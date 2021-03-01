@@ -6,8 +6,10 @@
 //Base
 @import'./Base/reset';
 @import'./Base/normalized';
+@import './Base/customize';
 //components
 @import './layout/header';
+@import './layout/carousel_movie';
 // @import'./Layout/carousel_movie';
 // @import'./Layout/cinema_block';
 // @import'./Layout/tix_news';
