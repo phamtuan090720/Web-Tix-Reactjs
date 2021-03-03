@@ -13,7 +13,7 @@ function ModalTrailer(props) {
                 <div className="modal-content">
                     {/* Modal body */}
                     <div className="modal-body">
-                        <button type="button" className="close" data-dismiss="modal" onClick={Close}><img src={props.CloseModal} alt /></button>
+                        <button type="button" className="close" data-dismiss="modal" onClick={Close}><img src={props.CloseModal} alt='icon close modal' /></button>
                         <iframe width="500" height="300" src={link} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
