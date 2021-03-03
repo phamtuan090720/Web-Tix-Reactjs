@@ -4,8 +4,8 @@ import LocationHeader from '../../img/Icon/location-header.png';
 import Avatar from '../../img/Icon/avatar.png';
 import Next from '../../img/Icon/next-session.png';
 import MenuIcon from '../../img/Icon/menu-options.png';
-import {NavLink,Link} from 'react-router-dom';
-import {connect, useSelector} from 'react-redux';
+import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
 import Location from './dropdownItem';
 
  function NavbarHome(props) {
