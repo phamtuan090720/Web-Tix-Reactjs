@@ -1,9 +1,9 @@
-import React ,{useEffect} from 'react'
+import React from 'react'
 import Slider from "react-slick";
 import NextIcon from '../../../img/Icon/next-session.png';
 import BackIcon from '../../../img/Icon/back-session.png';
 import { actHandleChangePage } from '../../../container/HomeTemplate/HomePage/modules/action';
-import Movie from '../../Movie';
+import ContainerMovie from './ContainerMovie';
 import { connect } from 'react-redux';
 function SampleNextArrow(props) {
     const { className, style, onClick, currentPage, changeIndexPage } = props;
@@ -40,8 +40,7 @@ function SamplePrevArrow(props) {
         let currentPageNew = currentPage - 1;
         onClick();
         changeIndexPage(currentPageNew);
-    }
-    
+    }    
     return (
         <div
             id='PrevSlick'
@@ -60,8 +59,9 @@ function SamplePrevArrow(props) {
         />
     );
 }
+
 function index(props) {
-    const { currentPage, changeIndexPage } = props;
+    const { currentPage, changeIndexPage,dataListMovie} = props;
     const settings = {
         dots: false,
         infinite: true,
@@ -88,40 +88,12 @@ function index(props) {
                 <div className='tab-content'>
                     <div className='tab-pane active' id='showing'>
                         <Slider {...settings} className='schedule_carousel'>
-                            <div className='schedule_carousel_container'>
-                                <div className="row">
-                                    <div className='col-3'>
-                                        <Movie />
-                                    </div>
-                                    <div className='col-3'>
-                                        <Movie />
-                                    </div>
-                                    <div className='col-3'>
-                                        <Movie />
-                                    </div>
-                                    <div className='col-3'>
-                                        <Movie />
-                                    </div>
-                                    <div className='col-3'>
-                                        <Movie />
-                                    </div>
-                                    <div className='col-3'>
-                                        <Movie />
-                                    </div>
-                                    <div className='col-3'>
-                                        <Movie />
-                                    </div>
-                                    <div className='col-3'>
-                                        <Movie />
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div className='schedule_carousel_container'>
-                                Showing
-                            </div>
+                            <ContainerMovie data1={dataListMovie}/>
+                            <ContainerMovie data1={dataListMovie}/>
+                            {/* <ContainerMovie data2={data2}/> */}
                         </Slider>
                     </div>
+                    
                     {/* <div className='tab-pane fade' id='coming'>
                         <div className='schedule_carousel'>
                             <div className='schedule_carousel_container'>

@@ -3,11 +3,11 @@ import DropdownIcon from '../../img/Icon/dropdown-icon.png';
 import ShedulesBar from './ScheduleBar';
 import Content from './Content';
 export default function index(porps) {
-    console.log(porps.dataListMovie);
+    const {dataListMovie} = porps
     return (
         <section className="movie_schedule">
             <ShedulesBar DropdownIcon={DropdownIcon}/>
-            <Content/>
+            <Content dataListMovie={dataListMovie}/>
         </section>
 
     )

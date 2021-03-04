@@ -8,7 +8,7 @@ function ModalTrailer(props) {
         props.RemoveLink();
     }
     return (
-        <div className="modal" id="modal_trailer">
+        <div className="modal" id="modal_trailer" onClick={Close}>
             <div className="modal-dialog modal-lg">
                 <div className="modal-content">
                     {/* Modal body */}
