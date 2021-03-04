@@ -1,17 +1,22 @@
-import React from 'react'
+import React ,{useEffect} from 'react'
 import Slider from "react-slick";
 import NextIcon from '../../../img/Icon/next-session.png';
 import BackIcon from '../../../img/Icon/back-session.png';
+import { actHandleChangePage } from '../../../container/HomeTemplate/HomePage/modules/action';
 import Movie from '../../Movie';
+import { connect } from 'react-redux';
 function SampleNextArrow(props) {
-    const { className, style, onClick } = props;
-    let test = ()=>{
-        console.log("Test");
+    const { className, style, onClick, currentPage, changeIndexPage } = props;
+    let handelChangeIndex = () => {
+        let currentPageNew = currentPage + 1;
         onClick();
+        changeIndexPage(currentPageNew);
     }
-    let Class = `${className} Next`
+    let Class = `${className} Next`;
+    let idSlick = 'NextSlick';
     return (
         <div
+            id={idSlick}
             className={Class}
             style={{
                 ...style,
@@ -25,14 +30,21 @@ function SampleNextArrow(props) {
                 right: '-70px',
                 top: '45%'
             }}
-            onClick={test}
+            onClick={handelChangeIndex}
         />
     );
 }
 function SamplePrevArrow(props) {
-    const { className, style, onClick } = props;
+    const { className, style, onClick, currentPage, changeIndexPage } = props;
+    let handelChangeIndex = () => {
+        let currentPageNew = currentPage - 1;
+        onClick();
+        changeIndexPage(currentPageNew);
+    }
+    
     return (
         <div
+            id='PrevSlick'
             className={className}
             style={{
                 ...style, display: "block", backgroundImage: `url(${BackIcon})`,
@@ -44,19 +56,20 @@ function SamplePrevArrow(props) {
                 left: '-70px',
                 top: '45%'
             }}
-            onClick={onClick}
+            onClick={handelChangeIndex}
         />
     );
 }
-export default function index(props) {
+function index(props) {
+    const { currentPage, changeIndexPage } = props;
     const settings = {
         dots: false,
         infinite: true,
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        nextArrow: <SampleNextArrow />,
-        prevArrow: <SamplePrevArrow />
+        nextArrow: <SampleNextArrow currentPage={currentPage} changeIndexPage={changeIndexPage} />,
+        prevArrow: <SamplePrevArrow currentPage={currentPage} changeIndexPage={changeIndexPage} />
     };
     return (
         <div className="movie_schedule_content">
@@ -64,12 +77,12 @@ export default function index(props) {
                 <div className="nav_btn">
                     <ul className="nav nav-tabs">
                         <li className="nav-item">
-                            <a className="nav-link active showing" data-toggle="tab" href="#showing">Đang Chiếu</a>
+                            <a className="nav-link active showing" data-toggle="tab" href="#showing">Danh Sách Phim</a>
                             {/* id="showing" */}
                         </li>
-                        <li className="nav-item">
+                        {/* <li className="nav-item">
                             <a className="nav-link coming" data-toggle="tab" href="#coming">Sắp Chiếu</a>
-                        </li>
+                        </li> */}
                     </ul>
                 </div>
                 <div className='tab-content'>
@@ -109,15 +122,28 @@ export default function index(props) {
                             </div>
                         </Slider>
                     </div>
-                    <div className='tab-pane fade' id='coming'>
+                    {/* <div className='tab-pane fade' id='coming'>
                         <div className='schedule_carousel'>
                             <div className='schedule_carousel_container'>
                                 Coming
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>
     )
 }
+const mapStateToProp = state => {
+    return {
+        currentPage: state.listMovieReducer.currentPage,
+    }
+}
+const mapDispatchToProps = (dispatch) => {
+    return {
+        changeIndexPage: (currentPage) => {
+            dispatch(actHandleChangePage(currentPage));
+        }
+    }
+}
+export default connect(mapStateToProp, mapDispatchToProps)(index);

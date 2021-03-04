@@ -4,9 +4,6 @@ import ShedulesBar from './ScheduleBar';
 import Content from './Content';
 export default function index(porps) {
     console.log(porps.dataListMovie);
-    const checkDate = () =>{
-
-    }
     return (
         <section className="movie_schedule">
             <ShedulesBar DropdownIcon={DropdownIcon}/>

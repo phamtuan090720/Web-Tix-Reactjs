@@ -1,9 +1,9 @@
 import * as AtctionTypes from "./constants.js";
 import api from "./../../../../api/index.js";
-export const actListMovieAPI=()=>{
+export const actListMovieAPI=(count,currentPage)=>{
     return (dispatch)=>{
         dispatch(actListMovieRequest())
-        api.get("/QuanLyPhim/LayDanhSachPhim?maNhom=GP04")
+        api.get(`/QuanLyPhim/LayDanhSachPhimPhanTrang?maNhom=GP04&soTrang=${currentPage}&soPhanTuTrenTrang=${count}`)
         .then((rs)=>{
             dispatch(actListMovieSuccess(rs.data));
         }).catch((err)=>{
@@ -31,3 +31,9 @@ export const actListMovieFailed= (err) =>{
     };
 };
 
+export const actHandleChangePage=(index)=>{
+    return{
+        type:AtctionTypes.LIST_MOVIE_CHANGE_PAGE_POST,
+        payload:index,
+    }
+}
