@@ -5,22 +5,27 @@ import BackIcon from '../../../img/Icon/back-session.png';
 import Movie from '../../Movie';
 function SampleNextArrow(props) {
     const { className, style, onClick } = props;
-    let Class=`${className} Next`
-    console.log(Class);
+    let test = ()=>{
+        console.log("Test");
+        onClick();
+    }
+    let Class = `${className} Next`
     return (
         <div
             className={Class}
-            style={{ ...style,
+            style={{
+                ...style,
                 display: "block", position: 'absolute',
-                backgroundImage:`url(${NextIcon})`,
-                width:'50px',
-                height:'100px',
-                backgroundPosition:'center',
-                backgroundRepeat:'no-repeat',
-                backgroundSize:'contain',
-                right:'-70px',
-                top:'45%'}}
-            onClick={onClick}
+                backgroundImage: `url(${NextIcon})`,
+                width: '50px',
+                height: '100px',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: 'contain',
+                right: '-70px',
+                top: '45%'
+            }}
+            onClick={test}
         />
     );
 }
@@ -29,14 +34,16 @@ function SamplePrevArrow(props) {
     return (
         <div
             className={className}
-            style={{ ...style, display: "block",backgroundImage:`url(${BackIcon})`,
-            width:'50px',
-            height:'100px',
-            backgroundPosition:'center',
-            backgroundRepeat:'no-repeat',
-            backgroundSize:'contain',
-            left:'-70px',
-            top:'45%'}}
+            style={{
+                ...style, display: "block", backgroundImage: `url(${BackIcon})`,
+                width: '50px',
+                height: '100px',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: 'contain',
+                left: '-70px',
+                top: '45%'
+            }}
             onClick={onClick}
         />
     );
@@ -71,32 +78,31 @@ export default function index(props) {
                             <div className='schedule_carousel_container'>
                                 <div className="row">
                                     <div className='col-3'>
-                                        <Movie/>
+                                        <Movie />
                                     </div>
                                     <div className='col-3'>
-                                        <Movie/>
+                                        <Movie />
                                     </div>
                                     <div className='col-3'>
-                                        <Movie/>
+                                        <Movie />
                                     </div>
                                     <div className='col-3'>
-                                        <Movie/>
+                                        <Movie />
+                                    </div>
+                                    <div className='col-3'>
+                                        <Movie />
+                                    </div>
+                                    <div className='col-3'>
+                                        <Movie />
+                                    </div>
+                                    <div className='col-3'>
+                                        <Movie />
+                                    </div>
+                                    <div className='col-3'>
+                                        <Movie />
                                     </div>
                                 </div>
-                                <div className="row">
-                                <div className='col-3'>
-                                        <Movie/>
-                                    </div>
-                                    <div className='col-3'>
-                                        <Movie/>
-                                    </div>
-                                    <div className='col-3'>
-                                        <Movie/>
-                                    </div>
-                                    <div className='col-3'>
-                                        <Movie/>
-                                    </div>
-                                </div>
+
                             </div>
                             <div className='schedule_carousel_container'>
                                 Showing
