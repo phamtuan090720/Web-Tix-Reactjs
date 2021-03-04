@@ -10,6 +10,12 @@ function Movie(props) {
     let Open = ()=>{
        openTrailer(data.trailer);
     }
+    const render=()=>{
+        return ` <img src={${start1}} alt />
+        <img src={${start1}} alt />
+        <img src={${start1}} alt />
+        <img src={${start1}} alt />`
+    }
     return (
         <div className="movie_item">
             <div className="movie_pic">
