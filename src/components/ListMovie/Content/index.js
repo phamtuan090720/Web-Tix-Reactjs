@@ -5,7 +5,7 @@ import BackIcon from '../../../img/Icon/back-session.png';
 import { actHandleChangePage } from '../../../container/HomeTemplate/HomePage/modules/action';
 import ContainerMovie from './ContainerMovie';
 import { connect } from 'react-redux';
-function SampleNextArrow(props) {
+function SampleNextArrowComing(props) {
     const { className, style, onClick, currentPage, changeIndexPage } = props;
     let handelChangeIndex = () => {
         let currentPageNew = currentPage + 1;
@@ -34,17 +34,18 @@ function SampleNextArrow(props) {
         />
     );
 }
-function SamplePrevArrow(props) {
+function SamplePrevArrowComing(props) {
     const { className, style, onClick, currentPage, changeIndexPage } = props;
     let handelChangeIndex = () => {
         let currentPageNew = currentPage - 1;
         onClick();
         changeIndexPage(currentPageNew);
-    }    
+    }
+    let Class = `${className} Prve`;
     return (
         <div
             id='PrevSlick'
-            className={className}
+            className={Class}
             style={{
                 ...style, display: "block", backgroundImage: `url(${BackIcon})`,
                 width: '50px',
@@ -61,15 +62,15 @@ function SamplePrevArrow(props) {
 }
 
 function index(props) {
-    const { currentPage, changeIndexPage,dataListMovie} = props;
+    const { currentPage, changeIndexPage, dataListMovie } = props;
     const settings = {
         dots: false,
         infinite: true,
-        speed: 500,
+        speed: 1500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        nextArrow: <SampleNextArrow currentPage={currentPage} changeIndexPage={changeIndexPage} />,
-        prevArrow: <SamplePrevArrow currentPage={currentPage} changeIndexPage={changeIndexPage} />
+        nextArrow: <SampleNextArrowComing currentPage={currentPage} changeIndexPage={changeIndexPage} />,
+        prevArrow: <SamplePrevArrowComing currentPage={currentPage} changeIndexPage={changeIndexPage} />
     };
     return (
         <div className="movie_schedule_content">
@@ -80,27 +81,27 @@ function index(props) {
                             <a className="nav-link active showing" data-toggle="tab" href="#showing">Danh Sách Phim</a>
                             {/* id="showing" */}
                         </li>
-                        {/* <li className="nav-item">
+                        <li className="nav-item">
                             <a className="nav-link coming" data-toggle="tab" href="#coming">Sắp Chiếu</a>
-                        </li> */}
+                        </li>
                     </ul>
                 </div>
                 <div className='tab-content'>
                     <div className='tab-pane active' id='showing'>
                         <Slider {...settings} className='schedule_carousel'>
-                            <ContainerMovie data1={dataListMovie}/>
-                            <ContainerMovie data1={dataListMovie}/>
+                            <ContainerMovie data1={dataListMovie} />
+                            <ContainerMovie data1={dataListMovie} />
                             {/* <ContainerMovie data2={data2}/> */}
                         </Slider>
                     </div>
-                    
-                    {/* <div className='tab-pane fade' id='coming'>
+
+                    <div className='tab-pane fade' id='coming'>
                         <div className='schedule_carousel'>
-                            <div className='schedule_carousel_container'>
-                                Coming
-                            </div>
+                            <Slider {...settings} className='schedule_carousel'>
+                                <ContainerMovie data1={dataListMovie} />
+                            </Slider>
                         </div>
-                    </div> */}
+                    </div>
                 </div>
             </div>
         </div>

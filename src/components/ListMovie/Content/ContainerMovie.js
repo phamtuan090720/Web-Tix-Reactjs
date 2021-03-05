@@ -13,7 +13,7 @@ export default function ContainerMovie(props) {
         }
     }
     return (
-       <div className='schedule_carousel_container'>
+       <div className='schedule_carousel_container' style={{height:'1000px'}}>
             <div className="row">
                     {render()}
             </div>

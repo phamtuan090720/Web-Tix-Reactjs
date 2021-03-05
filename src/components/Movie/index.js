@@ -4,17 +4,11 @@ import start12 from '../../img/Icon/star1.2.png';
 import PlayIcon from '../../img/Icon/play-video.png';
 import { actOpenTrailer } from '../CarouselMovie/modules/actions';
 import { connect } from 'react-redux';
-import DefaultPicMovie from '../../img/default-film.webp'
+import DefaultPicMovie from '../../img/default-film.webp';
 function Movie(props) {
     const { data,openTrailer } = props;
     let Open = ()=>{
        openTrailer(data.trailer);
-    }
-    const render=()=>{
-        return ` <img src={${start1}} alt />
-        <img src={${start1}} alt />
-        <img src={${start1}} alt />
-        <img src={${start1}} alt />`
     }
     return (
         <div className="movie_item">
