@@ -1,6 +1,9 @@
 import React from 'react'
 import NavNew from './NavNew';
 import NewContent from './NewContent';
+import {dataMainDienAnh,dataMainReview,dataMainKhuyenMai} from './dataMain';
+import {dataSubDienAnh,dataSubReview,dataSubKhuyenMai} from './dataSub';
+import {dataMiniDienAnh,dataMiniReview,dataMiniKhuyenMai} from './dataMini';
 export default function index() {
     return (
         <section className='tix_news'>
@@ -11,7 +14,16 @@ export default function index() {
                 </div>
                 <div className='tix_new_container'>
                     <NavNew/>
-                    <NewContent/>
+                    <NewContent dataMainDienAnh={dataMainDienAnh} dataMainReview={dataMainReview}
+                    dataMainKhuyenMai={dataMainKhuyenMai}
+                    dataSubDienAnh={dataSubDienAnh}
+                    dataSubReview={dataSubReview}
+                    dataSubKhuyenMai={dataSubKhuyenMai}
+                    dataMiniDienAnh={dataMiniDienAnh}
+                    dataMiniReview={dataMiniReview}
+                    dataMiniKhuyenMai={dataMiniKhuyenMai}
+                    
+                    />
                 </div>
             </div>
         </section>
