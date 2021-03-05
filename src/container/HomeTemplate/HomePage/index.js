@@ -5,9 +5,9 @@ import ListMovie from '../../../components/ListMovie';
 import {actListMovieAPI} from './modules/action';
 import App from '../../../components/App';
 import Footer from '../../../components/Footer';
+import New from '../../../components/New';
  function HomePage(props) {
     const {dataListMovie,count,currentPage,totalPages} = props;
-    console.log(count,currentPage);
     useEffect(()=>{
         props.fetchListMovie(count,currentPage);
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -53,6 +53,7 @@ import Footer from '../../../components/Footer';
         <div>
             <Carousel/>
             <ListMovie dataListMovie={dataListMovie}/>
+            <New/>
             <App/>
             <Footer/>
         </div>
