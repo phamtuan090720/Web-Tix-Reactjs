@@ -1,0 +1,392 @@
+.cinema_block {
+    .cinema_block_container {
+        max-width: 940px;
+        margin: 0 auto;
+        padding-bottom: 40px;
+        .bg-img-top_container {
+            position: relative;
+            overflow: hidden;
+            &::before {
+                content: "";
+                display: block;
+                padding-top: 120px;
+                width: 100%;
+            }
+            .bg-img-top {
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                margin: auto;
+                background-image: url('../../img/Icon/back-news.png');
+                background-size: 100%;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+        }
+        .listCinema {
+            min-height: 705px;
+            width: 92px;
+            float: left;
+            border: 1px solid #ebebec;
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+            display: block;
+            .nav-item {
+                // overflow-x: hidden;
+                // max-height: 700px;
+                .nav-link {
+                    padding: 20px;
+                    position: relative;
+                    transition: all .2s;
+                    border: none;
+                    opacity: 0.5;
+                    img {
+                        width: 100%;
+                    }
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 50%;
+                        width: calc(100% - 40px);
+                        transform: translateX(-50%);
+                        background-color: #ebebec;
+                        height: 1px;
+                    }
+                }
+                .nav-link.active {
+                    opacity: 1;
+                }
+                &:hover .nav-link {
+                    opacity: 1;
+                }
+            }
+        }
+        .cinema_address {
+            float: left;
+            min-height: 705px;
+            border-top: 1px solid #ebebec;
+            border-bottom: 1px solid #ebebec;
+            width: 30%;
+            .cinema_address_list {
+                // overflow-x: hidden;
+                // max-height: 700px;
+                .tablinks.active {
+                    opacity: 1;
+                }
+                .tablinks {
+                    display: flex;
+                    padding: $pd-2;
+                    cursor: pointer;
+                    position: relative;
+                    opacity: 0.5;
+                    transition: all 0.2s;
+                    // overflow-y: hidden;
+                    img {
+                        width: 50px;
+                        height: 50px;
+                    }
+                    p {
+                        margin: 0;
+                        a {
+                            @include text($color-red-0,
+                            $font-size-small);
+                            text-decoration: none;
+                        }
+                    }
+                    .cinema_info {
+                        padding-left: $pd-1;
+                        display: block;
+                        overflow-y: hidden;
+                        line-height: 1.4;
+                        .cinema-name {
+                            .bhd {
+                                color: $color-green-0;
+                            }
+                            .cns {
+                                color: #df0d7a;
+                            }
+                            .ddc {
+                                color: $color-gray-0;
+                            }
+                            .mega_gs {
+                                color: #e5a813;
+                            }
+                            .dcine {
+                                color: $color-black-0;
+                            }
+                            .lotte {
+                                color: #ca4137;
+                            }
+                            @include text($color-black-0,
+                            $font-size-0);
+                        }
+                        .cinema-address {
+                            @include text($color-gray-0,
+                            $font-size-small);
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                        }
+                    }
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 50%;
+                        width: calc(100% - 40px);
+                        transform: translateX(-50%);
+                        background-color: #ebebec;
+                        height: 1px;
+                    }
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+        .listMovies {
+            float: left;
+            min-height: 705px;
+            width: calc(100% - 30% - 92px);
+            border: 1px solid #ebebec;
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+            position: relative;
+            overflow-y: auto;
+             ::-webkit-scrollbar {
+                width: 5px;
+            }
+             ::-webkit-scrollbar-track {
+                border-radius: 10px;
+                background: #ebebec;
+            }
+            /* Handle */
+             ::-webkit-scrollbar-thumb {
+                background-color: $color-gray-0;
+                border-radius: 10px;
+            }
+            // overflow-x: hidden;
+            .tabcontent {
+                display: flex;
+                overflow-x: hidden;
+                max-height: 700px;
+                .notification {
+                    display: block;
+                    margin-bottom: 0;
+                    text-align: center;
+                    margin-top: 40px;
+                    font-size: 15px;
+                    color: $color-black-0;
+                }
+                .movie_item {
+                    p {
+                        margin-bottom: 0;
+                    }
+                    padding-bottom: 17px;
+                    padding-top: 20px;
+                    padding-right: 15px;
+                    padding-left: 20px;
+                    width: 100%;
+                    position: relative;
+                    margin-bottom: 0;
+                    border: none;
+                    box-shadow: none;
+                    -webkit-box-shadow: none;
+                    .movie_info {
+                        align-items: center;
+                        img {
+                            height: 50px;
+                            width: 50px;
+                        }
+                        .wrapInfo {
+                            p {
+                                font-weight: bold;
+                                font-size: 16px;
+                            }
+                            p:nth-child(2) {
+                                @include text($color-gray-0,
+                                $font-size-small);
+                                cursor: pointer;
+                            }
+                            .age_type_p {
+                                @include text($color-white-0,
+                                $font-size-small);
+                                min-width: 33px;
+                                text-align: center;
+                                background-color: $color-green-0;
+                                display: inline-block;
+                                border-radius: 7px;
+                                line-height: 1.7;
+                            }
+                            .age_type_c {
+                                @include text($color-white-0,
+                                $font-size-small);
+                                min-width: 33px;
+                                text-align: center;
+                                background-color: $color-red-0;
+                                display: inline-block;
+                                border-radius: 7px;
+                                line-height: 1.7;
+                            }
+                        }
+                    }
+                    .movie_version {
+                        font-weight: bolder;
+                        @include text($color-black-0,
+                        $font-size-2);
+                    }
+                    .movie_screening {
+                        button {
+                            @include text($color-gray-0,
+                            $font-size-0);
+                            width: calc(24% - 10px);
+                            margin: 0 10px 10px 0;
+                            padding: 5px 0;
+                            transition: all .2s;
+                            text-align: center;
+                            background-color: rgba(246, 246, 246, .5);
+                            border-radius: 7px;
+                            border: 1px solid #e4e4e4;
+                            span {
+                                @include text($color-green-0,
+                                $font-size-3);
+                                transition: all 0.3s;
+                            }
+                            &:hover span {
+                                @include text($color-red-0,
+                                $font-size-3);
+                            }
+                        }
+                    }
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 50%;
+                        width: calc(100% - 40px);
+                        transform: translateX(-50%);
+                        background-color: #ebebec;
+                        height: 1px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// .cinema_block_mobile {
+//     display: none;
+//     margin-top: 60px;
+//     width: 100%;
+//     .panel-group {
+//         .panel-default {
+//             .panel-heading {
+//                 position: relative;
+//                 padding: $pd-1;
+//                 border-bottom: 1px solid #e9e9e9;
+//                 .panel-title {
+//                     display: flex;
+//                     align-items: center;
+//                     img {
+//                         width: 50px;
+//                         height: 50px;
+//                     }
+//                     .wrap_info_cinema {
+//                         .cinema_name {
+//                             @include text($color-black-0, $font-size-2);
+//                             margin-bottom: 0;
+//                         }
+//                         .cinema_promo {
+//                             margin-bottom: 0;
+//                             @include text($color-red-0, $font-size-small);
+//                             img {
+//                                 width: 13px;
+//                                 height: 13px;
+//                             }
+//                         }
+//                     }
+//                 }
+//                 .img-back {
+//                     width: 16px;
+//                     height: 16px;
+//                     position: absolute;
+//                     right: 0;
+//                     top: 50%;
+//                     transform: translateY(-50%);
+//                 }
+//             }
+//             .list_cinema {
+//                 .list_cinema_item {
+//                     a {
+//                         text-decoration: none;
+//                         @include text($color-black-0, $font-size-0);
+//                         display: inline-flex;
+//                         align-items: center;
+//                         padding: 15px;
+//                         img {
+//                             width: 50px;
+//                             height: 50px;
+//                         }
+//                         .cinema-name {
+//                             margin-bottom: 0;
+//                             .bhd {
+//                                 color: $color-green-0;
+//                             }
+//                             .cns {
+//                                 color: #df0d7a;
+//                             }
+//                             .ddc {
+//                                 color: $color-gray-0;
+//                             }
+//                             .mega_gs {
+//                                 color: #e5a813;
+//                             }
+//                             .dcine {
+//                                 color: $color-black-0;
+//                             }
+//                             .lotte {
+//                                 color: #ca4137;
+//                             }
+//                             transition: all 0.2s;
+//                         }
+//                         .cinema-address {
+//                             @include text($color-gray-0, $font-size-small);
+//                             margin-bottom: 0;
+//                         }
+//                         &:hover .cinema-name {
+//                             color: $color-red-0;
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+// .age_type_p {
+//     @include text($color-white-0, $font-size-small);
+//     min-width: 33px;
+//     text-align: center;
+//     background-color: $color-green-0;
+//     display: inline-block;
+//     border-radius: 7px;
+//     line-height: 1.7;
+// }
+// .age_type_c {
+//     @include text($color-white-0, $font-size-small);
+//     min-width: 33px;
+//     text-align: center;
+//     background-color: $color-red-0;
+//     display: inline-block;
+//     border-radius: 7px;
+//     line-height: 1.7;
+// }
+@media screen and (max-width:768px) {
+    .cinema_block {
+        .cinema_block_container {
+            display: none;
+        }
+    }
+}

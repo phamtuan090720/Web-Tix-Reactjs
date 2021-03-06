@@ -2,18 +2,25 @@ import React ,{useEffect}from 'react';
 import { connect } from 'react-redux';
 import Carousel from '../../../components/CarouselMovie';
 import ListMovie from '../../../components/ListMovie';
-import {actListMovieAPI} from './modules/action';
+import {actListMovieAPI,actCallApiGetInfoCinemaSytem,actCallApiGetListCinemaPost} from './modules/action';
 import App from '../../../components/App';
 import Footer from '../../../components/Footer';
 import New from '../../../components/New';
+import Cinema from '../../../components/CinemaBlock';
  function HomePage(props) {
-    const {dataListMovie,count,currentPage,totalPages} = props;
+    const {dataListMovie,count,currentPage,totalPages,dataCinemaSytem,dataListCinema,maHeThongRap} = props;
+    useEffect(()=>{
+        async function fetchDataCinema(){
+           await props.fetchListSytemCinema();
+        }
+        fetchDataCinema();
+        console.log('fetchListSytemCinema');
+    },[]);
+    
     useEffect(()=>{
         props.fetchListMovie(count,currentPage);
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-        console.log("Render");
+        console.log("fetchListMovie");
     },[currentPage]);
- 
     useEffect(()=>{
           // khi render xong thì kiểm tra nếu currentPage đang ở trang 1 thì sẽ ẩn nút Prve
           if(currentPage<=1){
@@ -49,10 +56,21 @@ import New from '../../../components/New';
             
             console.log("Update");
     },[currentPage]);
+    useEffect(()=>{
+        if(dataCinemaSytem&&dataCinemaSytem.length>0){
+            let x=dataCinemaSytem[0];
+            props.fetchListCinema(x.maHeThongRap);
+        }
+    },[dataCinemaSytem]);
+    useEffect(()=>{
+        props.fetchListCinema(maHeThongRap);
+    },[maHeThongRap]);
+    console.log(dataListCinema);
     return (
         <div>
             <Carousel/>
             <ListMovie dataListMovie={dataListMovie}/>
+            <Cinema dataCinemaSytem={dataCinemaSytem} dataListCinema={dataListCinema}/>
             <New/>
             <App/>
             <Footer/>
@@ -66,12 +84,22 @@ const mapStateToProp = state =>{
         count:state.listMovieReducer.count,
         currentPage:state.listMovieReducer.currentPage,
         totalPages:state.listMovieReducer.totalPages,
+        dataCinemaSytem:state.listSytemCinemaReducer.dataCinemaSytem,
+        dataListCinema:state.listCinemaReducer.dataListCinema,
+        maHeThongRap:state.listCinemaReducer.maHeThongRap
+        
     }
 }
 const mapDispatchToProps = (dispatch)=>{
     return {
         fetchListMovie:(count,currentPage)=>{
             dispatch(actListMovieAPI(count,currentPage));
+        },
+        fetchListSytemCinema:()=>{
+            dispatch(actCallApiGetInfoCinemaSytem());
+        },
+        fetchListCinema:(maHeThongRap)=>{
+            dispatch(actCallApiGetListCinemaPost(maHeThongRap));
         }
     }
 }

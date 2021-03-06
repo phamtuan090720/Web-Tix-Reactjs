@@ -11,7 +11,6 @@ function App() {
       });
     }
   }
-  console.log(showLayoutHome(routesHome));
   return (
     <Switch>
         {/* <Route path='' component={PageNotFound}/> */}

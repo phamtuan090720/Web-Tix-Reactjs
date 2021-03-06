@@ -37,3 +37,70 @@ export const actHandleChangePage=(index)=>{
         payload:index,
     }
 }
+export const actCallApiGetInfoCinemaSytem=()=>{
+    return(dispatch)=>{
+        dispatch(actListSytemCinemRequest())
+        api.get(`/QuanLyRap/LayThongTinHeThongRap`)
+        .then((rs)=>{
+            dispatch(actListSytemCinemSuccess(rs.data));
+        }).catch((err)=>{
+            dispatch(actListSytemCinemFailed(err));
+        })
+        ;
+    }
+}
+export const actListSytemCinemRequest=()=>{
+    return{
+        type:AtctionTypes.LIST_SYSTEM_CINEMA_REQUEST,
+    }
+};
+export const actListSytemCinemSuccess = (data) =>{
+    return{
+        type:AtctionTypes.LIST_SYSTEM_CINEMA_SUCCESS,
+        payload: data,
+    };
+};
+
+export const actListSytemCinemFailed= (err) =>{
+    return{
+        type:AtctionTypes.LIST_SYSTEM_CINEMA_FAILED,
+        payload: err,
+    };
+};
+
+export const actCallApiGetListCinemaPost=(maHeThongRap)=>{
+    return(dispatch)=>{
+        dispatch(actListCinemRequest())
+        api.get(`/QuanLyRap/LayThongTinCumRapTheoHeThong?maHeThongRap=${maHeThongRap}`)
+        .then((rs)=>{
+            dispatch(actListCinemSuccess(rs.data));
+        }).catch((err)=>{
+            dispatch(actListCinemFailed(err));
+        })
+        ;
+    }
+}
+export const actListCinemRequest=()=>{
+    return{
+        type:AtctionTypes.LIST_CINEMA_REQUEST,
+    }
+};
+export const actListCinemSuccess = (data) =>{
+    return{
+        type:AtctionTypes.LIST_CINEMA_SUCCESS,
+        payload: data,
+    };
+};
+
+export const actListCinemFailed= (err) =>{
+    return{
+        type:AtctionTypes.LIST_CINEMA_FAILED,
+        payload: err,
+    };
+};
+export const actChangeSyTemCinema=(maHeThongRap)=>{
+    return{
+        type:AtctionTypes.CHANGE_SYSTEM_CINEMA,
+        payload:maHeThongRap
+    }
+}
