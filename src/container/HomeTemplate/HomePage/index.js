@@ -22,6 +22,15 @@ import Cinema from '../../../components/CinemaBlock';
         console.log("fetchListMovie");
     },[currentPage]);
     useEffect(()=>{
+        if(dataCinemaSytem&&dataCinemaSytem.length>0){
+            let x=dataCinemaSytem[0];
+            props.fetchListCinema(x.maHeThongRap);
+        }
+    },[dataCinemaSytem]);
+    useEffect(()=>{
+        props.fetchListCinema(maHeThongRap);
+    },[maHeThongRap]);
+    useEffect(()=>{
           // khi render xong thì kiểm tra nếu currentPage đang ở trang 1 thì sẽ ẩn nút Prve
           if(currentPage<=1){
             document.getElementById('PrevSlick').style.display="none";
@@ -56,16 +65,6 @@ import Cinema from '../../../components/CinemaBlock';
             
             console.log("Update");
     },[currentPage]);
-    useEffect(()=>{
-        if(dataCinemaSytem&&dataCinemaSytem.length>0){
-            let x=dataCinemaSytem[0];
-            props.fetchListCinema(x.maHeThongRap);
-        }
-    },[dataCinemaSytem]);
-    useEffect(()=>{
-        props.fetchListCinema(maHeThongRap);
-    },[maHeThongRap]);
-    console.log(dataListCinema);
     return (
         <div>
             <Carousel/>

@@ -3,6 +3,7 @@ import NavBar from './NavBar';
 import TabContentCiema from './TabContentCinema';
 export default function index(props) {
     const {dataCinemaSytem,dataListCinema}=props;
+    console.log(dataListCinema)
     return (
         <section className="cinema_block">
             <div className="cinema_block_container">

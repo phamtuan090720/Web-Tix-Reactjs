@@ -71,9 +71,9 @@ export const actListSytemCinemFailed= (err) =>{
 export const actCallApiGetListCinemaPost=(maHeThongRap)=>{
     return(dispatch)=>{
         dispatch(actListCinemRequest())
-        api.get(`/QuanLyRap/LayThongTinCumRapTheoHeThong?maHeThongRap=${maHeThongRap}`)
+        api.get(`/QuanLyRap/LayThongTinLichChieuHeThongRap?maHeThongRap=${maHeThongRap}&maNhom=GP04`)
         .then((rs)=>{
-            dispatch(actListCinemSuccess(rs.data));
+            dispatch(actListCinemSuccess(rs.data[0].lstCumRap));
         }).catch((err)=>{
             dispatch(actListCinemFailed(err));
         })
