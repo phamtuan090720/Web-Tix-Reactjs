@@ -85,7 +85,8 @@ const mapStateToProp = state =>{
         totalPages:state.listMovieReducer.totalPages,
         dataCinemaSytem:state.listSytemCinemaReducer.dataCinemaSytem,
         dataListCinema:state.listCinemaReducer.dataListCinema,
-        maHeThongRap:state.listCinemaReducer.maHeThongRap
+        maHeThongRap:state.listCinemaReducer.maHeThongRap,
+        dataListMovieSchedule:state.listCinemaReducer.dataListMovieSchedule,
         
     }
 }

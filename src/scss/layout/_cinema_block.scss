@@ -170,7 +170,7 @@
             }
             // overflow-x: hidden;
             .tabcontent {
-                display: flex;
+                display: none;
                 overflow-x: hidden;
                 max-height: 700px;
                 .notification {
@@ -273,10 +273,12 @@
                     }
                 }
             }
+            .active{
+                display: block;
+            }
         }
     }
 }
-
 // .cinema_block_mobile {
 //     display: none;
 //     margin-top: 60px;

@@ -5,7 +5,10 @@ export default function ContentChilld(props) {
     const render=()=>{
         if(dataListCinema&&dataListCinema.length>0){
             return dataListCinema.map((item,index)=>{
-               return <Content key={index} infoCinema={item} />
+                if(index===0){
+                    return <Content key={index} infoCinema={item} addClass={'tablinks active'} />
+                }
+               return <Content key={index} infoCinema={item} addClass={'tablinks'} />
             })
         }
     }

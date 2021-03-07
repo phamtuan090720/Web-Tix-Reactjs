@@ -1,10 +1,24 @@
 import React from 'react'
 
 export default function ItemContentChild(props) {
-    const {infoCinema} = props
+    const {infoCinema,addClass} = props;
+    const openCity = (e) =>{
+       
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(`${infoCinema.maCumRap}`).style.display = "block";
+        e.currentTarget.className += " active";
+    }
     // check mã cụm rạp để đổi màu
     return (
-        <div className="tablinks" onclick="openCity(event, 'bhdStar_bitexco')" id="defaultOpen_bhd_cinema">
+        <div className={addClass} onClick={openCity}>
             <div className="cinema_info">
                 <p className="cinema-name"><span className="bhd">{infoCinema.tenCumRap}</span></p>
                 <p className="cinema-address">{infoCinema.diaChi}</p>
