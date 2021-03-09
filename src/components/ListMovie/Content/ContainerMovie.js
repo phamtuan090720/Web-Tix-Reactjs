@@ -10,6 +10,35 @@ export default function ContainerMovie(props) {
                 </div>
             })
         }
+        else{
+            return<>
+          
+            <div className='col-3'>
+                <Movie/>
+            </div>
+            <div className='col-3'>
+                <Movie/>
+            </div>
+            <div className='col-3'>
+                <Movie/>
+            </div>
+            <div className='col-3'>
+                <Movie/>
+            </div>
+            <div className='col-3'>
+                <Movie/>
+            </div>
+            <div className='col-3'>
+                <Movie/>
+            </div>
+            <div className='col-3'>
+                <Movie/>
+            </div>
+            <div className='col-3'>
+                <Movie/>
+            </div>
+            </> 
+        }
     }
     return (
        <div className='schedule_carousel_container' style={{height:'1000px'}}>

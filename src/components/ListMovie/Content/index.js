@@ -67,6 +67,7 @@ function index(props) {
         dots: false,
         infinite: true,
         speed: 1500,
+        lazyLoad: true,
         slidesToShow: 1,
         slidesToScroll: 1,
         nextArrow: <SampleNextArrowComing currentPage={currentPage} changeIndexPage={changeIndexPage} />,

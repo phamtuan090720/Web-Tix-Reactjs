@@ -2,8 +2,6 @@ import React from 'react'
 
 export default function index() {
     return (
-        <div>
-            Page Not Found
-        </div>
+       <h1>Page Not F</h1>
     )
 }
