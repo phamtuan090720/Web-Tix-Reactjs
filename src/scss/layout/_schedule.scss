@@ -215,12 +215,19 @@
                         font-size: 18px;
                         padding: 10px;
                         text-align: center;
-                        background: #fb4226;
                         background: linear-gradient(to left, #fb4226, #ce3017 100%);
                         border: none;
+                        // opacity: 0.5;
+                        transition: all 0.5;
                         &:focus {
                             border: none;
                             outline: none;
+                            
+                        }
+                        &:hover{
+                            text-decoration: none;
+                            // opacity: 1;
+                            background: #fb4226;
                         }
                     }
                 }

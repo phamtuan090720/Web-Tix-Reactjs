@@ -5,6 +5,7 @@ import PlayIcon from '../../img/Icon/play-video.png';
 import { actOpenTrailer } from '../CarouselMovie/modules/actions';
 import { connect } from 'react-redux';
 import DefaultPicMovie from '../../img/default-film.webp';
+import { Link } from 'react-router-dom';
 function Movie(props) {
     const { data,openTrailer } = props;
     let Open = ()=>{
@@ -22,7 +23,7 @@ function Movie(props) {
                     <p className="movie_duration">114 phút</p>
                 </div>
                 <div className="movie_overlay">
-                    <button id="buy_btn">MUA VÉ</button>
+                    <Link to={`/detail-movie/${data.maPhim}`} id="buy_btn">MUA VÉ</Link>
                 </div>
                 <div className="movie_icon">
                     <div className="rating">
