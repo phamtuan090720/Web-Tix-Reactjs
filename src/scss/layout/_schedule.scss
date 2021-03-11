@@ -1,11 +1,11 @@
 // MOVIE SCHEDULE
 .movie_schedule {
     // display: none;
-    // position: relative;
+    position: relative;
     background-color: white;
     .schedule_bar {
         position: absolute;
-        top: 90%;
+        top: -140px;
         left: 50%;
         transform: translateX(-50%);
         background-color: $color-white-0;

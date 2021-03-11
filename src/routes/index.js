@@ -1,5 +1,5 @@
 import HomePage from "../container/HomeTemplate/HomePage";
-import PageNotFound from '../container/HomeTemplate/PageNotFound';
+// import PageNotFound from '../container/HomeTemplate/PageNotFound';
 import DetailPage from '../container/HomeTemplate/DetailPage';
 ;
 const routesHome = [{
@@ -16,11 +16,6 @@ const routesHome = [{
     exact:false,
     path:"/detail-movie/:id",
     component:DetailPage,
-},
-{
-    exact: false,
-    path: "",
-    component: PageNotFound,
 }
 ];
 export { routesHome};

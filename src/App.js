@@ -2,7 +2,8 @@ import './App.css';
 import {Switch} from 'react-router-dom';
 import {routesHome} from './routes';
 import HomeTemplate from './container/HomeTemplate';
-
+import PageNotFound from './container/HomeTemplate/PageNotFound';
+import {Route} from "react-router-dom";
 function App() {
  const showLayoutHome = (routes) => {
     if (routes && routes.length > 0) {
@@ -13,8 +14,8 @@ function App() {
   }
   return (
     <Switch>
-        {/* <Route path='' component={PageNotFound}/> */}
         {showLayoutHome(routesHome)}
+        <Route path='' component={PageNotFound}/>
     </Switch>
     )
 }
