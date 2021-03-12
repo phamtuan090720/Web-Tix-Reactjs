@@ -49,7 +49,7 @@ export default function index(props) {
                             <TabContentLichChieu data={data}/>
                         </div>
                         <div id="lichChieuMobile">
-                            <TabContentLichChieuMoblie/>
+                            <TabContentLichChieuMoblie data={data}/>
                         </div>
                     </div>
                     <div className="tab-pane container" id="thongTin">

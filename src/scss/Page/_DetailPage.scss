@@ -297,6 +297,7 @@
         }
     }
 }
+
 @media screen and (max-width:768px){
     .warper-content{
         color: #fff;
@@ -526,8 +527,8 @@
                                     }
                                     button{
                                         color: #e4e4e4;
-                                        font-size: 20px;
-                                        width: calc(24% - 10px);
+                                        font-size: 18px;
+                                        width:30%;
                                         margin: 0 10px 10px 0;
                                         padding: 5px 0;
                                         transition: all .2s;
@@ -652,5 +653,5 @@
                 }
             }
         }
-    }
+    }  
 }

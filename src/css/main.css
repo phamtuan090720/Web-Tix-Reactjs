@@ -40,11 +40,11 @@ body {
   position: absolute;
   left: 50%;
   top: 50%;
+  width: 90%;
 }
 
 .modal .modal-dialog .modal-body {
   padding: 0;
-  height: 500px;
 }
 
 .modal .modal-dialog .modal-body iframe {
@@ -385,13 +385,6 @@ body {
   }
 }
 
-@media (min-width: 576px) {
-  #modal-locaition .modal-dialog {
-    max-width: 600px;
-    margin: 1.75rem auto;
-  }
-}
-
 .carousel_movie {
   margin-top: 60px;
 }
@@ -448,30 +441,6 @@ body {
 
 .carousel_movie .carousel_movie_container .movie_item .carousel_movie_item:hover .button_trailer_movie {
   display: block;
-}
-
-@media screen and (min-width: 992px) {
-  .modal-lg {
-    height: 550px;
-    width: 900px;
-  }
-}
-
-@media screen and (max-width: 991px) {
-  .modal-lg {
-    width: 598px;
-    height: 335px;
-  }
-  .carousel_movie .modal .modal-dialog .modal-body {
-    height: 335px;
-  }
-}
-
-@media (min-width: 576px) {
-  .modal-dialog {
-    max-width: unset;
-    margin: 1.75rem auto;
-  }
 }
 
 @media screen and (max-width: 768px) {
@@ -938,13 +907,6 @@ body {
   border: none;
 }
 
-@media screen and (min-width: 992px) {
-  .modal-lg {
-    height: 550px;
-    width: 900px;
-  }
-}
-
 @media screen and (max-width: 992px) {
   .movie_schedule .schedule_bar {
     display: none;
@@ -955,13 +917,6 @@ body {
   .movie_schedule .movie_schedule_content_mb {
     margin-top: 80px;
     display: block;
-  }
-  .movie_schedule .modal-lg {
-    width: 598px;
-    height: 335px;
-  }
-  .movie_schedule .modal .modal-dialog .modal-body {
-    height: 335px;
   }
 }
 
@@ -2262,7 +2217,6 @@ footer .footer_content_mb2 .verify_mb2 img {
     background-size: cover;
     border-radius: 10px;
     position: relative;
-    margin: 0;
   }
   .warper-content .overlay_movie .container-info-movie .header-content .img-movie img {
     width: 100%;
@@ -2393,8 +2347,8 @@ footer .footer_content_mb2 .verify_mb2 img {
   }
   .warper-content .overlay_movie .container-info-movie #lichChieu #lichChieuMobile .cinemaList .cinemaItem .movie_screening button {
     color: #e4e4e4;
-    font-size: 20px;
-    width: calc(24% - 10px);
+    font-size: 18px;
+    width: 30%;
     margin: 0 10px 10px 0;
     padding: 5px 0;
     transition: all .2s;

@@ -419,14 +419,14 @@
     }
 }
 
-// NAV TAB
-// MOVIE ITEM
-@media screen and (min-width:992px) {
-    .modal-lg {
-        height: 550px;
-        width: 900px;
-    }
-}
+// // NAV TAB
+// // MOVIE ITEM
+// @media screen and (min-width:992px) {
+//     .modal-lg {
+//         height: 550px;
+//         width: 900px;
+//     }
+// }
 
 @media screen and (max-width:992px) {
     .movie_schedule {
@@ -439,17 +439,6 @@
         .movie_schedule_content_mb {
             margin-top: 80px;
             display: block;
-        }
-        .modal-lg {
-            width: 598px;
-            height: 335px;
-        }
-        .modal {
-            .modal-dialog {
-                .modal-body {
-                    height: 335px;
-                }
-            }
         }
     }
 }

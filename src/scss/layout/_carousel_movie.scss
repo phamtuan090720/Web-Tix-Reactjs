@@ -86,35 +86,35 @@
     // }
 }
 
-@media screen and (min-width:992px) {
-    .modal-lg {
-        height: 550px;
-        width: 900px;
-    }
-}
+// @media screen and (min-width:992px) {
+//     .modal-lg {
+//         height: 550px;
+//         width: 900px;
+//     }
+// }
 
-@media screen and (max-width:991px) {
-    .modal-lg {
-        width: 598px;
-        height: 335px;
-    }
-    .carousel_movie {
-        .modal {
-            .modal-dialog {
-                .modal-body {
-                    height: 335px;
-                }
-            }
-        }
-    }
-}
+// @media screen and (max-width:991px) {
+//     .modal-lg {
+//         width: 598px;
+//         height: 335px;
+//     }
+//     .carousel_movie {
+//         .modal {
+//             .modal-dialog {
+//                 .modal-body {
+//                     height: 335px;
+//                 }
+//             }
+//         }
+//     }
+// }
 
-@media (min-width: 576px) {
-    .modal-dialog {
-        max-width: unset;
-        margin: 1.75rem auto;
-    }
-}
+// @media (min-width: 576px) {
+//     .modal-dialog {
+//         max-width: unset;
+//         margin: 1.75rem auto;
+//     }
+// }
 
 @media screen and (max-width:768px) {
     .carousel_movie {
