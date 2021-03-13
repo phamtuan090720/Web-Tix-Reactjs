@@ -3,7 +3,7 @@ import CinemaItem from './CinemaItem';
 export default function CinemaList(props) {
     return (
         <div className="cinemaList">
-            <CinemaItem data={props.data}/>
+            <CinemaItem data={props.data} logo={props.logo}/>
         </div>
     )
 }

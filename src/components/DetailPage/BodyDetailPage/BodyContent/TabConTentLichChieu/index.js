@@ -7,10 +7,10 @@ export default function index(props) {
            return data.heThongRapChieu.map((item, index) => {
                 if (index === 0) {
                     return <div className="tab-pane active container" id={item.maHeThongRap}>
-                        <CinemaList data={item.cumRapChieu} />
+                        <CinemaList data={item.cumRapChieu} logo={item.logo} />
                     </div>
                 }
-                 return <div className="tab-pane container" id={item.maHeThongRap}> <CinemaList data={item.cumRapChieu} /></div>
+                 return <div className="tab-pane container" id={item.maHeThongRap}> <CinemaList data={item.cumRapChieu} logo={item.logo} /></div>
             })
         }
     }

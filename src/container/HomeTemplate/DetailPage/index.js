@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useEffect,useState} from 'react'
 import styled from "styled-components";
 import bg from '../../../img/movie-details-bg.jpg';
 import imgMovie from '../../../img/default-film.webp';
@@ -10,16 +10,9 @@ import * as Action from './modules/action';
 function Index(props) {
     const {loading,data} = props;
     const id = props.match.params.id;
-    console.log(id);
-    console.log(props);
-    useEffect(() => {
-        setTimeout(()=>{
-            props.fetchDetailMovie(id);
-            console.log("render");
-        },3000);
-    }, []);
-   
-    console.log(loading);
+   useEffect(() => {
+       props.fetchDetailMovie(id);
+    },[]);
         if(loading) return <Loader/>
         return (
             <>
