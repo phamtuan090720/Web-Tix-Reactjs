@@ -1,17 +1,17 @@
-function openNav() {
-    // document.getElementById("moblie_menu").style.width = "70%";
+// function openNav() {
+//     // document.getElementById("moblie_menu").style.width = "70%";
 
-    document.getElementById("mobile_menu_canvas").style.width = "30%";
-    document.getElementById("mobile_menu_canvas").style.opacity = "1";
-    document.getElementById("moblie_menu").style.right = "0";
-};
+//     document.getElementById("mobile_menu_canvas").style.width = "30%";
+//     document.getElementById("mobile_menu_canvas").style.opacity = "1";
+//     document.getElementById("moblie_menu").style.right = "0";
+// };
 
-function closeNav() {
-    document.getElementById("moblie_menu").style.right = "-70%";
-    // document.getElementById("moblie_menu").style.width = "0";
-    document.getElementById("mobile_menu_canvas").style.opacity = "0";
-    document.getElementById("mobile_menu_canvas").style.width = "0";
-};
+// function closeNav() {
+//     document.getElementById("moblie_menu").style.right = "-70%";
+//     // document.getElementById("moblie_menu").style.width = "0";
+//     document.getElementById("mobile_menu_canvas").style.opacity = "0";
+//     document.getElementById("mobile_menu_canvas").style.width = "0";
+// };
 $('.app_carousel').owlCarousel({
     loop: true,
     nav: false,

@@ -6,6 +6,7 @@ import styled from "styled-components";
 import MovieDefault from '../../../../img/default-film.webp';
 import * as Action from '../../../ModalTrailer/modules/action';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 function index(props) {
     const {data} = props;
     const MovieImg = styled.div`
