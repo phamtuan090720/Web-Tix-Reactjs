@@ -147,10 +147,15 @@ var mybutton = document.getElementById("myBtn");
 window.onscroll = function() { scrollFunction() };
 
 function scrollFunction() {
+    // if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    //     mybutton.style.display = "block";
+    // } else {
+    //     mybutton.style.display = "none";
+    // }
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        mybutton.style.display = "block";
+        document.getElementById('nav').style.background = 'rgba(32, 90, 168, 0.8)';
     } else {
-        mybutton.style.display = "none";
+        document.getElementById('nav').style.background = 'transparent';
     }
 }
 
@@ -163,3 +168,11 @@ function topFunction() {
 function openModal(link) {
     document.getElementById("iframe_trailer").src = link;
 }
+// window.onscroll = function() { scrollFunction() };
+// function scrollFunction() {
+//     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+//         document.getElementById('nav').style.background = 'rgba(32, 90, 168, 0.8)';
+//     } else {
+//         document.getElementById('nav').style.background = 'transparent';
+//     }
+// }

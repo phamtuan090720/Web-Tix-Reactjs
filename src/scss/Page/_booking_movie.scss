@@ -1,0 +1,711 @@
+*{
+    ul{
+        li{
+            list-style: none;
+            padding: 5px 0;
+        }
+    }
+}
+@mixin breakpoint($point,$size) {
+    @if $point==rps {
+        @media (max-width: $size) and (min-width: 320px) {
+            @content ;
+        }
+    }
+}
+// ::-webkit-scrollbar {
+//     width: 5px;
+//   }
+  
+//   /* Track */
+//   ::-webkit-scrollbar-track {
+//     box-shadow: inset 0 0 5px grey; 
+//     border-radius: 10px;
+//   }
+   
+//   /* Handle */
+//   ::-webkit-scrollbar-thumb {
+//     background: red; 
+//     border-radius: 10px;
+//   }
+  
+//   /* Handle on hover */
+//   ::-webkit-scrollbar-thumb:hover {
+//     background: #b30000; 
+//   }
+.Booking_Movie{
+    background-image: url(../../img/BookingTicket/movie-details-bg.jpg);
+    // height: 90vh;
+    width: 100%;
+    background-position: 50% 50%;
+    background-size: cover;
+    min-height: 640px;
+    color: #fff;
+    .wrapper{
+        height: 100%;
+    }
+    .overlay{
+        background-image: linear-gradient(180deg, rgba(12, 39, 56, 0) 14%, #081b27);
+        height: 100%;
+        width: 100%;
+        min-height: 600px;
+        position: relative;
+        overflow: hidden;
+        padding-bottom: 80px;
+        opacity: 1;
+        background-color: transparent;
+        .checkOutRight{
+            width: 25%;
+            position: fixed;
+            top: 0;
+            right: 0;
+            background:transparent;
+            box-shadow: 0 0 15px rgb(0, 0, 0);
+            z-index: 3;
+            // position: relative;
+            // overflow-y: scroll;
+            height: 100%;
+            padding-bottom: 100px;
+            padding-left: 5%;
+            padding-right: 5%;
+            transition: all 1s;
+            @include breakpoint(rps,1105px){
+                padding-top: 70px;
+                position: fixed;
+                top: 0;
+                width: 100%;
+                right: -100%;
+                background-image: url(../../img/BookingTicket/movie-details-bg.jpg);
+                background-position: 50% 50%;
+                background-size: cover;
+            }
+            .film_name{
+                border-bottom: 1px dashed #e9e9e9;
+                .movie_name{
+                    font-size: 20px;
+                    font-weight: bold;
+                }
+            }
+            .total{
+                position: relative;
+                border-bottom: 1px dashed #e9e9e9;
+                height: 80px;
+                margin-bottom: 15px;
+                text-align: center;
+                font-size: 36px;
+                font-family: "SF Medium";
+                // color: #44c020!important;
+                .cash{
+                    width: 300px;
+                    text-align: center;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate3d(-50%,-50%,0);
+                }
+            }
+            .chair{
+                border-bottom: 1px dashed #e9e9e9;
+                padding-bottom: 12.5px;
+                padding-top: 12.5px;
+                margin-bottom: 12.5px;
+                justify-content: space-between;
+            }
+            .inputUser{
+                border-bottom: 1px dashed #e9e9e9;
+                padding-bottom: 12.5px;
+                margin-bottom: 12.5px;
+                width: calc(100% - 10px);
+                position: relative;
+                input{
+                    width: calc(100% - 10px);
+                    padding-right: 5px;
+                    padding-left: 0;
+                    background: transparent;
+                    border: 0;
+                    transition: all 0.6s;
+                    color: white;
+                    &:focus~label{
+                        color: white;
+                        font-size: 12px;
+                    }
+                    &:active~label{
+                        color: white;
+                        font-size: 12px;
+                    }
+                    &:focus{
+                        margin-top: 5px;
+                        padding-top: 12.5px;
+                        outline: 0;
+                    }
+                    &:valid{
+                        margin-top: 5px;
+                        padding-top: 12.5px;
+                        outline: 0;
+                    }
+                }
+                
+                label{
+                    color: #9b9b9b;
+                    font-size: 16px;
+                    position: absolute;
+                    transition: .3s;
+                    top: 0;
+                    left: 1;
+                    z-index: 1;
+                    margin: 0;
+                }
+              
+               
+            }
+            .button-group-checkOut{
+                width: 100%;        
+                .back{
+                    position: relative;
+                    // display: inline-block;
+                    display: none;
+                    padding: 10px 20px;
+                    color: #03e9f4;
+                    font-size: 16px;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    overflow: hidden;
+                    transition: .5s;    
+                    margin-top: 40px;
+                    letter-spacing: 4px;
+                    font-weight: bold;
+                    width: 45%;
+                    margin-right: 10px;
+                    @include breakpoint(rps,1105px){
+                         display: inline-block;
+                    }
+                    cursor: pointer;
+                    &:hover{
+                        background: #03e9f4;
+                        color: #fff;
+                        border-radius: 5px;
+                        box-shadow: 0 0 5px #03e9f4,
+                                    0 0 25px #03e9f4,
+                                    0 0 50px #03e9f4,
+                                    0 0 100px #03e9f4;
+                    }
+                    span {
+                        position: absolute;
+                        display: block;
+                      }
+                      span:nth-child(1) {
+                        top: 0;
+                        left: -100%;
+                        width: 100%;
+                        height: 2px;
+                        background: linear-gradient(90deg, transparent, #03e9f4);
+                        animation: btn-anim1 1s linear infinite;
+                      }
+                      
+                      @keyframes btn-anim1 {
+                        0% {
+                          left: -100%;
+                        }
+                        50%,100% {
+                          left: 100%;
+                        }
+                      }
+                      span:nth-child(2) {
+                        top: -100%;
+                        right: 0;
+                        width: 2px;
+                        height: 100%;
+                        background: linear-gradient(180deg, transparent, #03e9f4);
+                        animation: btn-anim2 1s linear infinite;
+                        animation-delay: .25s
+                      }
+                      
+                      @keyframes btn-anim2 {
+                        0% {
+                          top: -100%;
+                        }
+                        50%,100% {
+                          top: 100%;
+                        }
+                      }
+
+                      span:nth-child(3) {
+                        bottom: 0;
+                        right: -100%;
+                        width: 100%;
+                        height: 2px;
+                        background: linear-gradient(270deg, transparent, #03e9f4);
+                        animation: btn-anim3 1s linear infinite;
+                        animation-delay: .5s
+                      }
+                      
+                      @keyframes btn-anim3 {
+                        0% {
+                          right: -100%;
+                        }
+                        50%,100% {
+                          right: 100%;
+                        }
+                      }
+                      span:nth-child(4) {
+                        bottom: -100%;
+                        left: 0;
+                        width: 2px;
+                        height: 100%;
+                        background: linear-gradient(360deg, transparent, #03e9f4);
+                        animation: btn-anim4 1s linear infinite;
+                        animation-delay: .75s
+                      }
+                      
+                      @keyframes btn-anim4 {
+                        0% {
+                          bottom: -100%;
+                        }
+                        50%,100% {
+                          bottom: 100%;
+                        }
+                      } 
+                }
+                .success{
+                    position: relative;
+                    display: inline-block;
+                    padding: 10px 20px;
+                    color: #03e9f4;
+                    font-size: 16px;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    overflow: hidden;
+                    transition: .5s;    
+                    margin-top: 40px;
+                    letter-spacing: 4px;
+                    font-weight: bold;
+                    width: 100%;
+                    cursor: pointer;
+                    @include breakpoint(rps,1105px){
+                        width: 45%;
+                    }
+                    &:hover{
+                        background: #03e9f4;
+                        color: #fff;
+                        border-radius: 5px;
+                        box-shadow: 0 0 5px #03e9f4,
+                                    0 0 25px #03e9f4,
+                                    0 0 50px #03e9f4,
+                                    0 0 100px #03e9f4;
+                    }
+                    span {
+                        position: absolute;
+                        display: block;
+                      }
+                      span:nth-child(1) {
+                        top: 0;
+                        left: -100%;
+                        width: 100%;
+                        height: 2px;
+                        background: linear-gradient(90deg, transparent, #03e9f4);
+                        animation: btn-anim1 1s linear infinite;
+                      }
+                      
+                      @keyframes btn-anim1 {
+                        0% {
+                          left: -100%;
+                        }
+                        50%,100% {
+                          left: 100%;
+                        }
+                      }
+                      span:nth-child(2) {
+                        top: -100%;
+                        right: 0;
+                        width: 2px;
+                        height: 100%;
+                        background: linear-gradient(180deg, transparent, #03e9f4);
+                        animation: btn-anim2 1s linear infinite;
+                        animation-delay: .25s
+                      }
+                      
+                      @keyframes btn-anim2 {
+                        0% {
+                          top: -100%;
+                        }
+                        50%,100% {
+                          top: 100%;
+                        }
+                      }
+
+                      span:nth-child(3) {
+                        bottom: 0;
+                        right: -100%;
+                        width: 100%;
+                        height: 2px;
+                        background: linear-gradient(270deg, transparent, #03e9f4);
+                        animation: btn-anim3 1s linear infinite;
+                        animation-delay: .5s
+                      }
+                      
+                      @keyframes btn-anim3 {
+                        0% {
+                          right: -100%;
+                        }
+                        50%,100% {
+                          right: 100%;
+                        }
+                      }
+                      span:nth-child(4) {
+                        bottom: -100%;
+                        left: 0;
+                        width: 2px;
+                        height: 100%;
+                        background: linear-gradient(360deg, transparent, #03e9f4);
+                        animation: btn-anim4 1s linear infinite;
+                        animation-delay: .75s
+                      }
+                      
+                      @keyframes btn-anim4 {
+                        0% {
+                          bottom: -100%;
+                        }
+                        50%,100% {
+                          bottom: 100%;
+                        }
+                      } 
+                }
+                @include breakpoint(rps,1105px){
+                    width: 80%;
+                    margin: 0 auto;
+                    display: flex;
+                }
+            }
+        }
+        .choose_tickets_left{
+            width: 75%;
+            // position: fixed;
+            // top: 0;
+            // left: 0;
+            @include breakpoint(rps,768px){
+                width: 100%;
+                overflow-x: scroll;
+                /* width */
+            }
+            @include breakpoint(rps,1105px){
+                width: 100%;
+            }
+            .cinema-chart{
+                padding-top: 70px;
+                @include breakpoint(rps,768px){
+                    min-width: 768px;
+                }
+                @include breakpoint(rps,1105px){
+                    width: 100%;
+                }
+            }
+            .nav{
+                width: 75%;
+                padding: 20px;
+                position: relative;
+                box-shadow: 0 0 15px rgb(0, 0, 0);
+                z-index: 3;
+                transition: all 1s;
+                position: fixed;
+                top: 0;
+                @include breakpoint(rps,1105px){
+                    width: 100%;
+                }
+                @include breakpoint(rps,768px){
+                }
+                .cancel{
+                    font-weight: bold;
+                    font-size: 20px;
+                    cursor :pointer;
+                   transition: all 0.5;
+                   &:hover{
+                    color: #03e9f4;
+                   }
+                }
+                .InfoUser{
+                    position: absolute;
+                    right: 0;
+                    top:50%;
+                    transform: translateY(-50%);
+                    margin-right: 20px;
+                    font-weight: 500;
+                    img{
+                        height: 40px;
+                        width: 40px;
+                        border-radius: 50%;
+                        margin-right: 10px;
+                    }
+                }
+            }
+            .screen-area{
+                .screen{
+                    font-size: 28px;
+                    margin: 10px auto 40px;
+                    position: relative;
+                    text-align: center;
+                    max-width: 350px;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    padding: 10px;
+                }
+                .screen::before{
+                    position: absolute;
+                    content: '';
+                    top: 0;
+                    left: 50%;
+                    width: 80%;
+                    transform: translateX(-50%);
+                    height: 1px;
+                    background: #213a69;
+                }
+                .screen::after{
+                    position: absolute;
+                    content: '';
+                    bottom:0;
+                    left: 50%;
+                    width: 100%;
+                    transform: translateX(-50%);
+                    height: 1px;
+                    background: #213a69;
+                }
+            }
+            .screen-thumb{
+                width: 100%;
+                margin-bottom: 20px;
+                img{
+                    width: 100%;
+                }
+            }
+            .way{
+                font-size: 28px;
+                margin: 10px auto 40px;
+                position: relative;
+                text-align: center;
+                max-width: 350px;
+                font-weight: 600;
+                text-transform: uppercase;
+                padding: 10px;
+                ::after{
+                    position: absolute;
+                    content: '';
+                    bottom:0;
+                    left: 50%;
+                    width: 100%;
+                    transform: translateX(-50%);
+                    height: 1px;
+                    background: #213a69;
+                }
+                ::before{
+                    position: absolute;
+                    content: '';
+                    top: 0;
+                    left: 50%;
+                    width: 80%;
+                    transform: translateX(-50%);
+                    height: 1px;
+                    background: #213a69;
+                }
+            }
+            .way-end{
+                font-size: 28px;
+                margin: 10px auto 0px;
+                position: relative;
+                text-align: center;
+                max-width: 350px;
+                font-weight: 600;
+                text-transform: uppercase;
+                padding: 10px; 
+            }
+            .screen-wrapper{
+                margin: 0 20px;
+                .seat-area{
+                    margin-bottom: 55px;
+                    padding: 0;
+                    margin: 0 auto;
+                    .seat-line{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        span{
+                            text-align: center;
+                            font-size: 16px;
+                            display: block;
+                            font-weight: bold;
+                            padding: 0;
+                        }
+                    }
+                    .seat--area{
+                        padding: 0;
+                        width: calc(100% - 100px);
+                        display: flex;
+                        justify-content: space-around;
+                        .front-seat{
+                            padding: 0;
+                            ul{
+                                display: flex;
+                                .single-seat{
+                                    padding: 5px;
+                                    position: relative;
+                                    img{
+                                        width: 100%;
+                                        height: 100%;
+                                    }
+                                    .sit-num{
+                                        position: absolute;
+                                        top: 50%;
+                                        left: 50%;
+                                        transform: translate(-50%, -50%);
+                                        text-transform: uppercase;
+                                        font-size: 12px;
+                                        font-weight: bold;
+                                        color: #03e9f4;
+                                        display: none;
+                                        transition: all 0.5;
+                                        &:hove{
+                                            color: white;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+        .info-check-out{
+            font-size: 20px;
+            align-items: center;
+            display: none;
+            box-shadow: 0 0 15px rgb(0, 0, 0);
+            @include breakpoint(rps,1105px){
+                width: 100%;
+                justify-content: space-between;
+                padding: 20px;
+                display: flex;
+                position: fixed;
+                bottom: 0;
+            }
+            @include breakpoint(rps,750px){
+                font-size: 16px;
+            }
+            .next{
+                display: none;
+                @include breakpoint(rps,1105px){
+                        width: 25%;
+                        position: relative;
+                        // display: inline-block;
+                        display: none;
+                        padding: 10px 20px;
+                        color: #03e9f4;
+                        font-size: 16px;
+                        text-decoration: none;
+                        text-transform: uppercase;
+                        overflow: hidden;
+                        transition: .5s;    
+                      
+                        letter-spacing: 4px;
+                        font-weight: bold;
+
+                        @include breakpoint(rps,1105px){
+                            display: inline-block;
+                        }
+                        cursor: pointer;
+                        &:hover{
+                            background: #03e9f4;
+                            color: #fff;
+                            border-radius: 5px;
+                            box-shadow: 0 0 5px #03e9f4,
+                                        0 0 25px #03e9f4,
+                                        0 0 50px #03e9f4,
+                                        0 0 100px #03e9f4;
+                        }
+                        span {
+                            position: absolute;
+                            display: block;
+                        }
+                        span:nth-child(1) {
+                            top: 0;
+                            left: -100%;
+                            width: 100%;
+                            height: 2px;
+                            background: linear-gradient(90deg, transparent, #03e9f4);
+                            animation: btn-anim1 1s linear infinite;
+                        }
+                        
+                        @keyframes btn-anim1 {
+                            0% {
+                            left: -100%;
+                            }
+                            50%,100% {
+                            left: 100%;
+                            }
+                        }
+                        span:nth-child(2) {
+                            top: -100%;
+                            right: 0;
+                            width: 2px;
+                            height: 100%;
+                            background: linear-gradient(180deg, transparent, #03e9f4);
+                            animation: btn-anim2 1s linear infinite;
+                            animation-delay: .25s
+                        }
+                        
+                        @keyframes btn-anim2 {
+                            0% {
+                            top: -100%;
+                            }
+                            50%,100% {
+                            top: 100%;
+                            }
+                        }
+
+                        span:nth-child(3) {
+                            bottom: 0;
+                            right: -100%;
+                            width: 100%;
+                            height: 2px;
+                            background: linear-gradient(270deg, transparent, #03e9f4);
+                            animation: btn-anim3 1s linear infinite;
+                            animation-delay: .5s
+                        }
+                        
+                        @keyframes btn-anim3 {
+                            0% {
+                            right: -100%;
+                            }
+                            50%,100% {
+                            right: 100%;
+                            }
+                        }
+                        span:nth-child(4) {
+                            bottom: -100%;
+                            left: 0;
+                            width: 2px;
+                            height: 100%;
+                            background: linear-gradient(360deg, transparent, #03e9f4);
+                            animation: btn-anim4 1s linear infinite;
+                            animation-delay: .75s
+                        }
+                        
+                        @keyframes btn-anim4 {
+                            0% {
+                            bottom: -100%;
+                            }
+                            50%,100% {
+                            bottom: 100%;
+                            }
+                    }
+                }
+            }
+        }
+    }
+ 
+}
+.Booking_Movie .overlay .choose_tickets_left::-webkit-scrollbar {
+    width: 5px;
+}
+.Booking_Movie .overlay .choose_tickets_left::-webkit-scrollbar-track{
+    border-radius: 10px;
+    background: #ebebec;    
+}

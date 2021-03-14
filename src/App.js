@@ -3,6 +3,7 @@ import {Switch} from 'react-router-dom';
 import {routesHome} from './routes';
 import HomeTemplate from './container/HomeTemplate';
 import PageNotFound from './container/HomeTemplate/PageNotFound';
+import BookingTicket from './container/HomeTemplate/BookingTicket';
 import {Route} from "react-router-dom";
 function App() {
  const showLayoutHome = (routes) => {
@@ -15,6 +16,7 @@ function App() {
   return (
     <Switch>
         {showLayoutHome(routesHome)}
+        <Route path="/booking-ticket/:id" component={BookingTicket}/>
         <Route path='' component={PageNotFound}/>
     </Switch>
     )
