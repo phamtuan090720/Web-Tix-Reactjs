@@ -51,7 +51,7 @@
         min-height: 600px;
         position: relative;
         overflow: hidden;
-        padding-bottom: 80px;
+        padding-bottom: 100px;
         opacity: 1;
         background-color: transparent;
         .checkOutRight{
@@ -62,8 +62,6 @@
             background:transparent;
             box-shadow: 0 0 15px rgb(0, 0, 0);
             z-index: 3;
-            // position: relative;
-            // overflow-y: scroll;
             height: 100%;
             padding-bottom: 100px;
             padding-left: 5%;
@@ -89,11 +87,10 @@
             .total{
                 position: relative;
                 border-bottom: 1px dashed #e9e9e9;
-                height: 80px;
+                height: 60px;
                 margin-bottom: 15px;
                 text-align: center;
                 font-size: 36px;
-                font-family: "SF Medium";
                 // color: #44c020!important;
                 .cash{
                     width: 300px;
@@ -110,6 +107,7 @@
                 padding-top: 12.5px;
                 margin-bottom: 12.5px;
                 justify-content: space-between;
+                font-weight: bold;
             }
             .inputUser{
                 border-bottom: 1px dashed #e9e9e9;
@@ -384,7 +382,7 @@
             // left: 0;
             @include breakpoint(rps,768px){
                 width: 100%;
-                overflow-x: scroll;
+                // overflow-x: scroll;
                 /* width */
             }
             @include breakpoint(rps,1105px){
@@ -393,7 +391,7 @@
             .cinema-chart{
                 padding-top: 70px;
                 @include breakpoint(rps,768px){
-                    min-width: 768px;
+                   width: 100%;
                 }
                 @include breakpoint(rps,1105px){
                     width: 100%;
@@ -413,6 +411,28 @@
                 }
                 @include breakpoint(rps,768px){
                 }
+                .countDown{
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    p{
+                        font-weight: bold;
+                    }
+                    .timeCountDown{
+                        font-size: 20px;
+                        font-weight: bold;
+                    }
+                }
+                // a{
+                //     font-weight: bold;
+                //     font-size: 20px;
+                //     cursor :pointer;
+                //    transition: all 0.5;
+                //    &:hover{
+                //     color: #03e9f4;
+                //     text-decoration: none;
+                //    }
+                // }
                 .cancel{
                     font-weight: bold;
                     font-size: 20px;
@@ -421,6 +441,8 @@
                    &:hover{
                     color: #03e9f4;
                    }
+                   text-decoration: none;
+                   color: white;
                 }
                 .InfoUser{
                     position: absolute;
@@ -517,15 +539,35 @@
                 padding: 10px; 
             }
             .screen-wrapper{
-                margin: 0 20px;
+                width: 100%;
+              
                 .seat-area{
                     margin-bottom: 55px;
                     padding: 0;
                     margin: 0 auto;
+                    width: 100%;
+                    @include breakpoint(rps,800px){
+                        overflow-x: scroll;
+                    }  
+                    &::-webkit-scrollbar {
+                        height:5px;
+                    }
+                    &::-webkit-scrollbar-track{
+                        border-radius: 10px;
+                        background:transparent;    
+                    }
+                    &::-webkit-scrollbar-thumb{
+                        background-color: #03e9f4;
+                        border-radius: 10px;
+                    }
                     .seat-line{
-                        display: flex;
                         justify-content: space-between;
                         align-items: center;
+                        @include breakpoint(rps,800px){
+                            width: 800px;
+                           
+                        }
+                        
                         span{
                             text-align: center;
                             font-size: 16px;
@@ -536,16 +578,20 @@
                     }
                     .seat--area{
                         padding: 0;
-                        width: calc(100% - 100px);
+                        margin: 0;
                         display: flex;
                         justify-content: space-around;
                         .front-seat{
                             padding: 0;
+                            margin: 0;
+                            justify-content: center;
                             ul{
                                 display: flex;
+                                padding: 0;
                                 .single-seat{
                                     padding: 5px;
                                     position: relative;
+                                    cursor: pointer;
                                     img{
                                         width: 100%;
                                         height: 100%;
@@ -559,7 +605,7 @@
                                         font-size: 12px;
                                         font-weight: bold;
                                         color: #03e9f4;
-                                        display: none;
+                                        // display: none;
                                         transition: all 0.5;
                                         &:hove{
                                             color: white;
@@ -699,13 +745,18 @@
                 }
             }
         }
+        
     }
  
 }
 .Booking_Movie .overlay .choose_tickets_left::-webkit-scrollbar {
-    width: 5px;
+    height:5px;
 }
 .Booking_Movie .overlay .choose_tickets_left::-webkit-scrollbar-track{
     border-radius: 10px;
-    background: #ebebec;    
+    background: transparent;    
+}
+.Booking_Movie .overlay .choose_tickets_left::-webkit-scrollbar-thumb{
+    background-color: #03e9f4;
+    border-radius: 10px;
 }

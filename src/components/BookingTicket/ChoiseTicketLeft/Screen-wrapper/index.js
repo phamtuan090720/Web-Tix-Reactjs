@@ -30,8 +30,8 @@ export default function index(props) {
             <span className="col-1">{nameLine}</span>
                 <ul className="seat--area col-10" >
 
-                <li class="front-seat">
-                    <ul class="row">
+                <li class="front-seat row">
+                    <ul class="row col-12">
                         {
                             data.map((item, index) => {
                                 if (index < 4) {
@@ -42,8 +42,8 @@ export default function index(props) {
 
                     </ul>
                 </li>
-                <li class="front-seat">
-                    <ul class="row">
+                <li class="front-seat row">
+                    <ul class="row col-12">
                         {
                             data.map((item, index) => {
                                 if (index >= 4 && index < 10) {
@@ -54,8 +54,8 @@ export default function index(props) {
 
                     </ul>
                 </li>
-                <li class="front-seat">
-                    <ul class="row">
+                <li class="front-seat row">
+                    <ul class="row col-12">
                         {
                             data.map((item, index) => {
                                 if (index >= 10 && index < 14) {
@@ -93,8 +93,8 @@ export default function index(props) {
                     <h5 className="way-1">VIP</h5>
                 </div>
                 <ul className="seat-area">
-                    {RenderSeatLine("VIP1", 0, 14, DanhSachGheVip(data))}
-                    {RenderSeatLine("VIP2", 14, 28, DanhSachGheVip(data))}
+                    {RenderSeatLine("V1", 0, 14, DanhSachGheVip(data))}
+                    {RenderSeatLine("V2", 14, 28, DanhSachGheVip(data))}
                 </ul>
                 <div className="way-end">
                     <h5 className="way-1">Hết</h5>

@@ -6,7 +6,9 @@ import {dataSubDienAnh,dataSubReview,dataSubKhuyenMai} from './dataSub';
 import {dataMiniDienAnh,dataMiniReview,dataMiniKhuyenMai} from './dataMini';
 export default function index() {
     return (
-        <section className='tix_news'>
+        <>
+        <div id='news_tix'></div>
+            <section className='tix_news'>
             <div className='tix_new_content'>
                 <div className="new_content_bg_top">
                     <div className="img_bg_top">
@@ -27,5 +29,7 @@ export default function index() {
                 </div>
             </div>
         </section>
+        </>
+        
     )
 }

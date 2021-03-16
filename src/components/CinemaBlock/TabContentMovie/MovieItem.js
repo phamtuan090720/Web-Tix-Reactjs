@@ -1,7 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 export default function MovieItem(props) {
     const {dataMovie}=props;
+    console.log(dataMovie);
     const cutData=(soLuong)=>{
         let data = []
         if(dataMovie.lstLichChieuTheoPhim.length>soLuong){
@@ -32,8 +34,8 @@ export default function MovieItem(props) {
    const renderGioChieu = ()=>{
        if(dataLichChieu&&dataLichChieu.length>0){
            return dataLichChieu.map((item)=>{
-            return  <button className="btn"><span>{getTimeIsoDate(item.ngayChieuGioChieu)}</span>~{getTimeEnd(item.ngayChieuGioChieu,109)}
-               </button>
+            return <Link to={`/booking-ticket/${item.maLichChieu}`}> <button className="btn"><span>{getTimeIsoDate(item.ngayChieuGioChieu)}</span>~{getTimeEnd(item.ngayChieuGioChieu,109)}
+            </button> </Link>
            })
        }
    }

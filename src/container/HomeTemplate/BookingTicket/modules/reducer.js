@@ -6,6 +6,10 @@ const initialStateInfoCheckOut={
 }
 export const InfoCheckOutReducer = (state=initialStateInfoCheckOut,action)=>{
     switch(action.type){
+        case ActionType.RESET_STATE_CHECKOUT:
+            state.total = 0;
+            state.listSeatSelector=[];
+            return {...state};
         case ActionType.ADD_SEAT:
             let arr = [...state.listSeatSelector];
             arr.push(action.payload);
@@ -27,5 +31,31 @@ export const InfoCheckOutReducer = (state=initialStateInfoCheckOut,action)=>{
             })
         default:
             return{...state};
+    }
+}
+const initialStateBookingTicketReducer = {
+    loading: true,
+    data: null,
+    err: null,
+}
+export const bookingTicketReducer = (state=initialStateBookingTicketReducer,action)=>{
+    switch (action.type) {
+        case ActionType.BOOKING_TICKET_REQUEST:
+            state.loading = true;
+            state.data = null;
+            state.err = null;
+            return { ...state }
+        case ActionType.BOOKING_TICKET_SUCCESS:
+            state.loading = false;
+            state.data = action.payload;
+            state.err = null;
+            return { ...state }
+        case ActionType.BOOKING_TICKET_FAILED:
+            state.loading = false;
+            state.data = null;
+            state.err = action.payload;
+            return { ...state }
+        default:
+            return { ...state }
     }
 }

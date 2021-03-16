@@ -11,14 +11,14 @@
 }
 
 html {
-    font-family: $font-family-1;
     scroll-behavior: smooth;
     height: 100%;
+    font-family: 'Catamaran', sans-serif;
 }
 
 body {
-    font-family: $font-family-0;
     font-size: $font-size-0;
+    font-family: 'Catamaran', sans-serif;
 }
 
 .clear {

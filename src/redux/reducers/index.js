@@ -5,7 +5,7 @@ import {listMovieReducer,listSytemCinemaReducer,listCinemaReducer} from '../../c
 import ContainerMovieState from '../../components/ListMovie/Content/modules/reducers';
 import detailMovieReducer from '../../container/HomeTemplate/DetailPage/modules/reducer';
 import ModalReducer from '../../components/ModalTrailer';
-import {InfoCheckOutReducer} from '../../container/HomeTemplate/BookingTicket/modules/reducer';
+import {InfoCheckOutReducer,bookingTicketReducer} from '../../container/HomeTemplate/BookingTicket/modules/reducer';
 const rootReducer  = combineReducers({
     LocationState,
     BannerState,
@@ -15,7 +15,8 @@ const rootReducer  = combineReducers({
     listCinemaReducer,
     detailMovieReducer,
     ModalReducer,
-    InfoCheckOutReducer
+    InfoCheckOutReducer,
+    bookingTicketReducer
 
 });
 export default rootReducer;

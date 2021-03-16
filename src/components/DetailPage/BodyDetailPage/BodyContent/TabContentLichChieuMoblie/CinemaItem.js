@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 export default function CinemaItem(props) {
     const { data,logo } = props;
@@ -28,8 +29,8 @@ export default function CinemaItem(props) {
    }
     const RenderLichChieu = (data)=>{
         return data.map((item)=>{
-            return <button className="btn"><span>{getTimeIsoDate(item.ngayChieuGioChieu)}</span>~{getTimeEnd(item.ngayChieuGioChieu,114)}
-            </button>
+            return <Link to={`/booking-ticket/${item.maLichChieu}`}><button className="btn"><span>{getTimeIsoDate(item.ngayChieuGioChieu)}</span>~{getTimeEnd(item.ngayChieuGioChieu,114)}
+            </button></Link>
         })
     }
     const renderHTML = () => {

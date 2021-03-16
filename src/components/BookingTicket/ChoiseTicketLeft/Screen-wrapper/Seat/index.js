@@ -20,18 +20,20 @@ function Index(props) {
         })
         if (isHave === true) {
             removeSeat(Seat);
+            setImg(imgSeat);
         }
         else {
             addSeat(Seat);
-        }
-        var x = document.getElementById(`${name}`);
-        if (x.style.display === 'block') {
-            x.style.display = 'none';
-            setImg(imgSeat);
-        } else {
-            x.style.display = 'block';
             setImg(imgSeatSelected);
         }
+        // var x = document.getElementById(`${name}`);
+        // if (x.style.display === 'block') {
+        //     x.style.display = 'none';
+        //     setImg(imgSeat);
+        // } else {
+        //     x.style.display = 'block';
+        //     setImg(imgSeatSelected);
+        // }
     }
     if(data.daDat===true){
         return (

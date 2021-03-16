@@ -28,11 +28,11 @@ const mapStateToProp = (state)=>{
         data: state.detailMovieReducer.data,
     };
 }
-const mapDispathToProp = (dispath) => {
+const mapDispatchToProp = (dispath) => {
     return {
         fetchDetailMovie: (id) => {
             dispath(Action.actDeailMovieAPI(id));
         },
     };
 };
-export default connect(mapStateToProp,mapDispathToProp)(Index);
+export default connect(mapStateToProp,mapDispatchToProp)(Index);
