@@ -29,6 +29,7 @@
                 border-radius: 30px!important;
                 overflow: hidden!important;
                 height: 438px;
+                width: calc(438px/2);
                 background-image: url('../../img/app/mobile.png');
                 background-size: 100% 100%;
                 .app_carousel {
@@ -86,6 +87,7 @@
             .app_content {
                 .app_content_slider {
                     height: 844px;
+                    width: calc(844px/2);
                     .app_carousel {
                         .item {
                             height: 844px;
@@ -106,6 +108,7 @@
             .app_content {
                 .app_content_slider {
                     height: 697px;
+                    width: calc(697px/2);
                     .app_carousel {
                         .item {
                             height: 697px;
@@ -126,6 +129,7 @@
             .app_content {
                 .app_content_slider {
                     height: 550px;
+                    width: calc(550px/2);
                     .app_carousel {
                         .item {
                             height: 550px;

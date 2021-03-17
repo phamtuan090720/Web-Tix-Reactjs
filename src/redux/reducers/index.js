@@ -6,6 +6,7 @@ import ContainerMovieState from '../../components/ListMovie/Content/modules/redu
 import detailMovieReducer from '../../container/HomeTemplate/DetailPage/modules/reducer';
 import ModalReducer from '../../components/ModalTrailer';
 import {InfoCheckOutReducer,bookingTicketReducer} from '../../container/HomeTemplate/BookingTicket/modules/reducer';
+import AuthReducer from "../../container/AdminTemplate/AuthPage/modules/reducer";
 const rootReducer  = combineReducers({
     LocationState,
     BannerState,
@@ -16,7 +17,8 @@ const rootReducer  = combineReducers({
     detailMovieReducer,
     ModalReducer,
     InfoCheckOutReducer,
-    bookingTicketReducer
+    bookingTicketReducer,
+    AuthReducer
 
 });
 export default rootReducer;

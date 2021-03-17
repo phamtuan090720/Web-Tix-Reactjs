@@ -52,7 +52,7 @@ export default function index(props) {
                             <TabContentLichChieuMoblie data={data}/>
                         </div>
                     </div>
-                    <div className="tab-pane container" id="thongTin">
+                    <div className="tab-pane fade" id="thongTin">
                         <div className="row">
                             <div className="col-6">
                                 <div className="row">
@@ -72,7 +72,7 @@ export default function index(props) {
                             </div>
                         </div>
                     </div>
-                    <div className="tab-pane container" id="danhGia">Đánh Giá</div>
+                    <div className="tab-pane fade" id="danhGia">Đánh Giá</div>
                 </div>
             </div>
         </>

@@ -4,6 +4,7 @@ import {routesHome} from './routes';
 import HomeTemplate from './container/HomeTemplate';
 import PageNotFound from './container/HomeTemplate/PageNotFound';
 import BookingTicket from './container/HomeTemplate/BookingTicket';
+import Login from './container/AdminTemplate/AuthPage';
 import {Route} from "react-router-dom";
 function App() {
  const showLayoutHome = (routes) => {
@@ -17,6 +18,7 @@ function App() {
     <Switch>
         {showLayoutHome(routesHome)}
         <Route path="/booking-ticket/:id" component={BookingTicket}/>
+        <Route path="/signin" component={Login} />
         <Route path='' component={PageNotFound}/>
     </Switch>
     )

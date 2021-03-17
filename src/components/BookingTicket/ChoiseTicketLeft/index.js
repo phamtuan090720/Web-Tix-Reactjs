@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import Avata from '../../../img/Icon/avatar.png';
+import Avata from '../../../img/AvataUser.jpg';
 import Thumb from '../../../img/BookingTicket/screen-thumb.png';
 import SreenWrapper from './Screen-wrapper';
 import CountDown from '../CountDownTime';
@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as Action from '../../../container/HomeTemplate/BookingTicket/modules/action';
  function Index(props) {
-    const{data} = props;
+    const{data,user} = props;
     return (
         <div className='choose_tickets_left'>
             <div className="nav" id="nav">
@@ -17,7 +17,7 @@ import * as Action from '../../../container/HomeTemplate/BookingTicket/modules/a
                 }} to='/home' className="cancel">X</Link>
                 <div className="InfoUser">
                     <img src={Avata} />
-                    <span className="username">Tuân Phạm</span>
+                    <span className="username">{user.taiKhoan}</span>
                 </div>
             </div>
             <div className="cinema-chart" >

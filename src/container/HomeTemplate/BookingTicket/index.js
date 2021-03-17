@@ -3,8 +3,9 @@ import { connect } from 'react-redux';
 import BookingTicket from '../../../components/BookingTicket';
 import * as Action from './modules/action';
 import Loading from '../../../components/Loader';
+import { Redirect } from 'react-router';
 function Index(props) {
-    const {fetchAPIBookingMovie,data,loading,resetStateCheckOut} = props;
+    const {fetchAPIBookingMovie,data,loading,resetStateCheckOut,user} = props;
     const id = props.match.params.id;
     useEffect(()=>{
         fetchAPIBookingMovie(id);
@@ -17,16 +18,18 @@ function Index(props) {
     const {total} = props;
     console.log(total);
     console.log(data);
+    if(!user) return <Redirect to='/signin'/>
     if(loading) return <Loading/>
     return (
-        <BookingTicket handelRebookTicket = {RebookTicket} data={data}/>
+        <BookingTicket user={user} handelRebookTicket = {RebookTicket} data={data}/>
     )
 }
 const mapStateToProp = state =>{
     return{
         total : state.InfoCheckOutReducer.total,
         data: state.bookingTicketReducer.data,
-        loading: state.bookingTicketReducer.loading
+        loading: state.bookingTicketReducer.loading,
+        user: state.AuthReducer.data,
     }
 }
 const mapDispatchToProp = (dispatch)=>{

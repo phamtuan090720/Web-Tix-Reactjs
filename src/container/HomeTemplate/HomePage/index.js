@@ -19,7 +19,6 @@ import Cinema from '../../../components/CinemaBlock';
     
     useEffect(()=>{
         props.fetchListMovie(count,currentPage);
-        console.log("fetchListMovie");
     },[currentPage]);
     useEffect(()=>{
         if(dataCinemaSytem&&dataCinemaSytem.length>0){
@@ -30,41 +29,6 @@ import Cinema from '../../../components/CinemaBlock';
     useEffect(()=>{
         props.fetchListCinema(maHeThongRap);
     },[maHeThongRap]);
-    useEffect(()=>{
-          // khi render xong thì kiểm tra nếu currentPage đang ở trang 1 thì sẽ ẩn nút Prve
-          if(currentPage<=1){
-            document.getElementById('PrevSlick').style.display="none";
-        }
-        else{
-            document.getElementById('PrevSlick').style.display="block";
-        }
-         // khi render xong thì kiểm tra nếu currentPage đang ở trang bằng với totalPages thì sẽ ẩn nút Next
-        if(currentPage<(totalPages-1)){
-            document.getElementById('NextSlick').style.display="block";
-        }
-        else{
-            document.getElementById('NextSlick').style.display="none";
-        }
-    },[]);
-    // khi currentPage thay đổi thì sẽ check lại điều kiện
-    useEffect(()=>{
-             // khi render xong thì kiểm tra nếu currentPage đang ở trang 1 thì sẽ ẩn nút Prve
-             if(currentPage<=1){
-                document.getElementById('PrevSlick').style.display="none";
-            }
-            else{
-                document.getElementById('PrevSlick').style.display="block";
-            }
-             // khi render xong thì kiểm tra nếu currentPage đang ở trang bằng với totalPages thì sẽ ẩn nút Next
-            if(currentPage===(totalPages-1)){
-                document.getElementById('NextSlick').style.display="none";
-            }
-            else{
-                document.getElementById('NextSlick').style.display="block";
-            }
-            
-            console.log("Update");
-    },[currentPage]);
     return (
         <div>
             <Carousel/>

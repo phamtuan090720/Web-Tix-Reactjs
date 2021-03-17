@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import Slider from "react-slick";
 import NextIcon from '../../../img/Icon/next-session.png';
 import BackIcon from '../../../img/Icon/back-session.png';
@@ -111,6 +111,7 @@ function index(props) {
 const mapStateToProp = state => {
     return {
         currentPage: state.listMovieReducer.currentPage,
+        totalPages:state.listMovieReducer.totalPages,
     }
 }
 const mapDispatchToProps = (dispatch) => {
