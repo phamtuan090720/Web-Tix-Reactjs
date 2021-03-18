@@ -3,8 +3,12 @@ import DropdownIcon from '../../img/Icon/dropdown-icon.png';
 import ShedulesBar from './ScheduleBar';
 import Content from './Content';
 import { connect } from 'react-redux';
+// import {actListMovieAPI} from '../../container/HomeTemplate/HomePage/modules/action';
 function Index(props) {
     const {currentPage,totalPages,dataListMovie}=props;
+    // useEffect(()=>{
+    //     props.fetchListMovie(count,currentPage);
+    // },[currentPage]);
     useEffect(()=>{
         // khi render xong thì kiểm tra nếu currentPage đang ở trang 1 thì sẽ ẩn nút Prve
         if(currentPage<=1){
@@ -43,7 +47,7 @@ useEffect(()=>{
             <div id='movie_schedule_tix'></div>
             <section className="movie_schedule">
                 <ShedulesBar DropdownIcon={DropdownIcon} />
-                <Content dataListMovie={dataListMovie} />
+                <Content/>
             </section>
 
         </>
@@ -54,6 +58,14 @@ const mapStateToProp = state =>{
     return{
         currentPage:state.listMovieReducer.currentPage,
         totalPages:state.listMovieReducer.totalPages,
+        count:state.listMovieReducer.count,
     }
 }
+// const mapDispatchToProps = (dispatch)=>{
+//     return {
+//         // fetchListMovie:(count,currentPage)=>{
+//         //     dispatch(actListMovieAPI(count,currentPage));
+//         // }
+//     }
+// }
 export default connect(mapStateToProp,null)(Index);

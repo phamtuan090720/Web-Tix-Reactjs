@@ -1,10 +1,11 @@
 import React from 'react'
+import { connect } from 'react-redux';
 import Movie from './../../Movie';
-export default function ContainerMovie(props) {
-    const {data1}=props;
+function ContainerMovie(props) {
+    const {dataListMovie}=props;
     const render=()=>{
-        if(data1&&data1.length>0){
-           return data1.map((movie)=>{
+        if(dataListMovie&&dataListMovie.length>0){
+           return dataListMovie.map((movie)=>{
             return <div key={movie.maPhim} className='col-3'>
                 <Movie data={movie} />
                 </div>
@@ -48,3 +49,10 @@ export default function ContainerMovie(props) {
         </div>
     )
 }
+const mapStateToProp = state => {
+    return{
+        dataListMovie:state.listMovieReducer.dataListMovie,
+    }
+}
+   
+export default connect(mapStateToProp,null)(ContainerMovie);

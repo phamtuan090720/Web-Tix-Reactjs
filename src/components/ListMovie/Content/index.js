@@ -5,6 +5,7 @@ import BackIcon from '../../../img/Icon/back-session.png';
 import { actHandleChangePage } from '../../../container/HomeTemplate/HomePage/modules/action';
 import ContainerMovie from './ContainerMovie';
 import { connect } from 'react-redux';
+import {actListMovieAPI} from '../../../container/HomeTemplate/HomePage/modules/action';
 function SampleNextArrowComing(props) {
     const { className, style, onClick, currentPage, changeIndexPage } = props;
     let handelChangeIndex = () => {
@@ -61,8 +62,12 @@ function SamplePrevArrowComing(props) {
     );
 }
 
-function index(props) {
-    const { currentPage, changeIndexPage, dataListMovie } = props;
+function Index(props) {
+
+    const { currentPage, changeIndexPage,count } = props;
+    useEffect(()=>{
+        props.fetchListMovie(count,currentPage);
+    },[currentPage]);
     const settings = {
         dots: false,
         infinite: true,
@@ -90,8 +95,8 @@ function index(props) {
                 <div className='tab-content'>
                     <div className='tab-pane active' id='showing'>
                         <Slider {...settings} className='schedule_carousel'>
-                            <ContainerMovie data1={dataListMovie} />
-                            <ContainerMovie data1={dataListMovie} />
+                            <ContainerMovie/>
+                            <ContainerMovie/>
                             {/* <ContainerMovie data2={data2}/> */}
                         </Slider>
                     </div>
@@ -99,7 +104,7 @@ function index(props) {
                     <div className='tab-pane fade' id='coming'>
                         <div className='schedule_carousel'>
                             <Slider {...settings} className='schedule_carousel'>
-                                <ContainerMovie data1={dataListMovie} />
+                                <ContainerMovie />
                             </Slider>
                         </div>
                     </div>
@@ -108,17 +113,23 @@ function index(props) {
         </div>
     )
 }
+
 const mapStateToProp = state => {
     return {
         currentPage: state.listMovieReducer.currentPage,
         totalPages:state.listMovieReducer.totalPages,
+        count:state.listMovieReducer.count,
+        dataListMovie:state.listMovieReducer.dataListMovie,
     }
 }
 const mapDispatchToProps = (dispatch) => {
     return {
+        fetchListMovie:(count,currentPage)=>{
+            dispatch(actListMovieAPI(count,currentPage));
+        },
         changeIndexPage: (currentPage) => {
             dispatch(actHandleChangePage(currentPage));
         }
     }
 }
-export default connect(mapStateToProp, mapDispatchToProps)(index);
+export default connect(mapStateToProp, mapDispatchToProps)(Index);
