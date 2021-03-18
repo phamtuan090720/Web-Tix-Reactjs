@@ -9,6 +9,7 @@ function Index(props) {
     const id = props.match.params.id;
     useEffect(()=>{
         fetchAPIBookingMovie(id);
+        resetStateCheckOut();
     },[]);
     const RebookTicket=()=>{
         fetchAPIBookingMovie(id);
@@ -16,8 +17,8 @@ function Index(props) {
         resetStateCheckOut();
     }
     const {total} = props;
-    console.log(total);
-    console.log(data);
+    // console.log(total);
+    // console.log(data);
     if(!user) return <Redirect to='/login'/>
     if(loading) return <Loading/>
     return (

@@ -64,9 +64,13 @@
             z-index: 3;
             height: 100%;
             padding-bottom: 100px;
-            padding-left: 5%;
-            padding-right: 5%;
+            padding-left: 2%;
+            padding-right: 2%;
             transition: all 1s;
+            .row{
+                margin:  0px;
+                padding: 0;
+            }
             @include breakpoint(rps,1105px){
                 padding-top: 70px;
                 position: fixed;
@@ -277,7 +281,7 @@
                     margin-top: 40px;
                     letter-spacing: 4px;
                     font-weight: bold;
-                    width: 100%;
+                    width: 60%;
                     cursor: pointer;
                     @include breakpoint(rps,1105px){
                         width: 45%;

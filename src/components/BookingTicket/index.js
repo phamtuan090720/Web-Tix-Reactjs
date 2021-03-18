@@ -3,7 +3,7 @@ import CheckOutInfo from './InfoCheckOut';
 import CheckOutRight from './CheckOutRinght';
 import ChoiseTicketLeft from './ChoiseTicketLeft';
 import ModalCheckOut from './RebookTicket';
-import ModalErr from './ModalErr';
+import ModalNoti from './ModalNotification';
 // import {data} from './data';
 
 export default function index(props) {
