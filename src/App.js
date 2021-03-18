@@ -20,7 +20,7 @@ function App() {
         {showLayoutHome(routesHome)}
         <Route path='/admin' component={Admin}/>
         <Route path="/booking-ticket/:id" component={BookingTicket}/>
-        <Route path="/signin" component={Login} />
+        <Route path="/login" component={Login} />
         <Route path='' component={PageNotFound}/>
     </Switch>
     )

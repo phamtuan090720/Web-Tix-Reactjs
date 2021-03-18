@@ -18,7 +18,7 @@ function Index(props) {
     const {total} = props;
     console.log(total);
     console.log(data);
-    if(!user) return <Redirect to='/signin'/>
+    if(!user) return <Redirect to='/login'/>
     if(loading) return <Loading/>
     return (
         <BookingTicket user={user} handelRebookTicket = {RebookTicket} data={data}/>

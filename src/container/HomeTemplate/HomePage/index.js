@@ -28,7 +28,6 @@ const mapStateToProp = state =>{
         dataListCinema:state.listCinemaReducer.dataListCinema,
         maHeThongRap:state.listCinemaReducer.maHeThongRap,
         dataListMovieSchedule:state.listCinemaReducer.dataListMovieSchedule,
-        
     }
 }
 const mapDispatchToProps = (dispatch)=>{

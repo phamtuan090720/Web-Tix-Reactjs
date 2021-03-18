@@ -14,7 +14,7 @@ function Index(props) {
    useEffect(() => {
        props.fetchDetailMovie(id);
     },[]);
-    if(!user) return <Redirect to='/signin'/>
+    if(!user) return <Redirect to='/login'/>
     if(loading) return <Loader/>
     return (
         <>

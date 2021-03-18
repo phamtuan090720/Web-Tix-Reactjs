@@ -4,7 +4,7 @@ import NavBar from './NavBar';
 import TabContentCiema from './TabContentCinema';
 import TabContentListMovie from './TabContentMovie';
 import {actCallApiGetInfoCinemaSytem,actCallApiGetListCinemaPost} from '../../container/HomeTemplate/HomePage/modules/action';
-function Index(props) {
+function CinemaBlock(props) {
     const {dataCinemaSytem,dataListCinema,maHeThongRap} = props;
     useEffect(()=>{
         async function fetchDataCinema(){
@@ -64,4 +64,4 @@ const mapDispatchToProps = (dispatch)=>{
         }
     }
 }
-export default connect(mapStateToProp,mapDispatchToProps)(Index);
+export default connect(mapStateToProp,mapDispatchToProps)(CinemaBlock);

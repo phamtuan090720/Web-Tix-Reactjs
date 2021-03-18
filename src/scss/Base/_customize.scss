@@ -119,6 +119,7 @@
     }
 }
 .modal {
+    transition: all 0.6s;
     .modal-dialog {
         margin: 0;
         position: absolute;

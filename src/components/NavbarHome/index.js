@@ -101,7 +101,7 @@ function NavbarHome(props) {
                     <div className="header_login">
                         <img src={AvataUser} alt="avatar" />
                         <span onClick={openMenuLogin}>{user.taiKhoan}</span>
-                        <div style={{ display: `${Menu}` }} class="menuLogin dropdown-content">
+                        <div style={{ display: `${Menu}` }} className="menuLogin dropdown-content">
                             <div className="Info">Thông Tin Cá Nhân</div>
                             <div className="loggOut" onClick={Loggout}>Đăng Xuất<img src={LogoutIcon}></img></div>
                         </div>
@@ -113,7 +113,7 @@ function NavbarHome(props) {
                     <div className="header_login">
                         <img src={AvataUser} alt="avatar" />
                         <span onClick={openMenuLogin}>{user.taiKhoan}</span>
-                        <div style={{ display: `${Menu}` }} class="menuLogin dropdown-content">
+                        <div style={{ display: `${Menu}` }} className="menuLogin dropdown-content">
                             <div className="Info">Thông Tin Cá Nhân</div>
                             <div className="Info">Trang Dashboard</div>
                             <div className="loggOut" onClick={Loggout}>Đăng Xuất<img src={LogoutIcon}></img></div>
@@ -124,7 +124,7 @@ function NavbarHome(props) {
 
         }
         else {
-            return <Link to='/signin'>
+            return <Link to='/login'>
                 <div className="header_login">
                     <img src={Avatar} alt="avatar" />
                     <span>Đăng Nhập</span>
