@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import imgSeat from '../../../../../img/BookingTicket/seat01.png';
 import imgSeatSelected from '../../../../../img/BookingTicket/seat01-free.png';
 import * as Action from '../../../../../container/HomeTemplate/BookingTicket/modules/action';
+import ModalErr from '../../../ModalErr';
 function Index(props) {
     const { className, data, addSeat, name, listSeatSelector, removeSeat } = props;
     const [img,setImg] = useState(imgSeat);
@@ -35,12 +36,25 @@ function Index(props) {
         //     setImg(imgSeatSelected);
         // }
     }
+    const [isOpen,setIsOpen] = React.useState(false);
+    const [messErr,setMessErr] = React.useState("");
+    const handleSCloseModal = () =>{
+        setIsOpen(false);
+    }
     if(data.daDat===true){
         return (
-            <li className={className} onClick={Click}>
+            <>
+              <li className={className} onClick={()=>{
+                  setIsOpen(true);
+                  setMessErr("Ghế đã có người chọn bạn vui lòng chọn ghế khác");
+              }}>
                 <img src={img} alt="Seat" />
-                <span id={name} style={{display:'block',fontWeight:'bold'}} className='sit-num'>X</span>
+                <span id={name} style={{display:'block',fontWeight:'bold',fontSize:20}} className='sit-num'>X</span>
             </li>
+            {
+                ModalErr(isOpen,messErr,handleSCloseModal)
+            }
+            </>
         )
     }
     return (

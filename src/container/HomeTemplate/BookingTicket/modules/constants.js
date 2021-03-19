@@ -5,3 +5,6 @@ export const BOOKING_TICKET_REQUEST = "bookingTicketReducer/BOOKING_TICKET_REQUE
 export const BOOKING_TICKET_SUCCESS ="bookingTicketReducer/BOOKING_TICKET_SUCCESS";
 export const BOOKING_TICKET_FAILED ="bookingTicketReducer/BOOKING_TICKET_FAILED";
 export const BOOKING_TICKET_POST ="bookingTicketReducer/BOOKING_TICKET_POST";
+export const DAT_VE_POST = 'bookingTicketReducer/DAT_VE_POST';
+export const DAT_VE_SUCCESS = 'bookingTicketReducer/DAT_VE_SUCCESS';
+export const DAT_VE_FAILED = 'bookingTicketReducer/DAT_VE_FAILED';

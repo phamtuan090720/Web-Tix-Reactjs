@@ -749,6 +749,105 @@
                 }
             }
         }
+        .ListVe{
+            text-align: left;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            top: 0;
+            z-index: 10;
+            background-color: rgba(0,0,0,.85);
+            .container{
+                font-size: 15px;
+                width: 50%;
+                min-height: 400px;
+                background-position: 50% 50%;
+                background-size: cover;
+                transition: all 0.6s;
+                @include breakpoint(rps,1105px){
+                    width: 80%;
+                } @include breakpoint(rps,750px){
+                    width: 100%;
+                }
+                .ListSeats{
+                    
+                    .Profile{
+                        display: flex;
+                        align-items: center;
+                        width: 80%;
+                        .seat{
+                            width: 10%;
+                            margin-left:15px;
+                            position: relative;
+                            img{
+                                width: 100%;
+                                height: 100%;
+                            }
+                            span{
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                text-transform: uppercase;
+                                font-size: 15px;
+                                font-weight: bold;
+                                color: #03e9f4;
+                            }
+                        }
+                    }
+                  
+                }
+                .title{
+                    margin-top: 20px;
+                }
+                .row{
+                    align-items: center;
+                    margin-bottom: 20px;
+                    margin-left: 10px;
+                    margin-right: 10px;
+                }
+                .Icon{
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    border: 1px solid #fff;
+                    position: relative;
+                    margin-right: 20px;
+                    .IconChild{
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%,-50%);
+                    }
+                }
+                .Action{
+                    .row{
+                        justify-content: space-between;
+                    }
+                    a{
+                        color: #03e9f4;
+                        text-decoration: none;
+                    }
+                    .MuiButton-contained{
+                        background-color:transparent;
+                        color: #03e9f4;
+                        border: 1px solid #03e9f4;
+                        &:hover{
+                            background: #03e9f4;
+                            color: #fff;
+                            border-radius: 5px;
+                            box-shadow: 0 0 5px #03e9f4,
+                                        0 0 25px #03e9f4,
+                                        0 0 50px #03e9f4,
+                                        0 0 100px #03e9f4;
+                        }
+                    }
+                }
+            }
+          
+        }
         
     }
  

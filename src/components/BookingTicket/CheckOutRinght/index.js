@@ -1,25 +1,27 @@
 import React, { useState } from 'react'
-import styled from 'styled-components';
 import { connect } from 'react-redux';
 import ModalErr from '../ModalErr';
 import Alert from '../Alert';
 import ModalNoti from '../ModalNotification';
+import {actDatVe,getInfoCustomer} from '../../../container/HomeTemplate/BookingTicket/modules/action';
 function Index(props) {
     // const Alert = styled.div`
     //     width: 100%;
     //     padding: 5px;
     //     margin-bottom: 0;
     // `;
-    const { data, listSeatSelector, total } = props;
+    const { data, listSeatSelector, total,user,malichChieu,actBookTicket,actGetInfoCustomer} = props;
+    console.log(user, parseInt(malichChieu));
     const [isOpen,setIsOpen]= useState(false);
     const [isOpenNoti,setIsOpenNoti]= useState(false);
+ 
     const [stateModalErr,setStateModalErr]= useState({
         mess:'',
     });
     const [state, setState] = useState({
         values: {
-            phone: '',
-            email: '',
+            phone: user.soDT,
+            email: user.email,
         },
         errors: {
             phone: '',
@@ -27,8 +29,46 @@ function Index(props) {
         },
         emailValid: false,
         phoneValid: false,
-        formValid: false,
+        formValid: true,
+    }); 
+    const [sateDataDatVe,setSateDataDatVe]= useState(
+        {
+            "maLichChieu": 0,
+            "danhSachVe": [
+              {
+                "maGhe": 0,
+                "giaVe": 0
+              }
+            ],
+            "taiKhoanNguoiDung": "string"
+          }
+    );
+    const [stateInfoCustomer,setStateInfoCustomer]=useState({
+        taiKhoan:null,
+        email:null,
+        SDT:null,
     });
+    console.log(user.taiKhoan);
+    console.log(listSeatSelector);
+    const danhSachGheChon = () =>{
+        if(listSeatSelector){
+            return listSeatSelector.map((item)=>{
+                return {
+                    "maGhe":parseInt(item.id),
+                    "giaVe":parseInt(item.giaTien),
+                }
+            })
+        }
+    };
+    const handelDatVe =()=>{
+        
+        actBookTicket(sateDataDatVe);
+        setIsOpenNoti(false);
+        actGetInfoCustomer(stateInfoCustomer);
+
+    }
+    console.log(stateInfoCustomer);
+    console.log(sateDataDatVe);
     React.useEffect(()=>{
         if(listSeatSelector.length>6){
             setIsOpen(true);
@@ -44,7 +84,17 @@ function Index(props) {
        if(handleCheckErrListSeatSelector(listSeatSelector)){
            if(handleCheckErrFrom()){
             setIsOpenNoti(true);
+            setSateDataDatVe({
+                "maLichChieu":parseInt(malichChieu),
+                "danhSachVe":danhSachGheChon(),
+                "taiKhoanNguoiDung":user.taiKhoan
+            });
            }
+           setStateInfoCustomer({
+                taiKhoan:user.taiKhoan,
+                email:state.values.email,
+                SDT:state.values.phone,
+           });
        };   
     }
     const handleCheckErrListSeatSelector = (ls) =>{
@@ -68,7 +118,6 @@ function Index(props) {
         }
         return true;
     }
-    console.log(state);
     
     const handleOnChange = (e) => {
         const { name, value } = e.target;
@@ -141,6 +190,7 @@ function Index(props) {
                                 name="email"
                                 onChange={handleOnChange}
                                 onBlur={handleCheckErr}
+                                defaultValue={user.email}
                             />
                             <label className="lableInputUser" htmlFor="emailCheckout">Email</label>
                             {state.errors.email ? (
@@ -156,6 +206,7 @@ function Index(props) {
                                 name="phone"
                                 onChange={handleOnChange}
                                 onBlur={handleCheckErr}
+                                defaultValue={user.soDT}
                                 type='text' />
                             <label className="lableInputUser" htmlFor="phoneCheckout">Phone</label>
                             {state.errors.phone ? (
@@ -190,7 +241,7 @@ function Index(props) {
 
             </div>
             {ModalErr(isOpen,stateModalErr.mess,handleSCloseModal)}
-            {ModalNoti(isOpenNoti,handleSCloseModal)}
+            {ModalNoti(isOpenNoti,handleSCloseModal,handelDatVe)}
         </>
     )
 }
@@ -200,4 +251,14 @@ const mapStateToProp = state => {
         total: state.InfoCheckOutReducer.total,
     }
 }
-export default connect(mapStateToProp, null)(Index);
+const mapDispatchToProp = (dispatch) =>{
+    return {
+        actBookTicket : (data)=>{
+            dispatch(actDatVe(data));
+        },
+        actGetInfoCustomer:(data)=>{
+            dispatch(getInfoCustomer(data))
+        }
+    }
+}
+export default connect(mapStateToProp, mapDispatchToProp)(Index);

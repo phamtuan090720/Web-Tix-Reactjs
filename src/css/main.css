@@ -1,17 +1,25 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,600,700");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+* ul li {
+  list-style: none;
+  padding: 5px 0;
+}
+
 html {
-  font-family: sans-serif;
   scroll-behavior: smooth;
+  height: 100%;
+  font-family: 'Catamaran', sans-serif;
 }
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
+  font-family: 'Catamaran', sans-serif;
+  overflow-x: hidden;
 }
 
 .clear {
@@ -33,6 +41,10 @@ body {
 
 .carousel_movie .slick-slider .slick-dots li button::before :focus {
   outline: none;
+}
+
+.modal {
+  transition: all 0.6s;
 }
 
 .modal .modal-dialog {
@@ -161,6 +173,10 @@ body {
   transform: translateY(-50%);
 }
 
+.header_nav_bar .header_menu .header_menu_right a {
+  text-decoration: none;
+}
+
 .header_nav_bar .header_menu .header_menu_right .header_login {
   display: flex;
   align-items: center;
@@ -171,12 +187,59 @@ body {
   cursor: pointer;
   padding-right: 11px;
   border-right: 1px solid #e9e9e99b;
+  position: relative;
 }
 
 .header_nav_bar .header_menu .header_menu_right .header_login img {
   width: 30px;
   margin-right: 5px;
   border-radius: 50%;
+}
+
+.header_nav_bar .header_menu .header_menu_right .header_login .menuLogin {
+  position: absolute;
+  transform: translate3d(8px, 25px, 0px);
+  top: 20px;
+  left: 0px;
+  will-change: transform;
+  display: none;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 5px;
+}
+
+.header_nav_bar .header_menu .header_menu_right .header_login .menuLogin .Info {
+  width: 100%;
+  color: black;
+  padding: 12px 16px;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+.header_nav_bar .header_menu .header_menu_right .header_login .menuLogin .Info:hover {
+  background-color: red;
+  color: white;
+}
+
+.header_nav_bar .header_menu .header_menu_right .header_login .menuLogin .loggOut {
+  color: black;
+  padding: 12px 16px;
+  width: 100%;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+.header_nav_bar .header_menu .header_menu_right .header_login .menuLogin .loggOut img {
+  width: 20px;
+  border-radius: unset;
+  margin-left: 5px;
+}
+
+.header_nav_bar .header_menu .header_menu_right .header_login .menuLogin .loggOut:hover {
+  background-color: red;
+  color: white;
 }
 
 .header_nav_bar .header_menu .header_menu_right .dropdown_place_header {
@@ -305,6 +368,18 @@ body {
   position: relative;
   width: 100%;
   padding: 10px;
+  color: #000;
+  font-size: 14px;
+}
+
+.sidepanel .sidepanel_frist_item .header_login {
+  transition: all 0.2s;
+}
+
+.sidepanel .sidepanel_frist_item .header_login .avata {
+  width: 35px;
+  height: 36px;
+  border-radius: 50%;
 }
 
 .sidepanel .sidepanel_frist_item a {
@@ -952,6 +1027,7 @@ body {
   border-radius: 30px !important;
   overflow: hidden !important;
   height: 438px;
+  width: calc(438px/2);
   background-image: url("../../img/app/mobile.png");
   background-size: 100% 100%;
 }
@@ -994,6 +1070,7 @@ body {
   }
   .app .app_movie .app_content .app_content_slider {
     height: 844px;
+    width: calc(844px/2);
   }
   .app .app_movie .app_content .app_content_slider .app_carousel .item {
     height: 844px;
@@ -1006,6 +1083,7 @@ body {
   }
   .app .app_movie .app_content .app_content_slider {
     height: 697px;
+    width: calc(697px/2);
   }
   .app .app_movie .app_content .app_content_slider .app_carousel .item {
     height: 697px;
@@ -1018,6 +1096,7 @@ body {
   }
   .app .app_movie .app_content .app_content_slider {
     height: 550px;
+    width: calc(550px/2);
   }
   .app .app_movie .app_content .app_content_slider .app_carousel .item {
     height: 550px;
@@ -2453,6 +2532,1053 @@ footer .footer_content_mb2 .verify_mb2 img {
   }
   .warper-content .overlay_movie .container-info-movie #thongTin .description p {
     font-size: 17px;
+  }
+}
+
+* ul li {
+  list-style: none;
+  padding: 5px 0;
+}
+
+.Booking_Movie {
+  background-image: url(../../img/BookingTicket/movie-details-bg.jpg);
+  width: 100%;
+  background-position: 50% 50%;
+  background-size: cover;
+  min-height: 640px;
+  color: #fff;
+}
+
+.Booking_Movie .wrapper {
+  height: 100%;
+}
+
+.Booking_Movie .overlay {
+  background-image: linear-gradient(180deg, rgba(12, 39, 56, 0) 14%, #081b27);
+  height: 100%;
+  width: 100%;
+  min-height: 600px;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 100px;
+  opacity: 1;
+  background-color: transparent;
+}
+
+.Booking_Movie .overlay .checkOutRight {
+  width: 25%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: transparent;
+  box-shadow: 0 0 15px black;
+  z-index: 3;
+  height: 100%;
+  padding-bottom: 100px;
+  padding-left: 2%;
+  padding-right: 2%;
+  transition: all 1s;
+}
+
+.Booking_Movie .overlay .checkOutRight .row {
+  margin: 0px;
+  padding: 0;
+}
+
+@media (max-width: 1105px) and (min-width: 320px) {
+  .Booking_Movie .overlay .checkOutRight {
+    padding-top: 70px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    right: -100%;
+    background-image: url(../../img/BookingTicket/movie-details-bg.jpg);
+    background-position: 50% 50%;
+    background-size: cover;
+  }
+}
+
+.Booking_Movie .overlay .checkOutRight .film_name {
+  border-bottom: 1px dashed #e9e9e9;
+}
+
+.Booking_Movie .overlay .checkOutRight .film_name .movie_name {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.Booking_Movie .overlay .checkOutRight .total {
+  position: relative;
+  border-bottom: 1px dashed #e9e9e9;
+  height: 60px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 36px;
+}
+
+.Booking_Movie .overlay .checkOutRight .total .cash {
+  width: 300px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.Booking_Movie .overlay .checkOutRight .chair {
+  border-bottom: 1px dashed #e9e9e9;
+  padding-bottom: 12.5px;
+  padding-top: 12.5px;
+  margin-bottom: 12.5px;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.Booking_Movie .overlay .checkOutRight .inputUser {
+  border-bottom: 1px dashed #e9e9e9;
+  padding-bottom: 12.5px;
+  margin-bottom: 12.5px;
+  width: calc(100% - 10px);
+  position: relative;
+}
+
+.Booking_Movie .overlay .checkOutRight .inputUser input {
+  width: calc(100% - 10px);
+  padding-right: 5px;
+  padding-left: 0;
+  background: transparent;
+  border: 0;
+  transition: all 0.6s;
+  color: white;
+}
+
+.Booking_Movie .overlay .checkOutRight .inputUser input:focus ~ label {
+  color: white;
+  font-size: 12px;
+}
+
+.Booking_Movie .overlay .checkOutRight .inputUser input:active ~ label {
+  color: white;
+  font-size: 12px;
+}
+
+.Booking_Movie .overlay .checkOutRight .inputUser input:focus {
+  margin-top: 5px;
+  padding-top: 12.5px;
+  outline: 0;
+}
+
+.Booking_Movie .overlay .checkOutRight .inputUser input:valid {
+  margin-top: 5px;
+  padding-top: 12.5px;
+  outline: 0;
+}
+
+.Booking_Movie .overlay .checkOutRight .inputUser label {
+  color: #9b9b9b;
+  font-size: 16px;
+  position: absolute;
+  transition: .3s;
+  top: 0;
+  left: 1;
+  z-index: 1;
+  margin: 0;
+}
+
+.Booking_Movie .overlay .checkOutRight .button-group-checkOut {
+  width: 100%;
+}
+
+.Booking_Movie .overlay .checkOutRight .button-group-checkOut .back {
+  position: relative;
+  display: none;
+  padding: 10px 20px;
+  color: #03e9f4;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  letter-spacing: 4px;
+  font-weight: bold;
+  width: 45%;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 1105px) and (min-width: 320px) {
+  .Booking_Movie .overlay .checkOutRight .button-group-checkOut .back {
+    display: inline-block;
+  }
+}
+
+.Booking_Movie .overlay .checkOutRight .button-group-checkOut .back:hover {
+  background: #03e9f4;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 100px #03e9f4;
+}
+
+.Booking_Movie .overlay .checkOutRight .button-group-checkOut .back span {
+  position: absolute;
+  display: block;
+}
+
+.Booking_Movie .overlay .checkOutRight .button-group-checkOut .back span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #03e9f4);
+  animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%, 100% {
+    left: 100%;
+  }
+}
+
+.Booking_Movie .overlay .checkOutRight .button-group-checkOut .back span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #03e9f4);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: .25s;
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%, 100% {
+    top: 100%;
+  }
+}
+
+.Booking_Movie .overlay .checkOutRight .button-group-checkOut .back span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #03e9f4);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: .5s;
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%, 100% {
+    right: 100%;
+  }
+}
+
+.Booking_Movie .overlay .checkOutRight .button-group-checkOut .back span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #03e9f4);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: .75s;
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%, 100% {
+    bottom: 100%;
+  }
+}
+
+.Booking_Movie .overlay .checkOutRight .button-group-checkOut .success {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #03e9f4;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  letter-spacing: 4px;
+  font-weight: bold;
+  width: 60%;
+  cursor: pointer;
+}
+
+@media (max-width: 1105px) and (min-width: 320px) {
+  .Booking_Movie .overlay .checkOutRight .button-group-checkOut .success {
+    width: 45%;
+  }
+}
+
+.Booking_Movie .overlay .checkOutRight .button-group-checkOut .success:hover {
+  background: #03e9f4;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 100px #03e9f4;
+}
+
+.Booking_Movie .overlay .checkOutRight .button-group-checkOut .success span {
+  position: absolute;
+  display: block;
+}
+
+.Booking_Movie .overlay .checkOutRight .button-group-checkOut .success span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #03e9f4);
+  animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%, 100% {
+    left: 100%;
+  }
+}
+
+.Booking_Movie .overlay .checkOutRight .button-group-checkOut .success span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #03e9f4);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: .25s;
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%, 100% {
+    top: 100%;
+  }
+}
+
+.Booking_Movie .overlay .checkOutRight .button-group-checkOut .success span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #03e9f4);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: .5s;
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%, 100% {
+    right: 100%;
+  }
+}
+
+.Booking_Movie .overlay .checkOutRight .button-group-checkOut .success span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #03e9f4);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: .75s;
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%, 100% {
+    bottom: 100%;
+  }
+}
+
+@media (max-width: 1105px) and (min-width: 320px) {
+  .Booking_Movie .overlay .checkOutRight .button-group-checkOut {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+  }
+}
+
+.Booking_Movie .overlay .choose_tickets_left {
+  width: 75%;
+}
+
+@media (max-width: 768px) and (min-width: 320px) {
+  .Booking_Movie .overlay .choose_tickets_left {
+    width: 100%;
+    /* width */
+  }
+}
+
+@media (max-width: 1105px) and (min-width: 320px) {
+  .Booking_Movie .overlay .choose_tickets_left {
+    width: 100%;
+  }
+}
+
+.Booking_Movie .overlay .choose_tickets_left .cinema-chart {
+  padding-top: 70px;
+}
+
+@media (max-width: 768px) and (min-width: 320px) {
+  .Booking_Movie .overlay .choose_tickets_left .cinema-chart {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1105px) and (min-width: 320px) {
+  .Booking_Movie .overlay .choose_tickets_left .cinema-chart {
+    width: 100%;
+  }
+}
+
+.Booking_Movie .overlay .choose_tickets_left .nav {
+  width: 75%;
+  padding: 20px;
+  position: relative;
+  box-shadow: 0 0 15px black;
+  z-index: 3;
+  transition: all 1s;
+  position: fixed;
+  top: 0;
+}
+
+@media (max-width: 1105px) and (min-width: 320px) {
+  .Booking_Movie .overlay .choose_tickets_left .nav {
+    width: 100%;
+  }
+}
+
+.Booking_Movie .overlay .choose_tickets_left .nav .countDown {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.Booking_Movie .overlay .choose_tickets_left .nav .countDown p {
+  font-weight: bold;
+}
+
+.Booking_Movie .overlay .choose_tickets_left .nav .countDown .timeCountDown {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.Booking_Movie .overlay .choose_tickets_left .nav .cancel {
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.5;
+  text-decoration: none;
+  color: white;
+}
+
+.Booking_Movie .overlay .choose_tickets_left .nav .cancel:hover {
+  color: #03e9f4;
+}
+
+.Booking_Movie .overlay .choose_tickets_left .nav .InfoUser {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-right: 20px;
+  font-weight: 500;
+}
+
+.Booking_Movie .overlay .choose_tickets_left .nav .InfoUser img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.Booking_Movie .overlay .choose_tickets_left .screen-area .screen {
+  font-size: 28px;
+  margin: 10px auto 40px;
+  position: relative;
+  text-align: center;
+  max-width: 350px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 10px;
+}
+
+.Booking_Movie .overlay .choose_tickets_left .screen-area .screen::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 50%;
+  width: 80%;
+  transform: translateX(-50%);
+  height: 1px;
+  background: #213a69;
+}
+
+.Booking_Movie .overlay .choose_tickets_left .screen-area .screen::after {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+  height: 1px;
+  background: #213a69;
+}
+
+.Booking_Movie .overlay .choose_tickets_left .screen-thumb {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.Booking_Movie .overlay .choose_tickets_left .screen-thumb img {
+  width: 100%;
+}
+
+.Booking_Movie .overlay .choose_tickets_left .way {
+  font-size: 28px;
+  margin: 10px auto 40px;
+  position: relative;
+  text-align: center;
+  max-width: 350px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 10px;
+}
+
+.Booking_Movie .overlay .choose_tickets_left .way ::after {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+  height: 1px;
+  background: #213a69;
+}
+
+.Booking_Movie .overlay .choose_tickets_left .way ::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 50%;
+  width: 80%;
+  transform: translateX(-50%);
+  height: 1px;
+  background: #213a69;
+}
+
+.Booking_Movie .overlay .choose_tickets_left .way-end {
+  font-size: 28px;
+  margin: 10px auto 0px;
+  position: relative;
+  text-align: center;
+  max-width: 350px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 10px;
+}
+
+.Booking_Movie .overlay .choose_tickets_left .screen-wrapper {
+  width: 100%;
+}
+
+.Booking_Movie .overlay .choose_tickets_left .screen-wrapper .seat-area {
+  margin-bottom: 55px;
+  padding: 0;
+  margin: 0 auto;
+  width: 100%;
+}
+
+@media (max-width: 800px) and (min-width: 320px) {
+  .Booking_Movie .overlay .choose_tickets_left .screen-wrapper .seat-area {
+    overflow-x: scroll;
+  }
+}
+
+.Booking_Movie .overlay .choose_tickets_left .screen-wrapper .seat-area::-webkit-scrollbar {
+  height: 5px;
+}
+
+.Booking_Movie .overlay .choose_tickets_left .screen-wrapper .seat-area::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: transparent;
+}
+
+.Booking_Movie .overlay .choose_tickets_left .screen-wrapper .seat-area::-webkit-scrollbar-thumb {
+  background-color: #03e9f4;
+  border-radius: 10px;
+}
+
+.Booking_Movie .overlay .choose_tickets_left .screen-wrapper .seat-area .seat-line {
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 800px) and (min-width: 320px) {
+  .Booking_Movie .overlay .choose_tickets_left .screen-wrapper .seat-area .seat-line {
+    width: 800px;
+  }
+}
+
+.Booking_Movie .overlay .choose_tickets_left .screen-wrapper .seat-area .seat-line span {
+  text-align: center;
+  font-size: 16px;
+  display: block;
+  font-weight: bold;
+  padding: 0;
+}
+
+.Booking_Movie .overlay .choose_tickets_left .screen-wrapper .seat-area .seat--area {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.Booking_Movie .overlay .choose_tickets_left .screen-wrapper .seat-area .seat--area .front-seat {
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
+
+.Booking_Movie .overlay .choose_tickets_left .screen-wrapper .seat-area .seat--area .front-seat ul {
+  display: flex;
+  padding: 0;
+}
+
+.Booking_Movie .overlay .choose_tickets_left .screen-wrapper .seat-area .seat--area .front-seat ul .single-seat {
+  padding: 5px;
+  position: relative;
+  cursor: pointer;
+}
+
+.Booking_Movie .overlay .choose_tickets_left .screen-wrapper .seat-area .seat--area .front-seat ul .single-seat img {
+  width: 100%;
+  height: 100%;
+}
+
+.Booking_Movie .overlay .choose_tickets_left .screen-wrapper .seat-area .seat--area .front-seat ul .single-seat .sit-num {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  color: #03e9f4;
+  transition: all 0.5;
+}
+
+.Booking_Movie .overlay .choose_tickets_left .screen-wrapper .seat-area .seat--area .front-seat ul .single-seat .sit-num:hove {
+  color: white;
+}
+
+.Booking_Movie .overlay .info-check-out {
+  font-size: 20px;
+  align-items: center;
+  display: none;
+  box-shadow: 0 0 15px black;
+}
+
+@media (max-width: 1105px) and (min-width: 320px) {
+  .Booking_Movie .overlay .info-check-out {
+    width: 100%;
+    justify-content: space-between;
+    padding: 20px;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+  }
+}
+
+@media (max-width: 750px) and (min-width: 320px) {
+  .Booking_Movie .overlay .info-check-out {
+    font-size: 16px;
+  }
+}
+
+.Booking_Movie .overlay .info-check-out .next {
+  display: none;
+}
+
+@media (max-width: 1105px) and (min-width: 320px) {
+  .Booking_Movie .overlay .info-check-out .next {
+    width: 25%;
+    position: relative;
+    display: none;
+    padding: 10px 20px;
+    color: #03e9f4;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    letter-spacing: 4px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 1105px) and (min-width: 320px) and (max-width: 1105px) and (min-width: 320px) {
+  .Booking_Movie .overlay .info-check-out .next {
+    display: inline-block;
+  }
+}
+
+@media (max-width: 1105px) and (min-width: 320px) {
+  .Booking_Movie .overlay .info-check-out .next:hover {
+    background: #03e9f4;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 100px #03e9f4;
+  }
+  .Booking_Movie .overlay .info-check-out .next span {
+    position: absolute;
+    display: block;
+  }
+  .Booking_Movie .overlay .info-check-out .next span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #03e9f4);
+    animation: btn-anim1 1s linear infinite;
+  }
+  @keyframes btn-anim1 {
+    0% {
+      left: -100%;
+    }
+    50%, 100% {
+      left: 100%;
+    }
+  }
+  .Booking_Movie .overlay .info-check-out .next span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #03e9f4);
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: .25s;
+  }
+  @keyframes btn-anim2 {
+    0% {
+      top: -100%;
+    }
+    50%, 100% {
+      top: 100%;
+    }
+  }
+  .Booking_Movie .overlay .info-check-out .next span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #03e9f4);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: .5s;
+  }
+  @keyframes btn-anim3 {
+    0% {
+      right: -100%;
+    }
+    50%, 100% {
+      right: 100%;
+    }
+  }
+  .Booking_Movie .overlay .info-check-out .next span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #03e9f4);
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: .75s;
+  }
+  @keyframes btn-anim4 {
+    0% {
+      bottom: -100%;
+    }
+    50%, 100% {
+      bottom: 100%;
+    }
+  }
+}
+
+.Booking_Movie .overlay .ListVe {
+  text-align: left;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  top: 0;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+.Booking_Movie .overlay .ListVe .container {
+  font-size: 15px;
+  width: 50%;
+  min-height: 400px;
+  background-position: 50% 50%;
+  background-size: cover;
+  transition: all 0.6s;
+}
+
+@media (max-width: 1105px) and (min-width: 320px) {
+  .Booking_Movie .overlay .ListVe .container {
+    width: 80%;
+  }
+}
+
+@media (max-width: 750px) and (min-width: 320px) {
+  .Booking_Movie .overlay .ListVe .container {
+    width: 100%;
+  }
+}
+
+.Booking_Movie .overlay .ListVe .container .ListSeats .Profile {
+  display: flex;
+  align-items: center;
+  width: 80%;
+}
+
+.Booking_Movie .overlay .ListVe .container .ListSeats .Profile .seat {
+  width: 10%;
+  margin-left: 15px;
+  position: relative;
+}
+
+.Booking_Movie .overlay .ListVe .container .ListSeats .Profile .seat img {
+  width: 100%;
+  height: 100%;
+}
+
+.Booking_Movie .overlay .ListVe .container .ListSeats .Profile .seat span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: bold;
+  color: #03e9f4;
+}
+
+.Booking_Movie .overlay .ListVe .container .title {
+  margin-top: 20px;
+}
+
+.Booking_Movie .overlay .ListVe .container .row {
+  align-items: center;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.Booking_Movie .overlay .ListVe .container .Icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  position: relative;
+  margin-right: 20px;
+}
+
+.Booking_Movie .overlay .ListVe .container .Icon .IconChild {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.Booking_Movie .overlay .ListVe .container .Action .row {
+  justify-content: space-between;
+}
+
+.Booking_Movie .overlay .ListVe .container .Action a {
+  color: #03e9f4;
+  text-decoration: none;
+}
+
+.Booking_Movie .overlay .ListVe .container .Action .MuiButton-contained {
+  background-color: transparent;
+  color: #03e9f4;
+  border: 1px solid #03e9f4;
+}
+
+.Booking_Movie .overlay .ListVe .container .Action .MuiButton-contained:hover {
+  background: #03e9f4;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 100px #03e9f4;
+}
+
+.Booking_Movie .overlay .choose_tickets_left::-webkit-scrollbar {
+  height: 5px;
+}
+
+.Booking_Movie .overlay .choose_tickets_left::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: transparent;
+}
+
+.Booking_Movie .overlay .choose_tickets_left::-webkit-scrollbar-thumb {
+  background-color: #03e9f4;
+  border-radius: 10px;
+}
+
+@keyframes floating {
+  from {
+    transform: translateY(0px);
+  }
+  65% {
+    transform: translateY(15px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+
+.PageNotFound {
+  height: 100%;
+}
+
+.PageNotFound {
+  background-image: url("https://assets.codepen.io/1538474/star.svg"), linear-gradient(to bottom, #05007A, #4D007D);
+  margin: 0;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.mars {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  height: 27vmin;
+  background: url("../../img/404/mars.svg") no-repeat bottom center;
+  background-size: cover;
+}
+
+.logo-404 {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  top: 16vmin;
+  width: 30vmin;
+}
+
+@media (max-width: 480px) and (min-width: 320px) {
+  .logo-404 {
+    top: 45vmin;
+  }
+}
+
+.meteor {
+  position: absolute;
+  right: 2vmin;
+  top: 16vmin;
+}
+
+.title {
+  color: white;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  text-align: center;
+  font-size: 5vmin;
+  margin-top: 31vmin;
+}
+
+@media (max-width: 480px) and (min-width: 320px) {
+  .title {
+    margin-top: 65vmin;
+  }
+}
+
+.subtitle {
+  color: white;
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  text-align: center;
+  font-size: 3.5vmin;
+  margin-top: -1vmin;
+  margin-bottom: 9vmin;
+}
+
+.back-home .btn-back {
+  border: 1px solid white;
+  color: white;
+  height: 5vmin;
+  padding: 12px;
+  font-family: "Nunito", sans-serif;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bolds;
+}
+
+.back-home .btn-back:hover {
+  background: white;
+  color: #4D007D;
+  text-decoration: none;
+}
+
+@media (max-width: 480px) and (min-width: 320px) {
+  .back-home .btn-back {
+    font-size: 3.5vmin;
+  }
+}
+
+.astronaut {
+  position: absolute;
+  top: 18vmin;
+  left: 10vmin;
+  height: 30vmin;
+  animation: floating 3s infinite ease-in-out;
+}
+
+@media (max-width: 480px) and (min-width: 320px) {
+  .astronaut {
+    top: 2vmin;
+  }
+}
+
+.spaceship {
+  position: absolute;
+  bottom: 15vmin;
+  right: 24vmin;
+}
+
+@media (max-width: 480px) and (min-width: 320px) {
+  .spaceship {
+    width: 45vmin;
+    bottom: 18vmin;
   }
 }
 /*# sourceMappingURL=main.css.map */

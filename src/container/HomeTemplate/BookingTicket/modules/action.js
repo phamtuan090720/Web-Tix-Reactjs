@@ -19,7 +19,6 @@ export const actBookingTicketAPI = (id) =>{
             api.get(`/QuanLyDatVe/LayDanhSachPhongVe?MaLichChieu=${id}`)
                 .then((rs) => {
                     dispatch(actBookingTicketSuccess(rs.data));
-                    console.log(rs.data);
                 }).catch((err) => {
                     dispatch(actBookingTicketFailed(err));
                 })
@@ -48,3 +47,42 @@ export const actResetStateReducer=()=>{
         type:ActionTypes.RESET_STATE_CHECKOUT,
     }
 }
+export const actDatVe = (dataTicket)=>{
+    if(dataTicket){
+        return(dispatch)=>{
+            api.post("/QuanLyDatVe/DatVe",dataTicket).then((rs)=>{
+                dispatch(actDatVeSucces(rs.data));
+            }).catch((e)=>{
+                dispatch(actDatVeFailed(e));
+            });
+        }
+    }
+}
+const actDatVeSucces = (data)=>{
+    return{
+        type:ActionTypes.DAT_VE_SUCCESS,
+        payload:data
+    };
+}
+const actDatVeFailed = (data)=>{
+    return{
+        type:ActionTypes.DAT_VE_FAILED,
+        payload:data
+    };
+}
+export const actCloseAlret = ()=>{
+    return{
+        type:'CLOSE_ALERT',
+    };
+}
+export const getInfoCustomer = (data)=>{
+    return{
+        type:'INFO_CUSTOMER',
+        payload:data
+    };
+}
+export const ResetStateDatVe = ()=>{
+    return{
+        type:"RESET_STATE_DATVE",
+    }
+} 

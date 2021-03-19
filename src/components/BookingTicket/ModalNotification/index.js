@@ -12,7 +12,7 @@ import green from '@material-ui/core/colors/green';
 import red from '@material-ui/core/colors/red';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import  Styled from 'styled-components';
-export default function AlertDialog(isOpen=false,handleSCloseModal) {
+export default function AlertDialog(isOpen=false,handleSCloseModal,handelDatVe) {
     const useStyles = makeStyles((theme) => ({
         button: {
           margin: theme.spacing(1),
@@ -60,7 +60,7 @@ export default function AlertDialog(isOpen=false,handleSCloseModal) {
                         Bạn xác nhận muốn đặt vé, bạn có muốn đặt thêm vé hay không?
               </DialogContentText>
                     </DialogContent>
-                    <DialogActions>
+                    <DialogActions> 
                        
                         <Button
                             style={{backgroundColor:`${Red}`,color:'white'}}
@@ -80,7 +80,7 @@ export default function AlertDialog(isOpen=false,handleSCloseModal) {
                             style={{backgroundColor:`${Green}`,color:'white'}}
                             className={classes.button}
                             startIcon={<CheckCircleOutlineIcon />}
-                            onClick={handleSCloseModal}
+                            onClick={handelDatVe}
                         >
                             Tiếp Tục
           </Button>
@@ -88,7 +88,7 @@ export default function AlertDialog(isOpen=false,handleSCloseModal) {
                 </Dialog>
             </div>
         );
-      },[handleSCloseModal,open]);
+      },[handleSCloseModal,open,handelDatVe]);
       return <>
         {Render()}
       </>

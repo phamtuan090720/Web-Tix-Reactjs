@@ -5,7 +5,8 @@ import * as Action from './modules/action';
 import Loading from '../../../components/Loader';
 import { Redirect } from 'react-router';
 function Index(props) {
-    const {fetchAPIBookingMovie,data,loading,resetStateCheckOut,user} = props;
+    const {fetchAPIBookingMovie,data,loading,resetStateCheckOut,user,restStateDatVe} = props;
+    console.log(data);
     const id = props.match.params.id;
     useEffect(()=>{
         fetchAPIBookingMovie(id);
@@ -15,14 +16,12 @@ function Index(props) {
         fetchAPIBookingMovie(id);
         document.getElementById("rebookTicket").style.display="none";
         resetStateCheckOut();
+        restStateDatVe();
     }
-    const {total} = props;
-    // console.log(total);
-    // console.log(data);
     if(!user) return <Redirect to='/login'/>
     if(loading) return <Loading/>
     return (
-        <BookingTicket user={user} handelRebookTicket = {RebookTicket} data={data}/>
+        <BookingTicket malichChieu={id} user={user} handelRebookTicket = {RebookTicket} data={data}/>
     )
 }
 const mapStateToProp = state =>{
@@ -40,6 +39,9 @@ const mapDispatchToProp = (dispatch)=>{
         },
         resetStateCheckOut:()=>{
             dispatch(Action.actResetStateReducer());
+        },
+        restStateDatVe:()=>{
+            dispatch(Action.ResetStateDatVe());
         }
     }
 }

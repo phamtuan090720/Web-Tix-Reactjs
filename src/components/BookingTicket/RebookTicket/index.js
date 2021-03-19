@@ -8,7 +8,7 @@ export default function index(props) {
         display: block;
         text-align: center;
         position: fixed;
-        z-index: 10;
+        z-index: 12;
         background-color: rgba(0,0,0,.85);
         top:0;
         display:none;

@@ -1,24 +1,50 @@
-import React from 'react'
+import React,{useState} from 'react'
 import CheckOutInfo from './InfoCheckOut';
 import CheckOutRight from './CheckOutRinght';
 import ChoiseTicketLeft from './ChoiseTicketLeft';
 import ModalCheckOut from './RebookTicket';
-import ModalNoti from './ModalNotification';
-// import {data} from './data';
+import AlertDatVe from './AlertDatVe';
+import { connect } from 'react-redux';
+import BillTicket from './BillTicket';
+import {actCloseAlret} from '../../container/HomeTemplate/BookingTicket/modules/action';
 
-export default function index(props) {
-    const {data,handelRebookTicket,user}=props;
-    console.log(data);
+function Index(props) {
+    const {data,handelRebookTicket,user,malichChieu,isOpen,mess,isErr,closeAlert}=props;
+    console.log(isOpen,mess,isErr);
+    const handleClose = ()=>{
+        closeAlert();
+    }
+    const handleOpenBill=()=>{
+        setIsOpenBill(true);
+    }
+    const [isOpenBbill,setIsOpenBill] = useState(false)
     return (
         <section className="Booking_Movie">
             <div className='wrapper'>
                 <div className='overlay'>
-                    <CheckOutRight data={data.thongTinPhim}/>
+                    <CheckOutRight handleOpenBill={handleOpenBill} user={user} malichChieu={malichChieu} data={data.thongTinPhim}/>
                     <ChoiseTicketLeft user={user} data={data.danhSachGhe}/>
                     <CheckOutInfo />
                     <ModalCheckOut handelRebookTicket={handelRebookTicket}/>
+                    {AlertDatVe(isOpen,mess,isErr,handleClose,handleOpenBill)}
+                    <BillTicket isOpen={isOpenBbill} handelRebookTicket={handelRebookTicket}/>
                 </div>
             </div>
         </section>
     )
 }
+const mapStateToProp = (state)=>{
+    return{
+        isOpen:state.DatVeReducer.isOpenAlert,
+        mess:state.DatVeReducer.mess,
+        isErr:state.DatVeReducer.isErr
+    }
+}
+const mapDispatchToProp=(disptach)=>{
+    return {
+        closeAlert:()=>{
+            disptach(actCloseAlret());
+        },
+    }
+}
+export default connect(mapStateToProp,mapDispatchToProp)(Index);
