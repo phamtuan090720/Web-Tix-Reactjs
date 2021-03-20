@@ -19,18 +19,20 @@ function Index(props) {
         mess:'',
     });
     const [state, setState] = useState({
-        values: {
-            phone: user.soDT,
-            email: user.email,
-        },
         errors: {
+            phone: '',
+            email: '',
+        },
+        values:{
             phone: '',
             email: '',
         },
         emailValid: false,
         phoneValid: false,
-        formValid: true,
+        formValid: false,
     }); 
+    console.log(state.values.phone);
+    console.log(state.values.email);
     const [sateDataDatVe,setSateDataDatVe]= useState(
         {
             "maLichChieu": 0,
@@ -48,8 +50,9 @@ function Index(props) {
         email:null,
         SDT:null,
     });
-    console.log(user.taiKhoan);
-    console.log(listSeatSelector);
+    // console.log(user.taiKhoan);
+    console.log(state);
+    // console.log(listSeatSelector);
     const danhSachGheChon = () =>{
         if(listSeatSelector){
             return listSeatSelector.map((item)=>{
@@ -67,8 +70,9 @@ function Index(props) {
         actGetInfoCustomer(stateInfoCustomer);
 
     }
-    console.log(stateInfoCustomer);
-    console.log(sateDataDatVe);
+    // console.log(stateInfoCustomer);
+    // console.log(sateDataDatVe);
+    // console.log(state.values);
     React.useEffect(()=>{
         if(listSeatSelector.length>6){
             setIsOpen(true);
@@ -83,20 +87,22 @@ function Index(props) {
         e.preventDefault();
        if(handleCheckErrListSeatSelector(listSeatSelector)){
            if(handleCheckErrFrom()){
-            setIsOpenNoti(true);
-            setSateDataDatVe({
-                "maLichChieu":parseInt(malichChieu),
-                "danhSachVe":danhSachGheChon(),
-                "taiKhoanNguoiDung":user.taiKhoan
+                setIsOpenNoti(true);
+                setSateDataDatVe({
+                    ...state,
+                    "maLichChieu":parseInt(malichChieu),
+                    "danhSachVe":danhSachGheChon(),
+                    "taiKhoanNguoiDung":user.taiKhoan
+                });
+            }
+            setStateInfoCustomer({
+                    taiKhoan:user.taiKhoan,
+                    email:state.values.email,
+                    SDT:state.values.phone,
             });
-           }
-           setStateInfoCustomer({
-                taiKhoan:user.taiKhoan,
-                email:state.values.email,
-                SDT:state.values.phone,
-           });
        };   
     }
+
     const handleCheckErrListSeatSelector = (ls) =>{
         if(ls.length===0){
             setIsOpen(true);
@@ -122,8 +128,9 @@ function Index(props) {
     const handleOnChange = (e) => {
         const { name, value } = e.target;
         setState({
-            ...state,
-            values: { ...state.values, [name]: value },
+
+        ...state,
+          values: { ...state.values, [name]: value },
         });
     };
     const handleCheckErr = (e) => {
@@ -148,10 +155,10 @@ function Index(props) {
                 break;
         }
         setState(
-            {
+            {   ...state,
                 errors: { ...state.errors, [name]: mess },
-                phoneValid: phoneValid,
-                emailValid: emailValid,
+                phoneValid,
+                emailValid,
                 formValid: phoneValid && emailValid,
             }
         );
@@ -190,7 +197,6 @@ function Index(props) {
                                 name="email"
                                 onChange={handleOnChange}
                                 onBlur={handleCheckErr}
-                                defaultValue={user.email}
                             />
                             <label className="lableInputUser" htmlFor="emailCheckout">Email</label>
                             {state.errors.email ? (
@@ -206,7 +212,6 @@ function Index(props) {
                                 name="phone"
                                 onChange={handleOnChange}
                                 onBlur={handleCheckErr}
-                                defaultValue={user.soDT}
                                 type='text' />
                             <label className="lableInputUser" htmlFor="phoneCheckout">Phone</label>
                             {state.errors.phone ? (

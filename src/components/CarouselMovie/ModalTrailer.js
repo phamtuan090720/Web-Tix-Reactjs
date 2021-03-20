@@ -11,11 +11,10 @@ function ModalTrailer(props) {
         <div className="modal" id="modal_trailer" onClick={Close}>
             <div className="modal-dialog modal-lg">
                 <div className="modal-content">
-                    {/* Modal body */}
                     <div className="modal-body">
                         <button type="button" className="close" data-dismiss="modal" onClick={Close}><img src={props.CloseModal} alt='icon close modal' /></button>
                         <div className="embed-responsive embed-responsive-16by9">
-                            <iframe className="embed-responsive-item" width={500} height={300} src="{link}" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+                            <iframe className="embed-responsive-item" width={500} height={300} src={link} frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
                         </div>
                     </div>
                 </div>

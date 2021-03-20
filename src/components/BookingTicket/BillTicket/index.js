@@ -22,6 +22,7 @@ function Index(props) {
     const [open,setOpen] = React.useState({
         display:"none",opacity:1
     });
+    console.log(infoUser);
     React.useEffect(()=>{
         if(isOpen===true){
             setOpen({
@@ -33,7 +34,6 @@ function Index(props) {
     const Bg = Styled.div`
     background-image: url(${BackGround});
     `;
-    console.log(listSeat);
     const RenderListSeat=()=>{
         if(listSeat){
             return listSeat.map((item)=>{
