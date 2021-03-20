@@ -1,6 +1,6 @@
 import * as ActionType from "./constants";
 let initalStateMovie = {
-    loading: false,
+    loading: true,
     dataListMovie: null,
     err: null,
     currentPage: 1,
@@ -11,22 +11,27 @@ let initalStateMovie = {
 let initalStateCinemaSytem = {
     dataCinemaSytem: null,
     err: null,
+    loading:true,
 }
 let initialStateListCinema = {
     maHeThongRap: null,
     err: null,
     dataListCinema: null,
+    loading:true,
 }
 export const listCinemaReducer = (state = initialStateListCinema, action) => {
     switch (action.type) {
         case ActionType.LIST_CINEMA_REQUEST:
+            state.loading=true;
             state.dataListCinema = null;
             state.err = null;
             return { ...state }
         case ActionType.LIST_CINEMA_SUCCESS:
+            state.loading=false;
             state.dataListCinema = action.payload;
             return { ...state }
         case ActionType.LIST_CINEMA_FAILED:
+            state.loading=false;
             state.err = action.payload;
             return { ...state }
         case ActionType.CHANGE_SYSTEM_CINEMA:
@@ -39,13 +44,16 @@ export const listCinemaReducer = (state = initialStateListCinema, action) => {
 export const listSytemCinemaReducer = (state = initalStateCinemaSytem, action) => {
     switch (action.type) {
         case ActionType.LIST_SYSTEM_CINEMA_REQUEST:
+            state.loading = true;
             state.dataCinemaSytem = null;
             state.err = null;
             return { ...state }
         case ActionType.LIST_SYSTEM_CINEMA_SUCCESS:
+            state.loading = false;
             state.dataCinemaSytem = action.payload;
             return { ...state }
         case ActionType.LIST_SYSTEM_CINEMA_FAILED:
+            state.loading = false;
             state.err = action.payload;
             return { ...state }
         default:

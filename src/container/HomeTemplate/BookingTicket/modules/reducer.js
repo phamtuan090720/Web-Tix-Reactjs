@@ -83,7 +83,6 @@ export const DatVeReducer = (state = initialStateDatVe, action) => {
             state.mess= null;
             state.isOpenAlert= false;
             state.isErr= true;
-            return { ...state }
         default:
             return { ...state }
     }

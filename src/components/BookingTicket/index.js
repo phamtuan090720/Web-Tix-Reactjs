@@ -17,7 +17,7 @@ function Index(props) {
     const handleOpenBill=()=>{
         setIsOpenBill(true);
     }
-    const [isOpenBbill,setIsOpenBill] = useState(false)
+    const [isOpenBbill,setIsOpenBill] = useState(false);
     return (
         <section className="Booking_Movie">
             <div className='wrapper'>

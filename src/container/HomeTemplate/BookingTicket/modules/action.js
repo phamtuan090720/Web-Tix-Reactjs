@@ -53,7 +53,7 @@ export const actDatVe = (dataTicket)=>{
             api.post("/QuanLyDatVe/DatVe",dataTicket).then((rs)=>{
                 dispatch(actDatVeSucces(rs.data));
             }).catch((e)=>{
-                dispatch(actDatVeFailed(e));
+                dispatch(actDatVeFailed(e.response.data));
             });
         }
     }

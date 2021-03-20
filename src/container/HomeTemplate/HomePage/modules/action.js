@@ -2,14 +2,14 @@ import * as AtctionTypes from "./constants.js";
 import api from "./../../../../api/index.js";
 export const actListMovieAPI=(count,currentPage)=>{
     return (dispatch)=>{
-        dispatch(actListMovieRequest())
-        api.get(`/QuanLyPhim/LayDanhSachPhimPhanTrang?maNhom=GP04&soTrang=${currentPage}&soPhanTuTrenTrang=${count}`)
-        .then((rs)=>{
-            dispatch(actListMovieSuccess(rs.data));
-        }).catch((err)=>{
-            dispatch(actListMovieFailed(err));
-        })
-        ;
+            dispatch(actListMovieRequest())
+            api.get(`/QuanLyPhim/LayDanhSachPhimPhanTrang?maNhom=GP04&soTrang=${currentPage}&soPhanTuTrenTrang=${count}`)
+            .then((rs)=>{
+                dispatch(actListMovieSuccess(rs.data));
+            }).catch((err)=>{
+                dispatch(actListMovieFailed(err));
+            })
+            ;
     }
 }
 export const actListMovieRequest = () =>{

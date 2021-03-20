@@ -63,11 +63,49 @@ function SamplePrevArrowComing(props) {
 }
 
 function Index(props) {
-
-    const { currentPage, changeIndexPage,count } = props;
-    useEffect(()=>{
-        props.fetchListMovie(count,currentPage);
-    },[currentPage]);
+    const { currentPage, changeIndexPage,count,fetchListMovie } = props;
+    useEffect(() => {
+        fetchListMovie(count,currentPage);
+    }, [currentPage])
+   const Render = React.useCallback(
+       () => {
+        return (
+            <div className="movie_schedule_content">
+                <div className='movie_panel'>
+                    <div className="nav_btn">
+                        <ul className="nav nav-tabs">
+                            <li className="nav-item">
+                                <a className="nav-link active showing" data-toggle="tab" href="#showing">Danh Sách Phim</a>
+                                {/* id="showing" */}
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link coming" data-toggle="tab" href="#coming">Sắp Chiếu</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div className='tab-content'>
+                        <div className='tab-pane active' id='showing'>
+                            <Slider {...settings} className='schedule_carousel'>
+                                <ContainerMovie/>
+                                <ContainerMovie/>
+                                {/* <ContainerMovie data2={data2}/> */}
+                            </Slider>
+                        </div>
+    
+                        <div className='tab-pane fade' id='coming'>
+                            <div className='schedule_carousel'>
+                                <Slider {...settings} className='schedule_carousel'>
+                                    <ContainerMovie />
+                                </Slider>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        )
+       },
+       [currentPage],
+   )
     const settings = {
         dots: false,
         infinite: true,
@@ -78,40 +116,9 @@ function Index(props) {
         nextArrow: <SampleNextArrowComing currentPage={currentPage} changeIndexPage={changeIndexPage} />,
         prevArrow: <SamplePrevArrowComing currentPage={currentPage} changeIndexPage={changeIndexPage} />
     };
-    return (
-        <div className="movie_schedule_content">
-            <div className='movie_panel'>
-                <div className="nav_btn">
-                    <ul className="nav nav-tabs">
-                        <li className="nav-item">
-                            <a className="nav-link active showing" data-toggle="tab" href="#showing">Danh Sách Phim</a>
-                            {/* id="showing" */}
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link coming" data-toggle="tab" href="#coming">Sắp Chiếu</a>
-                        </li>
-                    </ul>
-                </div>
-                <div className='tab-content'>
-                    <div className='tab-pane active' id='showing'>
-                        <Slider {...settings} className='schedule_carousel'>
-                            <ContainerMovie/>
-                            <ContainerMovie/>
-                            {/* <ContainerMovie data2={data2}/> */}
-                        </Slider>
-                    </div>
-
-                    <div className='tab-pane fade' id='coming'>
-                        <div className='schedule_carousel'>
-                            <Slider {...settings} className='schedule_carousel'>
-                                <ContainerMovie />
-                            </Slider>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    )
+  return <>
+  {Render()}
+  </>
 }
 
 const mapStateToProp = state => {

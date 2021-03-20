@@ -5,10 +5,7 @@ import Content from './Content';
 import { connect } from 'react-redux';
 // import {actListMovieAPI} from '../../container/HomeTemplate/HomePage/modules/action';
 function Index(props) {
-    const {currentPage,totalPages,dataListMovie}=props;
-    // useEffect(()=>{
-    //     props.fetchListMovie(count,currentPage);
-    // },[currentPage]);
+    const {currentPage,totalPages}=props;
     useEffect(()=>{
         // khi render xong thì kiểm tra nếu currentPage đang ở trang 1 thì sẽ ẩn nút Prve
         if(currentPage<=1){

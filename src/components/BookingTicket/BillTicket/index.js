@@ -18,19 +18,22 @@ import { connect } from 'react-redux';
 import Seat from './Seat';
 
 function Index(props) {
-    const {isOpen,resetSateCheckOut,infoUser,total,infoLichChieu,listSeat,handelRebookTicket} = props;
+    const {isOpen,resetSateCheckOut,infoUser,total,infoLichChieu,listSeat,handelRebookTicket,resetSateDatVe} = props;
     const [open,setOpen] = React.useState({
         display:"none",opacity:1
     });
-    console.log(infoUser);
     React.useEffect(()=>{
         if(isOpen===true){
             setOpen({
                 display:"flex",opacity:1
             });
         }
-    },[isOpen]);
-    
+        else{
+            setOpen({
+                display:"none",opacity:1
+            })
+        }
+    },[listSeat,isOpen]);
     const Bg = Styled.div`
     background-image: url(${BackGround});
     `;
@@ -118,6 +121,7 @@ function Index(props) {
                         <div className="row">
                             <Link to='/' onClick={()=>{
                                 resetSateCheckOut();
+                                resetSateDatVe();
                             }}>
                                 <Button
                                     variant="contained"
@@ -140,7 +144,6 @@ function Index(props) {
             </Bg>
         </div>
     )
-    console.log(infoLichChieu);
 }
 
 const mapStateToProp=(state)=>{
@@ -155,6 +158,9 @@ const mapDispatchToProp = (dispatch)=>{
     return {
         resetSateCheckOut:()=>{
             dispatch(Action.actResetStateReducer());
+        },
+        resetSateDatVe:()=>{
+            dispatch(Action.ResetStateDatVe());
         }
     }
 }
