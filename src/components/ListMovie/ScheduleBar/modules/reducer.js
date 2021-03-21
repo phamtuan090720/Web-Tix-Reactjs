@@ -27,6 +27,8 @@ export const ScheduleReducer = (state = initialState, action) => {
         case AtctionTypes.GET_LIST_CINEMA_FAILED:
             state.errListCinema = action.payload;
             return { ...state };
+        case AtctionTypes.RESET_SATE:
+            state.heThongRap = null;
         default:
             return { ...state };
     }

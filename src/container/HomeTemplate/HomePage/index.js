@@ -1,8 +1,8 @@
-import React, { useEffect, Suspense, LazyLoad } from 'react';
+import React, { useEffect, Suspense, LazyLoad, useCallback } from 'react';
 import { connect } from 'react-redux';
 // import Carousel from '../../../components/CarouselMovie';
 // import ListMovie from '../../../components/ListMovie';
-import { actListMovieAPI, actCallApiGetInfoCinemaSytem, actCallApiGetListCinemaPost } from './modules/action';
+import { actListMovieAPI, actCallApiGetInfoCinemaSytem, actCallApiGetListCinemaPost,actHandleChangePage} from './modules/action';
 // import App from '../../../components/App';
 // import Footer from '../../../components/Footer';
 // import New from '../../../components/New';
@@ -15,18 +15,34 @@ const New = React.lazy(() => import('../../../components/New'));
 const Footer = React.lazy(() => import('../../../components/Footer'));
 const App = React.lazy(() => import('../../../components/App'));
 function HomePage(props) {
-    // const { count, currentPage, Loading } = props;
+    // console.log(props.group);
+    // // const { count, currentPage, Loading } = props;
+    // useEffect(() => {
+    // }, [props])
+    const {group} = props;
+    const [isLoading,setIsLoading]=React.useState(true);
+    useEffect(() => {
+        setTimeout(()=>{
+            setIsLoading(false);
+        },2000);
+       
+    }, []);
+    const RenderHTML = useCallback(() => {
+        // setIsLoading(false);
+        if (isLoading) return <Loader />
+        return <Suspense fallback={<Loader />}>
+            <Carousel />
+            <ListMovie />
+            <Cinema />
+            <New />
+            <App />
+            <Footer />
+        </Suspense>
+
+    }, [group,isLoading]);
     return (
         <div>
-
-            <Suspense fallback={<Loader />}>
-                <Carousel />
-                <ListMovie />
-                <Cinema />
-                <New />
-                <App />
-                <Footer />
-            </Suspense>
+            {RenderHTML()}
         </div>
     )
     //  if(Loading) return <Loader/>
@@ -42,6 +58,7 @@ const mapStateToProp = state => {
         dataListMovieSchedule: state.listCinemaReducer.dataListMovieSchedule,
         count: state.listMovieReducer.count,
         currentPage: state.listMovieReducer.currentPage,
+        group: state.LocationState.location,
     }
 }
 const mapDispatchToProps = (dispatch) => {
@@ -54,6 +71,9 @@ const mapDispatchToProps = (dispatch) => {
         },
         fetchListCinema: (maHeThongRap) => {
             dispatch(actCallApiGetListCinemaPost(maHeThongRap));
+        },
+        changeIndexPage: (currentPage) => {
+            dispatch(actHandleChangePage(currentPage));
         }
     }
 }

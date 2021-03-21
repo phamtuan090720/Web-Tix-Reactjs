@@ -19,7 +19,7 @@ function Movie(props) {
                     <button onClick={Open} className="play_btn button_trailer_movie" data-toggle="modal" data-target="#modal_trailer"><img id="play_img" src={PlayIcon}/></button>
                 </div>
                 <div className="movie_description">
-                    <p><b><span className="movie_age_c">C18</span>{data.tenPhim}</b></p>
+                    <p><b>{data.tenPhim}</b></p>
                     <p className="movie_duration">114 phút</p>
                 </div>
                 <div className="movie_overlay">

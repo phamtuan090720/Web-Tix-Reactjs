@@ -5,23 +5,23 @@ import TabContentCiema from './TabContentCinema';
 import TabContentListMovie from './TabContentMovie';
 import {actCallApiGetInfoCinemaSytem,actCallApiGetListCinemaPost} from '../../container/HomeTemplate/HomePage/modules/action';
 function CinemaBlock(props) {
-    const {dataCinemaSytem,dataListCinema,maHeThongRap} = props;
+    const {dataCinemaSytem,dataListCinema,maHeThongRap,group} = props;
     useEffect(()=>{
         async function fetchDataCinema(){
            await props.fetchListSytemCinema();
         }
         fetchDataCinema();
         console.log('fetchListSytemCinema');
-    },[]);
+    },[group]);
     useEffect(()=>{
         if(dataCinemaSytem&&dataCinemaSytem.length>0){
             let x=dataCinemaSytem[0];
-            props.fetchListCinema(x.maHeThongRap);
+            props.fetchListCinema(x.maHeThongRap,group.group);
         }
-    },[dataCinemaSytem]);
+    },[dataCinemaSytem,group]);
     useEffect(()=>{
-        props.fetchListCinema(maHeThongRap);
-    },[maHeThongRap]);
+        props.fetchListCinema(maHeThongRap,group.group);
+    },[maHeThongRap,group]);
     return (
         <>
             <div id='cinema_block_tix'></div>
@@ -51,6 +51,7 @@ const mapStateToProp = state =>{
         dataListCinema:state.listCinemaReducer.dataListCinema,
         maHeThongRap:state.listCinemaReducer.maHeThongRap,
         dataListMovieSchedule:state.listCinemaReducer.dataListMovieSchedule,
+        group:state.LocationState.location,
         
     }
 }
@@ -59,8 +60,8 @@ const mapDispatchToProps = (dispatch)=>{
         fetchListSytemCinema:()=>{
             dispatch(actCallApiGetInfoCinemaSytem());
         },
-        fetchListCinema:(maHeThongRap)=>{
-            dispatch(actCallApiGetListCinemaPost(maHeThongRap));
+        fetchListCinema:(maHeThongRap,group)=>{
+            dispatch(actCallApiGetListCinemaPost(maHeThongRap,group));
         }
     }
 }

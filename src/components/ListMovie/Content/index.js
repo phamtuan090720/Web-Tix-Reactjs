@@ -1,11 +1,11 @@
-import React,{useEffect} from 'react'
+import React, { useCallback, useEffect } from 'react'
 import Slider from "react-slick";
 import NextIcon from '../../../img/Icon/next-session.png';
 import BackIcon from '../../../img/Icon/back-session.png';
 import { actHandleChangePage } from '../../../container/HomeTemplate/HomePage/modules/action';
 import ContainerMovie from './ContainerMovie';
 import { connect } from 'react-redux';
-import {actListMovieAPI} from '../../../container/HomeTemplate/HomePage/modules/action';
+import { actListMovieAPI } from '../../../container/HomeTemplate/HomePage/modules/action';
 function SampleNextArrowComing(props) {
     const { className, style, onClick, currentPage, changeIndexPage } = props;
     let handelChangeIndex = () => {
@@ -63,49 +63,82 @@ function SamplePrevArrowComing(props) {
 }
 
 function Index(props) {
-    const { currentPage, changeIndexPage,count,fetchListMovie } = props;
+    const { currentPage, changeIndexPage, count, fetchListMovie, group, totalPages } = props;
     useEffect(() => {
-        fetchListMovie(count,currentPage);
-    }, [currentPage])
-   const Render = React.useCallback(
-       () => {
-        return (
-            <div className="movie_schedule_content">
-                <div className='movie_panel'>
-                    <div className="nav_btn">
-                        <ul className="nav nav-tabs">
-                            <li className="nav-item">
-                                <a className="nav-link active showing" data-toggle="tab" href="#showing">Danh Sách Phim</a>
-                                {/* id="showing" */}
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link coming" data-toggle="tab" href="#coming">Sắp Chiếu</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className='tab-content'>
-                        <div className='tab-pane active' id='showing'>
-                            <Slider {...settings} className='schedule_carousel'>
-                                <ContainerMovie/>
-                                <ContainerMovie/>
-                                {/* <ContainerMovie data2={data2}/> */}
-                            </Slider>
+        fetchListMovie(count, currentPage, group.group);
+    }, [currentPage, group])
+    useEffect(() => {
+        // khi render xong thì kiểm tra nếu currentPage đang ở trang 1 thì sẽ ẩn nút Prve
+        if (currentPage <= 1) {
+            document.getElementById('PrevSlick').style.display = "none";
+        }
+        else {
+            document.getElementById('PrevSlick').style.display = "block";
+        }
+        // khi render xong thì kiểm tra nếu currentPage đang ở trang bằng với totalPages thì sẽ ẩn nút Next
+        if (currentPage < (totalPages - 1)) {
+            document.getElementById('NextSlick').style.display = "block";
+        }
+        else {
+            document.getElementById('NextSlick').style.display = "none";
+        }
+    }, []);
+    // khi currentPage thay đổi thì sẽ check lại điều kiện
+    useEffect(() => {
+        // khi render xong thì kiểm tra nếu currentPage đang ở trang 1 thì sẽ ẩn nút Prve
+        if (currentPage <= 1) {
+            document.getElementById('PrevSlick').style.display = "none";
+        }
+        else {
+            document.getElementById('PrevSlick').style.display = "block";
+        }
+        // khi render xong thì kiểm tra nếu currentPage đang ở trang bằng với totalPages thì sẽ ẩn nút Next
+        if (currentPage === (totalPages - 1)) {
+            document.getElementById('NextSlick').style.display = "none";
+        }
+        else {
+            document.getElementById('NextSlick').style.display = "block";
+        }
+    }, [currentPage]);
+    const Render = React.useCallback(
+        () => {
+            return (
+                <div className="movie_schedule_content">
+                    <div className='movie_panel'>
+                        <div className="nav_btn">
+                            <ul className="nav nav-tabs">
+                                <li className="nav-item">
+                                    <a className="nav-link active showing" data-toggle="tab" href="#showing">Danh Sách Phim</a>
+                                    {/* id="showing" */}
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link coming" data-toggle="tab" href="#coming">Sắp Chiếu</a>
+                                </li>
+                            </ul>
                         </div>
-    
-                        <div className='tab-pane fade' id='coming'>
-                            <div className='schedule_carousel'>
+                        <div className='tab-content'>
+                            <div className='tab-pane active' id='showing'>
                                 <Slider {...settings} className='schedule_carousel'>
                                     <ContainerMovie />
+                                    <ContainerMovie />
+                                    {/* <ContainerMovie data2={data2}/> */}
                                 </Slider>
+                            </div>
+
+                            <div className='tab-pane fade' id='coming'>
+                                <div className='schedule_carousel'>
+                                    <Slider {...settings} className='schedule_carousel'>
+                                        <ContainerMovie />
+                                    </Slider>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        )
-       },
-       [currentPage],
-   )
+            )
+        },
+        [currentPage],
+    )
     const settings = {
         dots: false,
         infinite: true,
@@ -116,23 +149,56 @@ function Index(props) {
         nextArrow: <SampleNextArrowComing currentPage={currentPage} changeIndexPage={changeIndexPage} />,
         prevArrow: <SamplePrevArrowComing currentPage={currentPage} changeIndexPage={changeIndexPage} />
     };
-  return <>
-  {Render()}
-  </>
+    return <>
+     <div className="movie_schedule_content">
+                    <div className='movie_panel'>
+                        <div className="nav_btn">
+                            <ul className="nav nav-tabs">
+                                <li className="nav-item">
+                                    <a className="nav-link active showing" data-toggle="tab" href="#showing">Danh Sách Phim</a>
+                                    {/* id="showing" */}
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link coming" data-toggle="tab" href="#coming">Sắp Chiếu</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div className='tab-content'>
+                            <div className='tab-pane active' id='showing'>
+                                <Slider {...settings} className='schedule_carousel'>
+                                    <ContainerMovie />
+                                    <ContainerMovie />
+                                    {/* <ContainerMovie data2={data2}/> */}
+                                </Slider>
+                            </div>
+
+                            <div className='tab-pane fade' id='coming'>
+                                <div className='schedule_carousel'>
+                                    <Slider {...settings} className='schedule_carousel'>
+                                        <ContainerMovie />
+                                    </Slider>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        {/* {Render()} */}
+    </>
 }
 
 const mapStateToProp = state => {
     return {
         currentPage: state.listMovieReducer.currentPage,
-        totalPages:state.listMovieReducer.totalPages,
-        count:state.listMovieReducer.count,
-        dataListMovie:state.listMovieReducer.dataListMovie,
+        totalPages: state.listMovieReducer.totalPages,
+        count: state.listMovieReducer.count,
+        dataListMovie: state.listMovieReducer.dataListMovie,
+        group: state.LocationState.location,
     }
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchListMovie:(count,currentPage)=>{
-            dispatch(actListMovieAPI(count,currentPage));
+        fetchListMovie: (count, currentPage, group) => {
+            dispatch(actListMovieAPI(count, currentPage, group));
         },
         changeIndexPage: (currentPage) => {
             dispatch(actHandleChangePage(currentPage));

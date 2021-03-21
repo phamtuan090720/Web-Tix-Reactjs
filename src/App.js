@@ -1,14 +1,16 @@
 import './App.css';
-import {Switch} from 'react-router-dom';
-import {routesHome} from './routes';
+import { Switch } from 'react-router-dom';
+import React, { Suspense } from 'react';
+import Loading from './components/Loader';
+import { routesHome } from './routes';
 import HomeTemplate from './container/HomeTemplate';
 import PageNotFound from './container/HomeTemplate/PageNotFound';
 import BookingTicket from './container/HomeTemplate/BookingTicket';
 import Login from './container/AdminTemplate/AuthPage';
 import Admin from './container/AdminTemplate';
-import {Route} from "react-router-dom";
+import { Route } from "react-router-dom";
 function App() {
- const showLayoutHome = (routes) => {
+  const showLayoutHome = (routes) => {
     if (routes && routes.length > 0) {
       return routes.map((item, index) => {
         return <HomeTemplate key={index} exact={item.exact} path={item.path} Component={item.component} />
@@ -16,14 +18,18 @@ function App() {
     }
   }
   return (
-    <Switch>
+    <Suspense fallback={<Loading/>}>
+      <Switch>
         {showLayoutHome(routesHome)}
-        <Route path='/admin' component={Admin}/>
-        <Route path="/booking-ticket/:id" component={BookingTicket}/>
+        <Route path='/admin' component={Admin} />
+        <Route path="/booking-ticket/:id" component={BookingTicket} />
         <Route path="/login" component={Login} />
-        <Route path='' component={PageNotFound}/>
-    </Switch>
-    )
+        <Route path='' component={PageNotFound} />
+      </Switch>
+    </Suspense>
+
+
+  )
 }
 
 export default App;

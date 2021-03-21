@@ -59,3 +59,8 @@ export const actGetInfoMovieFailed= (err) =>{
         payload: err,
     };
 };
+export const actResetSate=()=>{
+    return {
+        type:AtctionTypes.RESET_SATE,
+    }
+}

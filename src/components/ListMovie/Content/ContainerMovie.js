@@ -6,45 +6,45 @@ function ContainerMovie(props) {
     const render=()=>{
         if(dataListMovie&&dataListMovie.length>0){
            return dataListMovie.map((movie)=>{
-            return <div key={movie.maPhim} className='col-3'>
-                <Movie data={movie} />
+            return <div key={movie.maPhim} className='col-6 col-lg-3'>
+                    <Movie data={movie} />
                 </div>
             })
         }
         else{
             return<>
           
-            <div className='col-3'>
+            <div className='col-6 col-md-3'>
                 <Movie/>
             </div>
-            <div className='col-3'>
+            <div className='col-6 col-md-3'>
                 <Movie/>
             </div>
-            <div className='col-3'>
+            <div className='col-6 col-md-3'>
                 <Movie/>
             </div>
-            <div className='col-3'>
+            <div className='col-6 col-md-3'>
                 <Movie/>
             </div>
-            <div className='col-3'>
+            <div className='col-6 col-md-3'>
                 <Movie/>
             </div>
-            <div className='col-3'>
+            <div className='col-6 col-md-3'>
                 <Movie/>
             </div>
-            <div className='col-3'>
+            <div className='col-6 col-md-3'>
                 <Movie/>
             </div>
-            <div className='col-3'>
+            <div className='col-6 col-md-3'>
                 <Movie/>
             </div>
             </> 
         }
     }
     return (
-       <div className='schedule_carousel_container' style={{height:'1000px'}}>
+       <div className='schedule_carousel_container'>
             <div className="row">
-                    {render()}
+                {render()}
             </div>
         </div>
     )

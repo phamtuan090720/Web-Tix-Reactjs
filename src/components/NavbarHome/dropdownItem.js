@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {actChangeLocation} from './modules/action';
+import {actHandleChangePage} from '../../container/HomeTemplate/HomePage/modules/action'; 
  function DropdownItem(props) {
     const closeModalLocation=()=>{
         document.getElementById("modal-locaition").style.display="none";
@@ -10,12 +11,16 @@ import {actChangeLocation} from './modules/action';
             close[0].style.display="none";
         }
     }
+    const {setDefaltCurentPage} = props;
    const changeLocation = ()=>{
         closeModalLocation();
         props.changeLCT(props.location);
    } 
     return (
-        <a className="dropdown-item" href="#" onClick={changeLocation}>{props.location.city}</a>
+        <span className="dropdown-item" onClick={()=>{
+            changeLocation();
+            setDefaltCurentPage(1);
+        }}>{props.location.city}</span>
     )
 }
 const mapDispatchToProps = dispatch =>{
@@ -23,6 +28,10 @@ const mapDispatchToProps = dispatch =>{
         changeLCT:(lc)=>{
             dispatch(actChangeLocation(lc));
         },
+        setDefaltCurentPage:(index)=>{
+            dispatch(actHandleChangePage(index));
+        }
+
     }
 }
 export default connect(null,mapDispatchToProps)(DropdownItem);

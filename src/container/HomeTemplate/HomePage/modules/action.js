@@ -1,9 +1,9 @@
 import * as AtctionTypes from "./constants.js";
 import api from "./../../../../api/index.js";
-export const actListMovieAPI=(count,currentPage)=>{
+export const actListMovieAPI=(count,currentPage,group)=>{
     return (dispatch)=>{
             dispatch(actListMovieRequest())
-            api.get(`/QuanLyPhim/LayDanhSachPhimPhanTrang?maNhom=GP04&soTrang=${currentPage}&soPhanTuTrenTrang=${count}`)
+            api.get(`/QuanLyPhim/LayDanhSachPhimPhanTrang?maNhom=${group}&soTrang=${currentPage}&soPhanTuTrenTrang=${count}`)
             .then((rs)=>{
                 dispatch(actListMovieSuccess(rs.data));
             }).catch((err)=>{
@@ -68,10 +68,10 @@ export const actListSytemCinemFailed= (err) =>{
     };
 };
 
-export const actCallApiGetListCinemaPost=(maHeThongRap)=>{
+export const actCallApiGetListCinemaPost=(maHeThongRap,group)=>{
     return(dispatch)=>{
         dispatch(actListCinemRequest())
-        api.get(`/QuanLyRap/LayThongTinLichChieuHeThongRap?maHeThongRap=${maHeThongRap}&maNhom=GP04`)
+        api.get(`/QuanLyRap/LayThongTinLichChieuHeThongRap?maHeThongRap=${maHeThongRap}&maNhom=${group}`)
         .then((rs)=>{
             dispatch(actListCinemSuccess(rs.data[0].lstCumRap));
         }).catch((err)=>{

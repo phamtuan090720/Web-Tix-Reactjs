@@ -1,52 +1,23 @@
-import React,{useEffect} from 'react'
+import React,{useEffect,lazy,Suspense} from 'react'
 import DropdownIcon from '../../img/Icon/dropdown-icon.png';
+import Loading from '../Loader';
 import ShedulesBar from './ScheduleBar';
 import Content from './Content';
+
 import { connect } from 'react-redux';
-// import {actListMovieAPI} from '../../container/HomeTemplate/HomePage/modules/action';
+// const ShedulesBar = React.lazy(() => import('./ScheduleBar'));
+// const Content = React.lazy(() => import('./Content'));
 function Index(props) {
-    const {currentPage,totalPages}=props;
-    useEffect(()=>{
-        // khi render xong thì kiểm tra nếu currentPage đang ở trang 1 thì sẽ ẩn nút Prve
-        if(currentPage<=1){
-          document.getElementById('PrevSlick').style.display="none";
-      }
-      else{
-          document.getElementById('PrevSlick').style.display="block";
-      }
-       // khi render xong thì kiểm tra nếu currentPage đang ở trang bằng với totalPages thì sẽ ẩn nút Next
-      if(currentPage<(totalPages-1)){
-          document.getElementById('NextSlick').style.display="block";
-      }
-      else{
-          document.getElementById('NextSlick').style.display="none";
-      }
-  },[]);
-  // khi currentPage thay đổi thì sẽ check lại điều kiện
-useEffect(()=>{
-           // khi render xong thì kiểm tra nếu currentPage đang ở trang 1 thì sẽ ẩn nút Prve
-           if(currentPage<=1){
-              document.getElementById('PrevSlick').style.display="none";
-          }
-          else{
-              document.getElementById('PrevSlick').style.display="block";
-          }
-           // khi render xong thì kiểm tra nếu currentPage đang ở trang bằng với totalPages thì sẽ ẩn nút Next
-          if(currentPage===(totalPages-1)){
-              document.getElementById('NextSlick').style.display="none";
-          }
-          else{
-              document.getElementById('NextSlick').style.display="block";
-          }
-  },[currentPage]);
+    // const {currentPage,totalPages}=props;
     return (
         <>
             <div id='movie_schedule_tix'></div>
             <section className="movie_schedule">
-                <ShedulesBar DropdownIcon={DropdownIcon} />
-                <Content/>
+                <Suspense fallback={<Loading/>}>  
+                    <ShedulesBar DropdownIcon={DropdownIcon} />
+                    <Content/>
+                </Suspense>
             </section>
-
         </>
 
     )

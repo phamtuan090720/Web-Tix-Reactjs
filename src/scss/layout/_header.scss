@@ -152,7 +152,8 @@
                     background-color: #fff!important;
                     max-height: 300px;
                     overflow-y: scroll;
-                    a {
+                    span {
+                        cursor: pointer;
                         display: block;
                         padding: 3px 20px;
                         font-weight: 400;
@@ -288,7 +289,8 @@
             border-radius: 6px;
             overflow-y: scroll;
             .modal-body {
-                a {
+                span {
+                    cursor: pointer;
                     text-align: center;
                     margin-bottom: 5px;
                     height: 40px;
