@@ -55,13 +55,13 @@ function Index(props) {
                             <div className="Icon"><AccountCircleIcon className="IconChild" /></div>
                             <div className="Profile">
                                 <div>
-                                    <span>Tài Khoản: {infoUser.taiKhoan}</span>
+                                    <span>Tài Khoản: {infoUser?infoUser.taiKhoan:""}</span>
                                 </div>
                                 <div>
-                                    <span>Email: {infoUser.email}</span>
+                                    <span>Email: {infoUser?infoUser.email:""}</span>
                                 </div>
                                 <div>
-                                    <span>Số Điện Thoại: {infoUser.SDT}</span>
+                                    <span>Số Điện Thoại: {infoUser?infoUser.SDT:""}</span>
                                 </div>
                             </div>
                         </div>
@@ -71,7 +71,7 @@ function Index(props) {
                             <div className="Icon"><MovieIcon className="IconChild" /></div>
                             <div className="Profile">
                                 <div>
-                                    <span>Tên Phim: {infoLichChieu.thongTinPhim.tenPhim}</span>
+                                    <span>Tên Phim: {infoLichChieu?infoLichChieu.thongTinPhim.tenPhim:""}</span>
                                 </div>
                             </div>
                         </div>
@@ -81,7 +81,7 @@ function Index(props) {
                             <div className="Icon"><TheatersIcon className="IconChild" /></div>
                             <div className="Profile">
                                 <div>
-                                    <span>Rạp: {infoLichChieu.thongTinPhim.tenCumRap}-{infoLichChieu.thongTinPhim.tenCumRap}</span>
+                                    <span>Rạp: {infoLichChieu?infoLichChieu.thongTinPhim.tenCumRap:""}-{infoLichChieu?infoLichChieu.thongTinPhim.tenCumRap:''}</span>
                                 </div>
                             </div>
                         </div>
@@ -91,7 +91,7 @@ function Index(props) {
                             <div className="Icon"><ScheduleIcon className="IconChild" /></div>
                             <div className="Profile">
                                 <div>
-                                    <span>Ngày-Giờ: {infoLichChieu.thongTinPhim.ngayChieu}-{infoLichChieu.thongTinPhim.gioChieu}</span>
+                                    <span>Ngày-Giờ: {infoLichChieu?infoLichChieu.thongTinPhim.ngayChieu:""}-{infoLichChieu?infoLichChieu.thongTinPhim.gioChieu:""}</span>
                                 </div>
                             </div>
                         </div>
@@ -112,7 +112,7 @@ function Index(props) {
                             <div className="Icon"><LocalAtmIcon className="IconChild" /></div>
                             <div className="Profile">
                                 <div>
-                                    <span>Tổng Tiền: {total} VNĐ</span>
+                                    <span>Tổng Tiền: {total?total:""} VNĐ</span>
                                 </div>
                             </div>
                         </div>

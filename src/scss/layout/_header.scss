@@ -283,25 +283,23 @@
 }
 
 #modal-locaition {
-    .modal-location_tix {
-        .modal-content {
-            max-height: 500px;
-            border-radius: 6px;
-            overflow-y: scroll;
-            .modal-body {
-                span {
-                    cursor: pointer;
-                    text-align: center;
-                    margin-bottom: 5px;
-                    height: 40px;
-                    display: block;
-                    font-size: 16px;
-                    border-bottom: 1px solid #ebebec;
-                    border-top: 1px solid rgba(255, 255, 255, .2);
-                    padding-top: 5px;
-                }
-            }
+    max-height: 500px;
+    border-radius: 6px;
+    .MuiDialog-paperWidthSm{
+        width: 600px;
+    }
+    span {
+        cursor: pointer;
+        text-align: center;
+        margin-bottom: 5px;
+        height: 40px;
+        display: block;
+        font-size: 16px;
+        border-bottom: 1px solid #ebebec;
+        border-top: 1px solid rgba(255, 255, 255, .2);
+        padding-top: 5px;
         }
+    
          ::-webkit-scrollbar {
             width: 5px;
         }
@@ -313,7 +311,6 @@
             background-color: $color-gray-0;
             border-radius: 10px;
         }
-    }
 }
 
 // @media screen and (max-width:768px) {

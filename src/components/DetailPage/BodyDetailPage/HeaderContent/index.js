@@ -10,7 +10,6 @@ import { Link } from 'react-router-dom';
 function index(props) {
     const {data} = props;
     const MovieImg = styled.div`
-    // background-image: url(${data.hinhAnh});
     `;
     const Open=()=>{
         props.openTrailer(data.trailer);
@@ -18,11 +17,11 @@ function index(props) {
     return (
         <div className="header-content row">
             <MovieImg className='img-movie col-6 col-lg-3 col-md-4'>
-            <div className="point">{parseFloat(data.danhGia)}</div>
-                <img src={data.hinhAnh}></img>
+            <div className="point">{parseFloat(data?.danhGia)}</div>
+                <img src={data?.hinhAnh}></img>
             </MovieImg>
         <div className="detail-movie col-12 col-md-6">
-            <h1 className="title-movie">{data.tenPhim}</h1>
+            <h1 className="title-movie">{data?.tenPhim}</h1>
             <div className="ratting mb-1">
                 <div className="star">
                     <img src={startIcon} />
@@ -32,7 +31,7 @@ function index(props) {
                     <img src={startIcon} />
                 </div>
                 <div className="date">
-                    <img src={clockIcon} /><span>{new Date(data.ngayKhoiChieu).toLocaleDateString()}</span>
+                    <img src={clockIcon} /><span>{new Date(data?.ngayKhoiChieu).toLocaleDateString()}</span>
                 </div>
             </div>
             <p>115 phút - 0 IMDb - 2D/Digital</p>

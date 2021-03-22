@@ -4,6 +4,7 @@ import TabContentLichChieuMoblie from './TabContentLichChieuMoblie';
 export default function index(props) {
     const {data}=props;
     const RenderCinema=()=>{
+        if(data){
             return  data.heThongRapChieu.map((item,index)=>{
                 if(index===0){
                     return  <li className="nav-item">
@@ -24,6 +25,8 @@ export default function index(props) {
                 </a>
                 </li>
             })
+        }
+           
     }
     return (
         <>
@@ -57,17 +60,17 @@ export default function index(props) {
                             <div className="col-6">
                                 <div className="row">
                                     <p className="contentTitle">Ngày Công Chiếu:</p>
-                                    <p className="contentInfo">{new Date(data.ngayKhoiChieu).toLocaleDateString()}</p>
+                                    <p className="contentInfo">{new Date(data?.ngayKhoiChieu).toLocaleDateString()}</p>
                                 </div>
                                 <div className="row">
                                     <p className="contentTitle">Tên Phim:</p>
-                                    <p className="contentInfo">{data.tenPhim}</p>
+                                    <p className="contentInfo">{data?.tenPhim}</p>
                                 </div>
                             </div>
                             <div className="col-6">
                                 <div className="description">
                                     <p className="contentInfo">Mô Tả:</p>
-                                    <p>{data.moTa}</p>
+                                    <p>{data?.moTa}</p>
                                 </div>
                             </div>
                         </div>

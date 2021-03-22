@@ -2,6 +2,7 @@ export const LIST_MOVIE_REQUEST = "listMovieReducer/LIST_MOVIE_REQUEST";
 export const LIST_MOVIE_SUCCESS = "listMovieReducer/LIST_MOVIE_SUCCESS";
 export const LIST_MOVIE_FAILED = "listMovieReducer/LIST_MOVIE_FAILED";
 export const LIST_MOVIE_CHANGE_PAGE_POST = "listMovieReducer/LIST_MOVIE_CHANGE_PAGE_POST";
+export const LIST_MOVIE_CHANGE_COUNT_POST= "listMovieReducer/LIST_MOVIE_CHANGE_COUNT_POST"
 export const LIST_SYSTEM_CINEMA_REQUEST = "listCinemaSytemReducer/LIST_SYTEM_CINEMA_REQUEST";
 export const LIST_SYSTEM_CINEMA_SUCCESS = "listCinemaSytemReducer/LIST_SYTEM_CINEMA_SUCCESS";
 export const LIST_SYSTEM_CINEMA_FAILED = "listCinemaSytemReducer/LIST_SYTEM_CINEMA_FAILED";

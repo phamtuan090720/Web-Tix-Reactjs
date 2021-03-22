@@ -25,7 +25,6 @@ function HomePage(props) {
         setTimeout(()=>{
             setIsLoading(false);
         },2000);
-       
     }, []);
     const RenderHTML = useCallback(() => {
         // setIsLoading(false);

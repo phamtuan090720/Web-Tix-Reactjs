@@ -127,6 +127,23 @@
         top: 50%;     
         width: 90%;
         .modal-body {
+            .Content{
+                min-height: 400px;
+                min-width: 600px;
+                display: flex;
+                align-items: center;
+                color: #dc3545;
+                border-radius: 10px;
+                .Alert{
+                    margin: 0 auto;
+                    display: flex;
+                    align-items: center;
+                    font-size:  2.5rem;
+                    .MuiSvgIcon-root{
+                        font-size: 5.5rem;
+                    }
+                }
+            }
             padding: 0;
             iframe {
                 position: absolute;
@@ -140,7 +157,7 @@
                 top: -20px;
                 right: -20px;
                 opacity: 1;
-                z-index: 2;
+                z-index: 5;
                 transition: all 0.2s;
                 &:hover {
                     opacity: .5;

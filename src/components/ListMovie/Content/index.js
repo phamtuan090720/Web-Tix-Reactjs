@@ -2,10 +2,26 @@ import React, { useCallback, useEffect } from 'react'
 import Slider from "react-slick";
 import NextIcon from '../../../img/Icon/next-session.png';
 import BackIcon from '../../../img/Icon/back-session.png';
-import { actHandleChangePage } from '../../../container/HomeTemplate/HomePage/modules/action';
+import { actHandleChangePage, actXemThem } from '../../../container/HomeTemplate/HomePage/modules/action';
 import ContainerMovie from './ContainerMovie';
 import { connect } from 'react-redux';
 import { actListMovieAPI } from '../../../container/HomeTemplate/HomePage/modules/action';
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+const useStyles = makeStyles((theme) => ({
+    root: {
+        '& > *': {
+            margin: theme.spacing(1),
+        },
+    },
+    button: {
+        paddingLeft: 20,
+        paddingRight: 20,
+        paddingBottom: 10,
+        paddingTop: 10,
+    }
+}));
+
 function SampleNextArrowComing(props) {
     const { className, style, onClick, currentPage, changeIndexPage } = props;
     let handelChangeIndex = () => {
@@ -63,10 +79,11 @@ function SamplePrevArrowComing(props) {
 }
 
 function Index(props) {
-    const { currentPage, changeIndexPage, count, fetchListMovie, group, totalPages } = props;
+    const classes = useStyles();
+    const { currentPage, changeIndexPage, count, fetchListMovie, group, totalPages, totalCount } = props;
     useEffect(() => {
         fetchListMovie(count, currentPage, group.group);
-    }, [currentPage, group])
+    }, [currentPage, group, count])
     useEffect(() => {
         // khi render xong thì kiểm tra nếu currentPage đang ở trang 1 thì sẽ ẩn nút Prve
         if (currentPage <= 1) {
@@ -100,6 +117,24 @@ function Index(props) {
             document.getElementById('NextSlick').style.display = "block";
         }
     }, [currentPage]);
+    const RenderButtonXemThem = useCallback(
+        () => {
+            if (count === totalCount) {
+            }
+            else {
+                return <div className="buttonGroup justify-content-center mb-4">
+                    <Button className={classes.button} onClick={() => {
+                        let newCount = count + 8;
+                        props.xemThem(newCount);
+                    }} variant="contained" color="secondary">
+                        <b>Xem Thêm</b>
+                    </Button>
+                </div>
+            }
+
+        }, [count, totalCount]
+    )
+    console.log(totalCount);
     const Render = React.useCallback(
         () => {
             return (
@@ -150,39 +185,39 @@ function Index(props) {
         prevArrow: <SamplePrevArrowComing currentPage={currentPage} changeIndexPage={changeIndexPage} />
     };
     return <>
-     <div className="movie_schedule_content">
-                    <div className='movie_panel'>
-                        <div className="nav_btn">
-                            <ul className="nav nav-tabs">
-                                <li className="nav-item">
-                                    <a className="nav-link active showing" data-toggle="tab" href="#showing">Danh Sách Phim</a>
-                                    {/* id="showing" */}
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link coming" data-toggle="tab" href="#coming">Sắp Chiếu</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div className='tab-content'>
-                            <div className='tab-pane active' id='showing'>
-                                <Slider {...settings} className='schedule_carousel'>
-                                    <ContainerMovie />
-                                    <ContainerMovie />
-                                    {/* <ContainerMovie data2={data2}/> */}
-                                </Slider>
-                            </div>
+        <div className="movie_schedule_content">
+            <div className='movie_panel'>
+                <div className="nav_btn">
+                    <ul className="nav nav-tabs">
+                        <li className="nav-item">
+                            <a className="nav-link active showing" data-toggle="tab" href="#showing">Danh Sách Phim</a>
+                            {/* id="showing" */}
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link coming" data-toggle="tab" href="#coming">Sắp Chiếu</a>
+                        </li>
+                    </ul>
+                </div>
+                <div className='tab-content'>
+                    <div className='tab-pane active' id='showing'>
+                        <Slider {...settings} className='schedule_carousel'>
+                            <ContainerMovie />
+                            <ContainerMovie />
+                            {/* <ContainerMovie data2={data2}/> */}
+                        </Slider>
+                    </div>
 
-                            <div className='tab-pane fade' id='coming'>
-                                <div className='schedule_carousel'>
-                                    <Slider {...settings} className='schedule_carousel'>
-                                        <ContainerMovie />
-                                    </Slider>
-                                </div>
-                            </div>
+                    <div className='tab-pane fade' id='coming'>
+                        <div className='schedule_carousel'>
+                            <Slider {...settings} className='schedule_carousel'>
+                                <ContainerMovie />
+                            </Slider>
                         </div>
                     </div>
                 </div>
-        {/* {Render()} */}
+            </div>
+        </div>
+        {RenderButtonXemThem()}
     </>
 }
 
@@ -193,6 +228,7 @@ const mapStateToProp = state => {
         count: state.listMovieReducer.count,
         dataListMovie: state.listMovieReducer.dataListMovie,
         group: state.LocationState.location,
+        totalCount: state.listMovieReducer.totalCount
     }
 }
 const mapDispatchToProps = (dispatch) => {
@@ -202,7 +238,11 @@ const mapDispatchToProps = (dispatch) => {
         },
         changeIndexPage: (currentPage) => {
             dispatch(actHandleChangePage(currentPage));
+        },
+        xemThem: (count) => {
+            dispatch(actXemThem(count))
         }
+
     }
 }
 export default connect(mapStateToProp, mapDispatchToProps)(Index);

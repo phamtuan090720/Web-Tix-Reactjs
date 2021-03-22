@@ -6,6 +6,7 @@ export const actListMovieAPI=(count,currentPage,group)=>{
             api.get(`/QuanLyPhim/LayDanhSachPhimPhanTrang?maNhom=${group}&soTrang=${currentPage}&soPhanTuTrenTrang=${count}`)
             .then((rs)=>{
                 dispatch(actListMovieSuccess(rs.data));
+                console.log(rs.data.totalCount);
             }).catch((err)=>{
                 dispatch(actListMovieFailed(err));
             })
@@ -35,6 +36,12 @@ export const actHandleChangePage=(index)=>{
     return{
         type:AtctionTypes.LIST_MOVIE_CHANGE_PAGE_POST,
         payload:index,
+    }
+}
+export const actXemThem=(count)=>{
+    return{
+        type:AtctionTypes.LIST_MOVIE_CHANGE_COUNT_POST,
+        payload:count,
     }
 }
 export const actCallApiGetInfoCinemaSytem=()=>{

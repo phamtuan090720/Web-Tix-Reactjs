@@ -141,6 +141,7 @@
                 }
                 .tab-content{
                     min-height: 700px;
+                    max-height: 720px;
                 }
                 &:hover {
                     border-color: unset;
@@ -148,7 +149,8 @@
                 }
                 .listCinema{
                     background:transparent;
-                    min-height: 713px;
+                    min-height: 715px;
+                    max-height: 720px;
                     float: left;
                     border-top: 1px solid #ebebec;
                     border-bottom: 1px solid #ebebec;
@@ -209,7 +211,8 @@
                 .tab-content{
                     float: left;
                     width: 72%;
-                    min-height: 713px;
+                    min-height: 715px;
+                    max-height: 720px;
                     border-top-right-radius: 4px;
                     border-bottom-right-radius: 4px;
                     border: 1px solid #ebebec;
@@ -461,7 +464,8 @@
                     }
                     .listCinema{
                         background:transparent;
-                        min-height: 713px;
+                        min-height: 715px;
+                        max-height: 720px;
                         float: left;
                         border-top: 1px solid #ebebec;
                         border-bottom: 1px solid #ebebec;
@@ -580,7 +584,8 @@
                     .tab-content{
                         float: left;
                         width: 72%;
-                        min-height: 713px;
+                        min-height: 715px;
+                        max-height: 720px;
                         border-top-right-radius: 4px;
                         border-bottom-right-radius: 4px;
                         border: 1px solid #ebebec;

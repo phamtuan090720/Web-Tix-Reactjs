@@ -72,6 +72,8 @@ export const listMovieReducer = (state = initalStateMovie, action) => {
             state.dataListMovie = action.payload.items;
             state.totalPages = action.payload.totalPages;
             state.totalCount = action.payload.totalCount;
+            // state.totalCount = action.payload.totalCount;
+            state.count = action.payload.count;
             state.err = null;
             return { ...state }
         case ActionType.LIST_MOVIE_FAILED:
@@ -81,6 +83,9 @@ export const listMovieReducer = (state = initalStateMovie, action) => {
             return { ...state }
         case ActionType.LIST_MOVIE_CHANGE_PAGE_POST:
             state.currentPage = action.payload;
+            return { ...state }
+        case ActionType.LIST_MOVIE_CHANGE_COUNT_POST:
+            state.count=action.payload;
             return { ...state }
         default:
             return { ...state }

@@ -94,12 +94,13 @@ function Index(props) {
                     "danhSachVe": danhSachGheChon(),
                     "taiKhoanNguoiDung": user.taiKhoan
                 });
+                setStateInfoCustomer({
+                    taiKhoan: user.taiKhoan,
+                    email: state.values.email,
+                    SDT: state.values.phone,
+                });
             }
-            setStateInfoCustomer({
-                taiKhoan: user.taiKhoan,
-                email: state.values.email,
-                SDT: state.values.phone,
-            });
+          
         };
     }
 

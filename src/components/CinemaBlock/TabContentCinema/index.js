@@ -6,12 +6,12 @@ export default function index(props) {
         if(dataCinemaSytem&&dataCinemaSytem.length>0){
             return dataCinemaSytem.map((Item,index)=>{
                 if(index===0){
-                   return <div id={Item.maHeThongRap} className="tab-pane active">
+                   return <div key={index} id={Item.maHeThongRap} className="tab-pane active">
                        <ContentChilld dataListCinema={dataListCinema}/>
                         </div>
                 }
                 else{
-                    return <div id={Item.maHeThongRap} className="tab-pane">
+                    return <div key={index}  id={Item.maHeThongRap} className="tab-pane">
                         <ContentChilld dataListCinema={dataListCinema}/>
                         </div>
                 }

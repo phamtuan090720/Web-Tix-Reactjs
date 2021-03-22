@@ -6,7 +6,7 @@ function carouselMovieItem(props) {
     const Banner = styled.div`
     background-image: url(${props.data.banner});
     `;
-console.log(props.data.banner)
+// console.log(props.data.banner)
 const Open = ()=>{
     props.openTrailer(props.data.trailler);
 }

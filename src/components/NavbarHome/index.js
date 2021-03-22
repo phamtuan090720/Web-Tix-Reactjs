@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import Logo from '../../img/logo/web-logo.png';
 import LocationHeader from '../../img/Icon/location-header.png';
 import Avatar from '../../img/Icon/avatar.png';
-import Next from '../../img/Icon/next-session.png';
 import MenuIcon from '../../img/Icon/menu-options.png';
 import { Link } from 'react-router-dom';
 import { connect, useSelector } from 'react-redux';
@@ -27,6 +26,9 @@ import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import ViewListIcon from '@material-ui/icons/ViewList';
 import WebAssetIcon from '@material-ui/icons/WebAsset';
+import Dialog from '@material-ui/core/Dialog';
+import DialogContent from '@material-ui/core/DialogContent';
+
 const useStyles = makeStyles((theme) => ({
     root: {
         width: '100%',
@@ -49,7 +51,14 @@ function ListItemLink(props) {
 function NavbarHome(props) {
     const classes = useStyles();
     const [open, setOpen] = React.useState(true);
+    const [openMoal, setOpenMoal] = React.useState(false);
+    const handleClickOpen = () => {
+        setOpenMoal(true);
+    };
 
+    const handleClose = () => {
+        setOpenMoal(false);
+    };
     const handleClick = () => {
         setOpen(!open);
     };
@@ -77,7 +86,7 @@ function NavbarHome(props) {
     const RenderListLocation = () => {
         const { listLocation } = props;
         return listLocation.map((location) => {
-            return <Location key={location.stt} location={location} />
+            return <Location handleClose={handleClose} key={location.stt} location={location} />
         });
     }
 
@@ -102,7 +111,7 @@ function NavbarHome(props) {
                         <img src={AvataUser} alt="avatar" />
                         <span onClick={openMenuLogin}>{user.taiKhoan}</span>
                         <div style={{ display: `${Menu}` }} className="menuLogin dropdown-content">
-                            <div className="Info">Thông Tin Cá Nhân</div>
+                            <Link to={`/profile/${user.taiKhoan}`}><div className="Info">Thông Tin Cá Nhân</div></Link> 
                             <div className="loggOut" onClick={Loggout}>Đăng Xuất<img src={LogoutIcon}></img></div>
                         </div>
                     </div>
@@ -114,7 +123,7 @@ function NavbarHome(props) {
                         <img src={AvataUser} alt="avatar" />
                         <span onClick={openMenuLogin}>{user.taiKhoan}</span>
                         <div style={{ display: `${Menu}` }} className="menuLogin dropdown-content">
-                            <div className="Info">Thông Tin Cá Nhân</div>
+                            <Link to={`/profile/${user.taiKhoan}`}><div className="Info">Thông Tin Cá Nhân</div></Link> 
                             <div className="Info">Trang Dashboard</div>
                             <div className="loggOut" onClick={Loggout}>Đăng Xuất<img src={LogoutIcon}></img></div>
                         </div>
@@ -259,22 +268,21 @@ function NavbarHome(props) {
                     className={classes.root}
                 >
                     {renderDangNhap()}
-                    <ListItemLink button onClick={closeNav}>
+                    <ListItemLink href="#movie_schedule_tix" button onClick={closeNav}>
                         <ListItemIcon>
                             <CalendarTodayIcon />
                         </ListItemIcon>
-
                         <ListItemText primary="Lịch Chiếu" />
                     </ListItemLink>
                     <ListItemLink button onClick={closeNav}>
                         <ListItemIcon>
-                            <ViewListIcon/>
+                            <ViewListIcon />
                         </ListItemIcon>
                         <ListItemText primary="Cụm Rạp" />
                     </ListItemLink>
                     <ListItemLink href="#news_tix" button onClick={closeNav}>
                         <ListItemIcon>
-                            <WebAssetIcon/>
+                            <WebAssetIcon />
                         </ListItemIcon>
                         <ListItemText primary="Tin Tức" />
                     </ListItemLink>
@@ -284,24 +292,25 @@ function NavbarHome(props) {
                         </ListItemIcon>
                         <ListItemText primary="Ứng Dụng" />
                     </ListItemLink>
-                    <ListItemLink href="#" data-toggle="modal" data-target="#modal-locaition" onClick={openModalLocation}>
+
+                    {/* <ListItemLink href="#" data-toggle="modal" data-target="#modal-locaition" onClick={openModalLocation}> */}
+                    <ListItem button onClick={handleClickOpen}>
                         <ListItemIcon>
                             <LocationOnIcon />
                         </ListItemIcon>
                         <ListItemText primary={props.location.city} />
-                    </ListItemLink>
+                    </ListItem>
+
+                    {/* </ListItemLink> */}
                 </List>
             </div>
-            <div className="modal" id="modal-locaition">
-                <div className="modal-dialog modal-location_tix">
-                    <div className="modal-content">
-                        {/* Modal body */}
-                        <div className="modal-body">
-                            {RenderListLocation()}
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <Dialog
+                id="modal-locaition"
+                open={openMoal}
+                onClose={handleClose}
+            >
+                {RenderListLocation()}
+            </Dialog>
         </header>
     )
 }

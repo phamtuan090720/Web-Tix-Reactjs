@@ -1,6 +1,6 @@
 // import Axios from "axios";
 import * as AtctionTypes from "./constants.js";
-import api from "./../../../../api/index.js";
+import api from '../../../../api/index';
 export const actDeailMovieAPI = (id) => {
     return (dispatch) => {
         dispatch(actDetailMovieRequest());
@@ -11,6 +11,7 @@ export const actDeailMovieAPI = (id) => {
                     console.log(rs.data);
                 }).catch((err) => {
                     dispatch(actDetailMovieFailed(err));
+                    console.log(err);
                 })
         }, 2000);
     }

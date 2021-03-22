@@ -141,7 +141,7 @@ export default function index() {
                     <p>TIX – SẢN PHẨM CỦA CÔNG TY CỔ PHẦN ZION</p>
                     <span>Web Này Được Làm Bởi Phạm Tuân</span>
                     <span>Số Điện Thoại (Hotline): 0363902003<br />
-                        <span>Email: <a href="#">mr.tuan179@gmail.com</a></span>
+                        <span>Email: <a href="mailto:mr.tuan179@gmail.com?Subject=Contact">mr.tuan179@gmail.com</a></span>
                     </span></div>
                     <div className="verify col-sm-2">
                         <img src={logoGOV} />
@@ -156,7 +156,7 @@ export default function index() {
                     <p>TIX – SẢN PHẨM CỦA CÔNG TY CỔ PHẦN ZION</p>
                     <span>Web Này Được Làm Bởi Phạm Tuân</span>
                     <span>Số Điện Thoại (Hotline): 0363902003<br />
-                        <span>Email: <a href="#">mr.tuan179@gmail.com</a></span>
+                        <span>Email: <a href="mailto:mr.tuan179@gmail.com?Subject=Contact">mr.tuan179@gmail.com</a></span>
                     </span></div>
                 <div className="verify_mb2">
                     <img src={logoGOV} />

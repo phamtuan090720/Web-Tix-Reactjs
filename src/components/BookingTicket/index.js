@@ -22,11 +22,11 @@ function Index(props) {
         <section className="Booking_Movie">
             <div className='wrapper'>
                 <div className='overlay'>
-                    <CheckOutRight handleOpenBill={handleOpenBill} user={user} malichChieu={malichChieu} data={data.thongTinPhim}/>
-                    <ChoiseTicketLeft user={user} data={data.danhSachGhe}/>
+                    <CheckOutRight handleOpenBill={handleOpenBill} user={user} malichChieu={malichChieu} data={data?data.thongTinPhim:""}/>
+                    <ChoiseTicketLeft user={user} data={data?data.danhSachGhe:[]}/>
                     <CheckOutInfo />
                     <ModalCheckOut handelRebookTicket={handelRebookTicket}/>
-                    {AlertDatVe(isOpen,mess,isErr,handleClose,handleOpenBill)}
+                    {AlertDatVe(isOpen,mess,isErr,handleClose,handleOpenBill,props)}
                     <BillTicket isOpen={isOpenBbill} handelRebookTicket={handelRebookTicket}/>
                 </div>
             </div>

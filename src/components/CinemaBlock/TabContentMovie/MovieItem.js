@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 export default function MovieItem(props) {
     const {dataMovie}=props;
-    console.log(dataMovie);
     const cutData=(soLuong)=>{
         let data = []
         if(dataMovie.lstLichChieuTheoPhim.length>soLuong){

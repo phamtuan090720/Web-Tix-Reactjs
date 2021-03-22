@@ -8,14 +8,26 @@ function Index(props) {
     React.useEffect(()=>{
         actResetState();
     },[]);
-    React.useEffect(() => {
-        actFetchApiListMovie(group.group);
-    }, [group]);
     const [Film, setFilm] = useState({
         tenPhim: "Phim",
         maPhim: null,
     });
-  
+    React.useEffect(() => {
+        actFetchApiListMovie(group.group);
+        setFilm({
+            tenPhim: "Phim",
+            maPhim: null, 
+        });
+        setCinema({
+            tenCumRap: "Rạp",
+            maCumRap: null,
+        });
+        setNgayChieu("Ngày Xem");
+        setSuatChieu({
+            title: "Suất Chiếu", 
+            maLichChieu:null
+        });
+    }, [group]);
     const [cinema, setCinema] = useState({
         tenCumRap: "Rạp",
         maCumRap: null,
