@@ -11,6 +11,11 @@ function Movie(props) {
     let Open = ()=>{
        openTrailer(data.trailer);
     }
+    const RenderStart = React.useCallback((point)=>{
+        switch(point){
+
+        }
+    },[])
     if(data){
         return (
             <div className="movie_item">

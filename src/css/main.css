@@ -59,6 +59,26 @@ body {
   padding: 0;
 }
 
+.modal .modal-dialog .modal-body .Content {
+  min-height: 400px;
+  min-width: 600px;
+  display: flex;
+  align-items: center;
+  color: #dc3545;
+  border-radius: 10px;
+}
+
+.modal .modal-dialog .modal-body .Content .Alert {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  font-size: 2.5rem;
+}
+
+.modal .modal-dialog .modal-body .Content .Alert .MuiSvgIcon-root {
+  font-size: 5.5rem;
+}
+
 .modal .modal-dialog .modal-body iframe {
   position: absolute;
   top: 0;
@@ -72,7 +92,7 @@ body {
   top: -20px;
   right: -20px;
   opacity: 1;
-  z-index: 2;
+  z-index: 5;
   transition: all 0.2s;
 }
 
@@ -276,7 +296,8 @@ body {
   overflow-y: scroll;
 }
 
-.header_nav_bar .header_menu .header_menu_right .dropdown_place_header .dropdown-menu a {
+.header_nav_bar .header_menu .header_menu_right .dropdown_place_header .dropdown-menu span {
+  cursor: pointer;
   display: block;
   padding: 3px 20px;
   font-weight: 400;
@@ -287,7 +308,7 @@ body {
   transition: all 0.2s;
 }
 
-.header_nav_bar .header_menu .header_menu_right .dropdown_place_header .dropdown-menu a:hover {
+.header_nav_bar .header_menu .header_menu_right .dropdown_place_header .dropdown-menu span:hover {
   background-color: #60c5ef;
   color: #fff;
 }
@@ -417,13 +438,17 @@ body {
   opacity: .5;
 }
 
-#modal-locaition .modal-location_tix .modal-content {
+#modal-locaition {
   max-height: 500px;
   border-radius: 6px;
-  overflow-y: scroll;
 }
 
-#modal-locaition .modal-location_tix .modal-content .modal-body a {
+#modal-locaition .MuiDialog-paperWidthSm {
+  width: 600px;
+}
+
+#modal-locaition span {
+  cursor: pointer;
   text-align: center;
   margin-bottom: 5px;
   height: 40px;
@@ -434,16 +459,16 @@ body {
   padding-top: 5px;
 }
 
-#modal-locaition .modal-location_tix ::-webkit-scrollbar {
+#modal-locaition ::-webkit-scrollbar {
   width: 5px;
 }
 
-#modal-locaition .modal-location_tix ::-webkit-scrollbar-track {
+#modal-locaition ::-webkit-scrollbar-track {
   border-radius: 10px;
   background: #ebebec;
 }
 
-#modal-locaition .modal-location_tix ::-webkit-scrollbar-thumb {
+#modal-locaition ::-webkit-scrollbar-thumb {
   background-color: #9b9b9b;
   border-radius: 10px;
 }
@@ -524,7 +549,12 @@ body {
   }
 }
 
+#movie_schedule_tix {
+  margin-top: 60px;
+}
+
 .movie_schedule {
+  margin-top: 60px;
   position: relative;
   background-color: white;
 }
@@ -535,8 +565,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
   background-color: #fff;
-  max-width: 940px;
-  width: 100%;
+  width: 80%;
   margin: 0 auto;
   height: 80px;
   border-radius: 5px;
@@ -546,7 +575,7 @@ body {
 
 .movie_schedule .schedule_bar .drop_btn {
   float: left;
-  width: 30%;
+  width: 20%;
 }
 
 .movie_schedule .schedule_bar .drop_btn .edit_btn {
@@ -567,17 +596,62 @@ body {
   padding-top: 7px;
 }
 
-.movie_schedule .schedule_bar .drop_btn .dropdowm-menu a {
+.movie_schedule .schedule_bar .drop_btn .edit_btn:focus {
+  border: none;
+  box-shadow: none;
+}
+
+.movie_schedule .schedule_bar .drop_btn .dropdown-menu {
+  min-width: 160px;
+  max-height: 300px;
+  min-height: 30px;
+  padding: 5px 0;
+  margin: 2px 0 0;
   font-size: 14px;
+  text-align: left;
+  left: 0;
+  border-radius: 4px;
+  overflow-y: scroll;
+}
+
+.movie_schedule .schedule_bar .drop_btn .dropdown-menu::-webkit-scrollbar {
+  width: 5px;
+}
+
+.movie_schedule .schedule_bar .drop_btn .dropdown-menu::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: #ebebec;
+}
+
+.movie_schedule .schedule_bar .drop_btn .dropdown-menu::-webkit-scrollbar-thumb {
+  background-color: #9b9b9b;
+  border-radius: 10px;
+}
+
+.movie_schedule .schedule_bar .drop_btn .dropdown-menu span {
+  cursor: pointer;
+  display: block;
+  padding: 3px 20px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  color: #333;
+  white-space: nowrap;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.movie_schedule .schedule_bar .drop_btn .dropdown-menu span:hover {
+  background-color: #60c5ef;
+  color: #fff;
 }
 
 .movie_schedule .schedule_bar .btn_small {
-  width: calc(70%/4);
+  width: calc(80%/4);
 }
 
 .movie_schedule .schedule_bar .btn_confirm {
-  width: calc(70%/4 - 20px);
-  background-color: #4a4a4a;
+  width: calc(80%/4 - 20px);
+  background: #fb4226;
   border: none;
   border-radius: 4px;
   color: white;
@@ -982,12 +1056,16 @@ body {
   border: none;
 }
 
+.movie_schedule .buttonGroup {
+  display: none;
+}
+
 @media screen and (max-width: 992px) {
   .movie_schedule .schedule_bar {
     display: none;
   }
-  .movie_schedule .movie_schedule_content {
-    display: none;
+  .movie_schedule .buttonGroup {
+    display: flex;
   }
   .movie_schedule .movie_schedule_content_mb {
     margin-top: 80px;
@@ -2044,6 +2122,7 @@ footer .footer_content_mb2 .verify_mb2 img {
 
 .warper-content .overlay_movie .container-info-movie .body-content .tab-content {
   min-height: 700px;
+  max-height: 720px;
 }
 
 .warper-content .overlay_movie .container-info-movie .body-content:hover {
@@ -2053,7 +2132,8 @@ footer .footer_content_mb2 .verify_mb2 img {
 
 .warper-content .overlay_movie .container-info-movie .body-content .listCinema {
   background: transparent;
-  min-height: 713px;
+  min-height: 715px;
+  max-height: 720px;
   float: left;
   border-top: 1px solid #ebebec;
   border-bottom: 1px solid #ebebec;
@@ -2118,14 +2198,32 @@ footer .footer_content_mb2 .verify_mb2 img {
 .warper-content .overlay_movie .container-info-movie #lichChieu .tab-content {
   float: left;
   width: 72%;
-  min-height: 713px;
+  min-height: 715px;
+  max-height: 720px;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
   border: 1px solid #ebebec;
+  padding: 0;
+  max-height: 710px;
+  overflow-y: scroll;
 }
 
-.warper-content .overlay_movie .container-info-movie #lichChieu .tab-content .tab-pane {
-  padding: 0;
+.warper-content .overlay_movie .container-info-movie #lichChieu .tab-content::-webkit-scrollbar {
+  width: 5px;
+}
+
+.warper-content .overlay_movie .container-info-movie #lichChieu .tab-content::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: transparent;
+}
+
+.warper-content .overlay_movie .container-info-movie #lichChieu .tab-content::-webkit-scrollbar-thumb {
+  background-color: #03e9f4;
+  border-radius: 10px;
+}
+
+.warper-content .overlay_movie .container-info-movie #lichChieu .tab-content .tab-pane .cinemaList {
+  min-height: 713px;
 }
 
 .warper-content .overlay_movie .container-info-movie #lichChieu .tab-content .tab-pane .cinemaList .cinemaItem {
@@ -2349,7 +2447,8 @@ footer .footer_content_mb2 .verify_mb2 img {
   }
   .warper-content .overlay_movie .container-info-movie .body-content .listCinema {
     background: transparent;
-    min-height: 713px;
+    min-height: 715px;
+    max-height: 720px;
     float: left;
     border-top: 1px solid #ebebec;
     border-bottom: 1px solid #ebebec;
@@ -2458,7 +2557,8 @@ footer .footer_content_mb2 .verify_mb2 img {
   .warper-content .overlay_movie .container-info-movie #lichChieu .tab-content {
     float: left;
     width: 72%;
-    min-height: 713px;
+    min-height: 715px;
+    max-height: 720px;
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
     border: 1px solid #ebebec;
@@ -3339,7 +3439,7 @@ footer .footer_content_mb2 .verify_mb2 img {
 
 .Booking_Movie .overlay .ListVe .container {
   font-size: 15px;
-  width: 50%;
+  width: 60%;
   min-height: 400px;
   background-position: 50% 50%;
   background-size: cover;

@@ -1,7 +1,6 @@
 import React, { useCallback, useState,useEffect } from 'react'
 import { connect } from 'react-redux';
 import * as Action from './modules/action';
-import Styled from 'styled-components';
 import { Link } from 'react-router-dom';
 function Index(props) {
     const { actFetchApiListMovie, listMovie, actFetchApiListCinema, infoMovie, heThongRap,actResetState,group } = props;

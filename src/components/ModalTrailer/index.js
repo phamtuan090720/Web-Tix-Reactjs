@@ -16,7 +16,7 @@ function ModalTrailer(props) {
         }
         else {
             return <div className="embed-responsive embed-responsive-16by9">
-                <iframe className="embed-responsive-item" src={link ? (link) : ""} frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen="true" />
+                <iframe className="embed-responsive-item" title="Trailer" src={link ? (link) : ""} frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen="true" />
             </div>
         }
 
