@@ -153,9 +153,9 @@ function scrollFunction() {
     //     mybutton.style.display = "none";
     // }
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.getElementById('nav').style.background = 'rgba(32, 90, 168, 0.8)';
+        document.getElementById('navBar').style.background = 'rgba(32, 90, 168, 0.8)';
     } else {
-        document.getElementById('nav').style.background = 'transparent';
+        document.getElementById('navBar').style.background = 'transparent';
     }
 }
 

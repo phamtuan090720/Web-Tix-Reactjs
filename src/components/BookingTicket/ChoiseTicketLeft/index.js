@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React from 'react'
 import Avata from '../../../img/AvataUser.jpg';
 import Thumb from '../../../img/BookingTicket/screen-thumb.png';
 import SreenWrapper from './Screen-wrapper';
@@ -10,7 +10,7 @@ import * as Action from '../../../container/HomeTemplate/BookingTicket/modules/a
     const{data,user} = props;
     return (
         <div className='choose_tickets_left'>
-            <div className="nav" id="nav">
+            <div className="nav" id="navBar">
                 <CountDown/>
                 <Link onClick={()=>{
                     props.resetSateCheckOut();

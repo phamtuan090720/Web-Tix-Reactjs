@@ -39,7 +39,7 @@ export default function CinemaItem(props) {
             let dataLichChieu = cutData(item.lichChieuPhim,7);
                return   <div className="cinemaItem">
                <div className="cinemaInfor d-flex">
-                   <img src={logo} alt />
+                   <img src={logo} alt='logo' />
                    <div className="cinema_info">
                        <p className="cinema-name" data-toggle="collapse" data-target={`#${item.maCumRap}`}>{item.tenCumRap}</p>
                    </div>

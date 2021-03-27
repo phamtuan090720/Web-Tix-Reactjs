@@ -20,7 +20,7 @@ function ModalTrailer(props) {
             </div>
         }
 
-    }, [link])
+    }, [link]);
     return (
         <div className="modal" id="modal_trailer" onClick={Close} style={{ display: isOpen }}>
             <div className="modal-dialog modal-lg">

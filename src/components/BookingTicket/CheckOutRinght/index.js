@@ -31,8 +31,6 @@ function Index(props) {
         phoneValid: false,
         formValid: false,
     });
-    console.log(state.values.phone);
-    console.log(state.values.email);
     const [sateDataDatVe, setSateDataDatVe] = useState(
         {
             "maLichChieu": 0,
@@ -148,7 +146,6 @@ function Index(props) {
                 phoneValid = mess !== "" ? false : true;
                 if (value && !value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)) {
                     mess = "Email không đúng định dạng";
-                    phoneValid = false;
                 }
                 break;
             default:

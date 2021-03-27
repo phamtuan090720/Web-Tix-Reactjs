@@ -9,6 +9,10 @@
     {
         banner:img2,
         trailler:"https://www.youtube.com/embed/XRm1P7oGpMQ"
+    },
+    {
+        banner:img2,
+        trailler:"https://www.youtube.com/embed/XRm1P7oGpMQ"
     }
 ] 
 export default data;

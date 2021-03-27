@@ -28,6 +28,7 @@ import ViewListIcon from '@material-ui/icons/ViewList';
 import WebAssetIcon from '@material-ui/icons/WebAsset';
 import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
+import { actSetLocationLogin } from './modules/action';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -62,6 +63,7 @@ function NavbarHome(props) {
     const handleClick = () => {
         setOpen(!open);
     };
+   
     useEffect(() => {
         console.log(props.user)
     }, [props]);
@@ -141,7 +143,7 @@ function NavbarHome(props) {
             </Link>
         }
     };
-    const renderDangNhap = () => {
+    const renderDangNhap = React.useCallback(() => {
         if (user) {
             if (user.maLoaiNguoiDung === "QuanTri") {
                 return <>
@@ -213,7 +215,7 @@ function NavbarHome(props) {
                 </ListItemLink>
             </>
         }
-    }
+    },[user])
     return (
         <header>
             <div className="header_nav_bar">
@@ -325,7 +327,7 @@ const mapDispatchToProp = (dispatch) => {
     return {
         logOut: (history) => {
             dispatch(actUserLogot(history));
-        }
+        },
     }
 }
 export default connect(mapStateToProp, mapDispatchToProp)(NavbarHome);

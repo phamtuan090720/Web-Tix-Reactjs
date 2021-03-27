@@ -1,38 +1,7 @@
+// Lấy Trang này
 import * as ActionTypes from "./constant";
 import api from "../../../../api/index";
-// export const actLoginCallApi = (user, history) => {
-//   return (dispatch) => {
-//     dispatch(actLoginRequest());
-//     api
-//       .post("/QuanLyNguoiDung/DangNhap", user)
-//       .then((result) => {
-//         dispatch(actLoginSuccess(result.data));
-//         // if (result.data.maLoaiNguoiDung === "QuanTri") {
-//         //   sessionStorage.setItem("userAdmin", JSON.stringify(result.data));
-//         //   sessionStorage.setItem(
-//         //     "qaccessToken",
-//         //     JSON.stringify(result.data.accessToken)
-//         //   );
-//         //   history.replace("/dashboard");
-//         // } if(result.data.maLoaiNguoiDung==="KhachHang") {
-//         //   sessionStorage.setItem("userKH", JSON.stringify(result.data));
-//         //   history.goBack();
-//         // }
-//         // setToken( JSON.stringify({
-//         //   taiKhoan: result.data.taiKhoan,
-//         //   accessToken: result.data.accessToken,
-//         //   maLoaiNguoiDung: result.data.maLoaiNguoiDung,
-//         // }))
-//         sessionStorage.setItem(
-//           "USER",JSON.stringify(result.data)
-//         );
-//         history.goBack();
-//       })
-//       .catch((err) => {
-//         dispatch(actLoginFail(err.response.data));
-//       });
-//   };
-// };
+import { actSetLocationLogin } from "../../../../components/NavbarHome/modules/action";
 export const actLoginCallApi = (user, history) => {
   return (dispatch) => {
     dispatch(actLoginRequest());
@@ -40,6 +9,7 @@ export const actLoginCallApi = (user, history) => {
       .post("/QuanLyNguoiDung/DangNhap", user)
       .then((result) => {
         dispatch(actLoginSuccess(result.data));
+        dispatch(actSetLocationLogin(result.data.maNhom));
         sessionStorage.setItem("USER", JSON.stringify(result.data));
         history.replace("/");
       })
@@ -48,8 +18,22 @@ export const actLoginCallApi = (user, history) => {
       });
   };
 };
-export const actUserLogot = (history) => {
-  // sessionStorage.removeItem("accessToken");
+// thêm cái này để set đăng nhập lại
+export const actLogin = (user) => {
+  return (dispatch) => {
+    api
+      .post("/QuanLyNguoiDung/DangNhap", user)
+      .then((result) => {
+        dispatch(actLoginSuccess(result.data));
+        dispatch(actSetLocationLogin(result.data.maNhom));
+        console.log("đã đăng nhập");
+      })
+      .catch((err) => {
+        dispatch(actLoginFail(err?.response?.data));
+      });
+  };
+};
+export const actUserLogot = () => {
   sessionStorage.removeItem("USER");
   return {
     type: ActionTypes.USER_LOGOUT,

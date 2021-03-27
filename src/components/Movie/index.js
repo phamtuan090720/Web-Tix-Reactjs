@@ -21,7 +21,7 @@ function Movie(props) {
             <div className="movie_item">
                 <div className="movie_pic">
                     <img src={data.hinhAnh} alt />
-                    <button onClick={Open} className="play_btn button_trailer_movie" data-toggle="modal" data-target="#modal_trailer"><img id="play_img" src={PlayIcon}/></button>
+                    <button onClick={Open} className="play_btn button_trailer_movie" data-toggle="modal" data-target="#modal_trailer"><img id="play_img" alt="playTrailer" src={PlayIcon}/></button>
                 </div>
                 <div className="movie_description">
                     <p><b>{data.tenPhim}</b></p>

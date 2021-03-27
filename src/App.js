@@ -8,6 +8,7 @@ import PageNotFound from './container/HomeTemplate/PageNotFound';
 import BookingTicket from './container/HomeTemplate/BookingTicket';
 import Login from './container/AdminTemplate/AuthPage';
 import Admin from './container/AdminTemplate';
+import Profile from './container/HomeTemplate/Profile';
 import { Route } from "react-router-dom";
 function App() {
   const showLayoutHome = (routes) => {
@@ -21,6 +22,7 @@ function App() {
     <Suspense fallback={<Loading/>}>
       <Switch>
         {showLayoutHome(routesHome)}
+        <Route path='/profile/:taiKhoan' component={Profile}/>
         <Route path='/admin' component={Admin} />
         <Route path="/booking-ticket/:id" component={BookingTicket} />
         <Route path="/login" component={Login} />

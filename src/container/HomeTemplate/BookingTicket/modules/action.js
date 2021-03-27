@@ -57,7 +57,7 @@ export const actDatVe = (dataTicket) => {
                     headers:{
                         Authorization: `Bearer ${JSON.parse(sessionStorage.getItem("USER")).accessToken}` 
                      },
-                    url:"https://movie0706.cybersoft.edu.vn/api//QuanLyDatVe/DatVe",
+                    url:"https://movie0706.cybersoft.edu.vn/api/QuanLyDatVe/DatVe",
                     method:"POST",
                     data:dataTicket,
                 }).then((rs) => {
