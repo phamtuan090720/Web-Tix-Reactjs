@@ -13,7 +13,7 @@ import { FormControl } from "../../../components/AdminComponent/FormControl";
 import { MiniLoading } from "../../../components/AdminComponent/MiniLoading";
 import * as act from "./modules/actions";
 import { connect } from "react-redux";
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 function LoginPage(props) {
   const useStyle = makeStyles((theme) => ({
@@ -53,7 +53,7 @@ function LoginPage(props) {
       <Container maxWidth={false} classes={{ root: classes.root }}>
         <Typography component="div" style={{ height: "100vh" }} />
         <div className={classes.wrapperForm}>
-          <Link to='/home'><img src={lgLogin} alt="logo Login" className={classes.logoTitle} /></Link>
+          <img src={lgLogin} alt="logo Login" className={classes.logoTitle} />
           <FormControl onSubmit={handleSubmit(onSubmit)}>
             <MyTxt
               label="Tài Khoản"
@@ -72,10 +72,13 @@ function LoginPage(props) {
             {errors.matKhau && (
               <Alert severity="error">Vui lòng không để trống!</Alert>
             )}
-            <Button variant="contained" color="primary" type="submit">
-              Đăng nhập
+            <Button fullWidth variant="contained" color="primary" type="submit">
+              Login
               {loading ? <MiniLoading size="20px" /> : ""}
             </Button>
+            <Link to="/RegisterPage"> <Button fullWidth variant="contained" color="default" type="submit">
+              Register
+            </Button></Link>
             {err ? <Alert severity="error">{err}</Alert> : ""}
           </FormControl>
         </div>

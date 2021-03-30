@@ -21,4 +21,31 @@ const routesHome = [{
     isHome:false
 }
 ];
+// const routesAdmin = [
+//     {
+//       exact: false,
+//       path: "/dashboard",
+//       component: DashBoard,
+//     },
+//     {
+//       exact: false,
+//       path: "/UserManager",
+//       component: UserManager,
+//     },
+//     {
+//       exact: false,
+//       path: "/MovieManagerPage",
+//       component: MovieManagerPage,
+//     },
+//     {
+//       exact: false,
+//       path: "/BookingManagerPage",
+//       component: BookingManagerPage,
+//     },
+//     {
+//       exact: false,
+//       path: "/TheaterManagerPage",
+//       component: TheaterManagerPage,
+//     },
+//   ];
 export { routesHome};
