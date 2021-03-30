@@ -16,7 +16,7 @@ export default function SwitchLabels() {
     <FormGroup row>
       <FormControlLabel
         control={<Switch color="primary" checked={state.checkedA} onChange={handleChange} name="checkedA" />}
-        label="Chế Độ Tối"
+        label="Galaxy Mode"
       />
     </FormGroup>
   );

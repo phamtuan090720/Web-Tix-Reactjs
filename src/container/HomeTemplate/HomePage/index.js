@@ -46,9 +46,7 @@ function HomePage(props) {
     }, [group, isLoading]);
     return (
         <div>
-
             {RenderHTML()}
-        
         </div>
     )
     //  if(Loading) return <Loader/>
