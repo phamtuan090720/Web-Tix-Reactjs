@@ -157,7 +157,7 @@ export default function SimpleTabs() {
                 </Grid>
                 <MenuInfoUser handleCloseMenu={handleCloseMenu} isOpenMenu={isOpenMenu} toggleTab={toggleTab} OpenTabPane={OpenTabPane} Moblie />
             </TabPanel>
-            <TabPanel value={value} index={1}>
+            <TabPanel className={classes.TabPanel} value={value} index={1}>
                 <DataTable/>
             </TabPanel>
             <AppBar />

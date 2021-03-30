@@ -23,7 +23,7 @@ import {CallApiGetInfoAccount} from '../../modules/action';
 import Loading from '../Backdrop';
 const StyledTableCell = withStyles((theme) => ({
   head: {
-    backgroundColor: theme.palette.common.black,
+    backgroundColor:"#d32f2f",
     color: theme.palette.common.white,
     // width: '25%'
   },
@@ -166,7 +166,7 @@ TablePaginationActions.propTypes = {
 function CustomizedTables(props) {
   const classes = useStyles();
   const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(7);
+  const [rowsPerPage, setRowsPerPage] = React.useState(5);
   const {userLogin,getInfoAcount,isLoading,DataVe}=props;
   React.useEffect(()=>{
     let Account = {
@@ -186,6 +186,7 @@ function CustomizedTables(props) {
     setPage(0);
   };
   const RenderTableBody = React.useCallback(()=>{
+    console.log(isLoading)
     if(isLoading){
       return<Loading/>
     }
@@ -200,11 +201,12 @@ function CustomizedTables(props) {
               <TableCell colSpan={6} />
             </TableRow>
           )}
-    </TableBody>
+      </TableBody>
   </>
     }
    
-  },[isLoading,DataVe]);
+  },[isLoading,DataVe,rowsPerPage,page]);
+
   return (
     <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="customized table">
