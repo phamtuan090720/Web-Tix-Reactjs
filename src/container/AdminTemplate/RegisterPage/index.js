@@ -20,7 +20,7 @@ function RegisterPage(props) {
     root: {
       backgroundImage: `url(${bgLogin})`,
       backgroundSize: "cover",
-      backgroundPosition: '50% 50%',
+      // backgroundPosition: '50% 50%',
       alignItems:"center",
       display: 'flex',
       padding:40,
@@ -28,7 +28,9 @@ function RegisterPage(props) {
       // position: "relative;",
     },
     wrapperForm: {
-      maxWidth: "360px",
+      // maxWidth: "600px",
+      // width:'150%',
+      margin:"0 auto",
       padding: "40px 32px 30px",
       // position: "absolute",
       // top: "50%",
@@ -67,10 +69,7 @@ function RegisterPage(props) {
     const { loading, data, err,isAler } = props;
     setUserRegister({ ...userRegister, loading, data, err,isAler });
   }, [props.loading, props.data, props.err,props.isAler]);
-  const RenderAlert = React.useCallback(()=>{
-    // setTimeout(() => {
-    //   setUserRegister({...userRegister,isAler:false});
-    // },3000);
+    const RenderAlert = React.useCallback(()=>{
     return<>
       {
         userRegister.isAler?<Alert severity="success">Đăng Kí Thành Công!</Alert>:""
@@ -81,7 +80,7 @@ function RegisterPage(props) {
     <React.Fragment>
       <CssBaseline />
       <Container maxWidth={false} classes={{ root: classes.root }}>
-        <Typography component="div">
+        <Typography component="div" style={{width:400}}>
           <div className={classes.wrapperForm}>
             <img src={lgLogin} alt="logo Login" className={classes.logoTitle} />
             <FormControl onSubmit={handleSubmit(onSubmit)}>
@@ -90,34 +89,44 @@ function RegisterPage(props) {
                 label="Tài khoản"
                 ref={register({ required: true })}
               />
-              {errors.taiKhoan && <Alert severity="error">This field is required</Alert>
-              }
+              <div>
+                {errors.taiKhoan && <Alert severity="error">This field is required</Alert>}
+              </div>
               <MyTxt
                 name="matKhau"
                 label="Mật khẩu"
                 type="password"
                 ref={register({ required: true })}
               />
+              <div>
               {errors.matKhau && <Alert severity="error">This field is required</Alert>
               }
+              </div>
+             
               <MyTxt
                 name="email"
                 label="Email"
                 ref={register({ required: true })}
               />
-              {errors.email && <Alert severity="error">This field is required</Alert>}
+              <div>
+              {errors.email && <Alert  severity="error">This field is required</Alert>}
+              </div>
               <MyTxt
                 name="soDt"
                 label="Số điện thoại"
                 ref={register({ required: true })}
               />
-              {errors.soDt && <Alert severity="error">This field is required</Alert>}
+              <div>
+              {errors.soDt && <Alert  severity="error">This field is required</Alert>}
+              </div>
               <MyTxt
                 name="hoTen"
                 label="Họ tên"
                 ref={register({ required: true })}
               />
-              {errors.hoTen && <Alert severity="error">This field is required</Alert>}
+              <div>
+                {errors.hoTen && <Alert severity="error">This field is required</Alert>}
+              </div>
               <DefaultButton fullWidth color="default" type="submit">
                 Register
                 {userRegister.loading ? <MiniLoading /> : ""}
