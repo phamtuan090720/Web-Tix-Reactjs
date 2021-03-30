@@ -76,6 +76,10 @@ const useStyles = makeStyles((theme) => ({
     TabPanel: {
         width: '100%',
         position: 'relative',
+        // overflowX: 'scroll',
+        [theme.breakpoints.down(theme.breakpoints.values.sm+100)]: {
+            overflowX: 'scroll',
+        },
     },
     Grid: {
         width: '100%'

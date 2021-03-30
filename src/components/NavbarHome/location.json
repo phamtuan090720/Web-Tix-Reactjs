@@ -1,7 +1,7 @@
 [{
     "stt":1,
     "city":"Hồ Chí Minh",
-    "group":"GP01"
+    "group":"GP03"
 },
 {
     "stt":2,
@@ -11,7 +11,7 @@
 {
     "stt":3,
     "city":"Đà Nẵng",
-    "group":"GP03"
+    "group":"GP01"
 },
 {
     "stt":4,
