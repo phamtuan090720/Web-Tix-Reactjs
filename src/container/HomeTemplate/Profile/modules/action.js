@@ -9,10 +9,10 @@ export const actCallAPIInforUserRequest = (maNhom,tuKhoa)=>{
             api.get(`/QuanLyNguoiDung/TimKiemNguoiDung?MaNhom=${maNhom}&tuKhoa=${tuKhoa}`)
                 .then((rs) => {
                     dispatch(actInforUserSuccess(rs.data[0]));
-                    console.log(rs.data[0]);
+                    // console.log(rs.data[0]);
                 }).catch((err) => {
-                    dispatch(actInforUserFailed(err));
-                    console.log(err);
+                    dispatch(actInforUserFailed(err?.response?.data));
+                    console.log(err?.response?.data);
                 })
         }, 2000);
     }
@@ -34,7 +34,7 @@ const actInforUserFailed = (err)=>{
         payload:err
     }
 }
-export const actUpdateInfoUser = (dataUser)=>{
+export const actUpdateInfoUser = (dataUser,type)=>{
     if(dataUser){
         console.log(dataUser);
         if(JSON.parse(sessionStorage.getItem("USER"))){
@@ -52,7 +52,7 @@ export const actUpdateInfoUser = (dataUser)=>{
                             taiKhoan:rs.data.taiKhoan,
                             matKhau:rs.data.matKhau
                         }
-                        dispatch(actUpdateInfoUserSuccess());
+                        dispatch(actUpdateInfoUserSuccess(type));
                         dispatch(ActionLogin.actLogin(user));
                         dispatch(actCallAPIInforUserRequest(dataUser?.maNhom,dataUser?.taiKhoan));
                     alert("Đổi Thành Công ");
@@ -70,15 +70,45 @@ export const actUpdateInfoUserReqest = ()=>{
         type:ActionsType.UPDATE_USER_REQUEST,
     }
 }
-const actUpdateInfoUserSuccess = ()=>{
+const actUpdateInfoUserSuccess = (type)=>{
     sessionStorage.removeItem("USER");
     return {
         type:"UPDATE_USER_SUCCESS",
+        payload:type
     }
 }
 const actUpdateInfoUserFailed = (err)=>{
     return {
         type:'UPDATE_USER_FAILED',
         payload:err
+    }
+}
+export const CallApiGetInfoAccount = (account)=>{
+    return (dispatch)=>{
+        dispatch(actGetInfoAccountReqest());
+        api.post('/QuanLyNguoiDung/ThongTinTaiKhoan',account).then((rs)=>{
+            dispatch(actGetInfoAccountSuccess(rs.data));
+            console.log(rs.data);
+        }).catch(err=>{
+            dispatch(actGetInfoAccountFailed(err?.response?.data));
+            alert(err?.response?.data);
+        });
+    }
+}
+const actGetInfoAccountReqest = ()=>{
+    return {
+        type:ActionsType.GET_DATA_USER_POST_REQUEST,
+    }
+}
+const actGetInfoAccountSuccess = (data)=>{
+    return {
+        type:ActionsType.GET_DATA_USER_POST_SUCCESS,
+        payload:data,
+    }
+}
+const actGetInfoAccountFailed = (err)=>{
+    return {
+        type:ActionsType.GET_DATA_USER_POST_REQUEST,
+        payload:err,
     }
 }

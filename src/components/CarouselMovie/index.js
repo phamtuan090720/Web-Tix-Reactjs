@@ -7,8 +7,7 @@ import CloseModal from  '../../img/Icon/close.png'
 import ModalTrailer from './ModalTrailer';
 function CarouselMovie(props) {
     
-    const {dataBanner,test} = props;
-    console.log(test);
+    const {dataBanner} = props;
     let settings = {
         dots: true,
         infinite: true,
@@ -16,7 +15,7 @@ function CarouselMovie(props) {
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 5000,
+        autoplaySpeed: 3000,
         cssEase: "linear"
         
       };
@@ -34,14 +33,13 @@ function CarouselMovie(props) {
                     {renderCarouselItem()}
                 </Slider>
             </div>
-            <ModalTrailer CloseModal={CloseModal}/>
+            {/* <ModalTrailer CloseModal={CloseModal}/> */}
         </section>
     )
 }
 const mapStateToProp = (state)=>{
     return{
         dataBanner:state.BannerState.listBanner,
-        test: state.BannerState.linkTrailer
     }
 }
 export default connect(mapStateToProp,null)(CarouselMovie);

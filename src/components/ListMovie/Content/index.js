@@ -134,7 +134,7 @@ function Index(props) {
 
         }, [count, totalCount]
     )
-    console.log(totalCount);
+    // console.log(totalCount);
     const Render = React.useCallback(
         () => {
             return (

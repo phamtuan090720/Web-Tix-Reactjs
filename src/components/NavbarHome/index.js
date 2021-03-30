@@ -63,11 +63,12 @@ function NavbarHome(props) {
     const handleClick = () => {
         setOpen(!open);
     };
-   
+    // console.log(open);
     useEffect(() => {
-        console.log(props.user)
+        // console.log(props.user)
     }, [props]);
-    const { user } = props;
+    const { user, isHome } = props;
+    // console.log("isHome", isHome);
     const openNav = () => {
         document.getElementById('mobile_menu_canvas').style.width = '30%';
         document.getElementById("mobile_menu_canvas").style.opacity = "1";
@@ -77,13 +78,6 @@ function NavbarHome(props) {
         document.getElementById("moblie_menu").style.right = "-70%";
         document.getElementById("mobile_menu_canvas").style.opacity = "0";
         document.getElementById("mobile_menu_canvas").style.width = "0";
-    }
-    const openModalLocation = () => {
-        document.getElementById("modal-locaition").style.display = "block";
-        let show = document.getElementsByClassName("modal-backdrop");
-        if (show.length < 0) {
-            show[0].style.display = "block";
-        }
     }
     const RenderListLocation = () => {
         const { listLocation } = props;
@@ -113,7 +107,7 @@ function NavbarHome(props) {
                         <img src={AvataUser} alt="avatar" />
                         <span onClick={openMenuLogin}>{user.taiKhoan}</span>
                         <div style={{ display: `${Menu}` }} className="menuLogin dropdown-content">
-                            <Link to={`/profile/${user.taiKhoan}`}><div className="Info">Thông Tin Cá Nhân</div></Link> 
+                            <Link to={`/profile/${user.taiKhoan}`}><div className="Info">Thông Tin Cá Nhân</div></Link>
                             <div className="loggOut" onClick={Loggout}>Đăng Xuất<img src={LogoutIcon}></img></div>
                         </div>
                     </div>
@@ -125,7 +119,7 @@ function NavbarHome(props) {
                         <img src={AvataUser} alt="avatar" />
                         <span onClick={openMenuLogin}>{user.taiKhoan}</span>
                         <div style={{ display: `${Menu}` }} className="menuLogin dropdown-content">
-                            <Link to={`/profile/${user.taiKhoan}`}><div className="Info">Thông Tin Cá Nhân</div></Link> 
+                            <Link to={`/profile/${user.taiKhoan}`}><div className="Info">Thông Tin Cá Nhân</div></Link>
                             <div className="Info">Trang Dashboard</div>
                             <div className="loggOut" onClick={Loggout}>Đăng Xuất<img src={LogoutIcon}></img></div>
                         </div>
@@ -157,12 +151,15 @@ function NavbarHome(props) {
                     </ListItem>
                     <Collapse in={open} timeout="auto" unmountOnExit>
                         <List component="div" disablePadding>
-                            <ListItem button className={classes.nested}>
-                                <ListItemIcon>
-                                    <AccountBoxIcon />
-                                </ListItemIcon>
-                                <ListItemText primary="Thông Tin Người Dùng" />
-                            </ListItem>
+                            <Link style={{textDecoration:"none"}} to={`/profile/${user.taiKhoan}`}>
+                                <ListItem button className={classes.nested}>
+                                    <ListItemIcon>
+                                        <AccountBoxIcon />
+                                    </ListItemIcon>
+                                    <ListItemText primary="Thông Tin Người Dùng" />
+                                </ListItem>
+                            </Link>
+
                             <ListItem button className={classes.nested}>
                                 <ListItemIcon>
                                     <ExitToAppIcon />
@@ -190,12 +187,14 @@ function NavbarHome(props) {
                     </ListItem>
                     <Collapse in={open} timeout="auto" unmountOnExit>
                         <List component="div" disablePadding>
-                            <ListItem button className={classes.nested}>
-                                <ListItemIcon>
-                                    <AccountBoxIcon />
-                                </ListItemIcon>
-                                <ListItemText primary="Thông Tin Người Dùng" />
-                            </ListItem>
+                            <Link style={{textDecoration:"none"}} to={`/profile/${user.taiKhoan}`}>
+                                <ListItem button className={classes.nested}>
+                                    <ListItemIcon>
+                                        <AccountBoxIcon />
+                                    </ListItemIcon>
+                                    <ListItemText primary="Thông Tin Người Dùng" />
+                                </ListItem>
+                            </Link>
                             <ListItem button className={classes.nested}>
                                 <ListItemIcon>
                                     <ExitToAppIcon />
@@ -215,7 +214,7 @@ function NavbarHome(props) {
                 </ListItemLink>
             </>
         }
-    },[user])
+    }, [user, open]);
     return (
         <header>
             <div className="header_nav_bar">
@@ -226,22 +225,25 @@ function NavbarHome(props) {
                     <button className="menu_option" type="menu" onClick={openNav}>
                         <span><img src={MenuIcon} alt="menuIcon" /></span>
                     </button>
-                    <div className="header_menu_mid">
-                        <ul className="menu_items">
-                            <li className="menu_item_link">
-                                <a href="#movie_schedule_tix">Lịch Chiếu</a>
-                            </li>
-                            <li className="menu_item_link">
-                                <a href="#cinema_block_tix">Cụm rạp</a>
-                            </li>
-                            <li className="menu_item_link">
-                                <a href="#news_tix">Tin Tức</a>
-                            </li>
-                            <li className="menu_item_link">
-                                <a href="#app_tix">Ứng dụng</a>
-                            </li>
-                        </ul>
-                    </div>
+                    {isHome === true ? (
+                        <div className="header_menu_mid">
+                            <ul className="menu_items">
+                                <li className="menu_item_link">
+                                    <a href="#movie_schedule_tix">Lịch Chiếu</a>
+                                </li>
+                                <li className="menu_item_link">
+                                    <a href="#cinema_block_tix">Cụm rạp</a>
+                                </li>
+                                <li className="menu_item_link">
+                                    <a href="#news_tix">Tin Tức</a>
+                                </li>
+                                <li className="menu_item_link">
+                                    <a href="#app_tix">Ứng dụng</a>
+                                </li>
+                            </ul>
+                        </div>
+                    ) : ""}
+
                     <div className="header_menu_right">
                         {renderHeaderLogin()}
                         <div className="dropdown dropdown_place_header">
@@ -265,35 +267,40 @@ function NavbarHome(props) {
                     subheader={
                         <ListSubheader component="div" id="nested-list-subheader">
                             Menu
-        </ListSubheader>
+                        </ListSubheader>
                     }
                     className={classes.root}
                 >
                     {renderDangNhap()}
-                    <ListItemLink href="#movie_schedule_tix" button onClick={closeNav}>
-                        <ListItemIcon>
-                            <CalendarTodayIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Lịch Chiếu" />
-                    </ListItemLink>
-                    <ListItemLink button onClick={closeNav}>
-                        <ListItemIcon>
-                            <ViewListIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Cụm Rạp" />
-                    </ListItemLink>
-                    <ListItemLink href="#news_tix" button onClick={closeNav}>
-                        <ListItemIcon>
-                            <WebAssetIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Tin Tức" />
-                    </ListItemLink>
-                    <ListItemLink href='#app_tix' button onClick={closeNav}>
-                        <ListItemIcon>
-                            <AppsIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Ứng Dụng" />
-                    </ListItemLink>
+                    {isHome === true ? (
+                        <>
+                            <ListItemLink href="#movie_schedule_tix" button onClick={closeNav}>
+                                <ListItemIcon>
+                                    <CalendarTodayIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Lịch Chiếu" />
+                            </ListItemLink>
+                            <ListItemLink button onClick={closeNav}>
+                                <ListItemIcon>
+                                    <ViewListIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Cụm Rạp" />
+                            </ListItemLink>
+                            <ListItemLink href="#news_tix" button onClick={closeNav}>
+                                <ListItemIcon>
+                                    <WebAssetIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Tin Tức" />
+                            </ListItemLink>
+                            <ListItemLink href='#app_tix' button onClick={closeNav}>
+                                <ListItemIcon>
+                                    <AppsIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Ứng Dụng" />
+                            </ListItemLink>
+                        </>
+                    ) : ""}
+
 
                     {/* <ListItemLink href="#" data-toggle="modal" data-target="#modal-locaition" onClick={openModalLocation}> */}
                     <ListItem button onClick={handleClickOpen}>

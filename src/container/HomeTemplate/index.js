@@ -7,7 +7,7 @@ export default function HomeTemplate({ Component, ...props }) {
     <Route
       {...props}
       render={(propsComponent) => (
-        <LayoutHome>
+        <LayoutHome isHome={props.isHome}>
           <Component {...propsComponent} />
         </LayoutHome>
       )}

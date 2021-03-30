@@ -1,0 +1,1915 @@
+{
+  "taiKhoan": "tuan0907",
+  "matKhau": "123456",
+  "hoTen": "Phạm Tuân",
+  "email": "mr.tuan1749@gmail.com",
+  "soDT": "0363902003",
+  "maNhom": "GP04",
+  "loaiNguoiDung": null,
+  "thongTinDatVe": [
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "CGV",
+          "tenHeThongRap": "CGV - Parkson Đồng Khởi",
+          "maCumRap": "Rạp 2",
+          "tenCumRap": "Rạp 2",
+          "maRap": 632,
+          "tenRap": "Rạp 2",
+          "maGhe": 76365,
+          "tenGhe": "05"
+        }
+      ],
+      "maVe": 47895,
+      "ngayDat": "2021-03-19T20:31:53.717",
+      "tenPhim": "Đẹp gái không có gì sai",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Bitexco",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 470,
+          "tenRap": "Rạp 10",
+          "maGhe": 50441,
+          "tenGhe": "01"
+        }
+      ],
+      "maVe": 47910,
+      "ngayDat": "2021-03-19T21:25:36.96",
+      "tenPhim": "Ted 233",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Bitexco",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 470,
+          "tenRap": "Rạp 10",
+          "maGhe": 50442,
+          "tenGhe": "02"
+        }
+      ],
+      "maVe": 47912,
+      "ngayDat": "2021-03-19T21:26:11.207",
+      "tenPhim": "Ted 233",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Bitexco",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 470,
+          "tenRap": "Rạp 10",
+          "maGhe": 50443,
+          "tenGhe": "03"
+        }
+      ],
+      "maVe": 47914,
+      "ngayDat": "2021-03-19T21:27:44.447",
+      "tenPhim": "Ted 233",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Vincom Quang Trung",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 500,
+          "tenRap": "Rạp 10",
+          "maGhe": 55245,
+          "tenGhe": "05"
+        }
+      ],
+      "maVe": 47916,
+      "ngayDat": "2021-03-19T21:31:32.787",
+      "tenPhim": "Inside Out",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Vincom Quang Trung",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 500,
+          "tenRap": "Rạp 10",
+          "maGhe": 55298,
+          "tenGhe": "58"
+        }
+      ],
+      "maVe": 47918,
+      "ngayDat": "2021-03-19T21:32:41.727",
+      "tenPhim": "Inside Out",
+      "giaVe": 90000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Vincom Quang Trung",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 500,
+          "tenRap": "Rạp 10",
+          "maGhe": 55297,
+          "tenGhe": "57"
+        }
+      ],
+      "maVe": 47920,
+      "ngayDat": "2021-03-19T21:35:11.787",
+      "tenPhim": "Inside Out",
+      "giaVe": 90000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Vincom Quang Trung",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 500,
+          "tenRap": "Rạp 10",
+          "maGhe": 55299,
+          "tenGhe": "59"
+        }
+      ],
+      "maVe": 47922,
+      "ngayDat": "2021-03-19T21:36:58.977",
+      "tenPhim": "Inside Out",
+      "giaVe": 90000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Vincom Quang Trung",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 500,
+          "tenRap": "Rạp 10",
+          "maGhe": 55300,
+          "tenGhe": "60"
+        }
+      ],
+      "maVe": 47924,
+      "ngayDat": "2021-03-19T21:38:31.917",
+      "tenPhim": "Inside Out",
+      "giaVe": 90000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "CGV",
+          "tenHeThongRap": "CGV - Aeon Tân Phú",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 530,
+          "tenRap": "Rạp 10",
+          "maGhe": 60041,
+          "tenGhe": "01"
+        }
+      ],
+      "maVe": 47927,
+      "ngayDat": "2021-03-19T22:10:44.55",
+      "tenPhim": "Batman v Superman: Dawn of Justice",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "CGV",
+          "tenHeThongRap": "CGV - Aeon Tân Phú",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 530,
+          "tenRap": "Rạp 10",
+          "maGhe": 60041,
+          "tenGhe": "01"
+        }
+      ],
+      "maVe": 47928,
+      "ngayDat": "2021-03-19T22:10:44.94",
+      "tenPhim": "Batman v Superman: Dawn of Justice",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Bitexco",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 470,
+          "tenRap": "Rạp 10",
+          "maGhe": 50444,
+          "tenGhe": "04"
+        }
+      ],
+      "maVe": 47930,
+      "ngayDat": "2021-03-19T22:16:50.193",
+      "tenPhim": "Ted 233",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Bitexco",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 470,
+          "tenRap": "Rạp 10",
+          "maGhe": 50455,
+          "tenGhe": "15"
+        }
+      ],
+      "maVe": 47932,
+      "ngayDat": "2021-03-19T22:17:14.25",
+      "tenPhim": "Ted 233",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Bitexco",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 470,
+          "tenRap": "Rạp 10",
+          "maGhe": 50456,
+          "tenGhe": "16"
+        }
+      ],
+      "maVe": 47934,
+      "ngayDat": "2021-03-19T22:18:31.05",
+      "tenPhim": "Ted 233",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Bitexco",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 470,
+          "tenRap": "Rạp 10",
+          "maGhe": 50457,
+          "tenGhe": "17"
+        }
+      ],
+      "maVe": 47936,
+      "ngayDat": "2021-03-19T22:21:57.39",
+      "tenPhim": "Ted 233",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Bitexco",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 470,
+          "tenRap": "Rạp 10",
+          "maGhe": 50458,
+          "tenGhe": "18"
+        }
+      ],
+      "maVe": 47938,
+      "ngayDat": "2021-03-19T22:23:14.433",
+      "tenPhim": "Ted 233",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Bitexco",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 470,
+          "tenRap": "Rạp 10",
+          "maGhe": 50469,
+          "tenGhe": "29"
+        }
+      ],
+      "maVe": 47940,
+      "ngayDat": "2021-03-19T22:24:55.787",
+      "tenPhim": "Ted 233",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Bitexco",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 470,
+          "tenRap": "Rạp 10",
+          "maGhe": 50445,
+          "tenGhe": "05"
+        }
+      ],
+      "maVe": 47943,
+      "ngayDat": "2021-03-19T22:34:48.967",
+      "tenPhim": "Ted 233",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Bitexco",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 470,
+          "tenRap": "Rạp 10",
+          "maGhe": 50459,
+          "tenGhe": "19"
+        }
+      ],
+      "maVe": 47945,
+      "ngayDat": "2021-03-19T22:42:30.57",
+      "tenPhim": "Ted 233",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Bitexco",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 470,
+          "tenRap": "Rạp 10",
+          "maGhe": 50446,
+          "tenGhe": "06"
+        }
+      ],
+      "maVe": 47948,
+      "ngayDat": "2021-03-19T22:46:24.723",
+      "tenPhim": "Ted 233",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Bitexco",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 470,
+          "tenRap": "Rạp 10",
+          "maGhe": 50460,
+          "tenGhe": "20"
+        }
+      ],
+      "maVe": 47950,
+      "ngayDat": "2021-03-19T22:59:05.23",
+      "tenPhim": "Ted 233",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Bitexco",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 470,
+          "tenRap": "Rạp 10",
+          "maGhe": 50461,
+          "tenGhe": "21"
+        }
+      ],
+      "maVe": 47951,
+      "ngayDat": "2021-03-19T23:17:18.4",
+      "tenPhim": "Ted 233",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Bitexco",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 470,
+          "tenRap": "Rạp 10",
+          "maGhe": 50447,
+          "tenGhe": "07"
+        }
+      ],
+      "maVe": 47976,
+      "ngayDat": "2021-03-20T00:58:27.22",
+      "tenPhim": "Ted 233",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Bitexco",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 470,
+          "tenRap": "Rạp 10",
+          "maGhe": 50481,
+          "tenGhe": "41"
+        }
+      ],
+      "maVe": 47977,
+      "ngayDat": "2021-03-20T01:06:00.453",
+      "tenPhim": "Ted 233",
+      "giaVe": 90000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Bitexco",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 470,
+          "tenRap": "Rạp 10",
+          "maGhe": 50590,
+          "tenGhe": "150"
+        }
+      ],
+      "maVe": 47978,
+      "ngayDat": "2021-03-20T01:08:49.813",
+      "tenPhim": "Ted 233",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Bitexco",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 470,
+          "tenRap": "Rạp 10",
+          "maGhe": 50459,
+          "tenGhe": "19"
+        }
+      ],
+      "maVe": 47989,
+      "ngayDat": "2021-03-20T01:26:03.617",
+      "tenPhim": "Ted 233",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Bitexco",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 470,
+          "tenRap": "Rạp 10",
+          "maGhe": 50473,
+          "tenGhe": "33"
+        }
+      ],
+      "maVe": 47990,
+      "ngayDat": "2021-03-20T01:33:50.453",
+      "tenPhim": "Ted 233",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Bitexco",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 470,
+          "tenRap": "Rạp 10",
+          "maGhe": 50474,
+          "tenGhe": "34"
+        }
+      ],
+      "maVe": 47993,
+      "ngayDat": "2021-03-20T01:35:38.143",
+      "tenPhim": "Ted 233",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Bitexco",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 470,
+          "tenRap": "Rạp 10",
+          "maGhe": 50497,
+          "tenGhe": "57"
+        }
+      ],
+      "maVe": 47994,
+      "ngayDat": "2021-03-20T01:42:17.49",
+      "tenPhim": "Ted 233",
+      "giaVe": 90000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Bitexco",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 470,
+          "tenRap": "Rạp 10",
+          "maGhe": 50487,
+          "tenGhe": "47"
+        }
+      ],
+      "maVe": 47995,
+      "ngayDat": "2021-03-20T01:43:25.697",
+      "tenPhim": "Ted 233",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "CGV",
+          "tenHeThongRap": "CGV - Crescent Mall",
+          "maCumRap": "Rạp 5",
+          "tenCumRap": "Rạp 5",
+          "maRap": 545,
+          "tenRap": "Rạp 5",
+          "maGhe": 62487,
+          "tenGhe": "47"
+        }
+      ],
+      "maVe": 48006,
+      "ngayDat": "2021-03-20T03:27:08.613",
+      "tenPhim": "Ant-Man",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "CGV",
+          "tenHeThongRap": "CGV - Crescent Mall",
+          "maCumRap": "Rạp 5",
+          "tenCumRap": "Rạp 5",
+          "maRap": 545,
+          "tenRap": "Rạp 5",
+          "maGhe": 62488,
+          "tenGhe": "48"
+        }
+      ],
+      "maVe": 48007,
+      "ngayDat": "2021-03-20T03:28:42.723",
+      "tenPhim": "Ant-Man",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "CGV",
+          "tenHeThongRap": "CGV - Crescent Mall",
+          "maCumRap": "Rạp 5",
+          "tenCumRap": "Rạp 5",
+          "maRap": 545,
+          "tenRap": "Rạp 5",
+          "maGhe": 62588,
+          "tenGhe": "148"
+        }
+      ],
+      "maVe": 48010,
+      "ngayDat": "2021-03-20T03:33:14.253",
+      "tenPhim": "Ant-Man",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "CGV",
+          "tenHeThongRap": "CGV - Crescent Mall",
+          "maCumRap": "Rạp 5",
+          "tenCumRap": "Rạp 5",
+          "maRap": 545,
+          "tenRap": "Rạp 5",
+          "maGhe": 62587,
+          "tenGhe": "147"
+        }
+      ],
+      "maVe": 48011,
+      "ngayDat": "2021-03-20T03:33:42.737",
+      "tenPhim": "Ant-Man",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Vincom Lê Văn Việt",
+          "maCumRap": "Rạp 5",
+          "tenCumRap": "Rạp 5",
+          "maRap": 485,
+          "tenRap": "Rạp 5",
+          "maGhe": 52851,
+          "tenGhe": "11"
+        }
+      ],
+      "maVe": 48012,
+      "ngayDat": "2021-03-20T04:54:52",
+      "tenPhim": "Trainwreck",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Vincom Lê Văn Việt",
+          "maCumRap": "Rạp 5",
+          "tenCumRap": "Rạp 5",
+          "maRap": 485,
+          "tenRap": "Rạp 5",
+          "maGhe": 52846,
+          "tenGhe": "06"
+        }
+      ],
+      "maVe": 48013,
+      "ngayDat": "2021-03-20T05:08:19.253",
+      "tenPhim": "Trainwreck",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Vincom Lê Văn Việt",
+          "maCumRap": "Rạp 5",
+          "tenCumRap": "Rạp 5",
+          "maRap": 485,
+          "tenRap": "Rạp 5",
+          "maGhe": 52903,
+          "tenGhe": "63"
+        }
+      ],
+      "maVe": 48014,
+      "ngayDat": "2021-03-20T05:10:12.713",
+      "tenPhim": "Trainwreck",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Vincom Lê Văn Việt",
+          "maCumRap": "Rạp 5",
+          "tenCumRap": "Rạp 5",
+          "maRap": 485,
+          "tenRap": "Rạp 5",
+          "maGhe": 52903,
+          "tenGhe": "63"
+        }
+      ],
+      "maVe": 48015,
+      "ngayDat": "2021-03-20T05:12:55.903",
+      "tenPhim": "Trainwreck",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Bitexco",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 470,
+          "tenRap": "Rạp 10",
+          "maGhe": 50591,
+          "tenGhe": "151"
+        }
+      ],
+      "maVe": 48016,
+      "ngayDat": "2021-03-20T05:29:45.157",
+      "tenPhim": "Ted 233",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Bitexco",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 470,
+          "tenRap": "Rạp 10",
+          "maGhe": 50592,
+          "tenGhe": "152"
+        }
+      ],
+      "maVe": 48017,
+      "ngayDat": "2021-03-20T05:31:22.253",
+      "tenPhim": "Ted 233",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Bitexco",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 470,
+          "tenRap": "Rạp 10",
+          "maGhe": 50488,
+          "tenGhe": "48"
+        }
+      ],
+      "maVe": 48018,
+      "ngayDat": "2021-03-20T05:35:18.93",
+      "tenPhim": "Ted 233",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Bitexco",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 470,
+          "tenRap": "Rạp 10",
+          "maGhe": 50446,
+          "tenGhe": "06"
+        }
+      ],
+      "maVe": 48019,
+      "ngayDat": "2021-03-20T05:40:14.087",
+      "tenPhim": "Ted 233",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Bitexco",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 470,
+          "tenRap": "Rạp 10",
+          "maGhe": 50445,
+          "tenGhe": "05"
+        }
+      ],
+      "maVe": 48020,
+      "ngayDat": "2021-03-20T05:43:41.477",
+      "tenPhim": "Ted 233",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Bitexco",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 470,
+          "tenRap": "Rạp 10",
+          "maGhe": 50487,
+          "tenGhe": "47"
+        }
+      ],
+      "maVe": 48021,
+      "ngayDat": "2021-03-20T05:44:33.633",
+      "tenPhim": "Ted 233",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Bitexco",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 470,
+          "tenRap": "Rạp 10",
+          "maGhe": 50447,
+          "tenGhe": "07"
+        }
+      ],
+      "maVe": 48022,
+      "ngayDat": "2021-03-20T06:01:23.717",
+      "tenPhim": "Ted 233",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Bitexco",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 470,
+          "tenRap": "Rạp 10",
+          "maGhe": 50448,
+          "tenGhe": "08"
+        }
+      ],
+      "maVe": 48023,
+      "ngayDat": "2021-03-20T06:15:15.133",
+      "tenPhim": "Ted 233",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Bitexco",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 470,
+          "tenRap": "Rạp 10",
+          "maGhe": 50449,
+          "tenGhe": "09"
+        }
+      ],
+      "maVe": 48024,
+      "ngayDat": "2021-03-20T06:21:03.32",
+      "tenPhim": "Ted 233",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Bitexco",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 470,
+          "tenRap": "Rạp 10",
+          "maGhe": 50450,
+          "tenGhe": "10"
+        }
+      ],
+      "maVe": 48025,
+      "ngayDat": "2021-03-20T06:22:13.5",
+      "tenPhim": "Ted 233",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Bitexco",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 470,
+          "tenRap": "Rạp 10",
+          "maGhe": 50459,
+          "tenGhe": "19"
+        }
+      ],
+      "maVe": 48026,
+      "ngayDat": "2021-03-20T06:25:45.15",
+      "tenPhim": "Ted 233",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Bitexco",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 470,
+          "tenRap": "Rạp 10",
+          "maGhe": 50460,
+          "tenGhe": "20"
+        }
+      ],
+      "maVe": 48027,
+      "ngayDat": "2021-03-20T06:28:14.793",
+      "tenPhim": "Ted 233",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Bitexco",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 470,
+          "tenRap": "Rạp 10",
+          "maGhe": 50461,
+          "tenGhe": "21"
+        },
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Bitexco",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 470,
+          "tenRap": "Rạp 10",
+          "maGhe": 50462,
+          "tenGhe": "22"
+        },
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Bitexco",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 470,
+          "tenRap": "Rạp 10",
+          "maGhe": 50463,
+          "tenGhe": "23"
+        },
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Bitexco",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 470,
+          "tenRap": "Rạp 10",
+          "maGhe": 50464,
+          "tenGhe": "24"
+        }
+      ],
+      "maVe": 48028,
+      "ngayDat": "2021-03-20T06:37:31.693",
+      "tenPhim": "Ted 233",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Bitexco",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 470,
+          "tenRap": "Rạp 10",
+          "maGhe": 50473,
+          "tenGhe": "33"
+        }
+      ],
+      "maVe": 48032,
+      "ngayDat": "2021-03-20T06:40:41.517",
+      "tenPhim": "Ted 233",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Bitexco",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 470,
+          "tenRap": "Rạp 10",
+          "maGhe": 50474,
+          "tenGhe": "34"
+        }
+      ],
+      "maVe": 48033,
+      "ngayDat": "2021-03-20T06:46:38.94",
+      "tenPhim": "Ted 233",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Bitexco",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 470,
+          "tenRap": "Rạp 10",
+          "maGhe": 50479,
+          "tenGhe": "39"
+        }
+      ],
+      "maVe": 48034,
+      "ngayDat": "2021-03-20T06:48:34.603",
+      "tenPhim": "Ted 233",
+      "giaVe": 90000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "CGV",
+          "tenHeThongRap": "CGV - Aeon Bình Tân",
+          "maCumRap": "Rạp 5",
+          "tenCumRap": "Rạp 5",
+          "maRap": 515,
+          "tenRap": "Rạp 5",
+          "maGhe": 57648,
+          "tenGhe": "08"
+        }
+      ],
+      "maVe": 48038,
+      "ngayDat": "2021-03-20T11:28:54.263",
+      "tenPhim": "Home",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "CGV",
+          "tenHeThongRap": "CGV - Aeon Bình Tân",
+          "maCumRap": "Rạp 5",
+          "tenCumRap": "Rạp 5",
+          "maRap": 515,
+          "tenRap": "Rạp 5",
+          "maGhe": 57703,
+          "tenGhe": "63"
+        }
+      ],
+      "maVe": 48040,
+      "ngayDat": "2021-03-20T11:55:14.207",
+      "tenPhim": "Home",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Bitexco",
+          "maCumRap": "Rạp 7",
+          "tenCumRap": "Rạp 7",
+          "maRap": 467,
+          "tenRap": "Rạp 7",
+          "maGhe": 50098,
+          "tenGhe": "138"
+        }
+      ],
+      "maVe": 48041,
+      "ngayDat": "2021-03-20T11:56:47.737",
+      "tenPhim": "Trainwreck",
+      "giaVe": 130000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Vincom Quang Trung",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 500,
+          "tenRap": "Rạp 10",
+          "maGhe": 55392,
+          "tenGhe": "152"
+        }
+      ],
+      "maVe": 48042,
+      "ngayDat": "2021-03-20T12:12:02.713",
+      "tenPhim": "Inside Out",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Vincom Quang Trung",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 500,
+          "tenRap": "Rạp 10",
+          "maGhe": 55248,
+          "tenGhe": "08"
+        }
+      ],
+      "maVe": 48043,
+      "ngayDat": "2021-03-20T12:14:13.573",
+      "tenPhim": "Inside Out",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Vincom Lê Văn Việt",
+          "maCumRap": "Rạp 5",
+          "tenCumRap": "Rạp 5",
+          "maRap": 485,
+          "tenRap": "Rạp 5",
+          "maGhe": 52852,
+          "tenGhe": "12"
+        }
+      ],
+      "maVe": 48044,
+      "ngayDat": "2021-03-20T12:18:04.71",
+      "tenPhim": "Trainwreck",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Vincom Lê Văn Việt",
+          "maCumRap": "Rạp 5",
+          "tenCumRap": "Rạp 5",
+          "maRap": 485,
+          "tenRap": "Rạp 5",
+          "maGhe": 52853,
+          "tenGhe": "13"
+        }
+      ],
+      "maVe": 48045,
+      "ngayDat": "2021-03-20T12:24:43.4",
+      "tenPhim": "Trainwreck",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Vincom Lê Văn Việt",
+          "maCumRap": "Rạp 5",
+          "tenCumRap": "Rạp 5",
+          "maRap": 485,
+          "tenRap": "Rạp 5",
+          "maGhe": 52865,
+          "tenGhe": "25"
+        }
+      ],
+      "maVe": 48046,
+      "ngayDat": "2021-03-20T12:28:58.213",
+      "tenPhim": "Trainwreck",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Vincom Lê Văn Việt",
+          "maCumRap": "Rạp 5",
+          "tenCumRap": "Rạp 5",
+          "maRap": 485,
+          "tenRap": "Rạp 5",
+          "maGhe": 52854,
+          "tenGhe": "14"
+        }
+      ],
+      "maVe": 48047,
+      "ngayDat": "2021-03-20T12:29:50.683",
+      "tenPhim": "Trainwreck",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Vincom Lê Văn Việt",
+          "maCumRap": "Rạp 5",
+          "tenCumRap": "Rạp 5",
+          "maRap": 485,
+          "tenRap": "Rạp 5",
+          "maGhe": 52873,
+          "tenGhe": "33"
+        },
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Vincom Lê Văn Việt",
+          "maCumRap": "Rạp 5",
+          "tenCumRap": "Rạp 5",
+          "maRap": 485,
+          "tenRap": "Rạp 5",
+          "maGhe": 52874,
+          "tenGhe": "34"
+        },
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Vincom Lê Văn Việt",
+          "maCumRap": "Rạp 5",
+          "tenCumRap": "Rạp 5",
+          "maRap": 485,
+          "tenRap": "Rạp 5",
+          "maGhe": 52887,
+          "tenGhe": "47"
+        },
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Vincom Lê Văn Việt",
+          "maCumRap": "Rạp 5",
+          "tenCumRap": "Rạp 5",
+          "maRap": 485,
+          "tenRap": "Rạp 5",
+          "maGhe": 52888,
+          "tenGhe": "48"
+        },
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Vincom Lê Văn Việt",
+          "maCumRap": "Rạp 5",
+          "tenCumRap": "Rạp 5",
+          "maRap": 485,
+          "tenRap": "Rạp 5",
+          "maGhe": 52890,
+          "tenGhe": "50"
+        },
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Vincom Lê Văn Việt",
+          "maCumRap": "Rạp 5",
+          "tenCumRap": "Rạp 5",
+          "maRap": 485,
+          "tenRap": "Rạp 5",
+          "maGhe": 52889,
+          "tenGhe": "49"
+        }
+      ],
+      "maVe": 48048,
+      "ngayDat": "2021-03-20T12:30:51.643",
+      "tenPhim": "Trainwreck",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Vincom Lê Văn Việt",
+          "maCumRap": "Rạp 5",
+          "tenCumRap": "Rạp 5",
+          "maRap": 485,
+          "tenRap": "Rạp 5",
+          "maGhe": 52935,
+          "tenGhe": "95"
+        }
+      ],
+      "maVe": 48054,
+      "ngayDat": "2021-03-20T12:31:54.827",
+      "tenPhim": "Trainwreck",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Vincom Lê Văn Việt",
+          "maCumRap": "Rạp 5",
+          "tenCumRap": "Rạp 5",
+          "maRap": 485,
+          "tenRap": "Rạp 5",
+          "maGhe": 52859,
+          "tenGhe": "19"
+        }
+      ],
+      "maVe": 48055,
+      "ngayDat": "2021-03-20T12:39:52.607",
+      "tenPhim": "Trainwreck",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Vincom Lê Văn Việt",
+          "maCumRap": "Rạp 5",
+          "tenCumRap": "Rạp 5",
+          "maRap": 485,
+          "tenRap": "Rạp 5",
+          "maGhe": 52847,
+          "tenGhe": "07"
+        }
+      ],
+      "maVe": 48056,
+      "ngayDat": "2021-03-20T12:43:12.347",
+      "tenPhim": "Trainwreck",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "CGV",
+          "tenHeThongRap": "CGV - Hùng Vương Plaza",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 590,
+          "tenRap": "Rạp 10",
+          "maGhe": 69706,
+          "tenGhe": "66"
+        }
+      ],
+      "maVe": 48063,
+      "ngayDat": "2021-03-20T15:54:54.197",
+      "tenPhim": "Mad Max: Fury Road",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Vincom Quang Trung",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 500,
+          "tenRap": "Rạp 10",
+          "maGhe": 55245,
+          "tenGhe": "05"
+        }
+      ],
+      "maVe": 48180,
+      "ngayDat": "2021-03-21T18:44:16.657",
+      "tenPhim": "Inside Out",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Vincom Quang Trung",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 500,
+          "tenRap": "Rạp 10",
+          "maGhe": 55287,
+          "tenGhe": "47"
+        }
+      ],
+      "maVe": 48181,
+      "ngayDat": "2021-03-21T18:44:41.377",
+      "tenPhim": "Inside Out",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "Galaxy",
+          "tenHeThongRap": "GLX - Kinh Dương Vương",
+          "maCumRap": "Rạp 6",
+          "tenCumRap": "Rạp 6",
+          "maRap": 756,
+          "tenRap": "Rạp 6",
+          "maGhe": 96224,
+          "tenGhe": "24"
+        }
+      ],
+      "maVe": 48184,
+      "ngayDat": "2021-03-21T20:28:39.02",
+      "tenPhim": "Inside Out",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Bitexco",
+          "maCumRap": "Rạp 3",
+          "tenCumRap": "Rạp 3",
+          "maRap": 463,
+          "tenRap": "Rạp 3",
+          "maGhe": 49325,
+          "tenGhe": "05"
+        }
+      ],
+      "maVe": 48193,
+      "ngayDat": "2021-03-22T00:02:00.927",
+      "tenPhim": "Sửa Lần Cuối Nè",
+      "giaVe": 80000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "LotteCinima",
+          "tenHeThongRap": "Lotte - Gò Vấp",
+          "maCumRap": "Rạp 8",
+          "tenCumRap": "Rạp 8",
+          "maRap": 858,
+          "tenRap": "Rạp 8",
+          "maGhe": 112542,
+          "tenGhe": "22"
+        }
+      ],
+      "maVe": 48194,
+      "ngayDat": "2021-03-22T02:37:08.877",
+      "tenPhim": "True Detective",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "LotteCinima",
+          "tenHeThongRap": "Lotte - Gò Vấp",
+          "maCumRap": "Rạp 8",
+          "tenCumRap": "Rạp 8",
+          "maRap": 858,
+          "tenRap": "Rạp 8",
+          "maGhe": 112527,
+          "tenGhe": "07"
+        }
+      ],
+      "maVe": 48195,
+      "ngayDat": "2021-03-22T02:37:26.227",
+      "tenPhim": "True Detective",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Vincom Quang Trung",
+          "maCumRap": "Rạp 7",
+          "tenCumRap": "Rạp 7",
+          "maRap": 497,
+          "tenRap": "Rạp 7",
+          "maGhe": 54767,
+          "tenGhe": "07"
+        }
+      ],
+      "maVe": 48196,
+      "ngayDat": "2021-03-22T02:47:02.527",
+      "tenPhim": "Avenger",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Vincom Quang Trung",
+          "maCumRap": "Rạp 7",
+          "tenCumRap": "Rạp 7",
+          "maRap": 497,
+          "tenRap": "Rạp 7",
+          "maGhe": 54782,
+          "tenGhe": "22"
+        }
+      ],
+      "maVe": 48197,
+      "ngayDat": "2021-03-22T02:51:04.523",
+      "tenPhim": "Avenger",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Vincom Lê Văn Việt",
+          "maCumRap": "Rạp 2",
+          "tenCumRap": "Rạp 2",
+          "maRap": 482,
+          "tenRap": "Rạp 2",
+          "maGhe": 52394,
+          "tenGhe": "34"
+        }
+      ],
+      "maVe": 48198,
+      "ngayDat": "2021-03-22T02:51:56.94",
+      "tenPhim": "Sửa Lần Cuối Nè",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "CGV",
+          "tenHeThongRap": "CGV - Aeon Bình Tân",
+          "maCumRap": "Rạp 3",
+          "tenCumRap": "Rạp 3",
+          "maRap": 513,
+          "tenRap": "Rạp 3",
+          "maGhe": 57327,
+          "tenGhe": "07"
+        }
+      ],
+      "maVe": 48219,
+      "ngayDat": "2021-03-22T11:05:32.573",
+      "tenPhim": "Tan dat  ky tru vuong",
+      "giaVe": 80000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Vincom Lê Văn Việt",
+          "maCumRap": "Rạp 2",
+          "tenCumRap": "Rạp 2",
+          "maRap": 482,
+          "tenRap": "Rạp 2",
+          "maGhe": 52410,
+          "tenGhe": "50"
+        }
+      ],
+      "maVe": 48220,
+      "ngayDat": "2021-03-22T11:09:29.06",
+      "tenPhim": "Sửa Lần Cuối Nè",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - 3/2",
+          "maCumRap": "Rạp 1",
+          "tenCumRap": "Rạp 1",
+          "maRap": 451,
+          "tenRap": "Rạp 1",
+          "maGhe": 47407,
+          "tenGhe": "07"
+        }
+      ],
+      "maVe": 48221,
+      "ngayDat": "2021-03-22T11:11:16.76",
+      "tenPhim": "Mắt Biếc",
+      "giaVe": 80000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Vincom Lê Văn Việt",
+          "maCumRap": "Rạp 2",
+          "tenCumRap": "Rạp 2",
+          "maRap": 482,
+          "tenRap": "Rạp 2",
+          "maGhe": 52361,
+          "tenGhe": "01"
+        }
+      ],
+      "maVe": 48224,
+      "ngayDat": "2021-03-22T11:17:35.257",
+      "tenPhim": "Sửa Lần Cuối Nè",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Vincom Quang Trung",
+          "maCumRap": "Rạp 7",
+          "tenCumRap": "Rạp 7",
+          "maRap": 497,
+          "tenRap": "Rạp 7",
+          "maGhe": 54809,
+          "tenGhe": "49"
+        }
+      ],
+      "maVe": 48225,
+      "ngayDat": "2021-03-22T11:20:07.377",
+      "tenPhim": "Avenger",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Vincom Lê Văn Việt",
+          "maCumRap": "Rạp 2",
+          "tenCumRap": "Rạp 2",
+          "maRap": 482,
+          "tenRap": "Rạp 2",
+          "maGhe": 52473,
+          "tenGhe": "113"
+        }
+      ],
+      "maVe": 48226,
+      "ngayDat": "2021-03-22T11:22:12.353",
+      "tenPhim": "Sửa Lần Cuối Nè",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Vincom Quang Trung",
+          "maCumRap": "Rạp 7",
+          "tenCumRap": "Rạp 7",
+          "maRap": 497,
+          "tenRap": "Rạp 7",
+          "maGhe": 54810,
+          "tenGhe": "50"
+        }
+      ],
+      "maVe": 48227,
+      "ngayDat": "2021-03-22T11:41:27.42",
+      "tenPhim": "Avenger",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Bitexco",
+          "maCumRap": "Rạp 6",
+          "tenCumRap": "Rạp 6",
+          "maRap": 466,
+          "tenRap": "Rạp 6",
+          "maGhe": 49832,
+          "tenGhe": "32"
+        }
+      ],
+      "maVe": 48228,
+      "ngayDat": "2021-03-22T11:42:29.81",
+      "tenPhim": "Diep Van",
+      "giaVe": 80000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "CGV",
+          "tenHeThongRap": "CGV - Hùng Vương Plaza",
+          "maCumRap": "Rạp 7",
+          "tenCumRap": "Rạp 7",
+          "maRap": 587,
+          "tenRap": "Rạp 7",
+          "maGhe": 69173,
+          "tenGhe": "13"
+        }
+      ],
+      "maVe": 48239,
+      "ngayDat": "2021-03-22T13:29:03.397",
+      "tenPhim": "Tennet 2",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - 3/2",
+          "maCumRap": "Rạp 1",
+          "tenCumRap": "Rạp 1",
+          "maRap": 451,
+          "tenRap": "Rạp 1",
+          "maGhe": 47407,
+          "tenGhe": "07"
+        }
+      ],
+      "maVe": 48240,
+      "ngayDat": "2021-03-22T13:39:30.517",
+      "tenPhim": "đừng xóa hình của tui nữa mà ahuhuhuj",
+      "giaVe": 80000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "CGV",
+          "tenHeThongRap": "CGV - Aeon Tân Phú",
+          "maCumRap": "Rạp 7",
+          "tenCumRap": "Rạp 7",
+          "maRap": 527,
+          "tenRap": "Rạp 7",
+          "maGhe": 59568,
+          "tenGhe": "08"
+        }
+      ],
+      "maVe": 48248,
+      "ngayDat": "2021-03-22T14:05:44.793",
+      "tenPhim": "Natra Two",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Bitexco",
+          "maCumRap": "Rạp 6",
+          "tenCumRap": "Rạp 6",
+          "maRap": 466,
+          "tenRap": "Rạp 6",
+          "maGhe": 49808,
+          "tenGhe": "08"
+        }
+      ],
+      "maVe": 48256,
+      "ngayDat": "2021-03-22T14:55:52.82",
+      "tenPhim": "Diep Van",
+      "giaVe": 80000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "CGV",
+          "tenHeThongRap": "CGV - Hùng Vương Plaza",
+          "maCumRap": "Rạp 7",
+          "tenCumRap": "Rạp 7",
+          "maRap": 587,
+          "tenRap": "Rạp 7",
+          "maGhe": 69174,
+          "tenGhe": "14"
+        }
+      ],
+      "maVe": 48257,
+      "ngayDat": "2021-03-22T14:57:15.863",
+      "tenPhim": "Tennet 2",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "CGV",
+          "tenHeThongRap": "CGV - Hoàng Văn Thụ",
+          "maCumRap": "Rạp 2",
+          "tenCumRap": "Rạp 2",
+          "maRap": 572,
+          "tenRap": "Rạp 2",
+          "maGhe": 66767,
+          "tenGhe": "07"
+        }
+      ],
+      "maVe": 48426,
+      "ngayDat": "2021-03-23T16:44:34.97",
+      "tenPhim": "Hai đứa trẻ",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "CGV",
+          "tenHeThongRap": "CGV - Aeon Bình Tân",
+          "maCumRap": "Rạp 2",
+          "tenCumRap": "Rạp 2",
+          "maRap": 512,
+          "tenRap": "Rạp 2",
+          "maGhe": 57185,
+          "tenGhe": "25"
+        }
+      ],
+      "maVe": 48427,
+      "ngayDat": "2021-03-23T16:48:45.043",
+      "tenPhim": "Vợ 3",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "CGV",
+          "tenHeThongRap": "CGV - Aeon Bình Tân",
+          "maCumRap": "Rạp 2",
+          "tenCumRap": "Rạp 2",
+          "maRap": 512,
+          "tenRap": "Rạp 2",
+          "maGhe": 57183,
+          "tenGhe": "23"
+        }
+      ],
+      "maVe": 48428,
+      "ngayDat": "2021-03-23T16:49:28.627",
+      "tenPhim": "Vợ 3",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Bitexco",
+          "maCumRap": "Rạp 10",
+          "tenCumRap": "Rạp 10",
+          "maRap": 470,
+          "tenRap": "Rạp 10",
+          "maGhe": 50462,
+          "tenGhe": "22"
+        }
+      ],
+      "maVe": 48485,
+      "ngayDat": "2021-03-25T16:56:49.03",
+      "tenPhim": "Ted 233",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Vincom Lê Văn Việt",
+          "maCumRap": "Rạp 5",
+          "tenCumRap": "Rạp 5",
+          "maRap": 485,
+          "tenRap": "Rạp 5",
+          "maGhe": 52845,
+          "tenGhe": "05"
+        }
+      ],
+      "maVe": 48502,
+      "ngayDat": "2021-03-26T22:48:30.57",
+      "tenPhim": "Trainwreck",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    },
+    {
+      "danhSachGhe": [
+        {
+          "maHeThongRap": "BHDStar",
+          "tenHeThongRap": "BHD Star Cineplex - Vincom Lê Văn Việt",
+          "maCumRap": "Rạp 5",
+          "tenCumRap": "Rạp 5",
+          "maRap": 485,
+          "tenRap": "Rạp 5",
+          "maGhe": 52848,
+          "tenGhe": "08"
+        }
+      ],
+      "maVe": 48503,
+      "ngayDat": "2021-03-26T22:48:59.363",
+      "tenPhim": "Trainwreck",
+      "giaVe": 75000,
+      "thoiLuongPhim": 120
+    }
+  ]
+}

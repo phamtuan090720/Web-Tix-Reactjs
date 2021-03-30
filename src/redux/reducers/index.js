@@ -8,7 +8,7 @@ import ModalReducer from '../../components/ModalTrailer';
 import {InfoCheckOutReducer,bookingTicketReducer,DatVeReducer,BillReducer} from '../../container/HomeTemplate/BookingTicket/modules/reducer';
 import AuthReducer from "../../container/AdminTemplate/AuthPage/modules/reducer";
 import {ScheduleReducer} from '../../components/ListMovie/ScheduleBar/modules/reducer';
-import {FindUserReuder,AlerUpdateInfoReducer} from '../../container/HomeTemplate/Profile/modules/reducers';
+import {FindUserReuder,AlerUpdateInfoReducer,infoAccountReducer} from '../../container/HomeTemplate/Profile/modules/reducers';
 const rootReducer  = combineReducers({
     LocationState,
     BannerState,
@@ -25,7 +25,8 @@ const rootReducer  = combineReducers({
     BillReducer,
     ScheduleReducer,
     FindUserReuder,
-    AlerUpdateInfoReducer
+    AlerUpdateInfoReducer,
+    infoAccountReducer
 
 });
 export default rootReducer;

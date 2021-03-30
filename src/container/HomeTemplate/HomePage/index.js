@@ -1,14 +1,15 @@
 import React, { useEffect, Suspense, LazyLoad, useCallback } from 'react';
 import { connect } from 'react-redux';
-// import Carousel from '../../../components/CarouselMovie';
+import Carousel from '../../../components/CarouselMovie';
 // import ListMovie from '../../../components/ListMovie';
-import { actListMovieAPI, actCallApiGetInfoCinemaSytem, actCallApiGetListCinemaPost,actHandleChangePage} from './modules/action';
+import { actListMovieAPI, actCallApiGetInfoCinemaSytem, actCallApiGetListCinemaPost, actHandleChangePage } from './modules/action';
 // import App from '../../../components/App';
 // import Footer from '../../../components/Footer';
 // import New from '../../../components/New';
 // import Cinema from '../../../components/CinemaBlock';
+import ModalTrailer from '../../../components/ModalTrailer';
 import Loader from '../../../components/Loader';
-const Carousel = React.lazy(() => import('../../../components/CarouselMovie'));
+// const Carousel = React.lazy(() => import('../../../components/CarouselMovie'));
 const ListMovie = React.lazy(() => import('../../../components/ListMovie'));
 const Cinema = React.lazy(() => import('../../../components/CinemaBlock'));
 const New = React.lazy(() => import('../../../components/New'));
@@ -19,29 +20,35 @@ function HomePage(props) {
     // // const { count, currentPage, Loading } = props;
     // useEffect(() => {
     // }, [props])
-    const {group} = props;
-    const [isLoading,setIsLoading]=React.useState(true);
+    const { group } = props;
+    const [isLoading, setIsLoading] = React.useState(true);
     useEffect(() => {
-        setTimeout(()=>{
+        setTimeout(() => {
             setIsLoading(false);
-        },2000);
+        }, 2000);
     }, []);
     const RenderHTML = useCallback(() => {
         // setIsLoading(false);
+        // console.log("render Home")
         if (isLoading) return <Loader />
-        return <Suspense fallback={<Loader />}>
-            <Carousel />
-            <ListMovie />
-            <Cinema />
-            <New />
-            <App />
-            <Footer />
-        </Suspense>
-
-    }, [group,isLoading]);
+        return <>
+          
+            <Suspense fallback={<Loader />}>
+                <Carousel />
+                <ListMovie />
+                <Cinema />
+                <New />
+                <App />
+                <Footer />
+            </Suspense>
+            <ModalTrailer />
+        </>
+    }, [group, isLoading]);
     return (
         <div>
+
             {RenderHTML()}
+        
         </div>
     )
     //  if(Loading) return <Loader/>

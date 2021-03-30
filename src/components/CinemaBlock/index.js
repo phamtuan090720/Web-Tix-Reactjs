@@ -11,7 +11,7 @@ function CinemaBlock(props) {
            await props.fetchListSytemCinema();
         }
         fetchDataCinema();
-        console.log('fetchListSytemCinema');
+        // console.log('fetchListSytemCinema');
     },[group]);
     useEffect(()=>{
         if(dataCinemaSytem&&dataCinemaSytem.length>0){

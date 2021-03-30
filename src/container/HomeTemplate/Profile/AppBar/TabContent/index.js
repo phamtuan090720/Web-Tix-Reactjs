@@ -17,14 +17,17 @@ const useStyles = makeStyles((theme) => ({
     tabContent: {
         display: "none",
         opacity:"0",
-        transition:'opacity 0.2s linear',
+        transition:'opacity 0.4s linear',
+        width:"100%",
+        minHeight:"500px",
     },
     tabContentActive: {
         display: "block",
         opacity:"1"
     },
     itemContent: {
-        maxWidth: 345,
+        maxWidth: 400,
+        margin: '0 auto',
     },
     avatar: {
         backgroundColor: '#FF4633',
@@ -79,9 +82,6 @@ function TabConent(props) {
                             title={`Email: ${user.email}`}
                         />
                     </Card>
-          
-
-
             </div>
 
 

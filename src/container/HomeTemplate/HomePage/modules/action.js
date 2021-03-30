@@ -6,7 +6,7 @@ export const actListMovieAPI=(count,currentPage,group)=>{
             api.get(`/QuanLyPhim/LayDanhSachPhimPhanTrang?maNhom=${group}&soTrang=${currentPage}&soPhanTuTrenTrang=${count}`)
             .then((rs)=>{
                 dispatch(actListMovieSuccess(rs.data));
-                console.log(rs.data.totalCount);
+                // console.log(rs.data.totalCount);
             }).catch((err)=>{
                 dispatch(actListMovieFailed(err));
             })

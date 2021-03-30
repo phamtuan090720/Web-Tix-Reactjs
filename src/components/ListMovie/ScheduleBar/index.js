@@ -45,7 +45,7 @@ function Index(props) {
     const CallAPIFilm = (e) => {
         actFetchApiListCinema(e.target.id);
     }
-    console.log("Hệ Thống Rạp", heThongRap);
+    //  
     const Cinema = () => {
         let list = [];
         if (heThongRap) {

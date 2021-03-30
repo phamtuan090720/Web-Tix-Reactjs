@@ -14,7 +14,7 @@ function App() {
   const showLayoutHome = (routes) => {
     if (routes && routes.length > 0) {
       return routes.map((item, index) => {
-        return <HomeTemplate key={index} exact={item.exact} path={item.path} Component={item.component} />
+        return <HomeTemplate key={index} exact={item.exact} path={item.path} isHome={item.isHome} Component={item.component} />
       });
     }
   }

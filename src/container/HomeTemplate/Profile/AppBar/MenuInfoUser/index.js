@@ -7,92 +7,130 @@ import ListItemText from '@material-ui/core/ListItemText';
 import LockOpenIcon from '@material-ui/icons/LockOpen';
 import SettingsIcon from '@material-ui/icons/Settings';
 import PermIdentityIcon from '@material-ui/icons/PermIdentity';
+import ListSubheader from '@material-ui/core/ListSubheader';
 import Collapse from '@material-ui/core/Collapse';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import DarkMode from './Switches';
+import { Paper } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
-    maxWidth: 360,
+    maxWidth: 300,
     backgroundColor: theme.palette.background.paper,
+    [theme.breakpoints.down(theme.breakpoints.values.md)]: {
+    },
+  },
+  Moblie: {
+    width: '100%',
+    maxWidth: 300,
+    backgroundColor: theme.palette.background.paper,
+    position: 'absolute',
+    top: 0,
+    right: 10,
+    [theme.breakpoints.down(theme.breakpoints.values.md)]: {
+      zIndex:10,
+    },
+  },
+  OpenMenu:{
+    height:'auto',
+  },
+  CloseMenu:{
+    height:0,
+    overflow:"hidden",
   },
   nested: {
     paddingLeft: theme.spacing(4),
   },
-  tabActive:{
-    borderRight:' 2px solid #1876f2',
+  tabActive: {
+    borderRight: ' 2px solid #1876f2',
   },
-  tab:{
-    border:"unset",
+  tab: {
+    border: "unset",
     transition: 'all .5s',
-  }
+  },
 }));
-
-function ListItemLink(props) {
-  return <ListItem button component="a" {...props} />;
-}
-
 export default function SimpleList(props) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
-  const {toggleTab,OpenTabPane}=props;
+  const { toggleTab, OpenTabPane, Moblie ,isOpenMenu,handleCloseMenu } = props;
   const handleClick = () => {
     setOpen(!open);
   };
   return (
-    <div className={classes.root}>
-      <List component="nav" aria-label="main mailbox folders">
-        <ListItem button onClick={()=>{
-          OpenTabPane(1);
-        }} className={toggleTab===1 ? classes.tabActive : classes.tab} >
-          <ListItemIcon>
-            <AccountCircleIcon />
-          </ListItemIcon>
-          <ListItemText primary="Thông Tin Cá Nhân" />
-        </ListItem>
-        <ListItem button onClick={()=>{
-          OpenTabPane(2);
-        }} className={toggleTab===2 ? classes.tabActive : classes.tab}>
-          <ListItemIcon>
-            <PermIdentityIcon />
-          </ListItemIcon>
-          <ListItemText primary="Thay Đổi Thông Tin" />
-        </ListItem>
-        <ListItem button button onClick={()=>{
-          OpenTabPane(3);
-        }} className={toggleTab===3 ? classes.tabActive : classes.tab}>
-          <ListItemIcon>
-            <LockOpenIcon />
-          </ListItemIcon>
-          <ListItemText primary="Thay Đổi Mật Khẩu" />
-        </ListItem>
-        <ListItem button onClick={handleClick}>
-          <ListItemIcon>
-            <SettingsIcon />
-          </ListItemIcon>
-          <ListItemText primary="Cài Đặt" />
-          {open ? <ExpandLess /> : <ExpandMore />}
-        </ListItem>
-        <Collapse in={open} timeout="auto" unmountOnExit>
-          <List component="div" disablePadding>
-            <ListItem button className={classes.nested}>
-              <ListItemText primary="Đổi BackGround" />
-            </ListItem>
-            <ListItem button className={classes.nested}>
-              <DarkMode/>
-            </ListItem>
-            <ListItem button className={classes.nested}>
-              <ListItemText primary="Đăng Xuất" />
-              <ListItemIcon>
-                <ExitToAppIcon/>
-              </ListItemIcon>
-            </ListItem>
-          </List>
-        </Collapse>
-      </List>
-    </div>
+    <>
+      {Moblie ? (
+        <div className={classes.Moblie}>
+          <Paper style={{transition:"height 2s"}} className={isOpenMenu?classes.OpenMenu:classes.CloseMenu} elevation={3}>
+            <List component="nav" aria-label="main mailbox folders">
+              <ListSubheader>Menu</ListSubheader>
+              <ListItem button onClick={() => {
+                OpenTabPane(1);
+                handleCloseMenu();
+              }} className={toggleTab === 1 ? classes.tabActive : classes.tab} >
+                <ListItemIcon>
+                  <AccountCircleIcon />
+                </ListItemIcon>
+                <ListItemText primary="Thông Tin Cá Nhân" />
+              </ListItem>
+              <ListItem button onClick={() => {
+                OpenTabPane(2);
+                handleCloseMenu();
+              }} className={toggleTab === 2 ? classes.tabActive : classes.tab}>
+                <ListItemIcon>
+                  <PermIdentityIcon />
+                </ListItemIcon>
+                <ListItemText primary="Thay Đổi Thông Tin" />
+              </ListItem>
+              <ListItem button button onClick={() => {
+                OpenTabPane(3);
+                handleCloseMenu();
+              }} className={toggleTab === 3 ? classes.tabActive : classes.tab}>
+                <ListItemIcon>
+                  <LockOpenIcon />
+                </ListItemIcon>
+                <ListItemText primary="Thay Đổi Mật Khẩu" />
+              </ListItem>
+            </List>
+          </Paper>
+        </div>
+      ) : (
+        <div className={classes.root}>
+          <Paper elevation={3}>
+            <List component="nav" aria-label="main mailbox folders">
+            <ListSubheader>Menu</ListSubheader>
+              <ListItem button onClick={() => {
+                OpenTabPane(1);
+              }} className={toggleTab === 1 ? classes.tabActive : classes.tab} >
+                <ListItemIcon>
+                  <AccountCircleIcon />
+                </ListItemIcon>
+                <ListItemText primary="Thông Tin Cá Nhân" />
+              </ListItem>
+              <ListItem button onClick={() => {
+                OpenTabPane(2);
+              }} className={toggleTab === 2 ? classes.tabActive : classes.tab}>
+                <ListItemIcon>
+                  <PermIdentityIcon />
+                </ListItemIcon>
+                <ListItemText primary="Thay Đổi Thông Tin" />
+              </ListItem>
+              <ListItem button button onClick={() => {
+                OpenTabPane(3);
+              }} className={toggleTab === 3 ? classes.tabActive : classes.tab}>
+                <ListItemIcon>
+                  <LockOpenIcon />
+                </ListItemIcon>
+                <ListItemText primary="Thay Đổi Mật Khẩu" />
+              </ListItem>
+            </List>
+          </Paper>
+        </div>
+      )}
+    </>
+
+
+
   );
 }

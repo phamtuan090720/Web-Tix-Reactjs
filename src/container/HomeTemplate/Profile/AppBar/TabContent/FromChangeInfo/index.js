@@ -25,6 +25,8 @@ const useStyles = makeStyles((theme) => ({
             margin: theme.spacing(1),
             width: '100%',
         },
+        width: '100%',
+        padding:'20px',
     },
     row: {
         display: 'flex',
@@ -141,12 +143,12 @@ function FromChangeInfoUser(props) {
             ...data,
         }
         console.log("user",dataUser);
-        updateUser(dataUser);   
+        updateUser(dataUser,"ChangeInfo");   
     };
     React.useEffect(() => {
     }, [user]);
     return (
-        <Paper>
+        <Paper style={{width:"100%"}}>
             <form className={classes.root} onSubmit={handleSubmit(onSubmit)}>
                 <div className={classes.title}>Thay Đổi Thông Tin</div>
                 <div className={classes.row}>
@@ -293,8 +295,8 @@ const mapStateToProp = (state) => {
 }
 const mapDispatchToProp = (dispatch) => {
     return {
-        updateUser:(data)=>{
-            dispatch(Action.actUpdateInfoUser(data));
+        updateUser:(data,type)=>{
+            dispatch(Action.actUpdateInfoUser(data,type));
         }
     }
 }

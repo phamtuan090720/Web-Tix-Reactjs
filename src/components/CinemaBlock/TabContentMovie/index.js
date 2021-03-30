@@ -2,7 +2,7 @@ import React from 'react'
 import ContentChilld from './ConentChild';
 export default function index(props) {
     const { dataListCinema } = props;
-    console.log(dataListCinema);
+    // console.log(dataListCinema);
     const renderHTML = () => {
         if(dataListCinema&&dataListCinema.length>0){
             return dataListCinema.map((item,index)=>{

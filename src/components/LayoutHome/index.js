@@ -2,7 +2,7 @@ import NavbarHome from '../NavbarHome';
 function LayoutHome (props){
     return(
         <div>
-            <NavbarHome/>
+            <NavbarHome isHome={props.isHome}/>
             {props.children}
         </div>
     )

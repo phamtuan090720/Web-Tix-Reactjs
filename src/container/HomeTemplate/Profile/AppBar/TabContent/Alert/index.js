@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     const classes = useStyles();
     const [isOpen,setIsOpen]=React.useState("none");
     const { isErr,isAlert,mess,user,rsAlert} = props;
-    console.log(isAlert);
+    // console.log(isAlert);
     React.useEffect(()=>{
         if(isAlert===true){
             setIsOpen("block");
@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
         setTimeout(() => {
             setIsOpen("none");
             rsAlert();
-            console.log("set lại")
+            // console.log("set lại")
         }, 3000);
     },[isAlert,isErr,mess]);
     return (

@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { connect } from 'react-redux';
 import Body from './Body';
 import * as Action from './modules/action';
+import Nav from './Nav';
 function Profile(props) {
     const {user,userLogin,callApiFindUser}=props;
     React.useEffect(()=>{
@@ -9,6 +10,7 @@ function Profile(props) {
     },[]);
     return (
         <>
+            <Nav/>
             <Body></Body>
         </>
     )

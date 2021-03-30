@@ -63,12 +63,12 @@ function FromChangePassword(props) {
         maLoaiNguoiDung: user.maLoaiNguoiDung,
         hoTen: user.hoTen,
       }
-      props.changePassword(dataUser);
+      props.changePassword(dataUser,"changePassword");
       console.log("dataUser",dataUser)
     }
   };
 
-  console.log("data", user, "userFind", findUser);
+  // console.log("data", user, "userFind", findUser);
   const [valuesPassword, setValuesPassword] = React.useState({
     amount: '',
     password: '',
@@ -204,15 +204,14 @@ function FromChangePassword(props) {
       setValuesNewPassword({ ...valuesNewPassword, password:"" });
     }
   },[props.isErr]);
-  console.log(stateCheckErr);
-
+  // console.log(stateCheckErr);
   return (
     <Paper className={classes.root}>
       <div className={classes.title}>Xác nhận mật khẩu</div>
       <form onSubmit={handleSubmit(onSubmit)} className={classes.row} >
         <div className="row  m-0">
           <div className='col-12 m-0 p-0 row align-items-center'>
-            <div className='row m-0 p-0 col-6'>
+            <div className='row m-0 p-0 col-12 col-md-6'>
               <div className="col-12 mt-3 d-flex justify-content-center">
                 <FormControl variant="outlined" error={stateCheckErr?.errors?.password ? true : false} size="small">
                   <InputLabel htmlFor="outlined-adornment-password">Mật Khẩu Hiện Tại</InputLabel>
@@ -313,7 +312,7 @@ function FromChangePassword(props) {
                   <Alert style={{ backgroundColor: "white", color: "red", marginLeft: 30, padding: 0 }} severity="error">{stateCheckErr?.errors.confirmPassword}</Alert>) : ""}
               </div>
             </div>
-            <div className="col-6 p-0">
+            <div className="col-12 col-md-6 p-0">
               <p style={{ color: "#8a9cb7" }}>- <b>Chú ý:</b> Thực hiện bước này để bảo vệ tài khoản của bạn</p>
               <p style={{ color: "#8a9cb7" }}>- <b>Gợi Ý:</b> Nên đặt mật khẩu từ 6 ký tự trở lên</p>
             </div>
@@ -336,8 +335,8 @@ const mapStateToProp = (state) => {
 }
 const mapDispatchToProp = (dispatch) => {
   return {
-      changePassword:(data)=>{
-          dispatch(Action.actUpdateInfoUser(data));
+      changePassword:(data,type)=>{
+          dispatch(Action.actUpdateInfoUser(data,type));
       }
   }
 }
