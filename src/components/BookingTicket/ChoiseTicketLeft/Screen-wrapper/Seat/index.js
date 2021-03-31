@@ -12,6 +12,7 @@ function Index(props) {
             id: data.maGhe,
             name: name,
             giaTien: data.giaVe,
+            loaiGhe:data.loaiGhe,
         }
         let isHave = false;
         listSeatSelector.map((item) => {

@@ -10,7 +10,7 @@ import {actCloseAlret} from '../../container/HomeTemplate/BookingTicket/modules/
 
 function Index(props) {
     const {data,handelRebookTicket,user,malichChieu,isOpen,mess,isErr,closeAlert}=props;
-    console.log(isOpen,mess,isErr);
+    // console.log(isOpen,mess,isErr);
     const handleClose = ()=>{
         closeAlert();
     }

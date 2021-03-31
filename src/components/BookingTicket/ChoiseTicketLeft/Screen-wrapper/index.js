@@ -11,7 +11,7 @@ export default function index(props) {
         }
         return Ds;
     }
-    console.log(DanhSachGheVip(data));
+    // console.log(DanhSachGheVip(data));
     const DanhSachGheThuong = (data) => {
         let Ds = [];
         if (data) {
@@ -21,11 +21,9 @@ export default function index(props) {
         }
         return Ds;
     }
-    console.log(DanhSachGheThuong(data));
     const RenderSeatLine = (nameLine, IndexStart, IndexEnd, Array) => {
         let data = [];
         data = Array.slice(IndexStart, IndexEnd);
-        console.log(data);
         return <li class="seat-line row">
             <span className="col-1">{nameLine}</span>
                 <ul className="seat--area col-10" >

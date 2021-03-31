@@ -187,7 +187,7 @@ function NavbarAdmin(props) {
             <MenuIcon />
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
-            <img src={logo} alt="logo" style={{ width: "50px" }} />
+            <Link to='/'><img src={logo} alt="logo" style={{ width: "50px" }} /></Link>
           </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>

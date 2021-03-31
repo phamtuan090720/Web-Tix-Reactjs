@@ -256,7 +256,7 @@ function FromChangeInfoUser(props) {
                         <div className="row">
                             <div className='col'>
                                 <FormControl>
-                                    <InputLabel id="maLoai">Mã Loại Người Dùng</InputLabel>
+                                    <InputLabel style={{width:200}} id="maLoai">Mã Loại Người Dùng</InputLabel>
                                     <Controller
                                         as={
                                             <Select
@@ -271,9 +271,9 @@ function FromChangeInfoUser(props) {
                                         }
                                         control={control}
                                         name="maLoaiNguoiDung"
-                                        defaultValue={user ? user.maLoaiNguoiDung : ""}
+                                        defaultValue={user ? user?.maLoaiNguoiDung : ""}
                                     />
-                                    <FormHelperText>Bạn Không Có Quyền Thay Đổi</FormHelperText>
+                                    {user?.maLoaiNguoiDung==="KhachHang"?( <FormHelperText>Bạn Không Thể Thay Đổi</FormHelperText>):""}
                                 </FormControl>
                             </div>
                         </div>

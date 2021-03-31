@@ -8,14 +8,42 @@ import DefaultPicMovie from '../../img/default-film.webp';
 import { Link } from 'react-router-dom';
 function Movie(props) {
     const { data,openTrailer } = props;
+    // console.log(data);
     let Open = ()=>{
        openTrailer(data.trailer);
     }
-    const RenderStart = React.useCallback((point)=>{
-        switch(point){
-
+    const calculatePoint=(point)=>{
+        let a = Number(point)/2;
+        return a;
+    }
+    console.log(calculatePoint(9));
+    const checkDouble = (point)=>{
+        if(Math.abs(point- parseInt(point))){
+            return true;
         }
-    },[])
+        else{
+            return false;
+        }
+    }
+    const RenderStart = React.useCallback((point)=>{
+        if(checkDouble(point)){
+                switch(parseInt(point)){
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                }
+        }
+        else{
+            switch(parseInt(point)){
+                case 1:
+                case 2:
+                case 3:
+                case 4:
+                case 5:
+            }
+        }
+    });
     if(data){
         return (
             <div className="movie_item">

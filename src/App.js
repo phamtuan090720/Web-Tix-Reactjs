@@ -2,11 +2,11 @@ import './App.css';
 import { Switch } from 'react-router-dom';
 import React, { Suspense } from 'react';
 import Loading from './components/Loader';
-import { routesHome } from './routes';
+import { routesHome,routesAdmin} from './routes';
 import HomeTemplate from './container/HomeTemplate';
 import PageNotFound from './container/HomeTemplate/PageNotFound';
 import BookingTicket from './container/HomeTemplate/BookingTicket';
-import Admin from './container/AdminTemplate';
+import AdminLayout from "./container/AdminTemplate";
 import Profile from './container/HomeTemplate/Profile';
 import RegisterPage from "./container/AdminTemplate/RegisterPage";
 import LoginPage from "./container/AdminTemplate/AuthPage";
@@ -19,26 +19,26 @@ function App() {
       });
     }
   }
-  // const showLayoutAdmin = (routes) => {
-  //   if (routes && routes.length > 0) {
-  //     return routes.map((item, index) => {
-  //       return (
-  //         <AdminLayout
-  //           exact={item.exact}
-  //           path={item.path}
-  //           Component={item.component}
-  //           key={index}
-  //         />
-  //       );
-  //     });
-  //   }
-  // };
+  const showLayoutAdmin = (routes) => {
+    if (routes && routes.length > 0) {
+      return routes.map((item, index) => {
+        return (
+          <AdminLayout
+            exact={item.exact}
+            path={item.path}
+            Component={item.component}
+            key={index}
+          />
+        );
+      });
+    }
+  };
   return (
     <Suspense fallback={<Loading/>}>
       <Switch>
         {showLayoutHome(routesHome)}
+        {showLayoutAdmin(routesAdmin)}
         <Route path='/profile/:taiKhoan' component={Profile}/>
-        <Route path='/admin' component={Admin} />
         <Route path="/booking-ticket/:id" component={BookingTicket} />
         <Route path="/login" component={LoginPage} />
         <Route path="/RegisterPage" component={RegisterPage} />

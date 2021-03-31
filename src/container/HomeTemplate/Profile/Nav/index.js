@@ -21,6 +21,7 @@ import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import { actUserLogot } from '../../../AdminTemplate/AuthPage/modules/actions';
 import { connect } from 'react-redux';
 import AvataUser from '../../../../img/AvataUser.jpg';
+import DashboardIcon from '@material-ui/icons/Dashboard';
 
 const useStyles = makeStyles({
     list: {
@@ -32,18 +33,18 @@ const useStyles = makeStyles({
     nested: {
         paddingLeft: '60px',
     },
-    Img:{
+    Img: {
         width: '35px',
         height: '36px',
         borderRadius: '50%',
-        marginRight:'10px'
-      }
+        marginRight: '10px'
+    }
 });
 function ListItemLink(props) {
     return <ListItem button component="a" {...props} />;
 }
 function Nav(props) {
-    const {user} = props;
+    const { user } = props;
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
     const handleClickCaiDatt = () => {
@@ -55,7 +56,7 @@ function Nav(props) {
         }
         setOpen(open);
     };
-    const Loggout = ()=>{
+    const Loggout = () => {
         props.logOut(props.history);
     }
     const [openCallapeCaiDat, setOpenCallapeCaiDat] = React.useState(true);
@@ -73,11 +74,11 @@ function Nav(props) {
                             <span>{user.taiKhoan}</span>
                         </ListItemText>
 
-                        {open ? <ExpandLess /> : <ExpandMore />}
+                        {openCallapeUser ? <ExpandLess /> : <ExpandMore />}
                     </ListItem>
-                    <Collapse in={open} timeout="auto" unmountOnExit>
+                    <Collapse in={openCallapeUser} timeout="auto" unmountOnExit>
                         <List component="div" disablePadding>
-                            <Link style={{textDecoration:"none"}} to={`/profile/${user.taiKhoan}`}>
+                            <Link style={{ textDecoration: "none" }} to={`/profile/${user.taiKhoan}`}>
                                 <ListItem button className={classes.nested}>
                                     <ListItemIcon>
                                         <AccountBoxIcon />
@@ -88,15 +89,9 @@ function Nav(props) {
 
                             <ListItem button className={classes.nested}>
                                 <ListItemIcon>
-                                    <ExitToAppIcon />
+                                    <DashboardIcon />
                                 </ListItemIcon>
                                 <ListItemText primary="Trang Dashboard" />
-                            </ListItem>
-                            <ListItem onClick={Loggout} button className={classes.nested}>
-                                <ListItemIcon>
-                                    <ExitToAppIcon />
-                                </ListItemIcon>
-                                <ListItemText primary="Đăng Xuất" />
                             </ListItem>
                         </List>
                     </Collapse>
@@ -113,7 +108,7 @@ function Nav(props) {
                     </ListItem>
                     <Collapse in={openCallapeUser} timeout="auto" unmountOnExit>
                         <List component="div" disablePadding>
-                            <Link style={{textDecoration:"none"}} to={`/profile/${user.taiKhoan}`}>
+                            <Link style={{ textDecoration: "none",color:"black" }} to={`/profile/${user.taiKhoan}`}>
                                 <ListItem button className={classes.nested}>
                                     <ListItemIcon>
                                         <AccountBoxIcon />
@@ -159,8 +154,8 @@ function Nav(props) {
                 <div
                     className={classes.list}
                     role="presentation"
-                    // onClick={toggleDrawer(false)}
-                    // onKeyDown={toggleDrawer(false)}
+                // onClick={toggleDrawer(false)}
+                // onKeyDown={toggleDrawer(false)}
                 >
                     <List>
                         {renderDangNhap()}

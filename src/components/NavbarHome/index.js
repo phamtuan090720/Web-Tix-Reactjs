@@ -120,7 +120,7 @@ function NavbarHome(props) {
                         <span onClick={openMenuLogin}>{user.taiKhoan}</span>
                         <div style={{ display: `${Menu}` }} className="menuLogin dropdown-content">
                             <Link to={`/profile/${user.taiKhoan}`}><div className="Info">Thông Tin Cá Nhân</div></Link>
-                            <div className="Info">Trang Dashboard</div>
+                            <Link to='/dashboard'><div className="Info">Trang Dashboard</div></Link>
                             <div className="loggOut" onClick={Loggout}>Đăng Xuất<img src={LogoutIcon}></img></div>
                         </div>
                     </div>

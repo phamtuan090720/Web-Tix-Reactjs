@@ -6,7 +6,6 @@ import Loading from '../../../components/Loader';
 import { Redirect } from 'react-router';
 function Index(props) {
     const {fetchAPIBookingMovie,data,loading,resetStateCheckOut,user,restStateDatVe} = props;
-    console.log(data);
     const id = props.match.params.id;
     useEffect(()=>{
         fetchAPIBookingMovie(id);

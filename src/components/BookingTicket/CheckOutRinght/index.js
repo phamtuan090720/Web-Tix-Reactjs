@@ -11,7 +11,7 @@ function Index(props) {
     //     margin-bottom: 0;
     // `;
     const { data, listSeatSelector, total, user, malichChieu, actBookTicket, actGetInfoCustomer } = props;
-    console.log(user, parseInt(malichChieu));
+    // console.log(user, parseInt(malichChieu));
     const [isOpen, setIsOpen] = useState(false);
     const [isOpenNoti, setIsOpenNoti] = useState(false);
 
@@ -49,8 +49,7 @@ function Index(props) {
         SDT: null,
     });
     // console.log(user.taiKhoan);
-    console.log(state);
-    // console.log(listSeatSelector);
+    console.log(listSeatSelector);
     const danhSachGheChon = () => {
         if (listSeatSelector) {
             return listSeatSelector.map((item) => {
@@ -98,7 +97,7 @@ function Index(props) {
                     SDT: state.values.phone,
                 });
             }
-          
+
         };
     }
 
@@ -169,6 +168,24 @@ function Index(props) {
             })
         }
     }
+    console.log(listSeatSelector);
+    const ListSeatNormal = (Arr) => {
+        if (Arr) {
+            let listSeat = Arr.filter((item) => {
+                return item.loaiGhe === "Thuong"
+            })
+            return listSeat;
+        }
+    }
+    const ListSeatVip = (Arr) => {
+        if (Arr) {
+            let listSeat = Arr.filter((item) => {
+                return item.loaiGhe === "Vip"
+            })
+            return listSeat;
+        }
+    }
+    console.log('Ghế Thường', ListSeatNormal(listSeatSelector));
     return (
         <>
             <div className="checkOutRight" id='CheckOutRight'>
@@ -182,8 +199,13 @@ function Index(props) {
                         </div>
                     </div>
                 </div>
-                <div className="row chair">
-                    <span className="chair_content">Ghế :{RenderListSeat(listSeatSelector)} </span><span>0đ</span>
+                <div className="row chair row">
+                    <div style={{textAlign:"left"}} className="col-12 d-flex justify-content-between">
+                        <span className="chair_content">Ghế Thường :{RenderListSeat(ListSeatNormal(listSeatSelector))} </span><span>{ListSeatNormal(listSeatSelector).length>0?ListSeatNormal(listSeatSelector)[0].giaTien:"0"}đ</span>
+                    </div>
+                    <div style={{textAlign:"left"}} className="col-12 d-flex justify-content-between">
+                        <span className="chair_content">Ghế Vip :{RenderListSeat(ListSeatVip(listSeatSelector))} </span><span>{ListSeatVip(listSeatSelector).length>0?ListSeatVip(listSeatSelector)[0].giaTien:"0"}đ</span>
+                    </div>
                 </div>
                 <form>
                     <div className="inputUser">
@@ -218,7 +240,7 @@ function Index(props) {
                         </div>
                     </div>
                     <div className="row total">
-                            <p className="cash">Tổng: {total} đ</p>
+                        <p className="cash">Tổng: {total} đ</p>
                     </div>
                     <div className="button-group-checkOut">
                         <div className="btn back" onClick={() => {
@@ -239,7 +261,7 @@ function Index(props) {
                             <span />
       Đặt Vé
     </div>
-                       
+
                     </div>
                 </form>
 
