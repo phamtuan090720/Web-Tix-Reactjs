@@ -43,7 +43,6 @@ const useStyles = makeStyles({
   },
   Controller: {
     width: "150px",
-    color:"white"
   },
 });
 
