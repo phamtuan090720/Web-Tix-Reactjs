@@ -5,7 +5,7 @@
  
   Phân Chia Công Việc Như Sau:
 
-**Phạm Tuân:**
+**Phạm Tuân** Làm Về các trang Client:
 
 - Home
 - Login
@@ -14,7 +14,7 @@
 - Detail movie
 - Booking ticket
 
-**Trần Hải Bình:**
+**Trần Hải Bình** Làm Về các trang Admin:
 
 - Dashboard
 - Booking Manager Page
