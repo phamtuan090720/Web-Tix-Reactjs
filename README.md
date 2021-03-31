@@ -57,4 +57,12 @@
 - TheaterManagerPage:
 ![TheaterManagerPage](https://user-images.githubusercontent.com/52484769/113178105-7022ed00-9278-11eb-91d2-681735b46d39.png)
 
+Accout Để test:
+Khách Hàng:
+Tài Khoản: tuan0907
+Mật Khẩu: 123456
+Quản Trị:
+Tài Khoản: 123@admin
+Mật Khẩu: 147
+
 Sẽ có Video Demo Sớm Cho Các Bạn! 
