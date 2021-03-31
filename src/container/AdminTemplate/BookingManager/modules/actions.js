@@ -137,16 +137,6 @@ export const actCreateShowTimes = (data) => {
           });
       }
     }
-    // api
-    //   .post(`/QuanLyDatVe/TaoLichChieu`, data)
-    //   .then((rs) => {
-		// 		console.log(rs.data);
-		// 		dispatch(createShowTimesSuccess(rs?.data));
-    //   })
-    //   .catch((err) => {
-		// 		console.log(err);
-		// 		dispatch(createShowTimesFail(err?.response?.data));
-    //   });
   };
 };
 

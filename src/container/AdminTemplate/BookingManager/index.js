@@ -172,7 +172,7 @@ function BookingManagerPage(props) {
       <Container maxWidth={false} className={classes.Container}>
         <Typography
           component="div"
-          style={{ backgroundColor: "rgb(45, 45, 45)", height: "100vh" }}
+          style={{ backgroundColor: "#ffffff", height: "100vh" }}
           className={classes.Typo}
         >
           <Grid container spacing={3}>

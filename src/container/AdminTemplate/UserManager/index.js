@@ -97,7 +97,7 @@ function UserManager(props) {
         <Container maxWidth={false} className={classes.root}>
           <Typography
             component="div"
-            style={{ backgroundColor: "#2D2D2D", height: "100%" }}
+            style={{ backgroundColor: "#ffffff", height: "100%" }}
             className={classes.content}
           >
             <Container maxWidth="lg">

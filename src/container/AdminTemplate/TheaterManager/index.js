@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
   },
   root: {
     flexGrow: 1,
-    backgroundColor: "rgb(45, 45, 45)",
+    backgroundColor: "#ffffff",
     height: "100vh",
     padding: "30px",
   },
@@ -203,7 +203,7 @@ function TheaterManagerPage(props) {
             )}
           </AccordionDetails>
         </Accordion>
-        <Accordion
+        {/* <Accordion
           expanded={expanded === "panel3"}
           onChange={handleChange("panel3")}
         >
@@ -248,7 +248,7 @@ function TheaterManagerPage(props) {
               sit amet egestas eros, vitae egestas augue. Duis vel est augue.
             </Typography>
           </AccordionDetails>
-        </Accordion>
+        </Accordion> */}
       </Container>
       <Backdrop className={classes.backdrop} open={loader}>
         <CircularProgress color="inherit" />
