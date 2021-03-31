@@ -29,18 +29,66 @@ function Movie(props) {
         if(checkDouble(point)){
                 switch(parseInt(point)){
                     case 1:
+                        return<>
+                            <img src={start1} alt='start1'/>
+                            <img src={start12} alt="start1/2" />
+                        </>
                     case 2:
+                        return<>
+                        <img src={start1} alt='start1'/>
+                        <img src={start1} alt='start1'/>
+                        <img src={start12} alt="start1/2" />
+                    </>
                     case 3:
+                        return<>
+                        <img src={start1} alt='start1'/>
+                        <img src={start1} alt='start1'/>
+                        <img src={start1} alt='start1'/>
+                        <img src={start12} alt="start1/2" />
+                    </>
                     case 4:
+                        return<>
+                        <img src={start1} alt='start1'/>
+                        <img src={start1} alt='start1'/>
+                        <img src={start1} alt='start1'/>
+                        <img src={start1} alt='start1'/>
+                        <img src={start12} alt="start1/2" />
+                    </>
                 }
         }
         else{
             switch(parseInt(point)){
                 case 1:
+                    return<>
+                    <img src={start1} alt='start1'/>
+                    
+                </>
                 case 2:
+                    return<>
+                    <img src={start1} alt='start1'/>
+                    <img src={start1} alt='start1'/>
+                </>
                 case 3:
+                    return<>
+                     <img src={start1} alt='start1'/>
+                    <img src={start1} alt='start1'/>
+                    <img src={start1} alt='start1'/>
+                </>
                 case 4:
+                    return<>
+                    <img src={start1} alt='start1'/>
+                    <img src={start1} alt='start1'/>
+                   <img src={start1} alt='start1'/>
+                   <img src={start1} alt='start1'/>
+               </>
                 case 5:
+                    return<>
+                      <img src={start1} alt='start1'/>
+                    <img src={start1} alt='start1'/>
+                    <img src={start1} alt='start1'/>
+                   <img src={start1} alt='start1'/>
+                   <img src={start1} alt='start1'/>
+               </>
             }
         }
     });
@@ -62,11 +110,7 @@ function Movie(props) {
                     <div className="rating">
                         <p className="rating_point">{data.danhGia}</p>
                         <p className="rating_star">
-                              <img src={start1} alt />
-                              <img src={start1} alt />
-                              <img src={start1} alt />
-                              <img src={start1} alt />
-                              <img src={start12} alt />
+                            {RenderStart(calculatePoint(Number(data.danhGia)))}
                         </p>
                     </div>
                 </div>
