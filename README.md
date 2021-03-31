@@ -16,15 +16,20 @@
 - User Manager Page
 - MovieManagerPage
 - TheaterManagerPage
+
 Phân Chia Công Việc Như Sau:
+
 **Phạm Tuân:**
+
 - Home
 - Login
 - Register
 - Thông Tin Cá Nhân
 - Detail movie
 - Booking ticket
+
 **Trần Hải Bình:**
+
 - Dashboard
 - Booking Manager Page
 - User Manager Page
