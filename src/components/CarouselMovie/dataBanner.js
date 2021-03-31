@@ -8,11 +8,11 @@
     },
     {
         banner:BoGia,
-        trailler:"https://youtu.be/jluSu8Rw6YE"
+        trailler:"https://www.youtube.com/embed/jluSu8Rw6YE"
     },
     {
         banner:AmQuy,
-        trailler:"https://youtu.be/98W8bv_8Kz8"
+        trailler:"https://www.youtube.com/embed/f1Nv2O7VJuo"
     }
 ] 
 export default data;
