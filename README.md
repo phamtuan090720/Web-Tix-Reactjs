@@ -56,3 +56,4 @@
 - TheaterManagerPage:
 ![TheaterManagerPage](https://user-images.githubusercontent.com/52484769/113178105-7022ed00-9278-11eb-91d2-681735b46d39.png)
 
+Sẽ có Video Demo Sớm Cho Các Bạn! 
