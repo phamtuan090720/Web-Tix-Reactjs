@@ -45,7 +45,8 @@
 ![Dasboard](https://user-images.githubusercontent.com/52484769/113178026-5d101d00-9278-11eb-9172-81918664e674.png)
 
 - Booking Manager Page:
-![Booking-Ticket-Layout](https://user-images.githubusercontent.com/52484769/113178055-6305fe00-9278-11eb-9c8a-7ad76f2c16d2.png)
+![BookingManagerPage](https://user-images.githubusercontent.com/52484769/113178985-58983400-9279-11eb-82ab-1aa88c420ad6.png)
+
 
 - User Manager Page:
 ![UserManager](https://user-images.githubusercontent.com/52484769/113178075-68fbdf00-9278-11eb-96bc-77388389c86e.png)
