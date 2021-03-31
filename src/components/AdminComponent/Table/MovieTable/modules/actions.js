@@ -1,18 +1,30 @@
 import * as ActionTypes from "./constant";
-import api from "../../../../../api/index";
+import apiPost from "../../../../../api/apiPost";
 import * as act from "../../../../../container/AdminTemplate/MovieManager/modules/actions";
 
 export const actDeleteMovie = (maPhim) => {
   return (dispatch) => {
     dispatch(actDeleteMovieRequest());
-    api
-      .delete(`/QuanLyPhim/XoaPhim?MaPhim=${maPhim}`)
-      .then((result) => {
-        dispatch(actDeleteMovieSuccess(result.data));
-      })
-      .catch((err) => {
-        dispatch(actDeleteMovieFail(err.response.data));
-      });
+    if (maPhim) {
+      if (JSON.parse(sessionStorage.getItem("USER"))) {
+        apiPost({
+          headers: {
+            Authorization: `Bearer ${
+              JSON.parse(sessionStorage.getItem("USER")).accessToken
+            }`,
+          },
+          url: `https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/XoaPhim?MaPhim=${maPhim}`,
+          method: "DELETE",
+        })
+          .then((rs) => {
+            dispatch(actDeleteMovieSuccess(rs.data));
+            dispatch(act.actGetListMovieCallApi());
+          })
+          .catch((er) => {
+            dispatch(actDeleteMovieFail(er?.response?.data));
+          });
+      }
+    }
   };
 };
 
@@ -41,15 +53,28 @@ const actDeleteMovieFail = (err) => {
 export const actChangeInfoMovie = (fomData) => {
   return (dispatch) => {
     dispatch(actChangeInfoMovieRequest());
-    api
-      .post("/QuanLyPhim/CapNhatPhimUpload", fomData)
-      .then((result) => {
-        dispatch(actChangeInfoMovieSuccess(result.data));
-        dispatch(act.actGetListMovieCallApi());
-      })
-      .catch((err) => {
-        dispatch(actChangeInfoMoviefail(err.response.data));
-      });
+    if (fomData) {
+      if (JSON.parse(sessionStorage.getItem("USER"))) {
+        apiPost({
+          headers: {
+            Authorization: `Bearer ${
+              JSON.parse(sessionStorage.getItem("USER")).accessToken
+            }`,
+          },
+          url:
+            "https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/CapNhatPhimUpload",
+          method: "POST",
+          data: fomData,
+        })
+          .then((rs) => {
+            dispatch(actChangeInfoMovieSuccess(rs.data));
+            dispatch(act.actGetListMovieCallApi());
+          })
+          .catch((er) => {
+            dispatch(actChangeInfoMoviefail(er?.response?.data));
+          });
+      }
+    }
   };
 };
 

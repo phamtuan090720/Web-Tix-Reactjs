@@ -1,5 +1,8 @@
 import * as ActionTypes from "./constants";
 import api from "../../../../api/index";
+import apiPost from "../../../../api/apiPost";
+
+
 
 // GET ALL USER
 export const actGetAllUserCallApi = () => {
@@ -39,15 +42,29 @@ const actGetUserFail = (err) => {
 // ADD NEW USER
 export const actAddNewUser = (data) => {
   return (dispatch) => {
-    dispatch(actAddNewUserRequest());
-    api
-      .post("/QuanLyNguoiDung/ThemNguoiDung", data)
-      .then((result) => {
-        dispatch(actAddNewUserSucess(result.data));
-      })
-      .catch((err) => {
-        dispatch(actAddNewUserFail(err?.response?.data));
-      });
+		dispatch(actAddNewUserRequest());
+		if (data) {
+      if (JSON.parse(sessionStorage.getItem("USER"))) {
+        apiPost({
+          headers: {
+            Authorization: `Bearer ${
+              JSON.parse(sessionStorage.getItem("USER")).accessToken
+            }`,
+          },
+          url:
+            "https://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/ThemNguoiDung",
+          method: "POST",
+          data,
+        })
+          .then((rs) => {
+            dispatch(actAddNewUserSucess(rs.data));
+            dispatch(actGetAllUserCallApi());
+          })
+          .catch((er) => {
+            dispatch(actAddNewUserFail(er?.response?.data));
+          });
+      }
+    }
   };
 };
 

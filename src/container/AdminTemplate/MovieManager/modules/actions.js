@@ -1,5 +1,7 @@
 import * as ActionTypes from "./constant";
 import api from "../../../../api/index";
+import apiPost from "../../../../api/apiPost";
+
 
 export const actGetListMovieCallApi = () => {
   return (dispatch) => {
@@ -77,15 +79,29 @@ const actGetListMovieByDateFail = (err) => {
 
 export const actAddNewMovieCallApi = (formdata) => {
   return (dispatch) => {
-    dispatch(actAddNewMovieRequest());
-    api
-      .post("/QuanLyPhim/ThemPhimUploadHinh", formdata)
-      .then((result) => {
-        dispatch(actAddNewMovieSuccess(result?.data));
-      })
-      .catch((err) => {
-        dispatch(actAddNewMovieFail(err?.response?.data));
-      });
+		dispatch(actAddNewMovieRequest());
+		if (formdata) {
+      if (JSON.parse(sessionStorage.getItem("USER"))) {
+        apiPost({
+          headers: {
+            Authorization: `Bearer ${
+              JSON.parse(sessionStorage.getItem("USER")).accessToken
+            }`,
+          },
+          url:
+            "https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/ThemPhimUploadHinh",
+          method: "POST",
+          data: formdata,
+        })
+          .then((rs) => {
+            dispatch(actAddNewMovieSuccess(rs.data));
+            dispatch(actGetListMovieCallApi());
+          })
+          .catch((er) => {
+            dispatch(actAddNewMovieFail(er?.response?.data));
+          });
+      }
+    }
   };
 };
 

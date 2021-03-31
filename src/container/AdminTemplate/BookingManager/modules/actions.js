@@ -1,5 +1,6 @@
 import * as ActionTypes from "./constant";
 import api from "../../../../api/index";
+import apiPost from "../../../../api/apiPost";
 import { data } from "jquery";
 
 export const actGetDetailCinema = () => {
@@ -114,17 +115,38 @@ const actlayDanhSachPhongVeFail = (err) => {
 
 export const actCreateShowTimes = (data) => {
   return (dispatch) => {
-    dispatch(createShowTimesRequest());
-    api
-      .post(`/QuanLyDatVe/TaoLichChieu`, data)
-      .then((rs) => {
-				console.log(rs.data);
-				dispatch(createShowTimesSuccess(rs?.data));
-      })
-      .catch((err) => {
-				console.log(err);
-				dispatch(createShowTimesFail(err?.response?.data));
-      });
+		dispatch(createShowTimesRequest());
+		if (data) {
+      if (JSON.parse(sessionStorage.getItem("USER"))) {
+        apiPost({
+          headers: {
+            Authorization: `Bearer ${
+              JSON.parse(sessionStorage.getItem("USER")).accessToken
+            }`,
+          },
+          url:
+            "https://movie0706.cybersoft.edu.vn/api/QuanLyDatVe/TaoLichChieu",
+          method: "POST",
+          data,
+        })
+          .then((rs) => {
+            dispatch(createShowTimesSuccess(rs.data));
+          })
+          .catch((er) => {
+            dispatch(createShowTimesFail(er?.response?.data));
+          });
+      }
+    }
+    // api
+    //   .post(`/QuanLyDatVe/TaoLichChieu`, data)
+    //   .then((rs) => {
+		// 		console.log(rs.data);
+		// 		dispatch(createShowTimesSuccess(rs?.data));
+    //   })
+    //   .catch((err) => {
+		// 		console.log(err);
+		// 		dispatch(createShowTimesFail(err?.response?.data));
+    //   });
   };
 };
 
