@@ -9,6 +9,7 @@ import { actListMovieAPI, actCallApiGetInfoCinemaSytem, actCallApiGetListCinemaP
 // import Cinema from '../../../components/CinemaBlock';
 import ModalTrailer from '../../../components/ModalTrailer';
 import Loader from '../../../components/Loader';
+import Loading from '../../../components/Backdrop';
 // const Carousel = React.lazy(() => import('../../../components/CarouselMovie'));
 const ListMovie = React.lazy(() => import('../../../components/ListMovie'));
 const Cinema = React.lazy(() => import('../../../components/CinemaBlock'));
@@ -26,27 +27,25 @@ function HomePage(props) {
         setTimeout(() => {
             setIsLoading(false);
         }, 2000);
-    }, []);
+    }, [group]);
     const RenderHTML = useCallback(() => {
-        // setIsLoading(false);
-        // console.log("render Home")
         if (isLoading) return <Loader />
         return <>
-          
-            <Suspense fallback={<Loader />}>
-                <Carousel />
+            <Carousel />
+            <Suspense fallback={<Loading />}>
                 <ListMovie />
                 <Cinema />
-                <New />
-                <App />
-                <Footer />
             </Suspense>
+            <New />
+            <App />
+            <Footer />
             <ModalTrailer />
         </>
     }, [group, isLoading]);
     return (
         <div>
             {RenderHTML()}
+
         </div>
     )
     //  if(Loading) return <Loader/>
