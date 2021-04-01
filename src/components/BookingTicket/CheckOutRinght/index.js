@@ -46,7 +46,7 @@ function Index(props) {
         SDT: null,
     });
     const BackgroundCheckOutRight = Styled.div`
-        @media (max-width:1105px) and (min-width: 320px) {
+        @media (max-width:1105px){
             background-image: url(${BgCheckOut});
         }
     `;
