@@ -72,6 +72,9 @@
       ],
       "components/*": [
         "./src/components"
+      ],
+      "img/*": [
+        "./src/img"
       ]
     }
   },

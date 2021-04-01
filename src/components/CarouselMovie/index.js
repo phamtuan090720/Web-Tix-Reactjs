@@ -4,7 +4,6 @@ import Slider from "react-slick";
 import CarouselItem from './carouselMovieItem';
 import { connect } from 'react-redux';
 import CloseModal from  '../../img/Icon/close.png'
-import ModalTrailer from './ModalTrailer';
 function CarouselMovie(props) {
     
     const {dataBanner} = props;
@@ -19,13 +18,13 @@ function CarouselMovie(props) {
         cssEase: "linear"
         
       };
-    const renderCarouselItem = ()=>{
+    const renderCarouselItem = React.useCallback(()=>{
         if(dataBanner&&dataBanner.length>0){
            return dataBanner.map((item,index)=>{
                 return <CarouselItem key={index} ButttonPlay={ButttonPlay} data={item} />
             })
         }
-    }
+    },[dataBanner]);
     return (
         <section className="carousel_movie">
             <div className="carousel_movie_container">

@@ -3,13 +3,10 @@ import { connect } from 'react-redux';
 import ModalErr from '../ModalErr';
 import Alert from '../Alert';
 import ModalNoti from '../ModalNotification';
+import Styled from "styled-components";
+import BgCheckOut from '../../../img/BookingTicket/movie-details-bg.jpg';
 import { actDatVe, getInfoCustomer } from '../../../container/HomeTemplate/BookingTicket/modules/action';
 function Index(props) {
-    // const Alert = styled.div`
-    //     width: 100%;
-    //     padding: 5px;
-    //     margin-bottom: 0;
-    // `;
     const { data, listSeatSelector, total, user, malichChieu, actBookTicket, actGetInfoCustomer } = props;
     // console.log(user, parseInt(malichChieu));
     const [isOpen, setIsOpen] = useState(false);
@@ -48,6 +45,11 @@ function Index(props) {
         email: null,
         SDT: null,
     });
+    const BackgroundCheckOutRight = Styled.div`
+        @media (max-width:1105px) and (min-width: 320px) {
+            background-image: url(${BgCheckOut});
+        }
+    `;
     // console.log(user.taiKhoan);
     console.log(listSeatSelector);
     const danhSachGheChon = () => {
@@ -185,6 +187,7 @@ function Index(props) {
             return listSeat;
         }
     }
+    let width = window.innerWidth
     console.log('Ghế Thường', ListSeatNormal(listSeatSelector));
     return (
         <>

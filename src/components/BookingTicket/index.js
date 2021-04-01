@@ -6,6 +6,7 @@ import ModalCheckOut from './RebookTicket';
 import AlertDatVe from './AlertDatVe';
 import { connect } from 'react-redux';
 import BillTicket from './BillTicket';
+import bgBookingTicket from '../../img/BookingTicket/movie-details-bg.jpg';
 import {actCloseAlret} from '../../container/HomeTemplate/BookingTicket/modules/action';
 
 function Index(props) {
@@ -19,7 +20,7 @@ function Index(props) {
     }
     const [isOpenBbill,setIsOpenBill] = useState(false);
     return (
-        <section className="Booking_Movie">
+        <section style={{backgroundImage:`url(${bgBookingTicket})`}} className="Booking_Movie">
             <div className='wrapper'>
                 <div className='overlay'>
                     <CheckOutRight handleOpenBill={handleOpenBill} user={user} malichChieu={malichChieu} data={data?data.thongTinPhim:""}/>

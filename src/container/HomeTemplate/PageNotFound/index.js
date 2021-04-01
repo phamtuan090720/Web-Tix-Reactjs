@@ -4,11 +4,12 @@ import Icon404 from '../../../img/404/404.svg';
 import IconMeteor from '../../../img/404/meteor.svg';
 import IconAstronaut from '../../../img/404/astronaut.svg';
 import IconSpaceship from '../../../img/404/spaceship.svg';
+import mart from '../../../img/404/mars.svg';
 export default function index() {
     return (
-        <div className='PageNotFound'>
+        <div style={{backgroundImage:` url('https://assets.codepen.io/1538474/star.svg'),linear-gradient(to bottom, #05007A, #4D007D)`}} className='PageNotFound'>
             <div>
-                <div className="mars" />
+                <div style={{backgroundImage:`url(${mart})`}} className="mars" />
                 <img src={Icon404} className="logo-404" />
                 <img src={IconMeteor} className="meteor" />
                 <p className="title">Oh no!!</p>

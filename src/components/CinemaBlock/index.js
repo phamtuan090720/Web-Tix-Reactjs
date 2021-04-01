@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import NavBar from './NavBar';
 import TabContentCiema from './TabContentCinema';
 import TabContentListMovie from './TabContentMovie';
+import backNews from '../../img/Icon/back-news.png';
 import {actCallApiGetInfoCinemaSytem,actCallApiGetListCinemaPost} from '../../container/HomeTemplate/HomePage/modules/action';
 function CinemaBlock(props) {
     const {dataCinemaSytem,dataListCinema,maHeThongRap,group} = props;
@@ -28,7 +29,7 @@ function CinemaBlock(props) {
             <section className="cinema_block">
                 <div className="cinema_block_container">
                     <div className="bg-img-top_container">
-                        <div className="bg-img-top" />
+                        <div style={{backgroundImage:`url(${backNews})`}} className="bg-img-top" />
                     </div>
                     <NavBar dataCinemaSytem={dataCinemaSytem} />
                     <TabContentCiema dataCinemaSytem={dataCinemaSytem} dataListCinema={dataListCinema} />

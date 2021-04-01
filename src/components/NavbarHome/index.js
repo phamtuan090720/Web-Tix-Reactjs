@@ -24,9 +24,9 @@ import LocationOnIcon from '@material-ui/icons/LocationOn';
 import AppsIcon from '@material-ui/icons/Apps';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
-import ViewListIcon from '@material-ui/icons/ViewList';
 import WebAssetIcon from '@material-ui/icons/WebAsset';
 import Dialog from '@material-ui/core/Dialog';
+import DropdowIcon from '../../img/Icon/dropdown-icon.png';
 import DialogContent from '@material-ui/core/DialogContent';
 import { actSetLocationLogin } from './modules/action';
 
@@ -243,12 +243,11 @@ function NavbarHome(props) {
                             </ul>
                         </div>
                     ) : ""}
-
                     <div className="header_menu_right">
                         {renderHeaderLogin()}
                         <div className="dropdown dropdown_place_header">
                             <img className="place-header" src={LocationHeader} alt="Icon" />
-                            <div className="select-menu" data-toggle="dropdown">
+                            <div style={{background:`url(${DropdowIcon})`,backgroundRepeat:"no-repeat",backgroundPosition:"100%"}} className="select-menu" data-toggle="dropdown">
                                 <span>{props.location.city}</span>
                             </div>
                             <div className="dropdown-menu">

@@ -2,6 +2,8 @@ import React from 'react';
 import Slider from "react-slick";
 import { DataCarousel } from './dataCarousel';
 import CarouselItem from './itemCarouselApp';
+import backapp from '../../img/app/backapp.jpg';
+import mobile from '../../img/app/mobile.png';
 export default function index() {
     let settings = {
         dots: false,
@@ -26,7 +28,7 @@ export default function index() {
     return (
         <>
             <div id='app_tix'></div>
-            <section className="app">
+            <section style={{backgroundImage:`url(${backapp})`}} className="app">
                 <div className="app_movie row">
                     <div className="app_link container col-12 col-lg-6">
                         <h3>Ứng dụng tiện lợi dành cho</h3>
@@ -38,7 +40,8 @@ export default function index() {
                         <p style={{ paddingTop: 10 }}>TIX có hai phiên bản <a href="#">iOS</a> &amp; <a href="#">Android</a></p>
                     </div>
                     <div className="app_content col-12 col-lg-6">
-                        <div className="app_content_slider">
+                          {/* background-image: url('../../img/app/mobile.png'); */}
+                        <div style={{backgroundImage:`url(${mobile})`}} className="app_content_slider">
                             {/* <img class="mobile_bg" src="./img/app/mobile.png" alt=""> */}
                             <Slider {...settings} className='app_carousel'>
 
