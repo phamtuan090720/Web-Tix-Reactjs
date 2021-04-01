@@ -10,6 +10,7 @@ import New from '../../../components/New';
 import ModalTrailer from '../../../components/ModalTrailer';
 import Loader from '../../../components/Loader';
 import Loading from '../../../components/Backdrop';
+import { Box, Container } from '@material-ui/core';
 const ListMovie = React.lazy(() => import('../../../components/ListMovie'));
 const Cinema = React.lazy(() => import('../../../components/CinemaBlock'));
 function HomePage(props) {
@@ -35,10 +36,9 @@ function HomePage(props) {
         </>
     }, [group, isLoading]);
     return (
-        <div>
+        <Box>
             {RenderHTML()}
-            
-        </div>
+        </Box>
     )
 }
 const mapStateToProp = state => {

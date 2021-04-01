@@ -2,11 +2,23 @@
 #movie_schedule_tix{
     margin-top: 60px;
 }
+@import '../Helpers/mixin';
 .movie_schedule {
     // display: none;
     margin-top: 60px;
     position: relative;
     background-color: white;
+    max-width: 85%;
+    margin: 0 auto;
+    @include breakpoint(992px,768px){
+        max-width: 50%;
+    }
+    @include breakpointMax(600px){
+        max-width: 90%;
+    }
+    @include breakpointMoblie(iphone){
+        width: 100%;
+    }
     .schedule_bar {
         position: absolute;
         top: -140px;
@@ -105,9 +117,19 @@
         width: 100%;
         margin-bottom: 30px;
         justify-content: center;
+        
+        @include breakpointMoblie(iphone){
+            width: 100%;
+            margin-bottom: 40px;
+            justify-content: space-around;
+            font-size: 14px;
+        }
         .nav-item {
             display: block;
             margin-left: 40px;
+            @include breakpointMoblie(iphone){
+                margin-left:unset;
+            }
             .nav-link {
                 padding: 0;
                 border: none;
@@ -128,28 +150,50 @@
     .movie_schedule_content {
         max-width: 940px;
         margin: auto;
-        // BOOKING BAR
-        // MOVIE PANEL
         .movie_panel {
             margin-top: 100px;
         }
         .tab-content {
-            .schedule_carousel {
-                position: relative;
-                .owl-nav {
-                    .owl-prev {
-                        position: absolute;
-                        left: -10%;
-                        top: 45%;
-                        transform: translateY(-50%);
+            .schedule_carousel_Tablet{
+                display: none;
+                @include breakpointMax(992px){
+                    display: block;
+                }
+                .schedule_carousel_container{
+                  
+                    .col-6 .col-lg-3{
+                        @include breakpointMoblie(iphone){
+                            padding: 0 5px;
+                        }
                     }
-                    .owl-next {
-                        position: absolute;
-                        right: -10%;
-                        top: 45%;
-                        transform: translateY(-50%);
+                    .movie_item{
+                        .movie_pic{
+                            @include breakpointMoblie(iphone){
+                                height: 250px;
+                            }
+                        }
                     }
                 }
+            }
+            .schedule_carousel {
+                position: relative;
+                @include breakpoint(992px,320px){
+                    display: none;
+                }
+                // .owl-nav {
+                //     .owl-prev {
+                //         position: absolute;
+                //         left: -10%;
+                //         top: 45%;
+                //         transform: translateY(-50%);
+                //     }
+                //     .owl-next {
+                //         position: absolute;
+                //         right: -10%;
+                //         top: 45%;
+                //         transform: translateY(-50%);
+                //     }
+                // }
             }
             .row {
                 margin-left: 0;

@@ -14,3 +14,25 @@
     color: $color;
     font-size: $font-size;
 }
+@mixin breakpointMoblie($point) {
+    @if $point==iphone {
+        @media (max-width: 480px) and (min-width: 320px) {
+            @content ;
+        }
+    }
+}
+@mixin breakpoint($max,$min) {
+    @media (max-width: $max) and (min-width: $min) {
+        @content ;
+    }
+}
+@mixin breakpointMax($max) {
+    @media (max-width: $max) {
+        @content ;
+    }
+}
+@mixin breakpointMin($min) {
+    @media (max-width: $min) {
+        @content ;
+    }
+}

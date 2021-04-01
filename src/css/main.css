@@ -12,7 +12,6 @@
 
 html {
   scroll-behavior: smooth;
-  height: 100%;
   font-family: 'Catamaran', sans-serif;
 }
 
@@ -137,6 +136,7 @@ body {
   position: relative;
   height: 100%;
   margin: 0 10px;
+  padding: 0 10px;
 }
 
 .header_nav_bar .header_menu button {
@@ -565,6 +565,26 @@ body {
   margin-top: 60px;
   position: relative;
   background-color: white;
+  max-width: 85%;
+  margin: 0 auto;
+}
+
+@media (max-width: 992px) and (min-width: 768px) {
+  .movie_schedule {
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 600px) {
+  .movie_schedule {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) and (min-width: 320px) {
+  .movie_schedule {
+    width: 100%;
+  }
 }
 
 .movie_schedule .schedule_bar {
@@ -676,9 +696,24 @@ body {
   justify-content: center;
 }
 
+@media (max-width: 480px) and (min-width: 320px) {
+  .movie_schedule .nav-tabs {
+    width: 100%;
+    margin-bottom: 40px;
+    justify-content: space-around;
+    font-size: 14px;
+  }
+}
+
 .movie_schedule .nav-tabs .nav-item {
   display: block;
   margin-left: 40px;
+}
+
+@media (max-width: 480px) and (min-width: 320px) {
+  .movie_schedule .nav-tabs .nav-item {
+    margin-left: unset;
+  }
 }
 
 .movie_schedule .nav-tabs .nav-item .nav-link {
@@ -707,22 +742,36 @@ body {
   margin-top: 100px;
 }
 
+.movie_schedule .movie_schedule_content .tab-content .schedule_carousel_Tablet {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .movie_schedule .movie_schedule_content .tab-content .schedule_carousel_Tablet {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) and (min-width: 320px) {
+  .movie_schedule .movie_schedule_content .tab-content .schedule_carousel_Tablet .schedule_carousel_container .col-6 .col-lg-3 {
+    padding: 0 5px;
+  }
+}
+
+@media (max-width: 480px) and (min-width: 320px) {
+  .movie_schedule .movie_schedule_content .tab-content .schedule_carousel_Tablet .schedule_carousel_container .movie_item .movie_pic {
+    height: 250px;
+  }
+}
+
 .movie_schedule .movie_schedule_content .tab-content .schedule_carousel {
   position: relative;
 }
 
-.movie_schedule .movie_schedule_content .tab-content .schedule_carousel .owl-nav .owl-prev {
-  position: absolute;
-  left: -10%;
-  top: 45%;
-  transform: translateY(-50%);
-}
-
-.movie_schedule .movie_schedule_content .tab-content .schedule_carousel .owl-nav .owl-next {
-  position: absolute;
-  right: -10%;
-  top: 45%;
-  transform: translateY(-50%);
+@media (max-width: 992px) and (min-width: 320px) {
+  .movie_schedule .movie_schedule_content .tab-content .schedule_carousel {
+    display: none;
+  }
 }
 
 .movie_schedule .movie_schedule_content .tab-content .row {

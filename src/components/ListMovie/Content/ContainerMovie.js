@@ -14,25 +14,25 @@ function ContainerMovie(props) {
         else{
             return<>
           
-            <div className='col-6 col-md-3'>
+            <div className='col-6 col-lg-3'>
                 <Movie/>
             </div>
-            <div className='col-6 col-md-3'>
+            <div className='col-6 col-lg-3'>
                 <Movie/>
             </div>
-            <div className='col-6 col-md-3'>
+            <div className='col-6 col-lg-3'>
                 <Movie/>
             </div>
-            <div className='col-6 col-md-3'>
+            <div className='col-6 col-lg-3'>
                 <Movie/>
             </div>
-            <div className='col-6 col-md-3'>
+            <div className='col-6 col-lg-3'>
                 <Movie/>
             </div>
-            <div className='col-6 col-md-3'>
+            <div className='col-6 col-lg-3'>
                 <Movie/>
             </div>
-            <div className='col-6 col-md-3'>
+            <div className='col-6 col-lg-3'>
                 <Movie/>
             </div>
             <div className='col-6 col-md-3'>

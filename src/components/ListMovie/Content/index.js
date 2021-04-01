@@ -44,7 +44,7 @@ function SampleNextArrowComing(props) {
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'contain',
-                right: '-70px',
+                right: '-5%',
                 top: '45%'
             }}
             onClick={handelChangeIndex}
@@ -70,7 +70,7 @@ function SamplePrevArrowComing(props) {
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'contain',
-                left: '-70px',
+                left: '-5%',
                 top: '45%'
             }}
             onClick={handelChangeIndex}
@@ -131,7 +131,6 @@ function Index(props) {
                     </Button>
                 </div>
             }
-
         }, [count, totalCount]
     )
     // console.log(totalCount);
@@ -156,8 +155,10 @@ function Index(props) {
                                 <Slider {...settings} className='schedule_carousel'>
                                     <ContainerMovie />
                                     <ContainerMovie />
-                                    {/* <ContainerMovie data2={data2}/> */}
                                 </Slider>
+                                <div className="schedule_carousel_Tablet">
+                                    <ContainerMovie />
+                                </div>
                             </div>
 
                             <div className='tab-pane fade' id='coming'>
@@ -165,6 +166,9 @@ function Index(props) {
                                     <Slider {...settings} className='schedule_carousel'>
                                         <ContainerMovie />
                                     </Slider>
+                                </div>
+                                <div className="schedule_carousel_Tablet">
+                                    <ContainerMovie />
                                 </div>
                             </div>
                         </div>
@@ -185,38 +189,7 @@ function Index(props) {
         prevArrow: <SamplePrevArrowComing currentPage={currentPage} changeIndexPage={changeIndexPage} />
     };
     return <>
-        <div className="movie_schedule_content">
-            <div className='movie_panel'>
-                <div className="nav_btn">
-                    <ul className="nav nav-tabs">
-                        <li className="nav-item">
-                            <a className="nav-link active showing" data-toggle="tab" href="#showing">Danh Sách Phim</a>
-                            {/* id="showing" */}
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link coming" data-toggle="tab" href="#coming">Sắp Chiếu</a>
-                        </li>
-                    </ul>
-                </div>
-                <div className='tab-content'>
-                    <div className='tab-pane active' id='showing'>
-                        <Slider {...settings} className='schedule_carousel'>
-                            <ContainerMovie />
-                            <ContainerMovie />
-                            {/* <ContainerMovie data2={data2}/> */}
-                        </Slider>
-                    </div>
-
-                    <div className='tab-pane fade' id='coming'>
-                        <div className='schedule_carousel'>
-                            <Slider {...settings} className='schedule_carousel'>
-                                <ContainerMovie />
-                            </Slider>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {Render()}
         {RenderButtonXemThem()}
     </>
 }
