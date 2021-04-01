@@ -8,14 +8,14 @@
 @import'./Base/normalized';
 @import './Base/customize';
 //components
-@import './Layout/header';
-@import './Layout/carousel_movie';
-@import './Layout/schedule';
+@import './Layout/_header';
+@import './Layout/_carousel_movie';
+@import './Layout/_schedule';
 
-@import'./Layout/app';
-@import'./Layout/footer';
-@import'./Layout/tix_news';
-@import './Layout/cinema_block';
+@import'./Layout/_app';
+@import'./Layout/_footer';
+@import'./Layout/_tix_news';
+@import './Layout/_cinema_block';
 
 // @import'./Layout/backToTop';
 // //layouts
