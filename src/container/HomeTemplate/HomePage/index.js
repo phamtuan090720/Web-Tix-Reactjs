@@ -32,20 +32,20 @@ function HomePage(props) {
         if (isLoading) return <Loader />
         return <>
             <Carousel />
-            <Suspense fallback={<Loading />}>
+            <Suspense fallback={<Loading/>}>
                 <ListMovie />
                 <Cinema />
             </Suspense>
-            <New />
-            <App />
-            <Footer />
+                <New />
+                <App />
+                <Footer />
             <ModalTrailer />
         </>
     }, [group, isLoading]);
     return (
         <div>
             {RenderHTML()}
-
+            
         </div>
     )
     //  if(Loading) return <Loader/>
