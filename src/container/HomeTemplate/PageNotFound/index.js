@@ -10,8 +10,8 @@ export default function index() {
         <div style={{backgroundImage:` url('https://assets.codepen.io/1538474/star.svg'),linear-gradient(to bottom, #05007A, #4D007D)`}} className='PageNotFound'>
             <div>
                 <div style={{backgroundImage:`url(${mart})`}} className="mars" />
-                <img src={Icon404} className="logo-404" />
-                <img src={IconMeteor} className="meteor" />
+                <img src={Icon404} className="logo-404" alt="logo-404" />
+                <img src={IconMeteor} className="meteor" alt="meteor" />
                 <p className="title">Oh no!!</p>
                 <p className="subtitle">
                     You’re either misspelling the URL <br /> or requesting a page that's no longer here.

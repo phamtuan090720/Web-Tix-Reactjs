@@ -19,7 +19,6 @@ function Index(props) {
         let a = Number(point)/2;
         return a;
     }
-    console.log(calculatePoint(9));
     const checkDouble = (point)=>{
         if(Math.abs(point- parseInt(point))){
             return true;

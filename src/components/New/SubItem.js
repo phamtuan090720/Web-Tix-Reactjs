@@ -1,13 +1,13 @@
 import React from 'react'
 import LikeIcon from '../../img/Icon/like.png';
 import CommentIcon from '../../img/Icon/comment.png';
-import Pic from '../../img/News/41349f4ae77621aa818a599b16d3604a.png';
+// import Pic from '../../img/News/41349f4ae77621aa818a599b16d3604a.png';
 export default function mainItem(props) {
     const {dataItem} = props;
     return (
         <div className="col-12 col-sm-4 new_item">
             <a href="#">
-                <img src={dataItem.hinhAnh} alt />
+                <img src={dataItem.hinhAnh} alt="hinhAnh" />
                 <p className="title_new">{dataItem.title}</p>
             </a>
             <p className="new_content_sub">

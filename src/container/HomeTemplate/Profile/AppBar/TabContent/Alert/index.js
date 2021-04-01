@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
  function DescriptionAlerts(props) {
     const classes = useStyles();
     const [isOpen,setIsOpen]=React.useState("none");
-    const { isErr,isAlert,mess,user,rsAlert} = props;
+    const { isErr,isAlert,mess,rsAlert} = props;
     // console.log(isAlert);
     React.useEffect(()=>{
         if(isAlert===true){
@@ -47,7 +47,6 @@ const mapStateToProp=(state)=>{
         isErr:state.AlerUpdateInfoReducer.isErr,
         mess:state.AlerUpdateInfoReducer.mess,
         isAlert:state.AlerUpdateInfoReducer.isAler,
-        user:state.AuthReducer.data,
     }
 }
 const mapDispatchToProp = (dispatch) =>{
