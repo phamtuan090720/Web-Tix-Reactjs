@@ -185,6 +185,7 @@ function Index(props) {
         lazyLoad: true,
         slidesToShow: 1,
         slidesToScroll: 1,
+        swipe: false,
         nextArrow: <SampleNextArrowComing currentPage={currentPage} changeIndexPage={changeIndexPage} />,
         prevArrow: <SamplePrevArrowComing currentPage={currentPage} changeIndexPage={changeIndexPage} />
     };
