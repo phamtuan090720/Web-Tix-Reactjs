@@ -1,11 +1,11 @@
-import React, { useEffect, Suspense, LazyLoad, useCallback } from 'react';
+import React, { useEffect, Suspense, useCallback } from 'react';
 import { connect } from 'react-redux';
 import Carousel from '../../../components/CarouselMovie';
 // import ListMovie from '../../../components/ListMovie';
 import { actListMovieAPI, actCallApiGetInfoCinemaSytem, actCallApiGetListCinemaPost, actHandleChangePage } from './modules/action';
-// import App from '../../../components/App';
-// import Footer from '../../../components/Footer';
-// import New from '../../../components/New';
+import App from '../../../components/App';
+import Footer from '../../../components/Footer';
+import New from '../../../components/New';
 // import Cinema from '../../../components/CinemaBlock';
 import ModalTrailer from '../../../components/ModalTrailer';
 import Loader from '../../../components/Loader';
@@ -13,9 +13,9 @@ import Loading from '../../../components/Backdrop';
 // const Carousel = React.lazy(() => import('../../../components/CarouselMovie'));
 const ListMovie = React.lazy(() => import('../../../components/ListMovie'));
 const Cinema = React.lazy(() => import('../../../components/CinemaBlock'));
-const New = React.lazy(() => import('../../../components/New'));
-const Footer = React.lazy(() => import('../../../components/Footer'));
-const App = React.lazy(() => import('../../../components/App'));
+// const New = React.lazy(() => import('../../../components/New'));
+// const Footer = React.lazy(() => import('../../../components/Footer'));
+// const App = React.lazy(() => import('../../../components/App'));
 function HomePage(props) {
     // console.log(props.group);
     // // const { count, currentPage, Loading } = props;
@@ -32,7 +32,7 @@ function HomePage(props) {
         if (isLoading) return <Loader />
         return <>
             <Carousel />
-            <Suspense fallback={<Loading/>}>
+            <Suspense fallback={isLoading?"":<Loading/>}>
                 <ListMovie />
                 <Cinema />
             </Suspense>

@@ -280,12 +280,12 @@ function NavbarHome(props) {
                                 </ListItemIcon>
                                 <ListItemText primary="Lịch Chiếu" />
                             </ListItemLink>
-                            <ListItemLink button onClick={closeNav}>
+                            {/* <ListItemLink  button onClick={closeNav}>
                                 <ListItemIcon>
                                     <ViewListIcon />
                                 </ListItemIcon>
                                 <ListItemText primary="Cụm Rạp" />
-                            </ListItemLink>
+                            </ListItemLink> */}
                             <ListItemLink href="#news_tix" button onClick={closeNav}>
                                 <ListItemIcon>
                                     <WebAssetIcon />

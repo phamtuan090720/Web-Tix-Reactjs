@@ -1,7 +1,6 @@
 import './App.css';
 import { Switch } from 'react-router-dom';
-import React, { Suspense } from 'react';
-import Loading from './components/Loader';
+import React from 'react';
 import { routesHome,routesAdmin} from './routes';
 import HomeTemplate from './container/HomeTemplate';
 import PageNotFound from './container/HomeTemplate/PageNotFound';
@@ -34,7 +33,6 @@ function App() {
     }
   };
   return (
-    <Suspense fallback={<Loading/>}>
       <Switch>
         {showLayoutHome(routesHome)}
         {showLayoutAdmin(routesAdmin)}
@@ -44,7 +42,6 @@ function App() {
         <Route path="/RegisterPage" component={RegisterPage} />
         <Route path='' component={PageNotFound} />
       </Switch>
-    </Suspense>
   )
 }
 

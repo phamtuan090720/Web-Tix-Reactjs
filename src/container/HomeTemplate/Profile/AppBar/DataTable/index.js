@@ -166,17 +166,22 @@ function CustomizedTables(props) {
   const classes = useStyles();
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
-  const {userLogin,getInfoAcount,isLoading,DataVe}=props;
+  const {userLogin,getInfoAcount,isLoading,DataVeUser}=props;
+  const [DataVe,setDataVe]=React.useState(null);
   React.useEffect(()=>{
     let Account = {
       taiKhoan: userLogin.taiKhoan
     }
     getInfoAcount(Account);
-  },[]);
-  console.log('isLoading',isLoading);
-  // const DataVe = Data;
-  console.log('userLogin',userLogin);
-  const emptyRows = rowsPerPage - Math.min(rowsPerPage, DataVe?.thongTinDatVe?.length - page * rowsPerPage);
+  },[]); 
+  React.useEffect(()=>{
+    setDataVe(DataVeUser?.thongTinDatVe.sort(function sortFunction(a,b){  
+      var dateA = new Date(a.date).getTime();
+      var dateB = new Date(b.date).getTime();
+      return dateA > dateB ? 1 : -1;  
+  }));
+  },[DataVeUser]);
+  const emptyRows = rowsPerPage - Math.min(rowsPerPage, DataVe?.length - page * rowsPerPage);
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
@@ -192,7 +197,7 @@ function CustomizedTables(props) {
     else{
       return <>
       <TableBody>
-          {(rowsPerPage > 0?DataVe?.thongTinDatVe.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage):DataVe?.thongTinDatVe)?.map((item) => (
+          {(rowsPerPage > 0?DataVe?.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage):DataVe?.thongTinDatVe)?.map((item) => (
           <Row key={item.maVe} item={item} />
           ))}
           {emptyRows > 0 && (
@@ -233,7 +238,7 @@ function CustomizedTables(props) {
             <TablePagination
               rowsPerPageOptions={[5, 10, 25, { label: 'All', value: -1 }]}
               colSpan={3}
-              count={DataVe?.thongTinDatVe.length}
+              count={DataVe?.length}
               rowsPerPage={rowsPerPage}
               page={page}
               SelectProps={{
@@ -253,7 +258,7 @@ function CustomizedTables(props) {
 const mapStateToProp = state=>{
   return{
     userLogin: state.AuthReducer.data,
-    DataVe: state.infoAccountReducer.data,
+    DataVeUser: state.infoAccountReducer.data,
     isLoading:state.infoAccountReducer.isLoading
   }
 }
