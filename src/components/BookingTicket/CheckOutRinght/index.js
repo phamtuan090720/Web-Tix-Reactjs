@@ -191,7 +191,7 @@ function Index(props) {
     console.log('Ghế Thường', ListSeatNormal(listSeatSelector));
     return (
         <>
-            <div className="checkOutRight" id='CheckOutRight'>
+            <BackgroundCheckOutRight className="checkOutRight" id='CheckOutRight'>
                 <div className="row film_name">
                     <span className="col-12 movie_name">{data.tenPhim}</span>
                     <div className="contentcinema col-12">
@@ -268,7 +268,7 @@ function Index(props) {
                     </div>
                 </form>
 
-            </div>
+            </BackgroundCheckOutRight>
             {ModalErr(isOpen, stateModalErr.mess, handleSCloseModal)}
             {ModalNoti(isOpenNoti, handleSCloseModal, handelDatVe)}
         </>

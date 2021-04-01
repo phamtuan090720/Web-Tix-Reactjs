@@ -8,7 +8,7 @@
 }
 @mixin breakpoint($point,$size) {
     @if $point==rps {
-        @media (max-width: $size) and (min-width: 320px) {
+        @media (max-width: $size){
             @content ;
         }
     }
