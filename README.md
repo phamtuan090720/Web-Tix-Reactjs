@@ -13,6 +13,7 @@
 - Thông Tin Cá Nhân
 - Detail movie
 - Booking ticket
+- Page Not Found
 
 **Trần Hải Bình** Làm Về các trang Admin:
 
@@ -41,6 +42,8 @@
 - Booking ticket:
 ![Booking-Ticket-Layout](https://user-images.githubusercontent.com/52484769/113177358-9dbb6680-9277-11eb-8bca-ba6cd6ed7b48.png)
 
+- Page Not Found:
+![404](https://user-images.githubusercontent.com/52484769/113298593-33153400-9326-11eb-9e71-c136b6e51c0f.png)
 - Dashboard:
 ![Dasboard](https://user-images.githubusercontent.com/52484769/113178026-5d101d00-9278-11eb-9172-81918664e674.png)
 
