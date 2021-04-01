@@ -60,8 +60,7 @@ body {
 }
 
 .modal .modal-dialog .modal-body .Content {
-  min-height: 400px;
-  min-width: 600px;
+  min-height: 250px;
   display: flex;
   align-items: center;
   color: #dc3545;
@@ -109,6 +108,18 @@ body {
   transform: translate(-50%, -50%);
 }
 
+#myBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 15px;
+  background: transparent;
+}
+
 .header_nav_bar {
   position: fixed;
   top: -1px;
@@ -117,7 +128,7 @@ body {
   height: 60px;
   background-color: rgba(255, 255, 255, 0.95);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-  z-index: 3;
+  z-index: 1101;
   transition: all .2s;
 }
 
@@ -343,7 +354,7 @@ body {
   height: 100%;
   width: 0;
   position: fixed;
-  z-index: 3;
+  z-index: 1101;
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.8);
@@ -357,7 +368,7 @@ body {
 .sidepanel {
   width: 70%;
   position: fixed;
-  z-index: 3;
+  z-index: 1101;
   height: 100%;
   top: 0;
   right: -70%;
@@ -1132,14 +1143,6 @@ body {
   height: 100%;
   background-size: 100% 100%;
   background-repeat: no-repeat;
-}
-
-.app .app_movie .app_content .app_content_slider .app_carousel .item .item2 {
-  background-image: url("../../img/app/slide2.jpg");
-}
-
-.app .app_movie .app_content .app_content_slider .app_carousel .item .item3 {
-  background-image: url("../../img/app/slide3.jpg");
 }
 
 @media screen and (max-width: 992px) {
@@ -3680,5 +3683,120 @@ footer .footer_content_mb2 .verify_mb2 img {
     width: 45vmin;
     bottom: 18vmin;
   }
+}
+
+.nav-header {
+  display: flex;
+  position: fixed;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  z-index: 1101;
+  height: 60px;
+  padding: 0 20px;
+  justify-content: space-between;
+}
+
+.nav-header .header-logo {
+  display: flex;
+  align-items: center;
+  width: 50px;
+}
+
+.nav-header .header-logo img {
+  width: 100%;
+}
+
+.nav-header .header-menu {
+  display: flex;
+  align-items: center;
+}
+
+.body-profile {
+  margin-top: 60px;
+}
+
+.body-profile .header {
+  background-color: #272c34;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0;
+  border-radius: 0 0 15px 15px;
+  width: 90%;
+  max-width: unset;
+}
+
+.body-profile .header::before {
+  content: "";
+  padding-bottom: 400px;
+}
+
+@media (max-width: 500px) and (min-width: 375px) {
+  .body-profile .header::before {
+    padding-bottom: 200px;
+  }
+}
+
+@media (max-width: 768px) and (min-width: 501px) {
+  .body-profile .header::before {
+    padding-bottom: 300px;
+  }
+}
+
+@media (max-width: 500px) and (min-width: 375px) {
+  .body-profile .header {
+    width: 100%;
+    border-radius: unset;
+  }
+}
+
+@media (max-width: 768px) and (min-width: 501px) {
+  .body-profile .header {
+    width: 90%;
+  }
+}
+
+.body-profile .header .avata {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.body-profile .header .avata img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+@media (max-width: 500px) and (min-width: 375px) {
+  .body-profile .header .avata {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+.body-profile .accout-user {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.body-profile .accout-user .account .name {
+  font-weight: 500;
+  margin: 0px auto;
+  font-size: 30px;
+  text-align: center;
+}
+
+.body-profile .accout-user .account .maLoaiNguoiDung {
+  font-size: 20px;
+  text-align: center;
 }
 /*# sourceMappingURL=main.css.map */
