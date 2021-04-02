@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 export default function Index() {
-    const [Minutes, setMinutes] = useState(100);
+    const [Minutes, setMinutes] = useState(5);
     const [Seconds, setSeconds] = useState(0);
     const countDown = () => {
         if (Minutes === 0 && Seconds === 0) {
