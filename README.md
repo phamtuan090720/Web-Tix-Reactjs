@@ -1,6 +1,8 @@
 # Đồ Án Cuối Khóa Cybersoft Booking Movie.
  Đồ án này được thực hiện bởi **Phạm Tuân** và **Trần Hải Bình**.
 
+Link WEB:https://booking-movie-tix.herokuapp.com/
+
  Tham Khảo Layout tại https://tix.vn/.
  
   Phân Chia Công Việc Như Sau:
