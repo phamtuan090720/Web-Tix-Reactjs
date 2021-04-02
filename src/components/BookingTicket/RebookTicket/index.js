@@ -25,6 +25,7 @@ export default function index(props) {
         font-size: 16px;
         background: transparent;
         box-shadow: 0 0 15px black;
+        width: 100%;
     `;
         const LinkHome = styled.div`
             color:#03e9f4;

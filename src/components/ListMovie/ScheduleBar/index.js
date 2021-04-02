@@ -36,12 +36,6 @@ function Index(props) {
         title: "Suất Chiếu", 
         maLichChieu:null
     })
-    // useEffect(() => {
-    //     setCinema({
-    //    tenCumRap: "Rạp",
-    //    maCumRap: null,
-    //    })
-    // }, [Film]);
     const CallAPIFilm = (e) => {
         actFetchApiListCinema(e.target.id);
     }
@@ -61,7 +55,7 @@ function Index(props) {
         () => {
             if (listMovie) {
                 return listMovie.map((item) => {
-                    return <span className="dropdown-item" id={item.maPhim} onClick={(e) => {
+                    return <span style={{textAlign:"center"}} className="dropdown-item" id={item.maPhim} onClick={(e) => {
                         CallAPIFilm(e);
                         setFilm({
                             tenPhim: item.tenPhim,
@@ -102,10 +96,10 @@ function Index(props) {
                     }}>{item.tenCumRap}</span>
                 })
             }
-            else   return <span className="dropdown-item" >Không Tìm Thấy Rạp Chiếu Phim </span>
+            else   return <span style={{textAlign:"center"}} className="dropdown-item" >Không Tìm Thấy Rạp Chiếu Phim </span>
         }
         else {
-            return <span className="dropdown-item" >Vui Lòng Chọn Phim</span>
+            return <span style={{textAlign:"center"}} className="dropdown-item" >Vui Lòng Chọn Phim</span>
         }
     }, [heThongRap]);
     const buyTicket = useCallback(() => {
@@ -135,17 +129,17 @@ function Index(props) {
           let listNgayXem = getLichChieu();
           if(listNgayXem.length>0){
             return listNgayXem.map((item)=>{
-                return  <span className="dropdown-item" onClick={()=>{
+                return  <span style={{textAlign:"center"}} className="dropdown-item" onClick={()=>{
                     setNgayChieu(item)
                 }}>{new Date(item).toLocaleDateString()}</span>
             })
           }
           else{
-              return <span className="dropdown-item">Không Có Xuất Chiếu Cho Phim</span>
+              return <span style={{textAlign:"center"}} className="dropdown-item">Không Có Xuất Chiếu Cho Phim</span>
           }
         }
         else {
-            return <span className="dropdown-item">Vui Lòng Chọn Rạp Và Phim</span>
+            return <span style={{textAlign:"center"}} className="dropdown-item">Vui Lòng Chọn Rạp Và Phim</span>
         }
     }, [cinema]);
     const getXuatChieu=useCallback(
@@ -171,7 +165,7 @@ function Index(props) {
 
             if(getXuatChieu().length>0){
                 return getXuatChieu().map((item)=>{
-                    return <span className="dropdown-item" onClick={()=>{
+                    return <span style={{textAlign:"center"}} className="dropdown-item" onClick={()=>{
                         setSuatChieu(
                             {
                                 title:fromatTime(new Date(item.ngayChieuGioChieu)),
@@ -182,11 +176,11 @@ function Index(props) {
                 })
             }
             else{
-                return <span className="dropdown-item">Không Có Lịch Chiếu</span>
+                return <span style={{textAlign:"center"}} className="dropdown-item">Không Có Lịch Chiếu</span>
             } 
         }
         else {
-            return <span className="dropdown-item">Vui Lòng Chọn Ngày Chiếu</span>
+            return <span style={{textAlign:"center"}} className="dropdown-item">Vui Lòng Chọn Ngày Chiếu</span>
         }
     },[cinema,ngayChieu]);
     const fromatDate=()=>{
@@ -206,9 +200,6 @@ function Index(props) {
                     <img src={props.DropdownIcon} alt='IconDropdown' />
                 </button>
                 <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    {/* <a className="dropdown-item" href="#">Tiệc Trăng Máu - Blood Moon Party</a>
-                    <a className="dropdown-item" href="#">Quill, Chú Chó Dẫn Đường - Quill: The Life of a Guide Dog (P)</a>
-                    <a className="dropdown-item" href="#">Trại Xác Sống - The Clearing (C18)</a> */}
                     {
                         RenderListFilm()
                     }

@@ -176,7 +176,7 @@ function Index(props) {
                 </div>
             )
         },
-        [currentPage],
+        [currentPage,group],
     )
     const settings = {
         dots: false,
@@ -200,7 +200,7 @@ const mapStateToProp = state => {
         currentPage: state.listMovieReducer.currentPage,
         totalPages: state.listMovieReducer.totalPages,
         count: state.listMovieReducer.count,
-        dataListMovie: state.listMovieReducer.dataListMovie,
+        // dataListMovie: state.listMovieReducer.dataListMovie,
         group: state.LocationState.location,
         totalCount: state.listMovieReducer.totalCount
     }
