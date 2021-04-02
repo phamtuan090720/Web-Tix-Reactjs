@@ -23,7 +23,7 @@ function TabPanel(props) {
             {...other}
         >
             {value === index && (
-                <Box p={3}>
+                <Box p={2}>
                     <Typography>{children}</Typography>
                 </Box>
             )}
@@ -66,12 +66,17 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: '5px',
         display: "flex",
         position: 'relative',
+       
     },
     TabItem: {
         fontFamily: 'Catamaran,sans-serif',
-        padding: "20px",
         fontSize: "15px",
-        fontWeight: "500"
+        fontWeight: "500",
+        [theme.breakpoints.between(theme.breakpoints.values.sm-225,theme.breakpoints.values.sm-120)]: {
+            fontSize: "1rem",
+            padding: "5px",
+            fontFamily: 'Catamaran,sans-serif',
+        },
     },
     TabPanel: {
         width: '100%',

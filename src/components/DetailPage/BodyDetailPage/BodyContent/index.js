@@ -56,20 +56,20 @@ export default function index(props) {
                         </div>
                     </div>
                     <div className="tab-pane fade" id="thongTin">
-                        <div className="row">
-                            <div className="col-6">
-                                <div className="row">
+                        <div className="row m-0">
+                            <div className="col-12 col-md-6">
+                                <div className="row m-0">
                                     <p className="contentTitle">Ngày Công Chiếu:</p>
-                                    <p className="contentInfo">{new Date(data?.ngayKhoiChieu).toLocaleDateString()}</p>
+                                    <p className="contentInfo pl-3">{new Date(data?.ngayKhoiChieu).toLocaleDateString()}</p>
                                 </div>
-                                <div className="row">
+                                <div className="row m-0">
                                     <p className="contentTitle">Tên Phim:</p>
                                     <p className="contentInfo">{data?.tenPhim}</p>
                                 </div>
                             </div>
-                            <div className="col-6">
+                            <div className="col-12 col-md-6">
                                 <div className="description">
-                                    <p className="contentInfo">Mô Tả:</p>
+                                    <p className="contentTitle">Mô Tả:</p>
                                     <p>{data?.moTa}</p>
                                 </div>
                             </div>

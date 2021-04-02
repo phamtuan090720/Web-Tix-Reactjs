@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
             width: '100%',
         },
         width: '100%',
-        padding:'20px',
+        padding: '20px',
     },
     row: {
         display: 'flex',
@@ -99,7 +99,7 @@ const BootstrapInput = withStyles((theme) => ({
         fontSize: 16,
         padding: '10px 26px 10px 12px',
         transition: theme.transitions.create(['border-color', 'box-shadow']),
-        color:"#000",
+        color: "#000",
         // Use the system font instead of the default Roboto font.
         fontFamily: [
             '-apple-system',
@@ -125,11 +125,7 @@ function FromChangeInfoUser(props) {
     const { register, handleSubmit, errors, control } = useForm({
         mode: 'onBlur'
     });
-    // const [openModalCF, setOpenModalCF] = React.useState(false);
-    // const [dataUpdate,setdataUpdate] = React.useState({
-
-    // })
-    const { user,findUser,updateUser } = props;
+    const { user, findUser, updateUser } = props;
     const RenderGroupItem = () => {
         if (DataGroup) {
             return DataGroup.map((item) => {
@@ -139,16 +135,15 @@ function FromChangeInfoUser(props) {
     }
     const onSubmit = data => {
         let dataUser = {
-            matKhau:findUser.matKhau,
+            matKhau: findUser.matKhau,
             ...data,
         }
-        console.log("user",dataUser);
-        updateUser(dataUser,"ChangeInfo");   
+        updateUser(dataUser, "ChangeInfo");
     };
     React.useEffect(() => {
     }, [user]);
     return (
-        <Paper style={{width:"100%"}}>
+        <Paper style={{ width: "100%" }}>
             <form className={classes.root} onSubmit={handleSubmit(onSubmit)}>
                 <div className={classes.title}>Thay Đổi Thông Tin</div>
                 <div className={classes.row}>
@@ -184,7 +179,7 @@ function FromChangeInfoUser(props) {
                     />
                 </div>
                 <div className={classes.row}>
-                        {errors?.hoTen?.type === 'required' && (
+                    {errors?.hoTen?.type === 'required' && (
                         <Alert style={{ width: "100%", backgroundColor: "white", color: "red", marginLeft: 30, padding: 0 }} severity="error">Không Được Bỏ Trống!</Alert>)}
                 </div>
                 <div className={classes.row}>
@@ -192,8 +187,8 @@ function FromChangeInfoUser(props) {
                         <MailOutlineIcon />
                     </Avatar>
                     <TextField
-                        error={errors.email ? true : false}  
-                        inputRef={register({ required: true })}
+                        error={errors.email ? true : false}
+                        inputRef={register({ required: true, pattern: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/ })}
                         label="email"
                         variant="outlined"
                         size="small"
@@ -204,14 +199,16 @@ function FromChangeInfoUser(props) {
                 <div className={classes.row}>
                     {errors?.email?.type === 'required' && (
                         <Alert style={{ width: "100%", backgroundColor: "white", color: "red", marginLeft: 30, padding: 0 }} severity="error">Không Được Bỏ Trống!</Alert>)}
+                    {errors?.email?.type === 'pattern' && (
+                        <Alert style={{ width: "100%", backgroundColor: "white", color: "red", marginLeft: 30, padding: 0 }} severity="error">Email không đúng định dạng! vd:abcd@gmail.com</Alert>)}
                 </div>
                 <div className={classes.row}>
                     <Avatar aria-label="recipe" className={classes.avatar}>
                         <PhoneIcon />
                     </Avatar>
                     <TextField
-                        error={errors.soDienThoai ? true : false}
-                        inputRef={register({ required: true })}
+                        error={errors.soDT ? true : false}
+                        inputRef={register({ required: true, pattern: /(84|0[3|5|7|8|9])+([0-9]{8})\b/g })}
                         label="Số Điện Thoại"
                         variant="outlined"
                         size="small"
@@ -220,61 +217,65 @@ function FromChangeInfoUser(props) {
                     />
                 </div>
                 <div className={classes.row}>
-                        {errors?.soDienThoai?.type === 'required' && (
+                    {errors?.soDT?.type === 'required' && (
                         <Alert style={{ width: "100%", backgroundColor: "white", color: "red", marginLeft: 30, padding: 0 }} severity="error">Không Được Bỏ Trống!</Alert>)}
+                    {errors?.soDT?.type === 'pattern' && (
+                        <Alert style={{ width: "100%", backgroundColor: "white", color: "red", marginLeft: 30, padding: 0 }} severity="error">Số điện thoại không đúng định dạng!</Alert>)}
                 </div>
-                < div className={classes.row}>
-                    <div className="col-6">
-                        <div className="row align-items-center">
-                            <div className='col-2 p-0'>
-                                <Avatar aria-label="recipe" className={classes.avatar}>
-                                    <PersonPinIcon />
-                                </Avatar>
-                            </div>
-                            <div className='col-10'>
-                                <FormControl name="maNhom">
-                                    <InputLabel id="group">Nhóm</InputLabel>
-                                    <Controller
-                                        as={
-                                            <Select
-                                                labelId="group"
-                                                variant="outlined"
-                                                input={<BootstrapInput />}
-                                            >
-                                                {RenderGroupItem()}
-                                            </Select>
-                                        }
-                                        control={control}
-                                        name="maNhom"
-                                        defaultValue={user ? user.maNhom : ""}
-                                    />
-                                </FormControl>
+                <div className={classes.row}>
+                    <div className="row m-0">
+                        <div className="col-12 col-sm-6">
+                            <div className="row align-items-center">
+                                <div className='col-2 p-0'>
+                                    <Avatar aria-label="recipe" className={classes.avatar}>
+                                        <PersonPinIcon />
+                                    </Avatar>
+                                </div>
+                                <div className='col-10'>
+                                    <FormControl name="maNhom">
+                                        <InputLabel id="group">Nhóm</InputLabel>
+                                        <Controller
+                                            as={
+                                                <Select
+                                                    labelId="group"
+                                                    variant="outlined"
+                                                    input={<BootstrapInput />}
+                                                >
+                                                    {RenderGroupItem()}
+                                                </Select>
+                                            }
+                                            control={control}
+                                            name="maNhom"
+                                            defaultValue={user ? user.maNhom : ""}
+                                        />
+                                    </FormControl>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="col-6">
-                        <div className="row">
-                            <div className='col'>
-                                <FormControl>
-                                    <InputLabel style={{width:200}} id="maLoai">Mã Loại Người Dùng</InputLabel>
-                                    <Controller
-                                        as={
-                                            <Select
-                                                disabled
-                                                labelId="maLoai"
-                                                variant="outlined"
-                                                input={<BootstrapInput />}
-                                            >
-                                                <MenuItem value={"QuanTri"} >Quản Trị Viên</MenuItem>
-                                                <MenuItem value={"KhachHang"} >Khách Hàng</MenuItem>
-                                            </Select>
-                                        }
-                                        control={control}
-                                        name="maLoaiNguoiDung"
-                                        defaultValue={user ? user?.maLoaiNguoiDung : ""}
-                                    />
-                                    {user?.maLoaiNguoiDung==="KhachHang"?( <FormHelperText>Bạn Không Thể Thay Đổi</FormHelperText>):""}
-                                </FormControl>
+                        <div className="col-12 col-sm-6">
+                            <div className="row">
+                                <div className='col-12'>
+                                    <FormControl>
+                                        <InputLabel style={{ width: 200 }} id="maLoai">Mã Loại Người Dùng</InputLabel>
+                                        <Controller
+                                            as={
+                                                <Select
+                                                    disabled
+                                                    labelId="maLoai"
+                                                    variant="outlined"
+                                                    input={<BootstrapInput />}
+                                                >
+                                                    <MenuItem value={"QuanTri"} >Quản Trị Viên</MenuItem>
+                                                    <MenuItem value={"KhachHang"} >Khách Hàng</MenuItem>
+                                                </Select>
+                                            }
+                                            control={control}
+                                            name="maLoaiNguoiDung"
+                                            defaultValue={user ? user?.maLoaiNguoiDung : ""}
+                                        />
+                                        {user?.maLoaiNguoiDung === "KhachHang" ? (<FormHelperText>Bạn Không Thể Thay Đổi</FormHelperText>) : ""}
+                                    </FormControl>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -289,14 +290,14 @@ function FromChangeInfoUser(props) {
 }
 const mapStateToProp = (state) => {
     return {
-        user:state.AuthReducer.data,
-        findUser:state.FindUserReuder.data,
+        user: state.AuthReducer.data,
+        findUser: state.FindUserReuder.data,
     }
 }
 const mapDispatchToProp = (dispatch) => {
     return {
-        updateUser:(data,type)=>{
-            dispatch(Action.actUpdateInfoUser(data,type));
+        updateUser: (data, type) => {
+            dispatch(Action.actUpdateInfoUser(data, type));
         }
     }
 }

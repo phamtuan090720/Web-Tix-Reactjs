@@ -43,7 +43,7 @@ function ContainerMovie(props) {
     }
     return (
        <div className='schedule_carousel_container'>
-            <div className="row">
+            <div className="row m-0">
                 {render()}
             </div>
         </div>

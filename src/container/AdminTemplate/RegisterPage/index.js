@@ -96,28 +96,32 @@ function RegisterPage(props) {
                 name="matKhau"
                 label="Mật khẩu"
                 type="password"
-                ref={register({ required: true })}
+                ref={register({ required: true,minLength:6})}
               />
               <div>
-              {errors.matKhau && <Alert severity="error">This field is required</Alert>
+              {errors.matKhau?.type === "required" && <Alert severity="error">This field is required</Alert>
+              }
+               {errors.matKhau?.type === "minLength" && <Alert severity="error">min length 6 characters</Alert>
               }
               </div>
              
               <MyTxt
                 name="email"
                 label="Email"
-                ref={register({ required: true })}
+                ref={register({ required: true,pattern:/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/ })}
               />
               <div>
-              {errors.email && <Alert  severity="error">This field is required</Alert>}
+              {errors.email?.type==="required" && <Alert  severity="error">This field is required</Alert>}
+              {errors.email?.type==="pattern" && <Alert  severity="error">Email invalidate</Alert>}
               </div>
               <MyTxt
                 name="soDt"
                 label="Số điện thoại"
-                ref={register({ required: true })}
+                ref={register({ required: true,pattern:/(84|0[3|5|7|8|9])+([0-9]{8})\b/g })}
               />
               <div>
-              {errors.soDt && <Alert  severity="error">This field is required</Alert>}
+              {errors.soDt?.type==="required" && <Alert  severity="error">This field is required</Alert>}
+              {errors.soDt?.type==="pattern" && <Alert  severity="error">phone is not in the correct format example:0388888888</Alert>}
               </div>
               <MyTxt
                 name="hoTen"

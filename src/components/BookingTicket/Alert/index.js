@@ -15,10 +15,11 @@ export default function SimpleAlerts(props) {
     }));
 
     const Alert = Styled.div`
-    color: rgb(97,26,21);
-    background-color: rgb(253,236,234);
-    padding: 5px 8px;
-    border-radius: 20px;
+        color: rgb(97,26,21);
+        background-color: rgb(253,236,234);
+        padding: 5px 10px;
+        border-radius: 5px;
+        text-align: initial;
     `;
     return (
         <div className={useStyles.root}>

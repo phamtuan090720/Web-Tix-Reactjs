@@ -176,7 +176,7 @@ function Index(props) {
                 </div>
             )
         },
-        [currentPage,group],
+        [currentPage,group,count],
     )
     const settings = {
         dots: false,

@@ -1,7 +1,6 @@
 import React, { useEffect, Suspense, useCallback } from 'react';
 import { connect } from 'react-redux';
 import Carousel from '../../../components/CarouselMovie';
-// import ListMovie from '../../../components/ListMovie';
 import { actListMovieAPI, actCallApiGetInfoCinemaSytem, actCallApiGetListCinemaPost, actHandleChangePage } from './modules/action';
 import App from '../../../components/App';
 import Footer from '../../../components/Footer';

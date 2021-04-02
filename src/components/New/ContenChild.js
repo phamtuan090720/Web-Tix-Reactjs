@@ -32,7 +32,7 @@ export default function ContenChild(props) {
             <div className='row new_sub_items'>
                 {renderSubItem()}
                 <div className="col-12 col-sm-4 mini_new" >
-                    <div className="row">
+                    <div className="row m-0">
                         {renderMiniItem()}
                     </div>
                 </div>

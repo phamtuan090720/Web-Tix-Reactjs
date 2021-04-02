@@ -22,13 +22,15 @@ import { actUserLogot } from '../../../AdminTemplate/AuthPage/modules/actions';
 import { connect } from 'react-redux';
 import AvataUser from '../../../../img/AvataUser.jpg';
 import DashboardIcon from '@material-ui/icons/Dashboard';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 
 const useStyles = makeStyles({
     list: {
-        width: 350,
+        width:300,
     },
     fullList: {
         width: 'auto',
+        maxWidth:"30%",
     },
     nested: {
         paddingLeft: '60px',
@@ -151,13 +153,18 @@ function Nav(props) {
                 onClose={toggleDrawer(false)}
                 onOpen={toggleDrawer(true)}
             >
+                
                 <div
                     className={classes.list}
                     role="presentation"
-                // onClick={toggleDrawer(false)}
-                // onKeyDown={toggleDrawer(false)}
                 >
                     <List>
+                        <ListItem button onClick={toggleDrawer(false)}>
+                            <ListItemIcon>
+                                <ArrowForwardIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="Đóng" />
+                        </ListItem>
                         {renderDangNhap()}
                         <ListItem button onClick={handleClickCaiDatt}>
                             <ListItemIcon>

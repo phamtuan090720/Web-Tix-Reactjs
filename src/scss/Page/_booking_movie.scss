@@ -154,6 +154,7 @@
                     font-weight: bold;
                     width: 45%;
                     margin-right: 10px;
+                    margin-bottom: 70px;
                     @include breakpoint(rps,1105px){
                          display: inline-block;
                     }
@@ -165,7 +166,7 @@
                         box-shadow: 0 0 5px #03e9f4,
                                     0 0 25px #03e9f4,
                                     0 0 50px #03e9f4,
-                                    0 0 100px #03e9f4;
+                                    0 0 60px #03e9f4;
                     }
                     span {
                         position: absolute;
@@ -259,6 +260,7 @@
                     font-weight: bold;
                     width: 60%;
                     cursor: pointer;
+                    margin-bottom: 70px;
                     @include breakpoint(rps,1105px){
                         width: 45%;
                     }
@@ -269,7 +271,7 @@
                         box-shadow: 0 0 5px #03e9f4,
                                     0 0 25px #03e9f4,
                                     0 0 50px #03e9f4,
-                                    0 0 100px #03e9f4;
+                                    0 0 70px #03e9f4;
                     }
                     span {
                         position: absolute;
@@ -353,6 +355,9 @@
                     margin: 0 auto;
                     display: flex;
                 }
+                @include breakpointMoblie(iphone){
+                    width: 100%;
+                }
             }
         }
         .choose_tickets_left{
@@ -390,8 +395,13 @@
                 }
                 .countDown{
                     position: absolute;
-                    left: 50%;
+                    left: 45%;
                     transform: translateX(-50%);
+                    @include breakpointMoblie(iphone){
+                        // left: -45%;
+                        // transform: translateX(-50%);
+                        // position: absolute;
+                    }
                     p{
                         font-weight: bold;
                     }
@@ -400,16 +410,6 @@
                         font-weight: bold;
                     }
                 }
-                // a{
-                //     font-weight: bold;
-                //     font-size: 20px;
-                //     cursor :pointer;
-                //    transition: all 0.5;
-                //    &:hover{
-                //     color: #03e9f4;
-                //     text-decoration: none;
-                //    }
-                // }
                 .cancel{
                     font-weight: bold;
                     font-size: 20px;
@@ -601,6 +601,7 @@
             align-items: center;
             display: none;
             box-shadow: 0 0 15px rgb(0, 0, 0);
+            background-color: rgba(32, 90, 168, 0.3);
             @include breakpoint(rps,1105px){
                 width: 100%;
                 justify-content: space-between;
@@ -615,9 +616,8 @@
             .next{
                 display: none;
                 @include breakpoint(rps,1105px){
-                        width: 25%;
+                        width: 50%;
                         position: relative;
-                        // display: inline-block;
                         display: none;
                         padding: 10px 20px;
                         color: #03e9f4;

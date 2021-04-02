@@ -1,4 +1,8 @@
+@import '../Helpers/mixin';
 .tix_news {
+    .row{
+        margin: 0;
+    }
     .tix_new_content {
         max-width: 940px;
         margin: 0 auto;
@@ -34,6 +38,10 @@
                         border: none;
                         @include text($color-red-0,
                         24px);
+                        @include breakpointMoblie(iphone){
+                            @include text($color-red-0,
+                            18px);
+                        }
                     }
                     .nav-link {
                         @include text($color-black-0,
@@ -43,9 +51,17 @@
                         &:hover {
                             border: none;
                         }
+                        @include breakpointMoblie(iphone){
+                            @include text($color-black-0,
+                            16px);
+                        }
                     }
                     &:hover .nav-link {
                         font-size: 24px;
+                        @include breakpointMoblie(iphone){
+                            @include text($color-red-0,
+                            18px);
+                        }
                         border-color: unset;
                     }
                 }
@@ -127,6 +143,8 @@
                 }
                 .new_main_items {
                     margin-top: $mg-2;
+                    margin-left: 0;
+                    margin-right: 0;
                     .new_item {
                         a {
                             img {
@@ -137,6 +155,8 @@
                 }
                 .new_sub_items {
                     margin-top: $mg-2;
+                    margin-left: 0;
+                    margin-right: 0;
                     .new_item {
                         a {
                             img {
