@@ -48,7 +48,7 @@ const useRowStyles = makeStyles({
 
 const useStyles = makeStyles({
   table: {
-    minWidth: 500,
+    minWidth: 700,
   },
 });
 function Row(props) {
