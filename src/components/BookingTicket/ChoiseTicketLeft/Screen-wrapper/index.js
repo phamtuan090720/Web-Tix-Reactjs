@@ -11,7 +11,6 @@ export default function index(props) {
         }
         return Ds;
     }
-    // console.log(DanhSachGheVip(data));
     const DanhSachGheThuong = (data) => {
         let Ds = [];
         if (data) {
@@ -24,40 +23,40 @@ export default function index(props) {
     const RenderSeatLine = (nameLine, IndexStart, IndexEnd, Array) => {
         let data = [];
         data = Array.slice(IndexStart, IndexEnd);
-        return <li class="seat-line row">
+        return <li className="seat-line row">
             <span className="col-1">{nameLine}</span>
                 <ul className="seat--area col-10" >
 
-                <li class="front-seat row">
-                    <ul class="row col-12">
+                <li className="front-seat row">
+                    <ul className="row col-12">
                         {
                             data.map((item, index) => {
                                 if (index < 4) {
-                                    return <Seat data={item} name={`${nameLine}${index+1}`} className={"single-seat col-3"} />
+                                    return <Seat key={index} data={item} name={`${nameLine}${index+1}`} className={"single-seat col-3"} />
                                 }
                             })
                         }
 
                     </ul>
                 </li>
-                <li class="front-seat row">
-                    <ul class="row col-12">
+                <li className="front-seat row">
+                    <ul className="row col-12">
                         {
                             data.map((item, index) => {
                                 if (index >= 4 && index < 10) {
-                                    return <Seat data={item} name={`${nameLine}${index+1}`} className={"single-seat col-2"} />
+                                    return <Seat key={index} data={item} name={`${nameLine}${index+1}`} className={"single-seat col-2"} />
                                 }
                             })
                         }
 
                     </ul>
                 </li>
-                <li class="front-seat row">
-                    <ul class="row col-12">
+                <li className="front-seat row">
+                    <ul className="row col-12">
                         {
                             data.map((item, index) => {
                                 if (index >= 10 && index < 14) {
-                                    return <Seat data={item} name={`${nameLine}${index+1}`} className={"single-seat col-3"} />
+                                    return <Seat key={index} data={item} name={`${nameLine}${index+1}`} className={"single-seat col-3"} />
                                 }
                             })
                         }

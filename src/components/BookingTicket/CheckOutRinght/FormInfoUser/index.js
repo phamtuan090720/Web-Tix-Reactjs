@@ -96,7 +96,7 @@ function FormInfoUser(props) {
       }
     );
   }
-  console.log(stateCheckErr);
+  // console.log(stateCheckErr);
   const onSubmit = data => {
     if (data) {
       if (handleCheckErrListSeatSelector() === true) {
@@ -115,7 +115,7 @@ function FormInfoUser(props) {
       }
     }
   }
-  console.log(watch("email"));
+  // console.log(watch("email"));
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={classes.root}>
 

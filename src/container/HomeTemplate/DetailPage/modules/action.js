@@ -8,10 +8,10 @@ export const actDeailMovieAPI = (id) => {
             api.get(`/QuanLyRap/LayThongTinLichChieuPhim?MaPhim=${id}`)
                 .then((rs) => {
                     dispatch(actDetailMovieSuccess(rs.data));
-                    console.log(rs.data);
+                    // console.log(rs.data);
                 }).catch((err) => {
                     dispatch(actDetailMovieFailed(err));
-                    console.log(err);
+                    // console.log(err);
                 })
         }, 2000);
     }

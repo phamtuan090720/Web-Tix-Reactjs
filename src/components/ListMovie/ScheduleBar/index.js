@@ -54,8 +54,8 @@ function Index(props) {
     const RenderListFilm = useCallback(
         () => {
             if (listMovie) {
-                return listMovie.map((item) => {
-                    return <span style={{textAlign:"center"}} className="dropdown-item" id={item.maPhim} onClick={(e) => {
+                return listMovie.map((item,index) => {
+                    return <span key={index} style={{textAlign:"center"}} className="dropdown-item" id={item.maPhim} onClick={(e) => {
                         CallAPIFilm(e);
                         setFilm({
                             tenPhim: item.tenPhim,

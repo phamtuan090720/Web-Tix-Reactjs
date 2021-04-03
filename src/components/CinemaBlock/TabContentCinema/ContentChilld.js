@@ -13,7 +13,7 @@ export default function ContentChilld(props) {
         }
     }
     return (
-        <div class="cinema_address_list">
+        <div className="cinema_address_list">
             {render()}
         </div>
     )

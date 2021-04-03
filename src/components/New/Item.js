@@ -7,7 +7,7 @@ export default function mainItem(props) {
     return (
         <div className="col-12 col-sm-6 new_item">
             <a href="#">
-                <img src={dataItem.hinhAnh} alt />
+                <img src={dataItem.hinhAnh} alt="hinhAnh" />
                 <p className="title_new">{dataItem.title}</p>
             </a>
             <p className="new_content_sub">

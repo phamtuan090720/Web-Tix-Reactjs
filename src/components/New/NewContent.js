@@ -5,18 +5,18 @@ export default function NewContent(props) {
     dataMiniDienAnh,dataMiniReview,dataMiniKhuyenMai} = props;
     return (
       <div className="tab-content">
-              <div class="tab-pane active" id="dienAnh">
+              <div className="tab-pane active" id="dienAnh">
                   <Content dataMain={dataMainDienAnh}
                   dataSub={dataSubDienAnh}
                   dataMini={dataMiniDienAnh}
                   />
               </div>
-              <div class="tab-pane fade " id="review">
+              <div className="tab-pane fade " id="review">
                   <Content dataMain={dataMainReview}  dataSub={dataSubReview}
                    dataMini={dataMiniReview}/>
                  
               </div>
-              <div class="tab-pane fade " id="khuyenMai">
+              <div className="tab-pane fade " id="khuyenMai">
                    <Content dataMain={dataMainKhuyenMai}  dataSub={dataSubKhuyenMai}
                      dataMini={dataMiniKhuyenMai}
                    />

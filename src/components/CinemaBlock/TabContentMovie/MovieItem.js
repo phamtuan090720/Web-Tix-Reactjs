@@ -32,8 +32,8 @@ export default function MovieItem(props) {
    }
    const renderGioChieu = ()=>{
        if(dataLichChieu&&dataLichChieu.length>0){
-           return dataLichChieu.map((item)=>{
-            return <Link to={`/booking-ticket/${item.maLichChieu}`}> <button className="btn"><span>{getTimeIsoDate(item.ngayChieuGioChieu)}</span>~{getTimeEnd(item.ngayChieuGioChieu,109)}
+           return dataLichChieu.map((item,index)=>{
+            return <Link to={`/booking-ticket/${item.maLichChieu}`} key={index}> <button className="btn"><span>{getTimeIsoDate(item.ngayChieuGioChieu)}</span>~{getTimeEnd(item.ngayChieuGioChieu,109)}
             </button> </Link>
            })
        }

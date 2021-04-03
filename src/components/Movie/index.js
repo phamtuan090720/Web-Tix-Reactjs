@@ -16,7 +16,7 @@ function Movie(props) {
         let a = Number(point)/2;
         return a;
     }
-    console.log(calculatePoint(9));
+    // console.log(calculatePoint(9));
     const checkDouble = (point)=>{
         if(Math.abs(point- parseInt(point))){
             return true;
@@ -121,7 +121,7 @@ function Movie(props) {
         return(
             <div className="movie_item">
             <div className="movie_pic">
-                <img src={DefaultPicMovie} alt />
+                <img src={DefaultPicMovie} alt='DefaultPicMovie' />
                 <button onClick={Open} className="play_btn button_trailer_movie" data-toggle="modal" data-target="#modal_trailer"><img id="play_img" src={PlayIcon}/></button>
             </div>
             <div className="movie_description">
@@ -135,11 +135,11 @@ function Movie(props) {
                 <div className="rating">
                     <p className="rating_point">rating</p>
                     <p className="rating_star">
-                          <img src={start1} alt />
-                          <img src={start1} alt />
-                          <img src={start1} alt />
-                          <img src={start1} alt />
-                          <img src={start12} alt />
+                          <img src={start1} alt ="start1" />
+                          <img src={start1} alt ="start1" />
+                          <img src={start1} alt ="start1" />
+                          <img src={start1} alt ="start1" />
+                          <img src={start12} alt ="start12" />
                     </p>
                 </div>
             </div>

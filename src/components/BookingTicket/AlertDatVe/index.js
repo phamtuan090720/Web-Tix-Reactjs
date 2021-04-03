@@ -12,7 +12,7 @@ import { DialogActions } from '@material-ui/core';
 import { Link, Redirect } from 'react-router-dom';
 export default function AlertDialog(isOpen = false, mess = "", isErr = false, handleClose, handleOpenBill,props) {
     const {malichChieu} = props;
-    console.log(malichChieu);
+    // console.log(malichChieu);
     const [open, setOpen] = React.useState(isOpen);
     const [err, setErr] = React.useState(isErr);
     useEffect(() => {

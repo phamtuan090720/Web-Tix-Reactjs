@@ -88,7 +88,7 @@ export const CallApiGetInfoAccount = (account)=>{
         dispatch(actGetInfoAccountReqest());
         api.post('/QuanLyNguoiDung/ThongTinTaiKhoan',account).then((rs)=>{
             dispatch(actGetInfoAccountSuccess(rs.data));
-            console.log(rs.data);
+            // console.log(rs.data);
         }).catch(err=>{
             dispatch(actGetInfoAccountFailed(err?.response?.data));
             alert(err?.response?.data);

@@ -6,10 +6,10 @@ export default function index(props) {
         if(dataCinemaSytem&&dataCinemaSytem.length>0){
             return dataCinemaSytem.map((Item,index)=>{
                 if(index===0){
-                    return<NavItem dataCinemaSytem={Item} addClass={'nav-link active'}/>
+                    return<NavItem key={index} dataCinemaSytem={Item} addClass={'nav-link active'}/>
                 }
                 else{
-                    return <NavItem dataCinemaSytem={Item} addClass={'nav-link'}/>
+                    return <NavItem key={index} dataCinemaSytem={Item} addClass={'nav-link'}/>
                 }
                
             })
